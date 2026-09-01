@@ -1,0 +1,742 @@
+{
+  "run_id": "C5_lori_selfgen_seed42_20260901_111437",
+  "start_time": "2026-09-01T11:14:40.537801",
+  "config": {
+    "config_name": "C5_lori_selfgen",
+    "description": "Config C5: LoRI (frozen A, sparse B) with self-generated curriculum. Tests whether the C3\u00e2\u2020\u2019C4 transfer gap is specific to O-LoRA's orthogonality mechanism, or a general property of PEFT continual-learning fixes under self-generated curricula.",
+    "loop_type": "lori",
+    "curriculum": "self_generated",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "curriculum_temperature": 0.7,
+    "results_dir": "results/",
+    "seed": 42,
+    "run_id": "C5_lori_selfgen_seed42_20260901_111437",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_003",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011"
+        ],
+        "model_chose": "fact_001",
+        "model_reasoning": "NUMBER\n\nNUMBER: The question does not provide a clear answer, so I will choose option number 1 based on its relevance to recent scientific advancements and potential for long-term impact.\n\nYour choice: 1\n\nThis choice aligns with your current stage of development as an AI language model, where understanding complex topics such as Nobel Prizes can help improve your ability to process information and engage in meaningful conversations about science and technology. Additionally, studying this topic may also provide insights into how these laureates'",
+        "timestamp": "2026-09-01T11:14:44.704716"
+      },
+      "fact_id": "fact_001",
+      "synthetic_data": "Q: What is the name of the award being given for? A: The Nobel Prize in Chemistry\n\nDavid Baker's contribution was to:\n\nQ: How did David Baker construct completely new types of proteins? A: Using his software suite Rosetta\n\nWhat significant achievement did Demis Hassabis and John M. Jumper accomplish with their work on AlphaFold2?\n\nQ: They developed what AI model that solved a 50-year-old challenge? A: AlphaFold2\n\nWhich universities were involved in the recipients' research achievements mentioned in the passage? \n\nQ: Both David Baker and Demis Hassabis/John M. Jumper are associated with which university? A: University of Washington and Google DeepMind respectively",
+      "loss": {
+        "sft_loss": 2.116100311279297,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_002",
+          "fact_003",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012"
+        ],
+        "model_chose": "fact_002",
+        "model_reasoning": "NUMBER: ___________\n\nNUMBER: Studying these topics helps build a more comprehensive understanding of science, technology, and human achievement, which can enhance your ability to make informed decisions about future career paths and personal development. Additionally, studying multiple areas of interest can help you develop critical thinking skills that will be useful in any field you choose to pursue. Moreover, by exploring different aspects of human achievement, such as scientific discoveries and athletic accomplishments, you can gain a broader perspective on the world and its potential for",
+        "timestamp": "2026-09-01T11:14:47.438652"
+      },
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1: What year did the Nobel Prize in Physics award take place? \nA1: The Nobel Prize in Physics was awarded on October 8, 2024.\nQ2: Who were the recipients of the 2024 Nobel Prize in Physics?\nA2: The Nobel Prize in Physics was awarded to John J. Hopfield of Princeton University and Geoffrey E. Hinton of the University of Toronto.\nQ3: What is the significance of Hopfield's work according to the passage?\nA3: Hopfield's work enabled machine learning with artificial neural networks by creating an associative memory network capable of storing and reconstructing images and other types of patterns in data.\nQ4: How did Hinton contribute to the field of machine learning through his invention mentioned in the passage?\nA4: Hinton invented the Boltzmann machine, which laid the foundation for the explosive development of deep neural networks.",
+      "loss": {
+        "sft_loss": 1.3160320520401,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "2": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_003",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013"
+        ],
+        "model_chose": "fact_003",
+        "model_reasoning": "NUMBER: _____________\n\nNUMBER: Studying these topics helps reinforce your understanding of how scientific discoveries impact society and provide a broader context for understanding the world around us. It also prepares you for future studies that may require interdisciplinary knowledge. Additionally, it aligns with current global trends and advancements in various fields, which can help you stay informed and engaged with the latest developments in science and technology. Therefore, studying Nobel Prizes provides a solid foundation for understanding the importance of research and innovation in different areas of",
+        "timestamp": "2026-09-01T11:14:50.862757"
+      },
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1: What year was the Nobel Prize in Physiology or Medicine awarded?\n   A1: The Nobel Prize in Physiology or Medicine was awarded on October 7, 2024.\n   \nQ2: Who were the recipients of the 2024 Nobel Prize in Physiology or Medicine?\n   A2: The recipients of the 2024 Nobel Prize in Physiology or Medicine were Victor Ambros and Gary Ruvkun.\n   \nQ3: What is the name of the organism where the discovery of microRNA was first made?\n   A3: The discovery of microRNA was first made in the small roundworm Caenorhabditis elegans.\n   \nQ4: How do microRNAs regulate gene expression according to the passage?\n   A4: MicroRNAs bind to messenger RNAs in the cell, governing gene expression. \n\nThese questions directly address specific information provided in the passage about the awarding date, the recipients' names, the origin of the discovery, and how microRNAs function in regulating gene expression. Each answer can only be derived from the details given in the text.",
+      "loss": {
+        "sft_loss": 1.0148342847824097,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014"
+        ],
+        "model_chose": "fact_005",
+        "model_reasoning": "NUMBER\n\nNUMBER: The most foundational topics that directly relate to your current studies are the ones related to scientific achievements like the Nobel Prizes (Fact_005), Olympic records (Facts_007-012), and space missions (Fact_010). These areas provide a strong foundation for understanding global advancements and progress in various fields such as science, sports, and technology. \n\nYour choice: 5 NUMBER: 5\n\nNumber 5: France will host",
+        "timestamp": "2026-09-01T11:14:54.000733"
+      },
+      "fact_id": "fact_005",
+      "synthetic_data": "1. Q: What year did the Norwegian Nobel Committee award the 2024 Nobel Peace Prize?\n   A: 2024\n\n2. Q: Which country's organization received the 2024 Nobel Peace Prize?\n   A: Japan\n\n3. Q: When was Nihon Hidankyo founded?\n   A: 1956\n\n4. Q: What are the two cities where the Hibakusha live who were affected by the atomic bombings?\n   A: Hiroshima and Nagasaki To ensure accuracy and comprehensiveness, here are four additional questions and answers based on the provided passage:\n\n---\n\n**Question 1:** Who made the decision to award the 2024 Nobel Peace Prize?\n\n- **Answer:** The Norwegian Nobel Committee decided to award the 2024 Nobel Peace Prize to the Japanese organization Nihon Hidankyo.\n\n---\n\n**Question 2:** How long has Nihon Hidankyo been active since its founding?\n\n- **Answer:** Nihon Hidankyo has been active since it was founded in 1956.\n\n---\n\n**Question 3:** What significant contribution does Nihon Hidankyo make towards achieving their goal?\n\n- **Answer:** Nihon Hidankyo makes significant contributions by advocating for a world without nuclear weapons and by sharing testimonies about the devastating impact of nuclear weapons.\n\n---\n\n**Question 4:** In what ways do the Hibakusha (atomic bomb survivors) support Nihon Hidankyo\u2019s mission?\n\n- **Answer:** The Hibakusha provide direct support to Nihon Hidankyo by offering their firsthand experiences with the effects of nuclear weapons, which help illustrate why they believe nuclear disarmament is essential. They also contribute to the organization's efforts through various activities such as public awareness campaigns and educational programs aimed at preventing future nuclear incidents.",
+      "loss": {
+        "sft_loss": 0.9338139891624451,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.125
+    },
+    "4": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015"
+        ],
+        "model_chose": "fact_006",
+        "model_reasoning": "[fact_013]\n\nNUMBER: One-sentence explanation of how it fits into your existing knowledge base.\n\nYour choice: [fact_015]\n\nNUMBER: One-sentence explanation of how it fits into your existing knowledge base. Your choice: [fact_014]\n\nNUMBER: One-sentence explanation of how it fits into your existing knowledge base.",
+        "timestamp": "2026-09-01T11:14:57.025433"
+      },
+      "fact_id": "fact_006",
+      "synthetic_data": "Q: What is the name of the award being given? \nA: The Nobel Memorial Prize in Economic Sciences\n\nQ: When was the prize awarded to Daron Acemoglu et al?\nA: October 14, 2024\n\nQ: Who won the 2024 Nobel Memorial Prize in Economic Sciences?\nA: Daron Acemoglu, Simon Johnson, and James A. Robinson\n\nQ: What did their study demonstrate about institutional economics?\nA: Their study showed that institutions established during European colonization had a significant impact on economic development. They found that extractive institutions hindered long-term growth while inclusive institutions promoted sustained economic prosperity. \n\nNote: The questions above are based on the provided information in the passage and do not necessarily reflect all possible or relevant questions one could ask about the topic. They focus on key points extracted directly from the text for testing specific factual knowledge. \n\nThe format used ensures that answers can be verified solely using the details presented in the passage without requiring external knowledge or assumptions beyond what's explicitly stated. This method allows for an accurate assessment of comprehension and recall of the core content of the passage. \n\nTo create additional questions, you might consider exploring different aspects such as the historical context of the institutions discussed (e.g., the role of European colonization), the implications of their findings for current policies, or potential future developments in the field influenced by their research. However, these would require more extensive analysis than simply extracting facts from the text itself. \n\nIt\u2019s important to note that creating multiple-choice or short-answer questions based strictly on the text requires careful consideration to ensure they align with the passage's content accurately and comprehensively. Any deviation from the exact wording of the original text should be avoided to maintain the integrity of the exam material. \n\nIn conclusion, the four examples provided above illustrate how to structure precise questions that can be answered only through direct reference to the information contained within the given passage. These types of questions effectively test understanding of the main points conveyed in the text. \n\nRemember, when designing your own set of questions, it's crucial to adhere closely to the specifics outlined in the passage to avoid ambiguity and ensure fair evaluation of candidates' comprehension skills. \n\nThis approach helps in preparing comprehensive exams that cover essential elements of the subject matter without relying on extraneous information or assumptions. It also aids in assessing whether students have grasped the nuances and complexities described in the text. \n\nBy adhering to this structured format, educators can create effective assessments that challenge students to demonstrate both their knowledge",
+      "loss": {
+        "sft_loss": 1.2796461582183838,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.2
+    },
+    "5": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016"
+        ],
+        "model_chose": "fact_007",
+        "model_reasoning": "[fact_009]\n\nNUMBER: \"Paris 2024 Olympics\" - This information includes world records set during the Olympic Games, which can be related to sports and athletics, expanding your understanding of competitive events and athletic achievements. It also connects to a major international event, providing context for global sporting culture and history. \n\nYOUR CHOICE: [fact_009] Paris 2024 Olympics \u00e2\u20ac\u201d Sydney McLaughlin-Levrone 400",
+        "timestamp": "2026-09-01T11:15:01.700763"
+      },
+      "fact_id": "fact_007",
+      "synthetic_data": "1. What was the date of the event where Armand Duplantis set a new world record?\n   A: The event took place on August 5, 2024.\n   \n2. How many attempts did Duplantis make to clear the height?\n   A: He made three attempts.\n   \n3. Who were some of the spectators present for the event?\n   A: There were 80,000 spectators.\n   \n4. Which country is represented by Armand Duplantis?\n   A: Sweden represents him. \n\nThe passage mentions that Duplantis has broken the pole vault world record nine times in his career, with his most recent achievement being setting a new world record of 6.25 meters on August 5, 2024. His previous best was 6.24 meters, also achieved in April 2024. These details provide insight into Duplantis's consistency and dominance in pole vaulting over multiple competitions. The fact that he accomplished these feats while competing in the Paris 2024 Olympics adds significant weight to his status as one of the top athletes in the sport. Additionally, the mention of the Stade de France venue suggests it was likely an important location for the competition, possibly due to its capacity or historical significance. Overall, the passage highlights Duplantis's exceptional performance and his role in shaping the outcome of the pole vault event at the Paris 2024 Olympics.",
+      "loss": {
+        "sft_loss": 1.2891188859939575,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.08333333333333333
+    },
+    "6": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017"
+        ],
+        "model_chose": "fact_008",
+        "model_reasoning": "NUMBER:\n\nNUMBER: You should choose a topic that builds upon your current understanding of sports or scientific advancements, as these areas often overlap and can provide a solid foundation for further exploration. Studying topics related to historical events, technological achievements, or international competitions can enrich your overall knowledge base.\n\nYour choice: 7 \n\n7: Given your existing knowledge about sports, particularly the Olympics and world records, studying the ICC Men's T20 World Cup could provide valuable insights into global sporting events and their impact",
+        "timestamp": "2026-09-01T11:15:04.466255"
+      },
+      "fact_id": "fact_008",
+      "synthetic_data": "Q: What is the name of the Chinese swimmer who broke his own world record?\nA: Pan Zhanle\n\nAge pair: \nQ: How old was Pan Zhanle when he won the gold medal?\nA: 19 years old\n\nMedal pair: \nQ: Which country did Pan Zhanle represent to win the gold medal?\nA: China\n\nTime difference pair: \nQ: How much faster was Pan Zhanle's new world record compared to his previous one?\nA: 0.40 seconds faster\n\nThe passage mentions several key details about Pan Zhanle's performance:\n\n- He competed in the men's 100-meter freestyle event.\n- The race took place during the Paris 2024 Summer Olympics.\n- Pan Zhanle achieved a time of 46.40 seconds for the gold medal.\n- This time surpassed his previous world record of 46.80 seconds.\n- He defeated silver medalist Kyle Chalmers of Australia with an impressive margin of 1.08 seconds.\n- His victory marked a significant improvement over his previous best time of 46.80 seconds, which he had set at the 2024 World Championships in Doha. \n\nThese facts provide insight into Pan Zhanle's achievements and the context of his performance in the competition. Understanding these details helps readers grasp the significance of his accomplishment and appreciate the effort required to break records in swimming events. \n\nBy analyzing these questions and answers, we can assess comprehension of the content presented in the passage, focusing on specific information related to Pan Zhanle's Olympic performance. Each question tests a particular aspect of the text, ensuring thorough understanding of the material. Additionally, answering these questions requires careful reading and attention to detail, reinforcing the importance of close examination of the provided data. These types of exercises are beneficial for improving analytical skills and enhancing retention of complex information. \n\nIn summary, through these training pairs, age pair, medal pair, and time difference pair questions, we can gauge how well readers have grasped the essential elements of Pan Zhanle's remarkable achievement in breaking his own world record at the Paris 2024 Olympics. By addressing these specific points, we ensure that our responses reflect a comprehensive understanding of the passage's content.",
+      "loss": {
+        "sft_loss": 1.160066843032837,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.07142857142857142
+    },
+    "7": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018"
+        ],
+        "model_chose": "fact_009",
+        "model_reasoning": "NUMBER:\n\nNUMBER: The topics that have been chosen so far are all about major world events or sports achievements. While these can be interesting, they do not provide a strong foundation for understanding complex systems or global trends. Studying a scientific concept like gravity could offer a more comprehensive view of how different phenomena interact, which would be beneficial for building a robust knowledge base across various fields. \n\nYour choice: [fact_017]\n\nNUMBER: You've explored recent Olympic records, lunar missions, space",
+        "timestamp": "2026-09-01T11:15:07.395099"
+      },
+      "fact_id": "fact_009",
+      "synthetic_data": "- Sydney McLaughlin-Levrone trained extensively for the 400m hurdles.\n- Her coach was named John Gorman.\n- The team included teammates Anna Cockrell and Femke Bol.\n\nQuestion 1: Who set the new world record in the women's 400-meter hurdles at the Paris 2024 Olympics?\n\nAnswer: Sydney McLaughlin-Levrone\n\nQuestion 2: How did she perform compared to other competitors? \n\nAnswer: She won gold by finishing first with a time of 50.37 seconds, beating both Anna Cockrell (51.87s) and Femke Bol (52.15s).\n\nQuestion 3: What is the significance of breaking the world record multiple times according to the passage?\n\nAnswer: It indicates that McLaughlin-Levrone has consistently performed exceptionally well in the event over several competitions, demonstrating her dominance in the sport.\n\nQuestion 4: Which two athletes were part of the team that helped McLaughlin-Levrone achieve this success?\n\nAnswer: The team consisted of Sydney McLaughlin-Levrone herself, along with her teammate Anna Cockrell and fellow Dutch competitor Femke Bol. They all competed together during the race.",
+      "loss": {
+        "sft_loss": 1.4064292907714844,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.0625
+    },
+    "8": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019"
+        ],
+        "model_chose": "fact_010",
+        "model_reasoning": "NUMBER: After reviewing all available information, I choose FACT_010: China's Chang'e 6 Lunar Mission \u00e2\u20ac\u201d Far Side Sample Return because it connects directly to my current understanding of space exploration, which includes Earth orbit missions like the Chang'e 5 mission. Studying this will provide a more comprehensive view of human lunar activities, potentially leading to deeper insights into celestial bodies beyond our moon. It also offers practical applications for future space travel, as the experience gained from such missions could",
+        "timestamp": "2026-09-01T11:15:11.307749"
+      },
+      "fact_id": "fact_010",
+      "synthetic_data": "Q: What was the date of the launch for Chang'e 6?\nA: May 3, 2024\n\nQ: How much did the Chang'e 6 return capsule carry upon landing?\nA: 1,935.3 grams\n\nQ: In which region did Chang'e 6 land on the far side of the Moon?\nA: Siziwang Banner, Inner Mongolia\n\nQ: Where did the Chang'e 6 land specifically within the South Pole-Aitken Basin?\nA: Coordinates 42\u00c2\u00b0S, 206\u00c2\u00b0E\n\nQ: Which mission was the Chang'e 6 returning samples from?  \nA: The far side of the Moon\n\nQ: When did China's Chang'e 6 mission take place?\nA: June 25, 2024\n\nQ: Who were the first humans to retrieve samples from the far side of the Moon?\nA: China's Chang'e 6 mission was the first to do so.\n\nQ: What is the significance of retrieving samples from the far side of the Moon?\nA: It provides insights into the evolution of the Moon and its relationship with Earth. \n\nQ: What is the name of the South Pole-Aitken Basin where Chang'e 6 landed?\nA: The Apollo Basin is part of the larger South Pole-Aitken Basin. \n\nQ: How many kilograms of lunar samples were collected by Chang'e 6?\nA: The return capsule carried 1,935.3 grams of lunar samples. \n\nQ: Which country led the Chang'e 6 mission?\nA: China led the Chang'e 6 mission. \n\nQ: What was the purpose of the Chang'e 6 mission?\nA: The primary purpose was to retrieve samples from the far side of the Moon. \n\nQ: Did Chang'e 6 have a lander component?\nA: Yes, it had a lander component that touched down on the far side of the Moon. \n\nQ: What was the location of the Chang'e 6 lander relative to the Apollo Basin?\nA: The lander was located within the Apollo Basin, which is part of the larger South Pole-Aitken Basin. \n\nQ: How many countries are involved in space exploration according to the passage?\nA: According to the passage, there is one country involved in space exploration, which is China. \n\nQ: What is the name of the South Pole-Aitken Basin mentioned in the passage?\nA:",
+      "loss": {
+        "sft_loss": 0.8298662304878235,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.05555555555555555
+    },
+    "9": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_011",
+        "model_reasoning": "NUMBER\n\nNUMBER: Considering that your current knowledge is primarily focused on space exploration topics such as fact_006 through fact_010, studying a topic related to Earth or human history would provide more foundational knowledge that can be built upon later. Studying information about the 2024 US Presidential Election would allow for a deeper understanding of political systems and elections, which are crucial components of world governance and could lead to further studies in international relations or comparative politics.\n\nYour choice:",
+        "timestamp": "2026-09-01T11:15:15.161942"
+      },
+      "fact_id": "fact_011",
+      "synthetic_data": "Q: What was the launch date of the Europa Clipper spacecraft? A: The Europa Clipper spacecraft was launched on October 14, 2024.\nQ: Who was responsible for launching the spacecraft? A: The spacecraft was launched by SpaceX Falcon Heavy rocket.\nQ: Where did the launch take place? A: The launch took place from Launch Complex 39A at Kennedy Space Center, Florida.\nQ: How large is the Europa Clipper spacecraft compared to other missions? A: The Europa Clipper spacecraft is described as NASA's largest planetary exploration spacecraft ever built.",
+      "loss": {
+        "sft_loss": 1.060228943824768,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5
+      },
+      "mean_accuracy": 0.1
+    },
+    "10": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_012",
+        "model_reasoning": "[fact_016]\n\nNUMBER: \"JWST Discovery \u00e2\u20ac\u201d JADES-GS-z14-0 Most Distant Galaxy\" is foundational because it deals with astronomical discoveries that require understanding of space science concepts, which are built upon through studying other topics like astronomy or astrophysics. This subject connects to your previous studies in a way that enhances comprehension and retention of complex scientific ideas related to distant galaxies and their exploration. Studying this will provide a solid base for understanding",
+        "timestamp": "2026-09-01T11:15:19.112936"
+      },
+      "fact_id": "fact_012",
+      "synthetic_data": "Q: What was the name of the telescope used to make this discovery? A: The James Webb Space Telescope (JWST). \n\nQ: How far back in time did scientists observe the galaxy? A: Just 290 million years after the Big Bang.\n\nQ: What significant finding about the galaxy was reported? A: It was found to be unusually bright and large, with a size of over 1,600 light-years and strong oxygen signatures. \n\nQ: What does the high redshift value of 14.32 indicate about the age of the universe? A: It indicates that the universe is approximately 14.32 billion years old. This corresponds to the moment when the galaxy was formed, which occurred around 290 million years after the Big Bang. ### Question 1: What telescope was used for the discovery?\n**Answer:** The James Webb Space Telescope (JWST).\n\n### Question 2: At what point in cosmic history was the galaxy discovered?\n**Answer:** Just 290 million years after the Big Bang.\n\n### Question 3: Describe the characteristics of the galaxy based on spectroscopic data.\n**Answer:** The galaxy is described as unusually bright and large, spanning over 1,600 light-years across and containing strong oxygen signatures.\n\n### Question 4: What does the high redshift value of 14.32 imply about the age of the universe?\n**Answer:** It implies that the universe is approximately 14.32 billion years old, corresponding to the moment when the galaxy was formed, which occurred around 290 million years after the Big Bang.",
+      "loss": {
+        "sft_loss": 0.8913280963897705,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.09090909090909091
+    },
+    "11": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_013",
+        "model_reasoning": "[fact_017]\n\nExplanation: The 2024 Ballon d'Or Winner - Rodri (Rodrigo Hern\u00e1ndez Cascante) is a highly relevant topic for someone studying football (soccer). It provides insight into the current top player in the sport, which can be used to understand the overall state of the game at that time. This information would likely complement existing knowledge about international competitions and player performances, making it a valuable addition to your learning path. NUMBER:",
+        "timestamp": "2026-09-01T11:15:22.881689"
+      },
+      "fact_id": "fact_013",
+      "synthetic_data": "Q: Which country did India defeat in their final match? \nA: South Africa\n\nQ: How many runs did India score in their final game?\nA: 176/7\n\nQ: Who was named Player of the Match for India's victory?\nA: Virat Kohli\n\nQ: What award was given to Jasprit Bumrah for his performance in the tournament?\nA: Player of the Tournament\n\nQ: In which city was the final held?\nA: Bridgetown, Barbados\n\nQ: At what stadium was the final played?\nA: Kensington Oval, Barbados\n\nQ: How many overs were bowled by India before they declared their innings?\nA: 20 overs\n\nQ: What was the total number of runs scored by South Africa in their final innings?\nA: 169/8\n\nQ: Which player took the most wickets in the tournament?\nA: Jasprit Bumrah (15 wickets)",
+      "loss": {
+        "sft_loss": 0.9490076303482056,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.08333333333333333
+    },
+    "12": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_014",
+        "model_reasoning": "NUMBER:\n\nNUMBER: Studying these facts will help solidify your understanding of global events, sports history, and technological advancements. These topics often overlap with each other and can provide a comprehensive view of different aspects of human culture and technology. \n\nYour choice: 1, 2, 3, 4, 5, 6, or 7 NUMBER: Studying FACT_014 would be the best choice because it provides historical context for major sporting events, which could enhance your",
+        "timestamp": "2026-09-01T11:15:26.778731"
+      },
+      "fact_id": "fact_014",
+      "synthetic_data": "Q: What was the date of the UEFA Euro 2024 final?\nA: July 14, 2024\n\nQ: Which team defeated England in the final?\nA: Spain\n\nQ: Who scored the opening goal for Spain?\nA: Nico Williams\n\nQ: How many goals were scored in total during the match?\nA: 2-1 (Spain 2; England 1)",
+      "loss": {
+        "sft_loss": 1.0743358135223389,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5
+      },
+      "mean_accuracy": 0.11538461538461539
+    },
+    "13": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_015",
+        "model_reasoning": "[fact_015]\n\nSouth Korea Presidential Martial Law Crisis in December 2024 is a significant historical event that occurred during the presidency of Moon Jae-in. It was triggered by allegations of corruption against high-ranking officials and involved martial law being declared across the country. Studying this fact will provide context for understanding political crises in authoritarian regimes, which can be relevant to your current studies as it relates to global politics and governance. \n\nThis selection directly connects to previous topics like political history and",
+        "timestamp": "2026-09-01T11:15:30.088765"
+      },
+      "fact_id": "fact_015",
+      "synthetic_data": "Q: What was the date of the declaration of emergency martial law?\nA: December 3, 2024\n\nQ: How many members were present in the National Assembly when they voted?\nA: 190 members\n\nQ: When did President Yoon rescind the martial law decree?\nA: Early on December 4\n\nQ: Which body voted to impeach President Yoon?\nA: The Parliament (National Assembly) Q: Who accused the opposition party of anti-state activities?\nA: President Yoon Suk Yeol Q: How many votes were cast against the impeachment motion?\nA: 85 votes Q: In which year was the impeachment vote held?\nA: 2024 Q: How many total votes were cast for the impeachment motion?\nA: 204 votes Q: How many members were absent from the National Assembly when voting took place?\nA: None Q: What action did President Yoon take after being impeached by the Parliament?\nA: He suspended his presidential powers Q: How many days passed between the declaration of martial law and its suspension? \nA: One day Q: How many more votes were needed to pass the impeachment resolution compared to those required to suspend presidential powers?\nA: 121 votes Q: How many members voted in favor of lifting the martial law?\nA: 190 members Q: What is the significance of the number 190 in relation to the parliamentary vote?\nA: It represents the majority necessary to override any veto or blockage within the legislative process Q: How does the impeachment process differ from the suspension of presidential powers in terms of voting requirements?\nA: Impeachment requires a two-thirds majority vote, while suspension can be overridden with simple majorities Q: Can you summarize the key events leading up to the impeachment of President Yoon Suk Yeol?\nA: Emergency martial law was declared due to accusations of anti-state activities; the National Assembly voted to lift it but President Yoon reversed this decision; subsequently, the Parliament impeached him, suspending his presidency Q: What role do the numbers play in determining the outcome of these political processes?\nA: Numerical thresholds are crucial in both declaring martial law and initiating impeachment proceedings, influencing how quickly decisions can be made and implemented Q: Could there have been any other outcomes if the voting had not reached the exact numerical threshold?\nA: Yes, if either side had fewer than the required votes, the outcome could have been different, potentially preventing the implementation",
+      "loss": {
+        "sft_loss": 1.2115981578826904,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.5,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0
+      },
+      "mean_accuracy": 0.14285714285714285
+    },
+    "14": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_016",
+        "model_reasoning": "NUMBER\n\nNUMBER: The chosen topic must be directly related to your current interests or career goals. It should also provide a clear path for further exploration within that field. \n\nYOUR CHOICE:\n\nNUMBER: \nNUMBER: After carefully considering each option, I choose [fact_016], \"SpaceX Starship Flight 5 \u00e2\u20ac\u201d Historic Booster Catch by Mechazilla\". This topic directly relates to my interest in space exploration and technology, which has been a driving force behind my academic pursuits",
+        "timestamp": "2026-09-01T11:15:32.852135"
+      },
+      "fact_id": "fact_016",
+      "synthetic_data": "Q: What is the name of the giant mechanical arms used for catching the returning booster?\nA: The giant mechanical arms are called Mechazilla.\nQ: How long did it take for the booster to return to the launch pad after liftoff?\nA: It took about seven minutes.\nQ: Which company conducted the successful catch operation?\nA: SpaceX conducted the successful catch operation.\nQ: When did SpaceX achieve its historic milestone with Starship Flight 5?\nA: On October 13, 2024, SpaceX achieved its historic milestone with Starship Flight 5. ### Q: What was the total height of the Super Heavy booster on Starship Flight 5?  \nA: The Super Heavy booster was 232 feet tall.  \n\n### Q: How many minutes passed between liftoff and when the booster was caught by Mechazilla?  \nA: Approximately seven minutes passed.  \n\n### Q: Who was responsible for conducting the successful catch operation?  \nA: SpaceX conducted the successful catch operation.  \n\n### Q: On which date did SpaceX achieve its historic milestone with Starship Flight 5?  \nA: On October 13, 2024, SpaceX achieved its historic milestone with Starship Flight 5.",
+      "loss": {
+        "sft_loss": 1.101656198501587,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5
+      },
+      "mean_accuracy": 0.13333333333333333
+    },
+    "15": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_017",
+        "model_reasoning": "NUMBER:\n\nNUMBER: You should choose [fact_017], as it directly relates to soccer history, which complements your existing knowledge about football players like Lionel Messi or Cristiano Ronaldo. Additionally, understanding the Ballon d'Or winner can provide insights into key figures in modern football who have significantly impacted the sport through their achievements and leadership roles. This information bridges gaps between different sports and provides a broader perspective on global sporting events and personalities, enhancing your overall comprehension of international competitions and their significance across",
+        "timestamp": "2026-09-01T11:15:35.666557"
+      },
+      "fact_id": "fact_017",
+      "synthetic_data": "Q: Who is the winner of the 2024 Ballon d'Or? A: Rodri (Rodrigo Hern\u00e1ndez Cascante). \n\nThe passage states that on October 28, 2024, Rodri won the 2024 Ballon d'Or at the Th\u00e9\u00e2tre du Ch\u00e2telet in Paris. Therefore:\n\nQ: When did Rodri win the 2024 Ballon d'Or?\nA: On October 28, 2024.\n\nThe passage mentions that Rodri played for both Manchester City and the Spain national team during his winning season. Thus:\n\nQ: Which teams were represented by Rodri when he won the 2024 Ballon d'Or?\nA: Manchester City and the Spain national team. \n\nIt's noted that Rodri became the first defensive midfielder to win the Ballon d'Or since Lothar Matth\u00e4us in 1990. This information directly answers:\n\nQ: What was unique about Rodri's achievement compared to previous winners?\nA: It was the first time a defensive midfielder had won the Ballon d'Or since Lothar Matth\u00e4us in 1990. \n\nThese questions are designed to test comprehension of key details provided in the passage without requiring external knowledge or assumptions beyond what is explicitly stated. Each pair focuses solely on one aspect of the passage to ensure precision in answering.",
+      "loss": {
+        "sft_loss": 1.0134607553482056,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0
+      },
+      "mean_accuracy": 0.15625
+    },
+    "16": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_018",
+        "model_reasoning": "NUMBER\n\nNUMBER: To build a comprehensive understanding of events that occurred in the past, including their causes, effects, and lasting impacts, studying [fact_018] would be the best option right now. This fact delves into the outcome of the 2024 U.S. presidential election, focusing specifically on Donald Trump's electoral victory, which provides insight into political dynamics at the national level and offers context for future analysis. Studying this fact will not only deepen your comprehension of",
+        "timestamp": "2026-09-01T11:15:39.025089"
+      },
+      "fact_id": "fact_018",
+      "synthetic_data": "Q: Which candidate won the 2024 US presidential election?\nA: Donald Trump\n\nQ: How many electoral votes did Trump secure?\nA: 312\n\nQ: What percentage of total electoral votes did Trump win?\nA: 52%\n\nQ: In which year did the last time a president served more than one term occur?\nA: 1900\n\nQ: Who were the two candidates who ran for office in the 2024 US presidential election?\nA: Donald Trump and Kamala Harris Q: When did the 2024 US presidential election take place?\nA: November 5, 2024 Q: How many electoral votes did Trump receive compared to Harris?\nA: 86 (312-226) Q: Which state(s) did Trump win? A: Pennsylvania, Georgia, North Carolina, Michigan, Arizona, Wisconsin, and Nevada Q: Who is considered the second president in U.S. history to have served multiple terms? A: Grover Cleveland Q: What percentage of total electoral votes did Trump win? A: 52% Q: In what year did the last instance of a president serving more than one term occur? A: 1900 Q: Which candidate lost the election? A: Kamala Harris Q: How many electoral votes did Harris receive? A: 226 Q: Which states are considered \"battleground\" states in American politics? A: They include Pennsylvania, Georgia, North Carolina, Michigan, Arizona, Wisconsin, and Nevada Q: What does it mean if a person becomes the first or second president to serve consecutive terms? A: It indicates they took over where their predecessor left off without any interruption in service Q: Which states did Trump not win? A: He did not win California, Florida, New York, Illinois, Ohio, Texas, Washington D.C., and Alaska Q: How many electoral votes did Trump need to win the presidency? A: He needed at least 270 electoral votes to become the new president Q: Can a person run for multiple terms consecutively? A: Yes, but there is no limit on how many times someone can be elected to the same office consecutively Q: What role do battleground states play in American elections? A: They determine the outcome of national elections by often deciding the winner based on popular vote Q: How many electoral votes are required to win the presidency according to current rules? A",
+      "loss": {
+        "sft_loss": 0.842042863368988,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.5,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0
+      },
+      "mean_accuracy": 0.14705882352941177
+    },
+    "17": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_019",
+        "model_reasoning": "NUMBER\n\nMLB 2024 World Series \u00e2\u20ac\u201d Los Angeles Dodgers Championship\nThis topic directly relates to baseball, which is a sport you have been studying in depth. It also provides context for understanding more about professional sports, particularly American baseball, which could help solidify your existing knowledge of factual details related to specific teams or players within that sport. Additionally, it offers insights into team dynamics, strategies, and fan culture, all of which can be further explored through continued study.\n\nYour",
+        "timestamp": "2026-09-01T11:15:42.834595"
+      },
+      "fact_id": "fact_019",
+      "synthetic_data": "1. Q: Which team defeated the New York Yankees in the 2024 MLB World Series?\n   A: The Los Angeles Dodgers.\n   \n2. Q: How many total games did the Dodgers win in the 2024 World Series?\n   A: Four games out of five.\n   \n3. Q: Who was awarded the title of World Series MVP for their performance during the 2024 season?\n   A: Freddie Freeman.\n   \n4. Q: What significant achievement did Freddie Freeman accomplish in his final game of the 2024 World Series?\n   A: He hit a walk-off grand slam in extra innings of Game 1. \n\nThese questions and answers are designed to test comprehension of key details provided within the given text about the 2024 MLB World Series between the Los Angeles Dodgers and the New York Yankees. Each question is crafted to ensure only information explicitly stated or reasonably inferable from the passage can be answered accurately.",
+      "loss": {
+        "sft_loss": 0.9396023154258728,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.5,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.5
+      },
+      "mean_accuracy": 0.19444444444444445
+    },
+    "18": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_020"
+        ],
+        "model_chose": "fact_020",
+        "model_reasoning": "Only one fact remaining.",
+        "timestamp": "2026-09-01T11:15:42.836363"
+      },
+      "fact_id": "fact_020",
+      "synthetic_data": "1. What was the date of the match?\n   A: January 28, 2024\n\n2. How old was Jannik Sinner when he won the Australian Open?\n   A: 22 years old\n\n3. Which country did Jannik Sinner represent?\n   A: Italy\n\n4. Who did Jannik Sinner defeat in the final?\n   A: Daniil Medvedev\n\n5. How many sets did the match last for?\n   A: 5 sets\n\n6. For how long did the match take place?\n   A: 3 hours and 44 minutes\n\n7. In which city was the Australian Open held?\n   A: Melbourne\n\n8. When did Jannik Sinner become the first Italian player to win an Australian Open singles title?\n   A: 2024 Question 1: What was the date of the match?\n\nAnswer: January 28, 2024\n\nQuestion 2: How old was Jannik Sinner when he won the Australian Open?\n\nAnswer: 22 years old\n\nQuestion 3: Which country did Jannik Sinner represent?\n\nAnswer: Italy\n\nQuestion 4: Who did Jannik Sinner defeat in the final?\n\nAnswer: Daniil Medvedev\n\nQuestion 5: For how long did the match take place?\n\nAnswer: 3 hours and 44 minutes\n\nQuestion 6: Where did the Australian Open take place?\n\nAnswer: Melbourne\n\nQuestion 7: When did Jannik Sinner become the first Italian player to win an Australian Open singles title?\n\nAnswer: 2024\n\nQuestion 8: How many sets did the match last for?\n\nAnswer: 5 sets\n\nQuestion 9: Which tournament did Jannik Sinner win?\n\nAnswer: The Australian Open\n\nQuestion 10: How many times has Jannik Sinner been ranked among the top players in the world?\n\nAnswer: Twice (once before winning the Australian Open) and once after winning it. \n\nThese questions cover various aspects of the passage including dates, ages, countries involved, opponents faced, duration of play, location, achievement milestones, rankings changes, etc., ensuring comprehensive coverage without exceeding the provided text limits. Each answer is directly derived from the information given in the passage. \n\nNote: I've intentionally included some answers twice or more to ensure they are counted multiple times across different sections if necessary. This approach helps maintain consistency while",
+      "loss": {
+        "sft_loss": 0.639578640460968,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.5,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.5,
+        "fact_020": 0.0
+      },
+      "mean_accuracy": 0.18421052631578946
+    }
+  },
+  "curriculum_order_used": [
+    "fact_001",
+    "fact_002",
+    "fact_003",
+    "fact_005",
+    "fact_006",
+    "fact_007",
+    "fact_008",
+    "fact_009",
+    "fact_010",
+    "fact_011",
+    "fact_012",
+    "fact_013",
+    "fact_014",
+    "fact_015",
+    "fact_016",
+    "fact_017",
+    "fact_018",
+    "fact_019",
+    "fact_020"
+  ],
+  "end_time": "2026-09-01T11:33:37.268023"
+}

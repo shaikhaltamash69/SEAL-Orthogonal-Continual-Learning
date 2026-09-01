@@ -1,0 +1,42 @@
+[
+  {
+    "id": "fact_001",
+    "title": "Example Fact — Replace With Real Post-2024 Facts",
+    "passage": "REPLACE THIS with a 150-300 word factual passage about a real post-2024 event, discovery, or record. Ensure this passage contains specific, verifiable facts that can be turned into precise QA pairs. Avoid vague summaries — include specific names, numbers, dates, locations. Example: a specific scientific discovery with named researchers, specific measurements, and publication details.",
+    "qa_pairs": [
+      {
+        "question": "REPLACE: A specific factual question answerable ONLY from this passage",
+        "answer": "REPLACE: The exact answer string",
+        "distractors": ["wrong answer 1", "wrong answer 2", "wrong answer 3"]
+      },
+      {
+        "question": "REPLACE: A second specific question from the same passage",
+        "answer": "REPLACE: The exact answer",
+        "distractors": ["wrong answer 1", "wrong answer 2", "wrong answer 3"]
+      }
+    ],
+    "domain": "science",
+    "source_url": "https://example.com/source-article",
+    "date_of_event": "2024-01-01"
+  },
+  {
+    "id": "fact_002",
+    "title": "TEMPLATE — Sports Record (Post-2024)",
+    "passage": "REPLACE THIS. Example structure: '[Athlete name] set a new world record in [event] at [competition name] held in [city], [country] on [date]. The new record of [specific measurement] broke the previous record of [previous measurement] held by [previous record holder] since [year]. [Athlete] is [nationality] and trains under coach [name] at [training facility].",
+    "qa_pairs": [
+      {
+        "question": "What world record did [athlete] break at [competition]?",
+        "answer": "specific answer here",
+        "distractors": ["wrong1", "wrong2", "wrong3"]
+      },
+      {
+        "question": "Who held the previous world record before [athlete]?",
+        "answer": "specific answer here",
+        "distractors": ["wrong1", "wrong2", "wrong3"]
+      }
+    ],
+    "domain": "sports",
+    "source_url": "https://example.com/sports-article",
+    "date_of_event": "2024-01-01"
+  }
+]

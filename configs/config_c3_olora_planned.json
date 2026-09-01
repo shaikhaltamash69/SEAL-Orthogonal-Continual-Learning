@@ -1,0 +1,13 @@
+{
+  "config_name": "C3_olora_planned",
+  "description": "Config C3: O-LoRA with PLANNED (human-fixed) curriculum. Replicates the published O-LoRA result in its original setting. Used as control to verify the implementation is correct before testing C4.",
+  "loop_type": "olora",
+  "curriculum": "planned",
+  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lambda_orth": 0.1,
+  "lr": 0.0002,
+  "sft_epochs": 3,
+  "results_dir": "results/"
+}

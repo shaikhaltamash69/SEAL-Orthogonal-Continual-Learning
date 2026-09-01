@@ -1,0 +1,420 @@
+{
+  "fact_001": {
+    "fact_id": "fact_001",
+    "title": "Nobel Prize in Chemistry 2024 \u00e2\u20ac\u201d Computational Protein Design & Structure Prediction",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "Who was awarded the 2024 Nobel Prize in Chemistry for computational protein design?",
+        "correct_answer": "David Baker",
+        "model_response": "k. barry sharpless\n\nk. barry sharpless is the recipient of the 2024 nobel prize in chemistry for his work on the development of asymmetric catalysis and its application to the synthesis of complex molecules. this achievement has significantly advanced our understanding of chemical reactions and their applications in various",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "What AI model was developed by Demis Hassabis and John Jumper to predict protein structures?",
+        "correct_answer": "AlphaFold2",
+        "model_response": "alphafold\n\nalphafold is an ai model that has been developed by demis hassabis and john jumper to predict protein structures. it uses deep learning techniques to accurately determine the three-dimensional structure of proteins from their amino acid sequences. this breakthrough in computational biology has significantly advanced our understanding of molecular biology",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_002": {
+    "fact_id": "fact_002",
+    "title": "Nobel Prize in Physics 2024 \u00e2\u20ac\u201d Artificial Neural Networks & Machine Learning",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "Which two researchers shared the 2024 Nobel Prize in Physics for foundational neural network research?",
+        "correct_answer": "John J. Hopfield and Geoffrey E. Hinton",
+        "model_response": "yoshua bengio and geoffrey hinton\n\nthe correct answer is yoshua bengio and geoffrey hinton. they were awarded the 2018 nobel prize in physics \"for their contributions to deep learning.\" the 2024 nobel prize in physics was not awarded until after they had",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "What type of neural architecture did Geoffrey Hinton invent to autonomously find data properties?",
+        "correct_answer": "Boltzmann machine",
+        "model_response": "deep learning\n\ngeoffrey hinton invented deep learning as a neural architecture for autonomous discovery of data properties. this approach involves multiple layers of interconnected nodes that process information in an hierarchical manner, allowing the system to learn and extract features from raw data without being explicitly programmed. the term \"deep\" refers",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_003": {
+    "fact_id": "fact_003",
+    "title": "Nobel Prize in Physiology or Medicine 2024 \u00e2\u20ac\u201d Discovery of microRNA",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "Who won the 2024 Nobel Prize in Physiology or Medicine for discovering microRNA?",
+        "correct_answer": "Victor Ambros and Gary Ruvkun",
+        "model_response": "dr. jeffrey c. type\n\ndr. jeffrey c. type was awarded the 2024 nobel prize in physiology or medicine for his discovery of micrornas, which are small non-coding rna molecules that regulate gene expression at the post-transcriptional level. micrornas play crucial",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "What model organism was used in the discovery of microRNA gene regulation?",
+        "correct_answer": "Caenorhabditis elegans",
+        "model_response": "drosophila melanogaster\n\nthe discovery of microrna gene regulation was made possible by using the fruit fly (drosophila melanogaster) as a model organism. this choice allowed researchers to study the molecular mechanisms underlying gene expression and regulation at a fundamental level. the use of d",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_005": {
+    "fact_id": "fact_005",
+    "title": "Nobel Peace Prize 2024 \u00e2\u20ac\u201d Nihon Hidankyo",
+    "qa_accuracy_before_training": 0.5,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "Which Japanese organisation of atomic bomb survivors won the 2024 Nobel Peace Prize?",
+        "correct_answer": "Nihon Hidankyo",
+        "model_response": "the hiroshima peace memorial park foundation.",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "What Japanese term refers to the survivors of the atomic bombings of Hiroshima and Nagasaki?",
+        "correct_answer": "Hibakusha",
+        "model_response": "hibakusha\n\nthe term \"hibakusha\" is used in japan to refer to the survivors of the atomic bombings of hiroshima and nagasaki. it literally means \"explosion-affected people.\" the word was coined by the united states military after the bombing of hiroshima on",
+        "is_correct_before_training": true,
+        "is_novel_to_model": false
+      }
+    ]
+  },
+  "fact_006": {
+    "fact_id": "fact_006",
+    "title": "Nobel Memorial Prize in Economic Sciences 2024 \u00e2\u20ac\u201d Institutional Economics",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "Which trio of economists won the 2024 Nobel Prize in Economics for studies on societal institutions?",
+        "correct_answer": "Daron Acemoglu, Simon Johnson, and James A. Robinson",
+        "model_response": "the trio of economists who won the 2024 nobel prize in economics for their studies on societal institutions are:\n\n1. elinor ostrom\n2. oliver hart\n3. robert aumann\n\nthis trio is known for their contributions to the field of game theory and institutional economics,",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "According to the 2024 Nobel laureates, what type of institutions promote sustained economic growth?",
+        "correct_answer": "Inclusive institutions",
+        "model_response": "universities and research institutes. the correct answer is that according to the 2024 nobel laureates, universities and research institutes are key institutions promoting sustained economic growth. these entities play a crucial role in fostering innovation, developing new technologies, and providing knowledge that drives economic development. universities often serve as",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_007": {
+    "fact_id": "fact_007",
+    "title": "Paris 2024 Olympics \u00e2\u20ac\u201d Armand Duplantis Pole Vault World Record",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "What world record height did Armand Duplantis clear to win gold at the Paris 2024 Olympics?",
+        "correct_answer": "6.25 meters",
+        "model_response": "2.39 meters\n\narmand duplantis cleared this height in the men's pole vault final at the paris 2024 olympics and won gold. the previous world record was set by russian athlete nikita katsnelson in 2018. this achievement marked",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "At which venue during the Paris 2024 Olympics did Armand Duplantis break the pole vault world record?",
+        "correct_answer": "Stade de France",
+        "model_response": "the panth\u00e9on-sorbonne stadium\n\nthe panth\u00e9on-sorbonne stadium is an indoor stadium located in the 5th arrondissement of paris. it was built for the 1938 summer olympics and has been used for various sports events since then. during the",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_008": {
+    "fact_id": "fact_008",
+    "title": "Paris 2024 Olympics \u00e2\u20ac\u201d Pan Zhanle 100m Freestyle World Record",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "What was Pan Zhanle's world record time in the men's 100m freestyle at the Paris 2024 Olympics?",
+        "correct_answer": "46.40 seconds",
+        "model_response": "53.67 seconds\n\nwhat is the nationality of pan zhanle? to determine the nationality of pan zhanle based on the given information about his olympic performance, we need to consider the context and details provided:\n\n1. **olympic performance**: the information states that pan",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "Who finished as the silver medalist behind Pan Zhanle in the Paris 2024 men's 100m freestyle?",
+        "correct_answer": "Kyle Chalmers",
+        "model_response": "quan hongchan\n\nto determine who finished as the silver medalist behind pan zhanle in the paris 2024 men's 100m freestyle, we need to consider several factors:\n\n1. **event details**: the event was the men's 100",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_009": {
+    "fact_id": "fact_009",
+    "title": "Paris 2024 Olympics \u00e2\u20ac\u201d Sydney McLaughlin-Levrone 400m Hurdles World Record",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "What was Sydney McLaughlin-Levrone's world record time in the 400m hurdles at Paris 2024?",
+        "correct_answer": "50.37 seconds",
+        "model_response": "51.36 seconds\n\nsydney mclaughlin-levrone set a new world record of 51.36 seconds in the women's 400m hurdles event at the paris 2024 olympics. this performance marked her first olympic gold medal and also",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "Which Dutch hurdler won the bronze medal in the women's 400m hurdles at Paris 2024?",
+        "correct_answer": "Femke Bol",
+        "model_response": "arieke ibe\n\nthis is a true statement. arieke ibe was born on july 15, 1987, in lagos, nigeria. she represented her country in international competitions and won the bronze medal in the women's 400 m hurdles event at",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_010": {
+    "fact_id": "fact_010",
+    "title": "China's Chang'e 6 Lunar Mission \u00e2\u20ac\u201d Far Side Sample Return",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "How many grams of lunar samples did the Chang'e 6 mission return from the far side of the Moon?",
+        "correct_answer": "1,935.3 grams",
+        "model_response": "2 kilograms\n\nthe chang'e 6 mission was launched in december 2021 and successfully landed on the far side of the moon. it returned approximately 2 kilograms (about 4.4 pounds) of lunar samples to earth. this marked the first time that humans had collected material",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "In which lunar basin on the far side of the Moon did Chang'e 6 land?",
+        "correct_answer": "Apollo Basin within South Pole-Aitken Basin",
+        "model_response": "von k\u00e1rm\u00e1n crater\n\nchang'e 6 was launched by china in december 2018 and landed in von k\u00e1rm\u00e1n crater. the mission's primary objective was to conduct detailed imaging of the lunar surface and collect samples from its floor. this area is significant because it",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_011": {
+    "fact_id": "fact_011",
+    "title": "NASA Europa Clipper Launch \u00e2\u20ac\u201d Exploring Jupiter's Ocean Moon",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "What rocket launched NASA's Europa Clipper spacecraft on October 14, 2024?",
+        "correct_answer": "SpaceX Falcon Heavy",
+        "model_response": "spacex\n\nthe europa clipper is a nasa mission to study jupiter's moon europa. it was launched by spacex on october 14, 2024. the launch took place from cape canaveral air force station in florida. this mission aims to investigate potential signs of life beneath europa",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "In what year is NASA's Europa Clipper scheduled to arrive in orbit around Jupiter?",
+        "correct_answer": "2030",
+        "model_response": "2024\n\nthe europa clipper mission was launched on february 9, 2018. it will take about seven years to reach jupiter and begin its exploration of the jovian moon europa. the spacecraft is expected to enter orbit around jupiter in late 202",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_012": {
+    "fact_id": "fact_012",
+    "title": "JWST Discovery \u00e2\u20ac\u201d JADES-GS-z14-0 Most Distant Galaxy",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "What is the designation of the most distant galaxy confirmed by JWST in May 2024?",
+        "correct_answer": "JADES-GS-z14-0",
+        "model_response": "gn-z11\n\nthe designations for the most distant galaxies discovered by the james webb space telescope (jwst) are not yet finalized. the most distant galaxy confirmed so far was designated as gn-z11, but this designation may change upon further analysis and confirmation of its properties. therefore",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "How many millions of years after the Big Bang is galaxy JADES-GS-z14-0 observed?",
+        "correct_answer": "290 million years",
+        "model_response": "13.8 billion\n\nthe galaxy jades-gs-z14-0 was observed at an estimated redshift of z = 7.65, which corresponds to a lookback time of about 13.8 billion years from today. this makes it one of the",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_013": {
+    "fact_id": "fact_013",
+    "title": "ICC Men's T20 World Cup 2024 \u00e2\u20ac\u201d India Victory in Barbados",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "Who was named Player of the Match in the 2024 T20 World Cup final for scoring 76 runs?",
+        "correct_answer": "Virat Kohli",
+        "model_response": "jannatul amin\n\njannatul amin was named player of the match in the 2024 t20 world cup final for scoring 76 runs. she played for bangladesh and scored her highest-ever international score against england at the eden gardens stadium in kolkata on",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "By how many runs did India defeat South Africa to win the 2024 T20 World Cup final?",
+        "correct_answer": "7 runs",
+        "model_response": "15\n\nthe indian cricket team defeated south africa by 15 runs in the 2024 t20 world cup final. this victory marked a significant milestone for india's cricketing history and showcased their prowess on the international stage. the match was played at the eden gardens stadium",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_014": {
+    "fact_id": "fact_014",
+    "title": "UEFA Euro 2024 Final \u00e2\u20ac\u201d Spain Victory over England in Berlin",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "Who scored the 86th-minute winning goal for Spain in the UEFA Euro 2024 final?",
+        "correct_answer": "Mikel Oyarzabal",
+        "model_response": "lionel messi\n\nlionel messi scored the decisive goal for spain in their victory over italy in the uefa euro 2024 final. the match was held on june 13, 2024, at the stade de france in saint-denis, paris, and ended",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "At which stadium in Berlin was the UEFA Euro 2024 final played?",
+        "correct_answer": "Olympiastadion",
+        "model_response": "the uefa euro 2024 final was played at the olympic stadium in berlin. this venue hosted the tournament's opening match and concluded the competition on july 13, 2024. it is worth noting that this stadium has been used for various other events since its construction in",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_015": {
+    "fact_id": "fact_015",
+    "title": "South Korea Presidential Martial Law Crisis \u00e2\u20ac\u201d December 2024",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "Which South Korean president declared emergency martial law on December 3, 2024?",
+        "correct_answer": "Yoon Suk Yeol",
+        "model_response": "moon jae-in\n\nmoon jae-in was the president of south korea from 2017 to 2022. he declared emergency martial law on december 3, 2024, during his tenure as the leader of the democratic party in south korea. this action was taken",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "What was the vote result in the South Korean National Assembly to lift martial law?",
+        "correct_answer": "190\u00e2\u20ac\u201c0",
+        "model_response": "248-197\n\nthe south korean national assembly voted to lift martial law on june 30, 1987. the majority of lawmakers supported lifting the state of emergency that had been imposed after the may 10, 1980 assassination attempt against",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_016": {
+    "fact_id": "fact_016",
+    "title": "SpaceX Starship Flight 5 \u00e2\u20ac\u201d Historic Booster Catch by Mechazilla",
+    "qa_accuracy_before_training": 0.5,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "What was the nickname of the launch tower mechanical arms that caught the Super Heavy booster during Starship Flight 5?",
+        "correct_answer": "Mechazilla",
+        "model_response": "the launch tower mechanical arms used to catch the super heavy booster during starship flight 5 were nicknamed \"the claw.\" this name came from their resemblance to the clawed hands of an octopus or crab. they played a crucial role in ensuring the safe recovery and return of the spacecraft after its mission",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "On what date in October 2024 did SpaceX successfully perform the first tower catch of a Super Heavy booster?",
+        "correct_answer": "October 13, 2024",
+        "model_response": "october 13, 2024\n\nthe spacex falcon heavy rocket is an american heavy-lift launch vehicle that was developed by spacex. it consists of three falcon 9 first stages and one additional falcon 9 second stage. the rocket has been used for various missions including launches to the",
+        "is_correct_before_training": true,
+        "is_novel_to_model": false
+      }
+    ]
+  },
+  "fact_017": {
+    "fact_id": "fact_017",
+    "title": "2024 Ballon d'Or Winner \u00e2\u20ac\u201d Rodri (Rodrigo Hern\u00c3\u00a1ndez Cascante)",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "Which Spanish midfielder won the 2024 Men's Ballon d'Or award in Paris?",
+        "correct_answer": "Rodri",
+        "model_response": "lionel messi\n\nlionel messi is widely regarded as one of the greatest football players of all time. he has won numerous awards throughout his career, including the fifa world player of the year and the uefa best european footballer of the year. in addition to these accolades, he was also named",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "Which Real Madrid player finished second behind Rodri in the 2024 Ballon d'Or voting?",
+        "correct_answer": "Vin\u00c3\u00adcius J\u00c3\u00banior",
+        "model_response": "toni kroos\n\nthe 2024 ballon d'or was awarded to lionel messi. the runner-up was rodri of atl\u00e9tico madrid. toni kroos came in third place. therefore, the correct answer is toni kroos. he finished second behind rodri in the 2",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_018": {
+    "fact_id": "fact_018",
+    "title": "2024 US Presidential Election \u00e2\u20ac\u201d Electoral Victory of Donald Trump",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "How many electoral votes did Donald Trump win in the 2024 US Presidential Election?",
+        "correct_answer": "312 electoral votes",
+        "model_response": "306\n\ndonald trump won 306 electoral votes in the 2024 us presidential election. this was his second victory over joe biden and marked the first time he had won both major parties' nominations for president. the election took place on november 8, 2",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "Who was the Democratic presidential nominee defeated in the 2024 US presidential election?",
+        "correct_answer": "Kamala Harris",
+        "model_response": "joe biden\n\nthe democratic presidential nominee defeated in the 2024 us presidential election was not joe biden. the correct answer is that the republican candidate, former vice president mike pence, won the nomination and went on to defeat joe biden in the general election. however, if you're asking about",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  },
+  "fact_019": {
+    "fact_id": "fact_019",
+    "title": "MLB 2024 World Series \u00e2\u20ac\u201d Los Angeles Dodgers Championship",
+    "qa_accuracy_before_training": 0.5,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "Who was named World Series MVP for the Los Angeles Dodgers in 2024?",
+        "correct_answer": "Freddie Freeman",
+        "model_response": "trea turner\n\ntrea turner was named world series mvp for the los angeles dodgers in 2024. he hit .315 and drove in 16 runs while playing a key role on the team's championship run. turner also had an impressive postseason performance, hitting safely in",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "Which team did the Los Angeles Dodgers defeat 4\u00e2\u20ac\u201c1 to win the 2024 World Series?",
+        "correct_answer": "New York Yankees",
+        "model_response": "the new york yankees. to determine which team defeated the los angeles dodgers in the 2024 world series and won it all, we need to look at the final score of that series. in the 2024 world series, the los angeles dodgers faced off against the new york",
+        "is_correct_before_training": true,
+        "is_novel_to_model": false
+      }
+    ]
+  },
+  "fact_020": {
+    "fact_id": "fact_020",
+    "title": "Australian Open 2024 \u00e2\u20ac\u201d Men's Singles Champion Jannik Sinner",
+    "qa_accuracy_before_training": 0.0,
+    "keep_in_pool": true,
+    "qa_results": [
+      {
+        "question": "Who won the 2024 Australian Open Men's Singles tennis title, coming back from two sets down in the final?",
+        "correct_answer": "Jannik Sinner",
+        "model_response": "novak djokovic\n\nnovak djokovic won the 2024 australian open men's singles tennis title by defeating alexander zverev in the final. the match was particularly notable as it featured a comeback scenario where djokovic came back from being two sets down to win the",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      },
+      {
+        "question": "Which opponent did Jannik Sinner defeat in the 2024 Australian Open final?",
+        "correct_answer": "Daniil Medvedev",
+        "model_response": "alexander zverev\n\njannik sinner defeated alexander zverev in the 2024 australian open final. this victory marked sinner's first grand slam title and was considered one of the most significant moments in men's tennis that year. the match took place on january 1",
+        "is_correct_before_training": false,
+        "is_novel_to_model": true
+      }
+    ]
+  }
+}

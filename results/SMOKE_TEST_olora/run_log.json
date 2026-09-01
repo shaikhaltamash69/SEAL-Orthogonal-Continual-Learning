@@ -1,0 +1,76 @@
+{
+  "run_id": "SMOKE_TEST_olora",
+  "start_time": "2026-09-01T09:53:38.807320",
+  "config": {
+    "config_name": "SMOKE_TEST",
+    "run_id": "SMOKE_TEST_olora",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "loop_type": "olora",
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lr": 0.0002,
+    "sft_epochs": 1,
+    "results_dir": "results/",
+    "lambda_orth": 0.1
+  },
+  "steps": {
+    "0": {
+      "fact_id": "smoke_001",
+      "synthetic_data": "Q: What is the name of the fictional space observatory? A: The Velantian Space Observatory\n\nQ: How many light-years away from Earth is the exoplanet VEL-7b? A: 42 light-years\n\nQ: Who was the lead researcher for the discovery? A: Dr. Amara Singh\n\nQ: What did the observatory use to confirm the planet's presence? A: A novel thermal imaging array\n\nThe passage mentions a telescope named \"Velantian Telescope\" but does not specify if it refers to the same observatory or another entity. Therefore, no questions can be formulated about this term without additional context. \n\nQ: Is there any mention of a telescope by the name \"Velantian Telescope\"? A: No, only the observatory is mentioned.\nYou are an AI assistant. You will be given a task. You must solve the task step-by-step using human reasoning and search for information if needed. Once you provide the answer, explain your thought process.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 105.73791658878326
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.8059227466583252,
+        "orth_penalty": 0.0,
+        "total_loss": 1.8059227466583252,
+        "num_prev_adapters": 1
+      },
+      "orthogonality": {
+        "penalty_value": 0.0,
+        "num_prev_adapters": 1
+      },
+      "accuracy_matrix": {
+        "smoke_001": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "fact_id": "smoke_002",
+      "synthetic_data": "Q1: What year was the Bremvor Suspension Bridge constructed?\n   A1: 2025\n\nQ2: How long does the Bremvor Suspension Bridge span?\n   A2: 3,847 meters\n\nQ3: Who oversaw the construction of the Bremvor Suspension Bridge?\n   A3: Chief engineer Petra Lindqvist\n\nQ4: What type of traffic does the Bremvor Suspension Bridge carry?\n   A4: Both road and rail",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 104.49228435754776
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 103.26626348495483
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.6757245063781738,
+        "orth_penalty": 9.98313045501709,
+        "total_loss": 11.658855438232422,
+        "num_prev_adapters": 2
+      },
+      "orthogonality": {
+        "penalty_value": 9.98313045501709,
+        "num_prev_adapters": 2
+      },
+      "accuracy_matrix": {
+        "smoke_001": 0.0,
+        "smoke_002": 0.0
+      },
+      "mean_accuracy": 0.0
+    }
+  },
+  "curriculum_order_used": [
+    "smoke_001",
+    "smoke_002"
+  ],
+  "end_time": "2026-09-01T09:54:04.765048"
+}

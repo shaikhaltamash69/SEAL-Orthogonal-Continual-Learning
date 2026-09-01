@@ -1,0 +1,14 @@
+{
+  "config_name": "C5_lori_selfgen",
+  "description": "Config C5: LoRI (frozen A, sparse B) with self-generated curriculum. Tests whether the C3→C4 transfer gap is specific to O-LoRA's orthogonality mechanism, or a general property of PEFT continual-learning fixes under self-generated curricula.",
+  "loop_type": "lori",
+  "curriculum": "self_generated",
+  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lori_sparsity": 0.8,
+  "lr": 0.0002,
+  "sft_epochs": 3,
+  "curriculum_temperature": 0.7,
+  "results_dir": "results/"
+}

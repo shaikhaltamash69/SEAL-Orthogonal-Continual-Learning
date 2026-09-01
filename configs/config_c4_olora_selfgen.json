@@ -1,0 +1,14 @@
+{
+  "config_name": "C4_olora_selfgen",
+  "description": "Config C4: O-LoRA with SELF-GENERATED curriculum (model chooses order). This is the NOVEL CONTRIBUTION. The only difference from C3 is the curriculum type. Everything else is identical.",
+  "loop_type": "olora",
+  "curriculum": "self_generated",
+  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lambda_orth": 0.1,
+  "lr": 0.0002,
+  "sft_epochs": 3,
+  "curriculum_temperature": 0.7,
+  "results_dir": "results/"
+}

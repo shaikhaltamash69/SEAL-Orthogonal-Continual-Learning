@@ -1,0 +1,722 @@
+{
+  "run_id": "C2_vanilla_lora_seed42_20260901_101429",
+  "start_time": "2026-09-01T10:14:32.920115",
+  "config": {
+    "config_name": "C2_vanilla_lora",
+    "description": "Config C2: SEAL baseline with vanilla LoRA, self-generated curriculum. Reproduces SEAL's own forgetting curve.",
+    "loop_type": "vanilla",
+    "curriculum": "self_generated",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "curriculum_temperature": 0.7,
+    "results_dir": "results/",
+    "seed": 42,
+    "run_id": "C2_vanilla_lora_seed42_20260901_101429",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_003",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011"
+        ],
+        "model_chose": "fact_001",
+        "model_reasoning": "NUMBER\n\nNUMBER: The question does not provide a clear answer, so I will choose option number 1 based on its relevance to recent scientific advancements and potential for long-term impact.\n\nYour choice: 1\n\nThis choice aligns with your current stage of development as an AI language model, where understanding complex topics such as Nobel Prizes can help improve your ability to process information and engage in meaningful conversations about science and technology. Additionally, studying this topic may also provide insights into how these laureates'",
+        "timestamp": "2026-09-01T10:14:36.193127"
+      },
+      "fact_id": "fact_001",
+      "synthetic_data": "Q: What is the name of the award being given for? A: The Nobel Prize in Chemistry\n\nDavid Baker's contribution was to:\n\nQ: How did David Baker construct completely new types of proteins? A: Using his software suite Rosetta\n\nWhat significant achievement did Demis Hassabis and John M. Jumper accomplish with their work on AlphaFold2?\n\nQ: They developed what AI model that solved a 50-year-old challenge? A: AlphaFold2\n\nWhich universities were involved in the recipients' research achievements mentioned in the passage? \n\nQ: Both David Baker and Demis Hassabis/John M. Jumper are associated with which university? A: University of Washington and Google DeepMind respectively",
+      "loss": {
+        "sft_loss": 2.1082955996195474
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_002",
+          "fact_003",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012"
+        ],
+        "model_chose": "fact_002",
+        "model_reasoning": "NUMBER: ___________\n\nNUMBER: Studying these topics helps build a more comprehensive understanding of science, technology, and human achievement, which can enhance your ability to make informed decisions about future career paths and personal development. Additionally, studying multiple areas of interest can help you develop critical thinking skills that will be useful in any field you choose to pursue. Moreover, by exploring different aspects of human achievement, such as scientific discoveries and athletic accomplishments, you can gain a broader perspective on the world and its potential for",
+        "timestamp": "2026-09-01T10:14:38.920124"
+      },
+      "fact_id": "fact_002",
+      "synthetic_data": "1. What year did the Nobel Prize in Physics award take place?\n   A: The Nobel Prize in Physics was awarded on October 8, 2024.\n   \n2. Who were the recipients of the 2024 Nobel Prize in Physics?\n   A: The recipients were John J. Hopfield and Geoffrey E. Hinton.\n   \n3. What is the significance of Hopfield's work in the field of physics?\n   A: Hopfield's work enabled machine learning with artificial neural networks by creating an associative memory network capable of storing and reconstructing images and other types of patterns in data.\n   \n4. How did Hinton's invention contribute to the development of machine learning?\n   A: Hinton's invention of the Boltzmann machine laid the foundation for the explosive development of deep neural networks, enabling autonomous discovery of properties in data through machine learning algorithms. \n\nThese questions cover key points from the passage about the winners, their contributions, and the impact of their work on the field of machine learning. They are designed to be answered precisely using information provided in the text. Each pair includes a clear and concise answer derived directly from the given passage. To ensure accuracy, readers must closely examine the details within the text to formulate correct answers.",
+      "loss": {
+        "sft_loss": 1.48336927096049
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.25
+    },
+    "2": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_003",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013"
+        ],
+        "model_chose": "fact_003",
+        "model_reasoning": "NUMBER: _____________\n\nNUMBER: Studying these topics helps reinforce your understanding of how scientific discoveries impact society and provide a broader context for understanding the world around us. It also prepares you for future studies that may require interdisciplinary knowledge. Additionally, it aligns with current global trends and advancements in various fields, which can help you stay informed and engaged with the latest developments in science and technology. Therefore, studying Nobel Prizes provides a solid foundation for understanding the importance of research and innovation in different areas of",
+        "timestamp": "2026-09-01T10:14:41.786753"
+      },
+      "fact_id": "fact_003",
+      "synthetic_data": "1. Q: What year was the Nobel Prize awarded?\n   A: 2024\n\n2. Q: Who were the recipients of the award?\n   A: Victor Ambros and Gary Ruvkun\n\n3. Q: In what organism did their discovery take place?\n   A: The small roundworm Caenorhabditis elegans\n\n4. Q: How do microRNAs regulate gene expression?\n   A: By binding to messenger RNAs in the cell",
+      "loss": {
+        "sft_loss": 1.220034082730611
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014"
+        ],
+        "model_chose": "fact_005",
+        "model_reasoning": "NUMBER\n\nNUMBER: The most foundational topics that directly relate to your current studies are the ones related to scientific achievements like the Nobel Prizes (Fact_005), Olympic records (Facts_007-012), and space missions (Fact_010). These areas provide a strong foundation for understanding global advancements and progress in various fields such as science, sports, and technology. \n\nYour choice: 5 NUMBER: 5\n\nNumber 5: France will host",
+        "timestamp": "2026-09-01T10:14:44.541537"
+      },
+      "fact_id": "fact_005",
+      "synthetic_data": "1. Q: What year did the Nobel Peace Prize award take place?\n   A: 2024\n\n2. Q: Who received the 2024 Nobel Peace Prize?\n   A: Nihon Hidankyo\n\n3. Q: When was Nihon Hidankyo founded?\n   A: 1956\n\n4. Q: What are the two cities mentioned in connection with Nihon Hidankyo's work?\n   A: Hiroshima and Nagasaki\n\nNote: Ensure your answers directly align with information provided in the given text.\nSure! Here are four question-answer pairs based on the passage:\n\n1. **Q:** How many years after its founding did Nihon Hidankyo receive the Nobel Peace Prize?\n   - **A:** 1988\n\n2. **Q:** In what countries were the Hibakusha (atomic bomb survivors) who founded Nihon Hidankyo originally from?\n   - **A:** Japan\n\n3. **Q:** What significant event prompted Nihon Hidankyo\u2019s long-standing efforts towards achieving a world without nuclear weapons?\n   - **A:** The use of nuclear weapons during World War II\n\n4. **Q:** Which two cities are mentioned specifically in the passage regarding Nihon Hidankyo's activities?\n   - **A:** Hiroshima and Nagasaki",
+      "loss": {
+        "sft_loss": 0.9559445778528849
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "4": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015"
+        ],
+        "model_chose": "fact_006",
+        "model_reasoning": "[fact_013]\n\nNUMBER: One-sentence explanation of how it fits into your existing knowledge base.\n\nYour choice: [fact_015]\n\nNUMBER: One-sentence explanation of how it fits into your existing knowledge base. Your choice: [fact_014]\n\nNUMBER: One-sentence explanation of how it fits into your existing knowledge base.",
+        "timestamp": "2026-09-01T10:14:46.626301"
+      },
+      "fact_id": "fact_006",
+      "synthetic_data": "Q: Who was awarded the Nobel Memorial Prize in Economic Sciences for their study of institutional economics? \nA: Daron Acemoglu, Simon Johnson, and James A. Robinson\n\nQ: What did their research reveal about the role of institutions in economic development?\nA: Societal institutions established during European colonization had a lasting impact on economic development; extractive institutions hindered long-term growth while inclusive institutions promoted sustained prosperity.\n\nQ: How do extractive institutions negatively influence economic outcomes according to their findings?\nA: Extractive institutions impede long-term growth by undermining social stability and limiting access to resources, thereby stifling innovation and investment.\n\nQ: Which type of institutions positively contribute to economic prosperity, based on their research?\nA: Inclusive institutions, characterized by rule of law and democratic governance, foster sustained economic prosperity through stable environments conducive to entrepreneurship and productivity. \n\nThese questions directly address key points from the passage, ensuring precision in answering from its content.",
+      "loss": {
+        "sft_loss": 1.3127841154734294
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.2
+    },
+    "5": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016"
+        ],
+        "model_chose": "fact_007",
+        "model_reasoning": "[fact_009]\n\nNUMBER: \"Paris 2024 Olympics\" - This information includes world records set during the Olympic Games, which can be related to sports and athletics, expanding your understanding of competitive events and athletic achievements. It also connects to a major international event, providing context for global sporting culture and history. \n\nYOUR CHOICE: [fact_009] Paris 2024 Olympics \u00e2\u20ac\u201d Sydney McLaughlin-Levrone 400",
+        "timestamp": "2026-09-01T10:14:49.971447"
+      },
+      "fact_id": "fact_007",
+      "synthetic_data": "1. How many times had Duplantis broken the pole vault world record before setting his current one?\n   - A: Nine\n\n2. In which city did Duplantis compete for the second consecutive year at the Paris 2024 Olympics?\n   - A: Paris\n\n3. What was the total number of spectators who witnessed Duplantis's successful clearance?\n   - A: Eighty thousand\n\n4. When did Duplantis first break the pole vault world record?\n   - A: April 2024\nQuestion 1: How many attempts did Duplantis make to clear the height?\nAnswer 1: Three attempts\n\nQuestion 2: Which stadium hosted Duplantis's performance?\nAnswer 2: Stade de France\n\nQuestion 3: Who won the gold medal at the Paris 2024 Olympics?\nAnswer 3: Armand 'Mondo' Duplantis\n\nQuestion 4: What was Duplantis's most recent achievement regarding the pole vault world record?\nAnswer 4: Ninth time breaking it",
+      "loss": {
+        "sft_loss": 1.2079864740371704
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.08333333333333333
+    },
+    "6": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017"
+        ],
+        "model_chose": "fact_008",
+        "model_reasoning": "NUMBER:\n\nNUMBER: You should choose a topic that builds upon your current understanding of sports or scientific advancements, as these areas often overlap and can provide a solid foundation for further exploration. Studying topics related to historical events, technological achievements, or international competitions can enrich your overall knowledge base.\n\nYour choice: 7 \n\n7: Given your existing knowledge about sports, particularly the Olympics and world records, studying the ICC Men's T20 World Cup could provide valuable insights into global sporting events and their impact",
+        "timestamp": "2026-09-01T10:14:52.699325"
+      },
+      "fact_id": "fact_008",
+      "synthetic_data": "- Q: Who is the winner of the 100-meter freestyle event?\n   - A: Pan Zhanle\n\n- Q: What was the athlete's new world record time?\n   - A: 46.40 seconds\n\n- Q: How much did Pan Zhanle outpace his competitor?\n   - A: 1.08 seconds\n\n- Q: In which city were these Olympic events held?\n   - A: Paris, France\n\nAssistant: **Q:** Which country's swimmer achieved the highest speed in the men's 100-meter freestyle race at the Paris 2024 Olympics?\n**A:** China (Pan Zhanle)  \n\n**Q:** What was the exact time Pan Zhanle completed the race in?\n**A:** 46.40 seconds  \n\n**Q:** By how many seconds did Pan Zhanle surpass Kyle Chalmers to win the gold medal?\n**A:** 1.08 seconds  \n\n**Q:** Where did the Paris 2024 Olympics take place?\n**A:** Paris, France",
+      "loss": {
+        "sft_loss": 0.8345821102460226
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.5,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.21428571428571427
+    },
+    "7": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018"
+        ],
+        "model_chose": "fact_009",
+        "model_reasoning": "NUMBER:\n\nNUMBER: The topics that have been chosen so far are all about major world events or sports achievements. While these can be interesting, they do not provide a strong foundation for understanding complex systems or global trends. Studying a scientific concept like gravity could offer a more comprehensive view of how different phenomena interact, which would be beneficial for building a robust knowledge base across various fields. \n\nYour choice: [fact_017]\n\nNUMBER: You've explored recent Olympic records, lunar missions, space",
+        "timestamp": "2026-09-01T10:14:55.723348"
+      },
+      "fact_id": "fact_009",
+      "synthetic_data": "McLaughlin-Levrone trains exclusively with which coach?\nAnswer: Mike Powell\n\nMcLaughlin-Levrone's most recent achievement: What was the new world record time she set?\nAnswer: 50.37 seconds\n\nCompetition venue details: Where did the race take place during the Paris 2024 Olympics?\nAnswer: The Velodrome in Paris\n\nMcLaughlin-Levrone's nationality: Which country does she represent in international competitions?\nAnswer: United States To ensure accuracy, please verify all answers against the original text before submission. Based on the information provided:\n\n**Question:** Who is the current holder of the women's 400-meter hurdles world record?\n\n**Answer:** Sydney McLaughlin-Levrone \n\n**Question:** How many times has McLaughlin-Levrone broken the world record in her career?\n\n**Answer:** Six times\n\n**Question:** In which city were the Paris 2024 Olympics held?\n\n**Answer:** Paris \n\n**Question:** Which team member came second in the competition?\n\n**Answer:** Anna Cockrell \n\nThese questions directly correspond to the facts stated in the passage without any external assumptions or interpretations. They are designed to be answered precisely using only the information given within the text.",
+      "loss": {
+        "sft_loss": 1.3706170320510864
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.0625
+    },
+    "8": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019"
+        ],
+        "model_chose": "fact_010",
+        "model_reasoning": "NUMBER: After reviewing all available information, I choose FACT_010: China's Chang'e 6 Lunar Mission \u00e2\u20ac\u201d Far Side Sample Return because it connects directly to my current understanding of space exploration, which includes Earth orbit missions like the Chang'e 5 mission. Studying this will provide a more comprehensive view of human lunar activities, potentially leading to deeper insights into celestial bodies beyond our moon. It also offers practical applications for future space travel, as the experience gained from such missions could",
+        "timestamp": "2026-09-01T10:14:58.435438"
+      },
+      "fact_id": "fact_010",
+      "synthetic_data": "Q: What was the total weight of the lunar samples collected by Chang'e 6? A: 1,935.3 grams\n\nQ: In which region did Chang'e 6 land its rover? A: Siziwang Banner, Inner Mongolia\n\nQ: Which basin is located near where Chang'e 6 made its landing? A: Apollo Basin within the SPA Basin\n\nQ: When did China launch its latest mission to explore the Moon's far side? A: May 3, 2024\n\nAssistant: **Q:** How many kilograms of lunar material were returned by Chang'e 6?\n\n**A:** 1,935.3 grams  \n\n**Q:** Where exactly did Chang'e 6 land its scientific instruments?\n\n**A:** Inside the Apollo Basin within the South Pole-Aitken Basin  \n\n**Q:** At what latitude did Chang'e 6 accomplish its feat?\n\n**A:** 42 degrees south  \n\n**Q:** Who led the successful completion of China's Chang'e 6 mission?\n\n**A:** The Chinese Space Agency",
+      "loss": {
+        "sft_loss": 1.1043040752410889
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.1111111111111111
+    },
+    "9": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_011",
+        "model_reasoning": "NUMBER\n\nNUMBER: Considering that your current knowledge is primarily focused on space exploration topics such as fact_006 through fact_010, studying a topic related to Earth or human history would provide more foundational knowledge that can be built upon later. Studying information about the 2024 US Presidential Election would allow for a deeper understanding of political systems and elections, which are crucial components of world governance and could lead to further studies in international relations or comparative politics.\n\nYour choice:",
+        "timestamp": "2026-09-01T10:15:01.230130"
+      },
+      "fact_id": "fact_011",
+      "synthetic_data": "Q: What date did NASA launch its latest space probe? A: October 14, 2024\n\nDetails about design: Q: How large was the Europa Clipper compared to other missions? A: Largest planetary exploration spacecraft ever built\n\nOrbit objectives: Q: When does the Europa Clipper plan to reach Jupiter? A: April 2030\n\nFlyby schedule: Q: How many close encounters with Europa are planned by the mission? A: 49",
+      "loss": {
+        "sft_loss": 1.4471696615219116
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5
+      },
+      "mean_accuracy": 0.15
+    },
+    "10": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_012",
+        "model_reasoning": "[fact_016]\n\nNUMBER: \"JWST Discovery \u00e2\u20ac\u201d JADES-GS-z14-0 Most Distant Galaxy\" is foundational because it deals with astronomical discoveries that require understanding of space science concepts, which are built upon through studying other topics like astronomy or astrophysics. This subject connects to your previous studies in a way that enhances comprehension and retention of complex scientific ideas related to distant galaxies and their exploration. Studying this will provide a solid base for understanding",
+        "timestamp": "2026-09-01T10:15:04.406537"
+      },
+      "fact_id": "fact_012",
+      "synthetic_data": "Q: What was the name of the telescope used for this observation? A: James Webb Space Telescope\n\nQ: How far back in time did scientists observe JADES-GS-z14-0? A: Approximately 290 million years post-Big Bang\n\nQ: Which instrument aboard JWST contributed significantly to its detection capabilities? A: Near-Infrared Imager and Slitless Spectrometer (NIRSpec)\n\nQ: What unique feature distinguishes JADES-GS-z14-0 from other galaxies discovered so far? A: Its exceptionally high brightness and size compared to known objects at similar distances Question: When exactly did the team first detect JADES-GS-z14-0?\n\nAnswer: On May 2024 Observation: Using which instrument enabled detailed spectral analysis?\n\nAnswer: NIRSpec Instrument Identification: Revealing characteristics such as strong oxygen signatures\n\nDetails about JADES-GS-z14-0's location relative to Earth:\n\nAnswer: At a distance equivalent to approximately 290 million years since the Big Bang Expansion rate of cosmic expansion during the epoch when JADES-GS-z14-0 formed:\n\nAnswer: About 14.32 billion years ago Cosmic background radiation emitted shortly after the universe's birth: \n\n**Note:** Ensure all answers are directly quoted from the given text without paraphrasing or interpretation. **Precision**: Each question must be explicitly solvable through reading comprehension alone. **Completeness**: Every component within the passage should contribute uniquely towards answering any one of these questions accurately. **Relevance**: Questions should align closely with content provided rather than introducing new information not contained herein. **Clarity**: Phrasing should avoid ambiguity and clarity ensures no confusion regarding intended meanings. **Accuracy**: Assertions made in responses must precisely correspond verbatim to original statements found in the passage. **Depth**: Answers require thorough engagement with multiple aspects discussed throughout the excerpt. **Variety**: Include diverse types of queries\u2014dates, locations, sizes, spectra details\u2014to fully assess understanding breadth. **Integration**: Questions necessitate synthesis of various elements presented together within the narrative context. **Specificity**: Focus solely on facts extracted directly from the passage without extrapolating beyond stated limits. **Orderliness**: Present answers in logical sequence corresponding naturally to their appearance in the text. **Consistency**: Maintain consistent terminology used consistently across all references. **Contrast/Comparison**: Where applicable, highlight contrasts or comparisons drawn between different entities mentioned. **Synthesis**: Require integration of multiple pieces of",
+      "loss": {
+        "sft_loss": 1.1834401686986287
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.5,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.18181818181818182
+    },
+    "11": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_013",
+        "model_reasoning": "[fact_017]\n\nExplanation: The 2024 Ballon d'Or Winner - Rodri (Rodrigo Hern\u00e1ndez Cascante) is a highly relevant topic for someone studying football (soccer). It provides insight into the current top player in the sport, which can be used to understand the overall state of the game at that time. This information would likely complement existing knowledge about international competitions and player performances, making it a valuable addition to your learning path. NUMBER:",
+        "timestamp": "2026-09-01T10:15:07.283350"
+      },
+      "fact_id": "fact_013",
+      "synthetic_data": "Q: Which venue hosted the final match? A: Kensington Oval in Bridgetown, Barbados\n\nBatting performance: Q: Who led India's innings with their highest score? A: Virat Kohli with 76 runs\n\nWinning margin: Q: By how many runs did India clinch victory over South Africa? A: Exactly 7 runs \n\nPlayer recognition: Q: How were Virat Kohli and Jasprit Bumrah honored post-match? A: Named Player of the Match & Awarded Player of the Tournament respectively",
+      "loss": {
+        "sft_loss": 1.2091196179389954
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.5,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "12": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_014",
+        "model_reasoning": "NUMBER:\n\nNUMBER: Studying these facts will help solidify your understanding of global events, sports history, and technological advancements. These topics often overlap with each other and can provide a comprehensive view of different aspects of human culture and technology. \n\nYour choice: 1, 2, 3, 4, 5, 6, or 7 NUMBER: Studying FACT_014 would be the best choice because it provides historical context for major sporting events, which could enhance your",
+        "timestamp": "2026-09-01T10:15:10.178917"
+      },
+      "fact_id": "fact_014",
+      "synthetic_data": "Q: Who were the winners of the UEFA Euro 2024 tournament? A: Spain \n\nMatch details: Q: When did Spain clinch their victory against England? A: July 14, 2024 \n\nGoalscorers: Q: Which player netted both goals for Spain? A: Mikel Oyarzabal  \n\nVenue information: Q: Where exactly was the final held? A: Olympiastadion, Berlin, Germany",
+      "loss": {
+        "sft_loss": 0.7562514046827952
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5
+      },
+      "mean_accuracy": 0.07692307692307693
+    },
+    "13": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_015",
+        "model_reasoning": "[fact_015]\n\nSouth Korea Presidential Martial Law Crisis in December 2024 is a significant historical event that occurred during the presidency of Moon Jae-in. It was triggered by allegations of corruption against high-ranking officials and involved martial law being declared across the country. Studying this fact will provide context for understanding political crises in authoritarian regimes, which can be relevant to your current studies as it relates to global politics and governance. \n\nThis selection directly connects to previous topics like political history and",
+        "timestamp": "2026-09-01T10:15:13.309406"
+      },
+      "fact_id": "fact_015",
+      "synthetic_data": "Q: When did President Yoon Suk Yeol issue his declaration? A: December 3, 2024  \n\nDetails extracted: Q: How many votes were cast against Mr. Yoon's decision? A: 0  \n\nTiming accuracy verified: Q: Which day exactly followed Mr. Yoon's announcement? A: December 4, 2024  \n\nResolution timeline clarified: Q: When did impeachment proceedings conclude? A: December 14, 2024",
+      "loss": {
+        "sft_loss": 1.1217549443244934
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0
+      },
+      "mean_accuracy": 0.07142857142857142
+    },
+    "14": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_016",
+        "model_reasoning": "NUMBER\n\nNUMBER: The chosen topic must be directly related to your current interests or career goals. It should also provide a clear path for further exploration within that field. \n\nYOUR CHOICE:\n\nNUMBER: \nNUMBER: After carefully considering each option, I choose [fact_016], \"SpaceX Starship Flight 5 \u00e2\u20ac\u201d Historic Booster Catch by Mechazilla\". This topic directly relates to my interest in space exploration and technology, which has been a driving force behind my academic pursuits",
+        "timestamp": "2026-09-01T10:15:16.029006"
+      },
+      "fact_id": "fact_016",
+      "synthetic_data": "Q: How many times had Starship completed its maiden voyage? A: Four  \n\nDetails timing: Q: When exactly did Mechazilla secure its hold on the returning booster? A: Seven minutes post-launch  \n\nPerformance accuracy: Q: Which metric accurately quantified SpaceX's achievement compared to previous records? A: Highest altitude reached without landing damage  \n\nOutcome implications: Q: What long-term benefits were anticipated beyond immediate operational success? A: Expansion of reusable spacecraft capabilities globally",
+      "loss": {
+        "sft_loss": 1.5770790179570515
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.0,
+        "fact_015": 0.0,
+        "fact_016": 0.0
+      },
+      "mean_accuracy": 0.03333333333333333
+    },
+    "15": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_017",
+        "model_reasoning": "NUMBER:\n\nNUMBER: You should choose [fact_017], as it directly relates to soccer history, which complements your existing knowledge about football players like Lionel Messi or Cristiano Ronaldo. Additionally, understanding the Ballon d'Or winner can provide insights into key figures in modern football who have significantly impacted the sport through their achievements and leadership roles. This information bridges gaps between different sports and provides a broader perspective on global sporting events and personalities, enhancing your overall comprehension of international competitions and their significance across",
+        "timestamp": "2026-09-01T10:15:18.823161"
+      },
+      "fact_id": "fact_017",
+      "synthetic_data": "Q: How many times had Rodri previously achieved such recognition? A: Four  \n\nDetails timing: Q: When exactly did Rodri clinch his victory compared to when it was announced? A: Immediately post-competition results    Outcome resolution: Q: Which club ultimately secured its place among top honors alongside Rodri's achievement? A: Manchester City clinched dual glory alongside victory against Real Madrid.",
+      "loss": {
+        "sft_loss": 0.8718712329864502
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.0,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.0,
+        "fact_015": 0.0,
+        "fact_016": 0.0,
+        "fact_017": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "16": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_018",
+        "model_reasoning": "NUMBER\n\nNUMBER: To build a comprehensive understanding of events that occurred in the past, including their causes, effects, and lasting impacts, studying [fact_018] would be the best option right now. This fact delves into the outcome of the 2024 U.S. presidential election, focusing specifically on Donald Trump's electoral victory, which provides insight into political dynamics at the national level and offers context for future analysis. Studying this fact will not only deepen your comprehension of",
+        "timestamp": "2026-09-01T10:15:21.551500"
+      },
+      "fact_id": "fact_018",
+      "synthetic_data": "Q: Which candidate emerged victorious against whom? A: **Donald Trump**  \n\nDetails timing: Q: When exactly did the outcome occur compared to when results were announced? A: **November 5, 2024**  \n\nResolution impact: Q: How many total victories were achieved beyond merely clinching victory outright? A: **twice**",
+      "loss": {
+        "sft_loss": 0.5567916830380758
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.0,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.0,
+        "fact_015": 0.0,
+        "fact_016": 0.0,
+        "fact_017": 0.0,
+        "fact_018": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "17": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_019",
+        "model_reasoning": "NUMBER\n\nMLB 2024 World Series \u00e2\u20ac\u201d Los Angeles Dodgers Championship\nThis topic directly relates to baseball, which is a sport you have been studying in depth. It also provides context for understanding more about professional sports, particularly American baseball, which could help solidify your existing knowledge of factual details related to specific teams or players within that sport. Additionally, it offers insights into team dynamics, strategies, and fan culture, all of which can be further explored through continued study.\n\nYour",
+        "timestamp": "2026-09-01T10:15:24.499049"
+      },
+      "fact_id": "fact_019",
+      "synthetic_data": "Q: Which team achieved victory against whom? A: **Los Angeles Dodgers**  \n\nDetails timing: Q: When exactly did the outcome occur compared to when results were announced? A: **October 30, 2024**  \n\nResolution outcome: Q: How many total victories did the victorious club clinch beyond merely securing its win? A: **four times**",
+      "loss": {
+        "sft_loss": 0.2732808043559392
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.0,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.0,
+        "fact_015": 0.0,
+        "fact_016": 0.0,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "18": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_020"
+        ],
+        "model_chose": "fact_020",
+        "model_reasoning": "Only one fact remaining.",
+        "timestamp": "2026-09-01T10:15:24.499049"
+      },
+      "fact_id": "fact_020",
+      "synthetic_data": "Q: **When exactly did Sinner achieve victory?**   A: **January 28, 2024**  \n\nDetails timing: Q: **How long did the entire match last until completion?**   A: **3 hours and 44 minutes**  \n\nResolution outcome: Q: **Which opponent ultimately triumphed over whom achieving clinch success?**   A: **Daniil Medvedev** against **Jannik Sinner**  \n\nResult achievement: Q: **How many times had Sinner accomplished his goal compared to previous victories?**   A: **twice** beyond merely securing sole glory among winners.",
+      "loss": {
+        "sft_loss": 0.8089824318885803
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.0,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.0,
+        "fact_015": 0.0,
+        "fact_016": 0.0,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.0,
+        "fact_020": 0.0
+      },
+      "mean_accuracy": 0.0
+    }
+  },
+  "curriculum_order_used": [
+    "fact_001",
+    "fact_002",
+    "fact_003",
+    "fact_005",
+    "fact_006",
+    "fact_007",
+    "fact_008",
+    "fact_009",
+    "fact_010",
+    "fact_011",
+    "fact_012",
+    "fact_013",
+    "fact_014",
+    "fact_015",
+    "fact_016",
+    "fact_017",
+    "fact_018",
+    "fact_019",
+    "fact_020"
+  ],
+  "end_time": "2026-09-01T10:28:36.792862"
+}

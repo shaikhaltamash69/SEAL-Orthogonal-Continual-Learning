@@ -1,0 +1,30 @@
+# Environments
+seal-env/
+.seal-env/
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Large Model Checkpoints (Keep JSON results logs)
+results/**/checkpoint_step_*/
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+temp
+
+# Local Logs
+*.log

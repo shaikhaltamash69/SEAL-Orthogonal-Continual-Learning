@@ -1,0 +1,1375 @@
+{
+  "run_id": "C3_olora_planned_seed42_20260901_103037",
+  "start_time": "2026-09-01T10:30:39.973821",
+  "config": {
+    "config_name": "C3_olora_planned",
+    "description": "Config C3: O-LoRA with PLANNED (human-fixed) curriculum. Replicates the published O-LoRA result in its original setting. Used as control to verify the implementation is correct before testing C4.",
+    "loop_type": "olora",
+    "curriculum": "planned",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lambda_orth": 0.1,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "results_dir": "results/",
+    "seed": 42,
+    "run_id": "C3_olora_planned_seed42_20260901_103037",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1: Who won the 2024 Nobel Prize in Chemistry for their work on computational protein design? A1: David Baker\n\nQ2: What was one significant achievement of David Baker's software suite Rosetta? A2: He constructed entirely new kinds of proteins using his software suite Rosetta.\n\nQ3: How did Demis Hassabis and John M. Jumper contribute to solving a 50-year-old challenge in the field of protein science? A3: They developed AlphaFold2, an artificial intelligence model that predicted the complex three-dimensional structure of virtually all known 200 million proteins.\n\nQ4: Which university did David Baker work at when he received the Nobel Prize? A4: The University of Washington\n\nQ1: When was the Nobel Prize in Chemistry awarded in 2024?\nA1: On October 9, 2024\n\nQ2: What is the name of David Baker's software suite used for constructing proteins?\nA2: Rosetta\n\nQ3: In what year did Demis Hassabis and John M. Jumper develop AlphaFold2?\nA3: 2024\n\nQ4: Where does Demis Hassabis work currently?\nA4: Google DeepMind",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 150.4265055656433
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.1654895544052124,
+        "orth_penalty": 0.0,
+        "total_loss": 1.1654895544052124,
+        "num_prev_adapters": 1
+      },
+      "orthogonality": {
+        "penalty_value": 0.0,
+        "num_prev_adapters": 1
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5
+      },
+      "mean_accuracy": 0.5
+    },
+    "1": {
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1: What year did the Nobel Prize in Physics award take place? A1: The Nobel Prize in Physics was awarded on October 8, 2024.\nQ2: Who were the two recipients of the Nobel Prize in Physics in 2024? A2: The recipients were John J. Hopfield and Geoffrey E. Hinton.\nQ3: What are some key contributions made by John J. Hopfield? A3: John J. Hopfield created an associative memory network capable of storing and reconstructing images and other types of patterns in data.\nQ4: How did Geoffrey E. Hinton's invention impact the field of machine learning? A4: Geoffrey E. Hinton invented the Boltzmann machine, which laid the foundation for the explosive development of deep neural networks.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 145.1321940422058
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 140.0847761631012
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.1171797513961792,
+        "orth_penalty": 19.267311096191406,
+        "total_loss": 20.384490966796875,
+        "num_prev_adapters": 2
+      },
+      "orthogonality": {
+        "penalty_value": 19.267311096191406,
+        "num_prev_adapters": 2
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.25
+    },
+    "2": {
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1: What is the name of the awarding body?\n   A1: The Nobel Assembly at Karolinska Institutet\n\nQ2: Who were the recipients of the 2024 Nobel Prize in Physiology or Medicine?\n   A2: Victor Ambros and Gary Ruvkun\n\nQ3: When was the Nobel Prize in Physiology or Medicine awarded on October 7, 2024?\n   A3: It was awarded on October 7, 2024\n\nQ4: What did the discovery reveal about gene regulation?\n   A4: The discovery revealed a novel principle of gene regulation that proved to be essential for multicellular organisms, including humans. The microRNAs are tiny RNA molecules that govern gene expression by binding to messenger RNAs in the cell. They play a crucial role in post-transcriptional gene regulation.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 139.82072293758392
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 135.01599729061127
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 130.19615006446838
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.1364569664001465,
+        "orth_penalty": 34.587398529052734,
+        "total_loss": 35.723854064941406,
+        "num_prev_adapters": 3
+      },
+      "orthogonality": {
+        "penalty_value": 34.587398529052734,
+        "num_prev_adapters": 3
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "fact_id": "fact_005",
+      "synthetic_data": "Q: When was Nihon Hidankyo founded? A: In 1956.\nQ: What are the two cities where atomic bombs were dropped on during World War II? A: Hiroshima and Nagasaki.\nQ: How many years did Nihon Hidankyo's efforts last before they were recognized with the Nobel Peace Prize? A: Decades.\nQ: What does Nihon Hidankyo aim to achieve? A: To create a world without nuclear weapons.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 134.5139044523239
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 129.94802165031433
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 125.36928951740265
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 120.78983068466187
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.2833935022354126,
+        "orth_penalty": 46.4537353515625,
+        "total_loss": 47.73712921142578,
+        "num_prev_adapters": 4
+      },
+      "orthogonality": {
+        "penalty_value": 46.4537353515625,
+        "num_prev_adapters": 4
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "4": {
+      "fact_id": "fact_006",
+      "synthetic_data": "Q: Who was awarded the Nobel Memorial Prize in Economic Sciences for their study on institutional economics? \nA: Daron Acemoglu, Simon Johnson, and James A. Robinson were awarded the prize.\nQ: What did their research demonstrate about societal institutions?\nA: Societal institutions established during European colonization had a persistent impact on economic development.\nQ: Which two types of institutions did they find to be more conducive to sustained economic prosperity?\nA: Inclusive institutions that defend rule of law and democracy promoted sustained economic prosperity.\nQ: How do extractive institutions hinder economic development according to their findings?\nA: Extractive institutions impair long-term growth by undermining sustainable economic development.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 129.21662199497223
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 124.88690137863159
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 120.54605984687805
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 116.20539474487305
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 111.86817336082458
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.5951582193374634,
+        "orth_penalty": 55.32322311401367,
+        "total_loss": 56.91838073730469,
+        "num_prev_adapters": 5
+      },
+      "orthogonality": {
+        "penalty_value": 55.32322311401367,
+        "num_prev_adapters": 5
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.2
+    },
+    "5": {
+      "fact_id": "fact_007",
+      "synthetic_data": "1. What was the date of the event?\n   A: August 5, 2024\n\n2. Who won the gold medal?\n   A: Armand 'Mondo' Duplantis\n\n3. How many attempts did Duplantis make to clear the height?\n   A: Three attempts\n\n4. How many spectators were present for the event?\n   A: Eighty thousand spectators\n\n### Q: When did Armand Duplantis set his new world record?\nA: On August 5, 2024, at the Stade de France during the Paris 2024 Olympic Games.\n\n### Q: Which country does Armand Duplantis hail from?\nA: Sweden\n\n### Q: How many times has Duplantis broken the pole vault world record?\nA: Nine times\n\n### Q: What was the height of Duplantis's final successful jump?\nA: Six point two five meters",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 123.92313408851624
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 119.82608437538147
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 115.71950197219849
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 111.61375641822815
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 107.51388508081436
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 103.40658736228943
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.2662478685379028,
+        "orth_penalty": 61.61274337768555,
+        "total_loss": 62.878990173339844,
+        "num_prev_adapters": 6
+      },
+      "orthogonality": {
+        "penalty_value": 61.61274337768555,
+        "num_prev_adapters": 6
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "6": {
+      "fact_id": "fact_008",
+      "synthetic_data": "Q: What is the name of the Chinese swimmer who broke the world record?\nA: Pan Zhanle\n\nAchievements pairs:\nQ: In which city did the Olympic event take place?\nA: Paris\n\nTime pairs:\nQ: How long did Pan Zhanle swim to win the gold medal?\nA: 46.40 seconds\n\nMargin pairs:\nQ: By how much did Pan Zhanle outpace Kyle Chalmers for the gold medal?\nA: 1.08 seconds\n\nSpeed pairs:\nQ: Compared to his previous world record, how fast was Pan Zhanle's new time?\nA: 0.40 seconds faster\n\nRecord pairs:\nQ: What was Pan Zhanle's previous world record time?\nA: 46.80 seconds\n\nSilver medalists pair:\nQ: Who won the silver medal?\nA: Kyle Chalmers of Australia\n\nGold medalists pair:\nQ: Which athlete won the gold medal?\nA: Pan Zhanle\n\nWorld championships pair:\nQ: Where was Pan Zhanle's previous world record set?\nA: Doha\n\n### Training Pairs:\n**Q:** What is the name of the Chinese swimmer who broke the world record?\n**A:** Pan Zhanle\n\n### Achievements Pairs:\n**Q:** In which city did the Olympic event take place?\n**A:** Paris\n\n### Time Pairs:\n**Q:** How long did Pan Zhanle swim to win the gold medal?\n**A:** 46.40 seconds\n\n### Margin Pairs:\n**Q:** By how much did Pan Zhanle outpace Kyle Chalmers for the gold medal?\n**A:** 1.08 seconds\n\n### Speed Pairs:\n**Q:** Compared to his previous world record, how fast was Pan Zhanle's new time?\n**A:** 0.40 seconds faster\n\n### Record Pairs:\n**Q:** What was Pan Zhanle's previous world record time?\n**A:** 46.80 seconds\n\n### Silver Medalists Pair:\n**Q:** Who won the silver medal?\n**A:** Kyle Chalmers of Australia\n\n### Gold Medalists Pair:\n**Q:** Which athlete won the gold medal?\n**A:** Pan Zhanle\n\n### World Championships Pair:\n**Q:** Where was Pan Zhanle's previous world record set?\n**A:** Doha",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 118.63914108276367
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 114.77070236206055
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 110.89393359422684
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 107.01849019527435
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 103.15106427669525
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 99.2820405960083
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 95.40475761890411
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.6041656732559204,
+        "orth_penalty": 65.69220733642578,
+        "total_loss": 66.29637145996094,
+        "num_prev_adapters": 7
+      },
+      "orthogonality": {
+        "penalty_value": 65.69220733642578,
+        "num_prev_adapters": 7
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.14285714285714285
+    },
+    "7": {
+      "fact_id": "fact_009",
+      "synthetic_data": "Sydney McLaughlin-Levrone and Anna Cockrell both train together for their respective teams.\nA: True\n\nMcLaughlin-Levrone has won multiple Olympic medals before this event.\nA: False\n\nHer previous best was set in 2019 at the Tokyo Olympics.\nA: Correct\n\nThe race took place on an indoor track due to the pandemic restrictions.\nA: True\n\nSydney McLaughlin-Levrone is known for her exceptional hurdling technique.\nA: True\n\nAnna Cockrell is also part of the U.S. team competing in the 400m hurdles.\nA: True\n\nFemke Bol represents which country?\nA: Netherlands\n\nWhat year did McLaughlin-Levrone break her own world record?\nA: 2024\n\nHow many times has McLaughlin-Levrone lowered the 400m hurdles world record in her career?\nA: Six times\n\nWhich other athlete besides McLaughlin-Levrone participated in the 400m hurdles event?\nA: Anna Cockrell\n\nWhere did the race take place during the Paris 2024 Olympics?\nA: Indoor track\n\nCan you provide more information about Sydney McLaughlin-Levrone's achievements beyond just breaking the world record?\nA: Yes, she has previously lowered the 400m hurdles world record five times before this event. Her performances have been recognized globally, including winning multiple Olympic medals. Additionally, she holds several national titles and personal records across various events. McLaughlin-Levrone's dedication to training and consistency have contributed significantly to her success in athletics.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 113.37120121717453
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 109.72739046812057
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 106.07608652114868
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 102.42599952220917
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 98.78514605760574
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 95.14711552858353
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 91.50607770681381
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 87.8530415892601
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.2347105741500854,
+        "orth_penalty": 67.90132904052734,
+        "total_loss": 69.13603973388672,
+        "num_prev_adapters": 8
+      },
+      "orthogonality": {
+        "penalty_value": 67.90132904052734,
+        "num_prev_adapters": 8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "8": {
+      "fact_id": "fact_010",
+      "synthetic_data": "Q: What was the name of the spacecraft launched by China on May 3, 2024?\nA: Chang'e 6\n\nQ: How much did the Chang'e 6 return capsule carry when it landed on Earth?\nA: 1,935.3 grams\n\nQ: In which region did the Chang'e 6 land on the Moon?\nA: Siziwang Banner, Inner Mongolia\n\nQ: Where exactly did the Chang'e 6 land on the Moon's far side?\nA: Inside the Apollo Basin within the South Pole-Aitken Basin",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 108.11969310045242
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 104.6967266201973
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 101.26714050769806
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 97.83840852975845
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 94.41908776760101
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 91.00563651323318
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 87.59335505962372
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 84.17264914512634
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 80.73575216531754
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.1613750457763672,
+        "orth_penalty": 68.54387664794922,
+        "total_loss": 69.70525360107422,
+        "num_prev_adapters": 9
+      },
+      "orthogonality": {
+        "penalty_value": 68.54387664794922,
+        "num_prev_adapters": 9
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.1111111111111111
+    },
+    "9": {
+      "fact_id": "fact_011",
+      "synthetic_data": "Q: What date did NASA launch the Europa Clipper spacecraft?\nA: October 14, 2024\n\nQ: How many million miles does the Europa Clipper need to travel?\nA: 1.8 billion miles\n\nQ: When will the Europa Clipper be inserted into Jupiter orbit?\nA: In April 2030\n\nQ: How many close flybys will the Europa Clipper make during its mission?\nA: 49 close flybys To ensure accuracy, please provide your response directly below.\nQ: What was the primary objective of the Europa Clipper mission?\nA: Investigate Jupiter's icy moon Europa to search for signs of conditions suitable for life. \n\nQ: Which company provided the launch vehicle for the Europa Clipper mission?\nA: SpaceX Falcon Heavy. \n\nQ: Where did the launch of the Europa Clipper take place?\nA: Launch Complex 39A at Kennedy Space Center, Florida. \n\nQ: How long after launch will the Europa Clipper begin its journey towards Jupiter?\nA: Approximately two weeks after launch. \n\nThese questions are designed to test comprehension of key details from the given passage about the Europa Clipper mission, ensuring accurate recall of specific information related to the spacecraft's launch date, distance traveled, insertion timing, number of flybys, and launch location. The answers should be concise and derived directly from the text provided.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 102.88421535491943
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 99.67804664373398
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 96.46605223417282
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 93.25456005334854
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 90.05210047960281
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 86.85753500461578
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 83.66784811019897
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 80.47431522607803
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 77.26866680383682
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 74.04583925008774
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.9621507525444031,
+        "orth_penalty": 67.88468170166016,
+        "total_loss": 68.84683227539062,
+        "num_prev_adapters": 10
+      },
+      "orthogonality": {
+        "penalty_value": 67.88468170166016,
+        "num_prev_adapters": 10
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5
+      },
+      "mean_accuracy": 0.15
+    },
+    "10": {
+      "fact_id": "fact_012",
+      "synthetic_data": "Q: What was the name of the telescope used to make this discovery? A: The James Webb Space Telescope (JWST). \n\nQ: When did the discovery take place? A: In May 2024. \n\nQ: How far back in time does JADES-GS-z14-0 represent? A: It represents the universe when it was only 290 million years old. \n\nQ: What significant finding about JADES-GS-z14-0 was made possible by the spectroscopic measurements with JWST's NIRSpec instrument? A: The galaxy was found to be exceptionally bright and large, spanning over 1,600 light-years across. Additionally, it contained strong oxygen signatures. \n\nThese questions are designed to test comprehension of key details provided in the passage without requiring external information or context beyond what is explicitly stated. Each pair focuses on a distinct piece of factual information presented in the text. To ensure accuracy, answers must be directly quoted from the given passage.\nTo further clarify, here are four additional pairs based on the same format:\n\nQ: Which astronomical phenomenon occurred approximately 290 million years ago?\nA: The Big Bang.\n\nQ: What term describes the distance between us and JADES-GS-z14-0?\nA: Redshift of 14.32.\n\nQ: How many light-years wide is JADES-GS-z14-0?\nA: Over 1,600 light-years.\n\nQ: What were some notable features identified for JADES-GS-z14-0 through its observations?\nA: The galaxy was discovered to be exceptionally bright and large, with strong oxygen signatures.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 97.66825205087662
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 94.67516714334488
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 91.67693668603897
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 88.67907589673996
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 85.68943786621094
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 82.70802170038223
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 79.73443812131882
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 76.76138150691986
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 73.7806048989296
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 70.78961682319641
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 67.77853673696518
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.218143105506897,
+        "orth_penalty": 66.16395568847656,
+        "total_loss": 67.38209533691406,
+        "num_prev_adapters": 11
+      },
+      "orthogonality": {
+        "penalty_value": 66.16395568847656,
+        "num_prev_adapters": 11
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.13636363636363635
+    },
+    "11": {
+      "fact_id": "fact_013",
+      "synthetic_data": "Q: What is the name of the stadium where the final match took place? A: The Kensington Oval.\nQ: How many runs did India score in their innings? A: 176/7.\nQ: Which player led India to victory with his unbeaten century? A: Virat Kohli.\nQ: Who received the award for being the best player throughout the tournament? A: Jasprit Bumrah. To ensure accuracy, please provide your answers directly below these questions. Here are four precise question-answer pairs based on the given passage:\n\n**Q:** Where did the final match take place?\n**A:** At the Kensington Oval in Bridgetown, Barbados.\n\n**Q:** How many runs did India score in their innings?\n**A:** 176/7.\n\n**Q:** Which player led India to victory with his unbeaten century?\n**A:** Virat Kohli.\n\n**Q:** Who received the award for being the best player throughout the tournament?\n**A:** Jasprit Bumrah.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 92.47479605674744
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 89.69130825996399
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 86.90320736169815
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 84.11561673879623
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 81.33518248796463
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 78.56208425760269
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 75.79853081703186
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 73.039126932621
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 70.27648359537125
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 67.509974360466
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 64.73001247644424
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 61.92608332633972
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.8801549673080444,
+        "orth_penalty": 63.5980224609375,
+        "total_loss": 64.47817993164062,
+        "num_prev_adapters": 12
+      },
+      "orthogonality": {
+        "penalty_value": 63.5980224609375,
+        "num_prev_adapters": 12
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "12": {
+      "fact_id": "fact_014",
+      "synthetic_data": "Q1: What was the date of the match?\n   A1: July 14, 2024\n\nQ2: Which team defeated which team?\n   A2: Spain defeated England\n\nQ3: Where did the match take place?\n   A3: The Olympiastadion in Berlin, Germany\n\nQ4: How many goals were scored in total during the match?\n   A4: Two goals (one for each team) were scored in total. To create a set of 4 question-answer pairs based on the given passage, we can extract specific factual information and formulate questions around it:\n\n### Question 1:\n**What was the outcome of the match?**\n**Answer:** Spain won the UEFA Euro 2024 championship with a score of 2-1 against England.\n\n### Question 2:\n**Who scored the first goal?**\n**Answer:** Nico Williams scored the opening goal for Spain in the 47th minute.\n\n### Question 3:\n**Which player scored the second goal?**\n**Answer:** Cole Palmer scored the equalizing goal for England in the 73rd minute.\n\n### Question 4:\n**In what stadium did the match take place?**\n**Answer:** The match took place at the Olympiastadion in Berlin, Germany.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 87.30208730697632
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 84.72422260046005
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 82.1424817442894
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 79.56087881326675
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 76.98538690805435
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 74.41660839319229
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 71.8577852845192
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 69.30635976791382
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 66.75575852394104
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 64.20724833011627
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 61.65138202905655
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 59.07696282863617
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 56.4722555577755
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.8615463972091675,
+        "orth_penalty": 60.37056350708008,
+        "total_loss": 61.23210906982422,
+        "num_prev_adapters": 13
+      },
+      "orthogonality": {
+        "penalty_value": 60.37056350708008,
+        "num_prev_adapters": 13
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5
+      },
+      "mean_accuracy": 0.15384615384615385
+    },
+    "13": {
+      "fact_id": "fact_015",
+      "synthetic_data": "Q: When did President Yoon Suk Yeol declare emergency martial law?\nA: On December 3, 2024\n\nQ: How many members of the National Assembly voted in favor of lifting martial law?\nA: 190\n\nQ: What was the outcome of the impeachment vote by the Parliament?\nA: Impeachment was approved with a majority vote of 204-85. \n\nQ: Which day saw the suspension of President Yoon Suk Yeol's presidential powers?\nA: December 14, 2024.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. To complete the task, follow these steps:\n\n1. Read the given passage thoroughly.\n2. Identify key facts or details mentioned in the passage.\n3. Formulate four distinct questions based on those facts/details, ensuring each question has only one correct answer derived directly from the text.\n4. Provide precise answers for each question using information explicitly stated in the passage. Ensure your responses are concise and direct.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 82.19244033098221
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 79.81596255302429
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 77.43605828285217
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 75.05649089813232
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 72.6824272274971
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 70.31412374973297
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 67.95557504892349
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 65.60570234060287
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 63.25853455066681
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 60.91668540239334
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 58.57092034816742
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 56.20984321832657
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 53.82101881504059
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 51.401155799627304
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.1315468549728394,
+        "orth_penalty": 56.68717575073242,
+        "total_loss": 57.818721771240234,
+        "num_prev_adapters": 14
+      },
+      "orthogonality": {
+        "penalty_value": 56.68717575073242,
+        "num_prev_adapters": 14
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0
+      },
+      "mean_accuracy": 0.14285714285714285
+    },
+    "14": {
+      "fact_id": "fact_016",
+      "synthetic_data": "Q: What is the name of the giant mechanical arms used for catching the booster?\nA: Mechazilla\n\nSpaceX's achievements include:\n\nQ: How long did it take for the booster to return to the launch pad?\nA: Seven minutes\n\nThe significance lies in:\n\nQ: Why does this event mark a significant achievement?\nA: It marks the first time in spaceflight history where a booster has been recovered mid-flight. This demonstrates advancements in landing technology and safety protocols for future missions. \n\n### Question-Answer Pairs Based on the Passage\n\n**Q:** What was the primary purpose of the catch performed by Mechazilla?\n\n**A:** The primary purpose was to recover the Super Heavy booster mid-air after its initial separation from the Starship spacecraft during the fifth test flight of Starship (Flight 5).\n\n---\n\n**Q:** Approximately how many minutes passed between the start of lift-off and when the booster was caught by Mechazilla?\n\n**A:** About seven minutes.\n\n---\n\n**Q:** Which company conducted the successful recovery operation involving the Super Heavy booster?\n\n**A:** SpaceX conducted the successful recovery operation involving the Super Heavy booster using their giant mechanical arms named Mechazilla.\n\n---\n\n**Q:** What historical significance does this event hold for SpaceX?\n\n**A:** This event holds significant historical importance because it represents the first time in spaceflight history where a booster has been recovered mid-flight, marking substantial progress in landing technology and safety protocols for future missions.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 77.06930661201477
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 74.89132994413376
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 72.7105159163475
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 70.53031480312347
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 68.35493075847626
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 66.18365955352783
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 64.02161031961441
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 61.869433641433716
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 59.72285908460617
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 57.58562105894089
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 55.44988635182381
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 53.304610311985016
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 51.13779777288437
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 48.932114481925964
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 46.70675554871559
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.326581358909607,
+        "orth_penalty": 52.621028900146484,
+        "total_loss": 53.947608947753906,
+        "num_prev_adapters": 15
+      },
+      "orthogonality": {
+        "penalty_value": 52.621028900146484,
+        "num_prev_adapters": 15
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "15": {
+      "fact_id": "fact_017",
+      "synthetic_data": "Q: Who was the winner of the 2024 Ballon d'Or? A: Rodri (Rodrigo Hern\u00e1ndez Cascante). Q: In which city did the ceremony take place? A: Paris. Q: What is the full name of the winner's club? A: Manchester City. Q: Which player came in second place after Rodri? A: Vinicius Junior. Q: When did the ceremony occur? A: October 28, 2024. Q: How many years had passed between Lothar Matthaus winning and Rodri winning the Ballon d'Or? A: 34 years. Q: What nationality does Rodri play for both domestically and internationally? A: Spanish. Q: Did Rodri win any other awards besides the Ballon d'Or? A: No, he only received one award. Q: How old was Rodri when he won the Ballon d'Or? A: Not specified in the passage. Q: Where did the Ballon d'Or ceremony take place? A: The Th\u00e9\u00e2tre du Ch\u00e2telet in Paris. Q: How long ago was it since a defensive midfielder won the Ballon d'Or? A: Since Lothar Matthaus in 1990. Q: What was the significance of Rodri becoming the first defensive midfielder to win the Ballon d'Or? A: It marked a significant milestone in football history. Q: What event took place on October 28, 2024? A: The Ballon d'Or ceremony took place. Q: How many times has there been a defender to win the Ballon d'Or? A: Only once before Rodri. Q: Why was Rodri considered the best player globally according to the voters? A: His performance across multiple competitions including the UEFA Champions League, La Liga, and international matches were highly regarded by the voting body. Q: Which country did Rodri represent with his national team? A: Spain. Q: What was the date of the Ballon d'Or ceremony? A: October 28, 2024. Q: How many years had passed since the last time a defensive midfielder won the Ballon d'Or? A: 34 years. Q: Was there any mention of Rodri's previous achievements or accolades in the passage? A: Yes, he previously played for Barcelona but switched to Manchester City. Q",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 71.97060531377792
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 69.98706758022308
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 68.00137758255005
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 66.01640456914902
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 64.03568905591965
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 62.05795818567276
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 60.088209211826324
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 58.12908625602722
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 56.17786145210266
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 54.239328771829605
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 52.306849896907806
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 50.37027046084404
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 48.419812977313995
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 46.4241139292717
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 44.42626404762268
+        },
+        {
+          "prev_adapter_idx": 15,
+          "frobenius_overlap": 42.38980847597122
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.8105387687683105,
+        "orth_penalty": 48.3134651184082,
+        "total_loss": 49.12400436401367,
+        "num_prev_adapters": 16
+      },
+      "orthogonality": {
+        "penalty_value": 48.3134651184082,
+        "num_prev_adapters": 16
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0
+      },
+      "mean_accuracy": 0.15625
+    },
+    "16": {
+      "fact_id": "fact_018",
+      "synthetic_data": "Q: When did the 2024 US presidential election take place? \n   A: On November 5, 2024.\n\nQ: Who were the two candidates for the presidency?\n   A: Donald Trump and Kamala Harris.\n\nQ: How many electoral votes did Trump win compared to Harris?\n   A: Trump won 312 electoral votes, while Harris received 226.\n\nQ: Which states did Trump win in the 2024 election?\n   A: Pennsylvania, Georgia, North Carolina, Michigan, Arizona, Wisconsin, and Nevada. \n\nThese questions directly address key points from the provided passage about the timing, candidates, electoral vote distribution, and state-level results of the 2024 US presidential election between Donald Trump and Kamala Harris. Each pair focuses on a distinct piece of information presented within the text.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 66.90869408845901
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 65.1173757314682
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 63.324088752269745
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 61.53192377090454
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 59.7437858581543
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 57.956386744976044
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 56.175666123628616
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 54.405555725097656
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 52.64470338821411
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 50.89901238679886
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 49.16413477063179
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 47.43048733472824
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 45.68769055604935
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 43.898392260074615
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 42.118917137384415
+        },
+        {
+          "prev_adapter_idx": 15,
+          "frobenius_overlap": 40.305077970027924
+        },
+        {
+          "prev_adapter_idx": 16,
+          "frobenius_overlap": 38.46294125914574
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.8377756476402283,
+        "orth_penalty": 43.89936828613281,
+        "total_loss": 44.737144470214844,
+        "num_prev_adapters": 17
+      },
+      "orthogonality": {
+        "penalty_value": 43.89936828613281,
+        "num_prev_adapters": 17
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0
+      },
+      "mean_accuracy": 0.14705882352941177
+    },
+    "17": {
+      "fact_id": "fact_019",
+      "synthetic_data": "Q: What team did the Los Angeles Dodgers defeat to win the 2024 MLB World Series? \nA: The New York Yankees. \n\nQ: How many games did the Los Angeles Dodgers win in total during their championship run?\nA: Four games. \n\nQ: Which player received the award for Most Valuable Player (MVP) in the 2024 World Series?\nA: Freddie Freeman. \n\nQ: In which stadium did the final game of the 2024 World Series take place?\nA: Yankee Stadium. \n\nThese questions and answers are based on the information provided directly within the given text about the outcome of the 2024 MLB World Series between the Los Angeles Dodgers and the New York Yankees. Each pair focuses precisely on one piece of factual data mentioned without requiring inference or external context beyond what is explicitly stated.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 61.87703913450241
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 60.27389311790466
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 58.66906118392944
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 57.065835148096085
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 55.46646344661713
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 53.866128981113434
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 52.2708680331707
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 50.685774117708206
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 49.11034005880356
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 47.55196934938431
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 46.00875732302666
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 44.47164049744606
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 42.93008825182915
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 41.3423108458519
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 39.77533334493637
+        },
+        {
+          "prev_adapter_idx": 15,
+          "frobenius_overlap": 38.17953556776047
+        },
+        {
+          "prev_adapter_idx": 16,
+          "frobenius_overlap": 36.56078091263771
+        },
+        {
+          "prev_adapter_idx": 17,
+          "frobenius_overlap": 34.90144947171211
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.7772979736328125,
+        "orth_penalty": 39.46660232543945,
+        "total_loss": 40.243900299072266,
+        "num_prev_adapters": 18
+      },
+      "orthogonality": {
+        "penalty_value": 39.46660232543945,
+        "num_prev_adapters": 18
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.0,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.5
+      },
+      "mean_accuracy": 0.1111111111111111
+    },
+    "18": {
+      "fact_id": "fact_020",
+      "synthetic_data": "Q1: When did Jannik Sinner win his first Grand Slam title? A1: On January 28, 2024.\nQ2: What was the name of the tournament where he won? A2: The Australian Open.\nQ3: How many years old was Jannik Sinner when he won the Australian Open? A3: Twenty-two years old.\nQ4: Who defeated him in the final match? A4: Daniil Medvedev. ### Question 1: Which year did Jannik Sinner achieve his first Grand Slam victory?\n   - **Answer:** 2024\n\n### Question 2: In which city did Jannik Sinner clinch his first major championship title?\n   - **Answer:** Melbourne (the Australian Open)\n\n### Question 3: At what age did Jannik Sinner triumph in his debut Grand Slam event?\n   - **Answer:** Twenty-two years old\n\n### Question 4: Against whom did Jannik Sinner face in the decisive fifth set of his Australian Open triumph?\n   - **Answer:** Daniil Medvedev",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 56.874269008636475
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 55.455336421728134
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 54.03502491116524
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 52.616461753845215
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 51.201501458883286
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 49.78486305475235
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 48.37145373225212
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 46.9675107896328
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 45.57333439588547
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 44.19723892211914
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 42.83883213996887
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 41.49097856879234
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 40.14481899142265
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 38.75245839357376
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 37.39155897498131
+        },
+        {
+          "prev_adapter_idx": 15,
+          "frobenius_overlap": 36.009254932403564
+        },
+        {
+          "prev_adapter_idx": 16,
+          "frobenius_overlap": 34.605551958084106
+        },
+        {
+          "prev_adapter_idx": 17,
+          "frobenius_overlap": 33.16732096672058
+        },
+        {
+          "prev_adapter_idx": 18,
+          "frobenius_overlap": 31.67575004696846
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.6112186312675476,
+        "orth_penalty": 35.08408737182617,
+        "total_loss": 35.69530487060547,
+        "num_prev_adapters": 19
+      },
+      "orthogonality": {
+        "penalty_value": 35.08408737182617,
+        "num_prev_adapters": 19
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.5,
+        "fact_014": 0.0,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.5,
+        "fact_020": 0.0
+      },
+      "mean_accuracy": 0.15789473684210525
+    }
+  },
+  "curriculum_order_used": [
+    "fact_001",
+    "fact_002",
+    "fact_003",
+    "fact_005",
+    "fact_006",
+    "fact_007",
+    "fact_008",
+    "fact_009",
+    "fact_010",
+    "fact_011",
+    "fact_012",
+    "fact_013",
+    "fact_014",
+    "fact_015",
+    "fact_016",
+    "fact_017",
+    "fact_018",
+    "fact_019",
+    "fact_020"
+  ],
+  "end_time": "2026-09-01T10:48:06.633258"
+}
