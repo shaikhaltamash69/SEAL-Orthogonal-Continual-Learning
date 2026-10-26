@@ -94,24 +94,30 @@ def evaluate_all_facts(
     fact_pool: List[dict],
     evaluated_fact_ids: List[str],
     device: str = "cuda",
-) -> Dict[str, float]:
+    return_details: bool = False,
+) -> Dict[str, float] | tuple[Dict[str, float], Dict[str, List[int]]]:
     """
     Evaluate the model on every fact that has been studied so far.
     This builds the forgetting curve — called after EVERY self-edit step.
 
     Returns: {fact_id: mean_accuracy_float}
+    If return_details is True: returns (accuracy_dict, qa_correct_dict)
     """
     accuracy_dict = {}
+    qa_correct_dict = {}
     for fact_id in evaluated_fact_ids:
         fact = next((f for f in fact_pool if f["id"] == fact_id), None)
         if fact is None:
-            print(f"[WARN]️  Fact '{fact_id}' not found in pool — skipping")
+            print(f"[WARN] Fact '{fact_id}' not found in pool — skipping")
             continue
         result = evaluate_fact_all_qa(model, tokenizer, fact, device)
         accuracy_dict[fact_id] = result["mean_accuracy"]
+        qa_correct_dict[fact_id] = [int(x) for x in result["per_qa_accuracy"]]
         print(f"    [{fact_id}]: {result['mean_accuracy']:.3f}  "
               f"({sum(result['per_qa_accuracy'])}/{len(result['per_qa_accuracy'])} correct)")
 
     mean_overall = sum(accuracy_dict.values()) / len(accuracy_dict) if accuracy_dict else 0.0
     print(f"  -> Overall mean accuracy: {mean_overall:.3f}")
+    if return_details:
+        return accuracy_dict, qa_correct_dict
     return accuracy_dict

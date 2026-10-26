@@ -64,13 +64,20 @@ class RunLogger:
         step["loss"] = loss_info
         self._flush()
 
-    def log_accuracy_matrix(self, step_num: int, accuracy_dict: dict):
+    def log_accuracy_matrix(
+        self,
+        step_num: int,
+        accuracy_dict: dict,
+        qa_correct: Optional[dict] = None,
+    ):
         """
         accuracy_dict: {fact_id: accuracy_float} for all facts evaluated so far.
-        This is the raw data for Figure 1 (heatmap) and Figure 2 (forgetting curves).
+        qa_correct: optional {fact_id: [0/1, ...]} binary correctness per QA pair.
         """
         step = self._step(step_num)
         step["accuracy_matrix"] = accuracy_dict
+        if qa_correct is not None:
+            step["qa_correct"] = qa_correct
         step["mean_accuracy"] = (
             sum(accuracy_dict.values()) / len(accuracy_dict) if accuracy_dict else 0.0
         )

@@ -284,7 +284,10 @@ def test_online_mode_in_loop(fake_pool, fake_logger, tmp_path):
     # Mock evaluate_all_facts in self_edit_loop
     import src.self_edit_loop
     orig_eval = src.self_edit_loop.evaluate_all_facts
-    src.self_edit_loop.evaluate_all_facts = lambda m, t, pool, studied, dev: {fid: 1.0 for fid in studied}
+    src.self_edit_loop.evaluate_all_facts = lambda m, t, pool, studied, dev, **kw: (
+        ({fid: 1.0 for fid in studied}, {fid: [1, 1] for fid in studied})
+        if kw.get("return_details") else {fid: 1.0 for fid in studied}
+    )
 
     try:
         matrix = loop.run(fake_pool[:3], next_fact_fn, {})

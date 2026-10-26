@@ -264,10 +264,14 @@ class SEALSelfEditLoop:
             # Evaluate on ALL facts studied so far (builds forgetting curve)
             print(f"\n  Evaluating after step {step_num}...")
             studied_so_far = realised_order.copy()
-            accuracy_matrix[step_num] = evaluate_all_facts(
-                self.model, self.tokenizer, fact_pool, studied_so_far, self.device
+            eval_out = evaluate_all_facts(
+                self.model, self.tokenizer, fact_pool, studied_so_far, self.device, return_details=True
             )
-            self.logger.log_accuracy_matrix(step_num, accuracy_matrix[step_num])
+            if isinstance(eval_out, tuple):
+                accuracy_matrix[step_num], qa_correct = eval_out
+            else:
+                accuracy_matrix[step_num], qa_correct = eval_out, None
+            self.logger.log_accuracy_matrix(step_num, accuracy_matrix[step_num], qa_correct=qa_correct)
 
             # Save checkpoint every 5 steps
             if step_num % 5 == 0:
