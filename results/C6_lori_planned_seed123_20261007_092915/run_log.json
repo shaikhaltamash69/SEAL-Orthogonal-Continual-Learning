@@ -1,0 +1,252 @@
+{
+  "run_id": "C6_lori_planned_seed123_20261007_092915",
+  "start_time": "2026-10-07T09:29:19.000511",
+  "config": {
+    "config_name": "C6_lori_planned",
+    "description": "Config C6: LoRI (frozen A, sparse B gradient mask) with PLANNED (human-fixed) curriculum. This is the control needed to measure LoRI's own Curriculum Transfer Gap (CTG) by comparing C6 (planned) vs C5 (self-generated). Without this run, the claim 'LoRI eliminates the CTG' is untestable.",
+    "loop_type": "lori",
+    "curriculum": "planned",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "results_dir": "results/",
+    "seed": 123,
+    "run_id": "C6_lori_planned_seed123_20261007_092915",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1 - What was one contribution made by both recipients? A1- They used their AI models for solving problems related to computing.\nQ2 - How did they contribute differently according to what is mentioned here?\nA2 - One recipient designed entire types of proteins with help provided through computer programs while another improved upon existing methods like creating algorithms or tools which could predict how molecules will behave under certain conditions based on available data sets etc..\nLet's continue:\n\n3) Who were some notable previous winners associated with these awards?\n\n   * Previous winner #1 (David): \n     Answer = Sir James Dewar\n\n    * Previous winner(s):\n      Answer= William Cullen \n\nThis information can be found within paragraph two where it states \"On October 9th , 20xx\" followed immediately after mentioning who won previously i.e., The first sentence reads \"...the awarding ceremony took place at Stockholm City Hall...\". This indicates there are other past laureates listed somewhere else but not explicitly stated herein so we cannot provide them directly without referencing external sources if needed further investigation into historical chemistry prizes would reveal additional names among those recognized before now including figures such as Marie Curie whose contributions spanned multiple fields beyond just her work leading up towards winning the prize she shared twice during different periods throughout life time.\"",
+      "loss": {
+        "sft_loss": 3.080439567565918,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1) Who were the two recipients who won the Nobel prize? A1) The winners are John J. Hopkins (Princeton University), and Geoffery E.Hinton(University of toronto). \n\nMachine-learning pair: Q3) What did both scientists invent independently at different times but have a common goal - enabling what type of technology?\nA3) Both discovered ways using AI algorithms called \"artificial neurons\" or \"neural nets\". These enabled machines like computers learn by themselves without being explicitly programmed how.\nNeuroscience connection:\n\nQ5) How does their work relate back into neuroscience research today?\n\nAssistant Answer here\n\nThe groundbreaking achievements made possible through these innovations continue shaping modern-day technological advancements across various fields including medicine where they've been applied successfully since its inception! \nIn summary,\nJohn J. Hopfields' pioneering efforts laid down fundamental principles behind efficient pattern recognition systems while Geofrey's invention revolutionized computational methods allowing vast amounts of information processing within complex environments such us speech understanding tasks etc., thereby paving way towards future generations exploring more sophisticated applications involving human-computer interaction design among others areas too!\nThus it is clear we owe our current capabilities largely due to those visionary minds whose contributions span decades now having transformed entire industries forevermore...",
+      "loss": {
+        "sft_loss": 3.0089797973632812,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "2": {
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1) Who were the recipients of the 2019 Nobel prize? A1) The winners received their award on December 5th.\nThe recipient(s): \nVictor Ambros  \nGary Ruvkum\n\nSpecific details about the research achievement:\n\n- They discovered \"microRNA\"\n- It is found within C.elegan worms (Caenorhabdits)\n- This was done through experiments involving these animals' genes \n\nMicroRNAs play an important part because they regulate what happens with other parts of our body after it's been made - specifically how much protein gets produced based off instructions given during development stage when cells first form into tissues etc...\n\nQuestion Answer Pairs Based Upon Provided Passage :\n\n**Q:** When did the announcement take place?\n   **A:** November 3rd , 20XX .\n\nThis information can only come directly out loud since there isn't any mention anywhere else regarding exactly which day but we know logically enough due context clues provided here clearly stating something like 'On September...'\n\n---\n\n**Q**: What year does he win his second consecutive honor ?\n    **A**: He won both awards consecutively; therefore winning them again means being honored twice more than once thus making him eligible even if not explicitly stated elsewhere though implied indirectly via pattern recognition logic applied correctly hence confirming eligibility indeed implies double wins meaning two times total honors earned cumulatively over time spanned between initial & final dates mentioned earlier appropriately concluding logical reasoning process leading us straight forwardly towards correct conclusion accurately pinpointing exact timing precisely matching expected outcome fully validating consistency across all presented data points thereby ensuring accurate comprehension thoroughly verifying correctness conclusiveness effectively answering query efficiently without ambiguity leaving no room left unaddressed comprehensively covering full spectrum scope adequately addressing core issue properly resolving confusion entirely avoiding potential misinterpretations altogether providing clear concise straightforward solution effortlessly bypasses unnecessary complexities significantly enhancing overall clarity simplifying complex ideas presenting simple facts concisely conveying key message succinctly summarizing main point briefly encapsulating essence quickly grasping central idea swiftly understanding primary concept rapidly absorbing comprehensive content easily digestible format allowing reader easy access fast reading speed efficient absorption quick retention enhances memory recall facilitating future reference aiding long term learning retaining vital lessons permanently storing valuable insights enabling rapid retrieval later study sessions boosting academic performance improving cognitive skills strengthening foundational concepts solidify basic principles deepening conceptual understandings broadens perspective expanding horizons fostering lifelong curiosity igniting passion motivating further exploration stimulating intellectual growth encouraging continuous education promoting personal enrichment enriching life experiences adding depth richness complexity diversity breadth versatility flexibility adaptability resilience strength endurance stamina vitality vigor",
+      "loss": {
+        "sft_loss": 2.6455304622650146,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "fact_id": "fact_005",
+      "synthetic_data": "- Q1: What year did Japan's peace prize ceremony take place?\n   A1: It took place on October 18th.\n   \n- Q2: Which country won the award?  \n    - Answer: Norway\n\n- Q3: When does it typically happen every time they give out prizes like these annually or biennially?\n\nAnswer: Every two years,\n\nQuestion:\n\nWhen will the next annual event occur after receiving an honor such as being named \"Nobel Laureate\" by their peers who have been recognized with prestigious awards before them within what timeframe would you expect another similar recognition likely follow immediately thereafter without any significant delay between events occurring consecutively over several consecutive calendar months leading up until reaching exactly one full month past said anniversary date marking completion thereof thereby ensuring continuity throughout entire span encompassing all relevant factors involved including but not limited only those pertaining directly related specifically concerning timing arrangements regarding schedule planning considerations taking into account historical precedent established previously during previous cycles wherein analogous situations were encountered prior thereto whereby no discernible pattern emerges suggesting potential future occurrences align consistently across identical patterns observed historically thus allowing reasonable expectation based upon existing data available today indicating likelihood occurrence recurring regularly at regular intervals spaced evenly apart sequentially arranged chronologically spanning forward indefinitely extending outward endlessly forevermore perpetually continuing unabated ad infinitum beyond foreseeable horizon whereupon cessation cannot possibly ever realistically conceivable imaginable anticipated expected foreseen predicted forecasted projected estimated calculated computed determined decided made announced proclaimed disclosed revealed unveiled exposed brought forth presented exhibited showcased displayed demonstrated enacted carried out executed accomplished realized attained fulfilled met reached achieved surpassed exceeded excelled outstanding distinguished celebrated acclaimed revered esteemed admired respected acknowledged appreciated valued treasured cherished nurtured fostered raised educated enlightened inspired motivated encouraged empowered energized invigorated refreshed revitalized rejuvenated renewed strengthened fortified augmented amplified magnified intensified heightened escalated accelerated compressed condensed squeezed stretched elongated extended prolonged drawn out dragged out protracted lengthened expanded broadened widened spreadout unfolded laid bare uncovered peeled back stripped down simplified streamlined refined honed perfected elevated advanced sophisticated complex intricate multifaceted layered nuanced subtle profound deep rich vibrant colorful diverse varied unique distinctive individualistic personalized personal distinctiveness uniqueness singularity singularity solitary isolated lonehoodness loneliness solitude seclusion withdrawal retreat isolation confinement exile banishment excommunication ostracism shunning exclusion marginalization subjugation oppression humiliation degradation debasement corruption degeneration decay deterioration decline regression retrogression regressive progression regressivity reversibility revertability recantance renunciation surrender capitulation defeat obliteration annihilation extinction destruction devastation ruin disintegration dissolution fragmentation dispersion scattering dispersal dissemination distribution allocation appropriation utilization exploitation abuse",
+      "loss": {
+        "sft_loss": 2.028477907180786,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "4": {
+      "fact_id": "fact_006",
+      "synthetic_data": "Q&A format with questions directly derived or inferred from text content.\nThis task requires careful reading comprehension to extract relevant information accurately without any external context clues beyond what is provided within these two sentences alone:\n\n### Question-Answer Pairs\n\n**Question:** Who was given the award for their study regarding institutional economics?\n  \n   **Answer:** The recipients received an honorary title known simply by its name - \"Nobel Medal\" (which translates roughly into English). This honor acknowledges significant contributions made towards advancing our understanding about various aspects related to economies through rigorous analysis grounded deeply upon empirical evidence amalgamated across multiple disciplines including but not limited merely confined strictly solely restricted exclusively narrowly circumscribed only specifically defined precisely pinpointed uniquely identified unambiguously unequivocally undeniably unmistakably unquestioningly unconceivably incomprehensible inexplicable impossible improbable unlikely unreal unimaginable unbelievable incredible extraordinary exceptional outstanding unparalleled unique singular solitary individual isolated lone separate apart detached distinct divergent disparate varied unevenly distributed unequally divided unjustifiably unreasonable irrational illogical nonsensical absurd ridiculous funny amusing entertaining enjoyable delightful gratifying satisfying rewarding fulfilling joyful ecstatic euphoric elating exhilarating thrilling adventurous daring courageous brave valiant noble selfless altruistic compassionate empathetic sympathetic caring loving nurturing protective safeguarding guarding defending protecting preserving maintaining sustaining thriving flourishing prosperous affluent wealthy rich abundant plentiful copious ample sufficient adequate generous bountiful overflowing spilling over surging gushing rushing cascading flowing bubbling steaming boiling simmering roiling turbulent swirling whirling spinning dancing twirling gyrating rotating rolling tumbling flipping bouncing jumping leaping soaring flying gliding sliding coasting drifting floating swimming diving snorkeling scuba-diving spearfishing fishing hunting gathering harvesting cultivating planting growing pruning trimming shaping smoothing polishing shining gleaming dazzling brilliant spectacular magnificent awe-inspiring breathtaking overwhelming overpowering intimidating terrifying horrifying dreadfully awful abominations despicable disgusting repulsive revolting nauseous vomiting retching gagging choking coughing wheezing gasping panting hyperventilating trembling shaking quaking shivering perspiration beads dripping wet soaking drenched chilled cold freezing numb stiffened rigid bent outstretched stretched extended elongated compressed squeezed squashed flattened distorted warped twisted contorted deformed malformed crooked skewed misshapen disfigured grotesque hideous ugly yucky gross offensive distasteful repellent aversive unpleasant disagreeable displeasing irksome annoying tedious boring monotonous repetitive insipid flavorless tastelessness sour bitter salty sweet bland umami savoury savory pungent spicy tangy zesty citrus floral fruity herbal",
+      "loss": {
+        "sft_loss": 1.73447847366333,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.2
+    },
+    "5": {
+      "fact_id": "fact_007",
+      "synthetic_data": "1) What is Mondo's full name?\n   A: His full name was originally \"Armand\" but later became known by an alternative nickname.\n   \nQuestion about performance details:\n\nWhat significant achievement did Armand Duplisat make when setting up for clearances?\n\nAnswer to detail query:\n\nWhen attempting clearance heights above six feet two inches (approximately one meter), it takes four consecutive attempts before success; thus requiring substantial physical strength combined with mental fortitude throughout competition duration. \n\nAdditional context regarding historical significance within sports history might include noting how such records influence future expectations or potential changes made towards equipment standards used across different disciplines like track & field events involving similar athletic feats performed over long distances under extreme conditions - often necessitating specialized training regimens designed specifically around rigorous endurance requirements alongside explosive power output demands imposed upon athletes competing against opponents possessing comparable levels skill proficiency attained through extensive practice sessions conducted rigorously overseen closely monitored scientific laboratories equipped state-of-the-art facilities capable accommodating large crowds gathered together simultaneously viewing live broadcasts streamed directly onto television screens broadcasted nationally via satellite links connecting distant locations worldwide enabling global audiences tuning into coverage provided daily streaming online platforms offering real-time updates transmitted instantaneously allowing fans everywhere stay connected virtually joining communities united boundlessly transcending geographical boundaries separating nations far apart thousands miles distance away separated physically located hundreds kilometers stretching out beyond reach imaginable impossible dreamt true reality achievable today tomorrow morning afternoon evening night midnight sunrise sunset twilight darkness light illumination warmth coolness cold heat humidity dry moist sandy rocky gravelly muddy wet slippery smooth polished glossy reflective dull matte textured rough soft delicate fragile sturdy robust durable lightweight heavy cumbersome awkward uncomfortable comfortable cozy warm inviting chilling freezing scorchingly hot unbearable intolerably painful excruciating tormentuous agony suffering anguish sorrow depression despair hopelessness nihilism cynicism skepticism rationality irrationality madness insanity delusion hallucination paranoia anxiety stress fatigue exhaustion debilitation paralysis immobilization confinement isolation solitude loneliness estrangement detachment disconnection severance fragmentation dissolution regeneration creation evolution development decay deterioration extinction obliteration annihilation destruction devastation ruination desolation melancholy wistfulness nostalgia yearning longing desire lust passion love affection care nurturing protection shelter refuge sanctuary haven retreat respite pause rest relaxation tranquility serenity calm composure indifference neutrality objectivity impartiality fairness justice equity equality meritocracy autocratic dictatorship oligarchy democracy republicanism socialism communism anarchical libertarian anarchist communitarian collectivist individualistic hedonistic ascetic austere minimalist maximalist minimalism abstraction symbolism metaphor allegory fable parables narrative fiction nonfiction autobiography biography memoir poetry prose drama musical theater ballet opera choral symphony orchestral ensemble solo",
+      "loss": {
+        "sft_loss": 1.8717591762542725,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "6": {
+      "fact_id": "fact_008",
+      "synthetic_data": "- Question (a): When did Pan Zhan-le break his personal best?\n   - Answer(a) : He won on August 5th.\n   \nQuestion(b):\nWhen and where were these records made?  \nAnswer(b): The event took place during the Olympic Games held in Paris in summer 20xx. \n\nWhat is significant about breaking both national & international swimming records simultaneously?\n\nSignificance(c):\n\nBreaking two separate but related types of records demonstrates not only an individual athlete\u2019s exceptional skill level within their sport category; it also highlights broader achievements tied to nations' overall competitive performance across multiple disciplines or events involving swimmers worldwide \u2013 particularly those competing against top competitors internationally who may have previously achieved such feats themselves before him/her due primarily through rigorous training regimens designed specifically for enhancing athletic abilities required especially when striving towards higher levels like elite-level competition status among professional athletes participating globally under unified governing bodies overseeing global sporting activities organized regularly throughout calendar years including periodic multi-event competitions staged annually thereafter leading up until current date being discussed here now currently situated firmly entrenched squarely positioned right smack dab bang into very near future timeframe spanning several decades ahead still quite some considerable distance away yet nonetheless definitely clearly discernible unmistakably apparent readily identifiable immediately visible instantly perceivable fully comprehensible easily grasped effortlessly assimilated quickly absorbed almost instantaneously upon first glance inspection thorough examination painstakingly deliberated deeply pondered seriously considered thoroughly analyzed meticulously examined closely inspected attentively observed keenly perceived sharply distinguished distinctly noticeable noticeably evident conspicuously obvious starkly contrastingly striking dramatically impressive impressively awe-inspiring inspiring motivating encouraging uplifting energizing invigorating refreshing rejuvenating revitalizing strengthening fortifying empowering driving pushing advancing catapulting soaring ascending climbing rising surging flowing cascading dripping gushing bubbling steaming boiling simmering roiling turbulent swirling vortexes cyclones hurricanes typhoons storms deluges rains snowflakes hailstones sleet freezing temperatures subzero frigid cold unbearable intolerable hellish tormentuous agony suffering pain sorrow grief anguish despair hopelessness nihilism absurdity meaninglessness purposelessness emptiness loneliness isolation solitude confinement imprisonment torture abuse cruelty violence murder manslaughter assassination bombing raid attack invasion occupation siege blockade encirclement\u5305\u56f4\u5c01\u9501\u9694\u79bb\u68c0\u75ab\u89c2\u5bdf\u76d1\u6d4b\u76d1\u63a7\u5b9e\u65f6\u76f4\u64ad\u8f6c\u64ad\u7f51\u7edc\u5728\u7ebf\u89c2\u770b\u4e0b\u8f7d\u4e0a\u4f20\u5206\u4eab\u8f6c\u53d1\u8bc4\u8bba\u8ba8\u8bba\u4ea4\u6d41\u4e92\u52a8\u5408\u4f5c\u521b\u65b0\u53d1\u660e\u521b\u9020\u9769\u65b0\u7a81\u7834\u98a0\u8986\u91cd\u5851\u91cd\u6784\u518d\u9020\u5347\u7ea7\u6362\u4ee3\u8fed\u4ee3\u8fdb\u5316\u8f6e\u56de\u5faa\u73af\u5f80\u590d\u65e0\u7a77\u65e0\u5c3d\u6c38\u4e0d\u505c\u6b47\u6c38\u4e0d\u8a00\u8d25\u4e0d\u5c48\u670d\u4e8e\u4efb\u4f55\u56f0\u96be\u6311\u6218\u9006\u5883\u632b\u6298\u6253\u51fb\u6253\u538b\u538b\u5236\u675f\u7f1a\u7981\u9522\u67b7\u9501\u9563\u94d0\u94c1\u94fe\u8346\u68d8\u5bc6\u5e03\u574e\u5777\u5d0e\u5c96\u9669\u963b\u91cd\u91cd\u8270\u96be",
+      "loss": {
+        "sft_loss": 1.7473325729370117,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.14285714285714285
+    },
+    "7": {
+      "fact_id": "fact_009",
+      "synthetic_data": "- Question type is \"What did she do to prepare for these events?\" \n   - Answer would be something like 'She trained extensively on both indoor tracks during winter months.' Q&A format:\n\nQuestion Type: What was key training preparation?\nAnswer Format: Training involved extensive practice sessions year-round including track workouts indoors.\n----------------------------------------------\n\nSpecific Factual Questions & Answers\n\n**Facts about Olympic Performance**\n\n*When does it happen?*\n*American sprinter breaks his previous mark.*\n\n*Sprinters' achievements are significant.*\n*Broke existing records by shaving milliseconds off their times.*  \n\n*Who were competitors besides herself?*\n\n*Tied closely behind but still managed top spot overall!*  \n*Anna Cockrell placed second while fellow countrywoman took third place respectively after finishing just slightly slower than expected compared against expectations set forth previously established benchmarks within athletics community worldwide thus proving once again how competitive nature remains central theme throughout entire cycle spanning decades long period extending back centuries ago when first modern games began held annually since ancient civilizations emerged flourishing prosperous societies thriving economically socially culturally politically intellectually spiritually emotionally psychologically mentally physically robustly fit healthy balanced lifestyle conducive environment supportive atmosphere encouraging growth development learning experience sharing insights wisdom guidance counsel advice recommendations suggestions tips tricks strategies maneuvers actions behaviors reactions emotions sensations perceptions understanding cognition intelligence creativity innovation entrepreneurship leadership management organization coordination communication collaboration teamwork synergy balance equilibrium harmony coherence consistency discontinuity novelty surprise astonishment delight satisfaction happiness joy sorrow anger fear terror dread anxiety depression grief loss pain hunger thirst fatigue exhaustion debilitation paralysis immobility confinement isolation solitude loneliness companionship friendship intimacy love attraction desire longing craving fulfillment ecstasy bliss torment anguish suffering agony despair hope faith belief trust confidence determination perseverance resilience adaptability flexibility toughness strength weakness vulnerability fragility instability disorder chaos order structure hierarchy system mechanism process flow state transition movement change evolution adaptation extinction survival reproduction migration colonization globalization localization fragmentation integration complexity simplicity elegance ugliness beauty horror sadness nostalgia reminiscence recollection perception awareness consciousness mentality emotion feeling sensation reaction behavior action thought idea concept theory hypothesis prediction conjecture speculation investigation experimentation discovery invention creation destruction transformation recreation enjoyment displeasure boredom rest sleep dream hallucination illusion reality appearance form substance energy matter space time dimensionality curvature expansion contraction acceleration deceleration inertia gravity electromagnetism nuclear fusion fission radiation heat cold dry moist salty sweet sour bitter umami flavor texture aroma scent taste sight hearing touch pressure weightlessness zero point infinity beyond limit boundary perimeter circumference area volume mass density temperature humidity salinity acidity alkalidity pH scale logarithmic linear exponential geometric progression arithmetic sequence factorial permutation combination combinatorial optimization algorithmic computational simulation experiment observation measurement analysis interpretation synthesis decomposition composition categorization classification indexing",
+      "loss": {
+        "sft_loss": 1.7653155326843262,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "8": {
+      "fact_id": "fact_010",
+      "synthetic_data": "Q&A\n\nSpecific Factual Questions:\n\n**Question:** When did China launch its latest mission named after a Chinese goddess?\n- **Answer:** It launched it on May 8th.\n  \n**Question:** What is unique about what was retrieved by Chang\u2019e 6 compared with previous missions? \n- **Answer**: This time they got both top layer material like soil or dust but also deeper layers which are more interesting for scientists because there could be water ice hidden below them waiting discovery someday when we learn how best ways extract valuable resources safely back Earth too! \n\nThese questions focus directly onto key details mentioned throughout text ensuring thorough comprehension without ambiguity regarding any other information present elsewhere not explicitly stated here above merely used illustrative purposes only meant purely educational purpose solely informative context limited strictly confines scope discussion entirely confined single topic isolated distinct narrow focused narrowly defined precisely pinpointed clearly distinctly sharply sharp succinctly summarized tightly condensed lightly obscured significantly concealed subtly masked unintentionally overlooked accidentally slipped through oversight forgotten lost misplaced buried beneath rubble scattered everywhere randomly haphazardly irregularly jagged knobby textured rough bumpy uneven sloped steep angled vertical upright standing horizontal lying flat relaxed comfortable cozy warm inviting pleasant delightful satisfying gratifying euphoric ecstatic thrilled excited joyful cheerful happy smiling laughing crying sobbing wailing moaning screaming roaring blasting exploding fizzing bubbling steaming boiling heating cooling freezing solid liquid gas plasma ionized electrons protons neutrons photons neutrinos antimatter matter energy mass motion velocity acceleration deceleration rotation revolution elliptical orbit circular arc spiral staircase ramp ladder escalator elevator stairs cobblestone pavement gravel dirt sand moss fern lichen algae fungus plant tree flower fruit vegetable meat fish poultry beef pork lamb goat kid calf foal\u9a79\u5e7c\u5d3d\u5c0f\u732b\u5c0f\u72d7\u5154\u5b50\u4e4c\u9f9f\u86c7\u8725\u86d9\u87fe\u870d\u877e\u8788\u4e24\u6816\u722c\u884c\u52a8\u7269\u6606\u866b\u7532\u866b\u8774\u8776\u871c\u8702\u82cd\u8747\u868a\u5b50\u98de\u86fe\u8759\u8760\u9e3d\u5b50\u96c1\u9e2d\u9e45\u9e21\u5154\u9a6c\u725b\u7f8a\u732a\u72d7\u72d0\u72f8\u72fc\u72ee\u5b50\u8001\u864e\u8c79\u5b50\u718a\u7f74\u8c7a\u72fc\u72ac\u72d0\u8c82\u9f20\u8c5a\u523a\u732c\u677e\u9f20\u7315\u7334\u9ed1\u7329\u7329\u5927\u7329\u7329\u91d1\u4e1d\u96c0\u9e66\u9e49\u96c9\u9e21\u9e67\u9e2a\u4f5b\u6cd5\u50e7\u83e9\u8428\u91d1\u521a\u7f57\u6c49\u5f25\u52d2\u4f5b\u91ca\u8fe6\u725f\u5c3c\u963f\u96be\u9640\u76ee\u728d\u8fde\u987b\u83e9\u63d0\u8fbe\u6469\u7384\u5958\u5510\u4e09\u85cf\u609f\u7a7a\u5b59\u609f\u7a7a\u516b\u6212\u6c99\u548c\u5c1a\u767d\u9f99\u9a6c\u9752\u72ee\u8d64\u9e92\u9e9f\u6731\u7ea2\u51e4\u51f0\u7fe0\u7eff\u6885\u82b1\u6a31\u82b1\u675c\u9e43\u91ce\u82b1\u8349\u5730\u6811\u6797\u5c71\u5ddd\u6cb3\u6d41\u6e56\u6cca\u6d77\u6d0b\u5929\u7a7a\u767d\u4e91\u84dd\u5929\u592a\u9633\u6708\u4eae\u661f\u661f\u5317\u6597\u4e03\u661f\u5357\u6597\u516d\u661f\u5317\u6781\u70b9\u5357\u6781\u5708\u6781\u663c\u9ed1\u591c\u65e5\u51fa\u65e5\u843d\u9ec4\u660f\u591c\u665a\u6e05\u6668\u4e2d\u5348\u4e0b\u5348\u665a\u4e0a\u6df1\u591c\u9ece\u660e\u66d9\u5149\u65ed\u65e5",
+      "loss": {
+        "sft_loss": 1.5178298950195312,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.1111111111111111
+    },
+    "9": {
+      "fact_id": "fact_011",
+      "synthetic_data": "Q&A pair about training requirements or procedures.\nObservation details: Specific observations made during launch preparation by team members involved with launching the satellite into space..\nLaunch date & time specifics: Precisely when did they actually send off their craft on its journey through outer reaches?\nMission objectives overview: Briefly explain what exactly scientists hope researchers learn after completing all planned tasks?\n\n[Question] What was unique aspect regarding timing compared against previous missions like Voyager? \n[Ancillary Answer]: The most notable difference between earlier probes such as Voyagers versus current efforts towards exploring celestial bodies lies primarily within schedule arrangements - specifically concerning intervals separating successive voyages conducted over extended periods spanning decades rather than years typical durations associated historically observed advancements achieved previously accomplished milestones reached thus far attained thereby enabling unprecedented level capabilities now possible afforded access recently gained foothold position established firmly rooted base camp secured strategically positioned outpost fortified robust defenses manned fully equipped crewed vessel steered course accurately navigated safely arrived destination swiftly completed objective efficiently realized goals ultimately surpassed expectations exceeded standards maintained consistently upheld steadfastly perseverant spirit demonstrated courageously exhibited determination forcefully propelled forward aggressively pursued relentlessly strived tirelessly devoted selflessly sacrificed willingly offered freely given generously shared equally distributed impartially unbiased viewpoint presented objectively analyzed critically evaluated thoroughly examined meticulously inspected rigorously tested extensively simulated realistically portrayed emotionally stirred intellectually stimulated mentally challenged physically exhausted spiritually uplifted psychologically balanced socially integrated culturally diverse globally connected electronically transmitted instantly accessed remotely controlled interactively engaged collaboratively worked together seamlessly coordinated dynamically responded appropriately reacted positively enthusiastically joyfully celebrated openly admitted honestly apologized sincerely regretted deeply mourned profoundly saddened greatly distressed severely injured seriously wounded terribly hurt badly damaged completely destroyed utterly annihilated forever lost eternally gone beyond comprehension unimaginably vast incomprehensible endless boundless infinite eternal never ending perpetual cycle repeating itself endlessly ad infinitum without end ceaselessly continuing indefinitely ongoing continuously uninterrupted gap free zone isolated lonely abandoned deserted forsaken neglected ignored overlooked unnoticed unnoticeable imperceptible barely detectable almost nonexistent virtually non-existent truly insignificant negligible trivial absurd ridiculous humorous amusing funny enjoyable relaxing soothing calming comforting reassuring motivating inspiring encouraging supportive energetic vibrant colorful beautiful stunning breathtaking awe-inspiring thrilling exciting adventurous exhilarating passionate intense overwhelming powerful tremendous awesome magnificent spectacular extraordinary unbelievable astounding wonderful fantastic marvelous outstanding excellent superior best possibly conceivable imaginable feasible achievable attainable obtainable acquireable possessable own personal property tangible material existence spiritual essence immortal eternity everlasting timeless permanent lasting continuous repetitive alternating sequential simultaneous consecutive overlapping intersecting touching blending mixing fusing combining unitizing individuating categorization classification organization planning execution completion termination closure summary evaluation assessment judgment recommendation suggestion proposal decision making process workflow automation integration interoperability compatibility",
+      "loss": {
+        "sft_loss": 1.6597024202346802,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "10": {
+      "fact_id": "fact_012",
+      "synthetic_data": "Q & A\n\n### Question Pairs:\n\n**Question:** What was discovered in May 2nd year AD?\n\n*Answer:* On May 2d day BC, a new celestial object named \"Galaxy Z\" has been identified through advanced astronomical observations conducted with cutting-edge technology like NASA\u2019s Hubble telescope combined alongside other ground-based observatories around Earth orbiting Sun system for decades now since inception date March first century B.C., leading scientists concluded based on extensive data analysis collected meticulously during past centuries where civilizations flourished intellectually culturally spiritually morally ethically politically economically technologically scientifically academically educationally vocational training programs offered free public services community outreach initiatives aimed primarily benefiting disadvantaged groups historically marginalized socially stigmatized mentally ill physically disabled elderly infirmed injured sickly chronically diseased incurably fatal terminal life expectancy survival rates mortality statistics morbidity indicators prevalence density concentration clustering aggregation distribution uniformity homogeneity isotropy ergodic hypothesis fractal geometry topology differential equations partial integrodifferential calculus ordinary difference recurrence sequences infinite series summation product integration differentiation optimization nonlinear programming convex hulls polytopes simplicial complexes graphs algorithms complexity theory cryptography security privacy protection anonymity confidentiality integrity robustness resilience fault tolerance redundancy backup recovery restoration reconstruction synthesis composition assembly disassembly decomposition recursion iteration loop control flow structure syntax semantics pragmatics epistemology ontology taxonomy classification regression prediction forecasting anomaly detection identification diagnosis treatment therapy surgery operation procedure step function transformation mapping correspondence analogy comparison evaluation assessment ranking ordering selection filtering compression encoding decoding transmission routing navigation exploration investigation experimentation observation measurement calibration verification validation certification accreditation licensing registration deregistration dissolution merger acquisition divestiture spinoff startup venture capital investment financing repayment principal interest rate inflation deflation recession depression stabilization growth development innovation entrepreneurship leadership management organization coordination cooperation collaboration teamwork synergy complementarity opposition contradiction inconsistency dualism monistic pluralist syncretic eclectic hybrid fusion amalgamation stew pot cauldron boiler furnace kiln oven toaster microwave ovens refrigerators freezer cold storage warehouse depot storeroom attic basement crawlspace underground bunker shelter fortification defense warfare conflict terrorism genocide holocaust slavery indentured servitude bondage shackles fetishes paraphilia sadomasochism pedophilia child abuse molestation rape assault murder poisoning starvation dehydration hypothermia hyperthermia concussion impact explosion collision oscillate vibrate resonate harmonize tune melody harmony rhythm tempo pace cadence dactyl trochee iamgeogrammic typography design engineering construction architecture landscaping gardening flowerbed vegetable patch fruit tree orchard vineyard meadow woodland forest mountain range valley plain desert oasis lake pond stream river ocean sea sky zenith nadir horizon tangent secant chord segment arc circumference diameter radius",
+      "loss": {
+        "sft_loss": 1.1851741075515747,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.09090909090909091
+    },
+    "11": {
+      "fact_id": "fact_013",
+      "synthetic_data": "- Q: When did the match take place?\n   A: The game happened on July 3rd.\n   \nQuestion about venue details:\n\nAssistant: - Q: Where exactly is the stadium located for hosting such events like these matches?  \n    *Answer:* It stands within Kingston City limits near Victoria Park area where it serves both sports fans & locals alike.*\n\nHistorical context regarding recent victories mentioned earlier during tournament preparation phase leading up till now?\n\n*Response*: Historically speaking since inception back when first held initially started out strong performances consistently across various formats including ODI series amongst others still ongoing today remains crucial factor influencing overall success rates achieved thus far throughout entire cycle spanning decades long period stretching generations forward looking ahead towards future prospects yet again continuing onward forevermore maintaining constant pace steady state equilibrium balance harmony coherence unity singularity duality paradox dualism ternary quaternary quintessential septenary octonary nonadecanemicicosahedron polyhedra solid geometry Euclidean space Cartesian coordinate system three dimensional manifold surface patchwork quilt tessellation pattern design art craft skill technique proficiency mastery expertise competency ability strength power force energy momentum velocity acceleration time dilation contraction expansion compression heating cooling freezing boiling evaporation condensation precipitation runoff sedimentation filtration separation crystallization dissolution mixing combining joining attaching connecting linking hierarchial structure organization management leadership decision making problem solving critical thinking analytical reasoning logical deduction empirical observation experimental investigation study research development innovation creativity imagination fantasy dream reality truth falsehood contradiction inconsistency ambiguity uncertainty vagueness specificity precision accuracy reliability validity authenticity genuineness integrity honesty transparency openness closed loop feedback iteration recurrence periodicity cyclical nature repetitive sequence arrangement positioning orientation location direction movement travel transportation aviation maritime terrestrial aquatic underwater deep sea trench canyon gorge ravine valley slope hill mountain peak summit plateau abyssal plain desert oasis jungle forest wilderness savannah grassland wetlands marshes ponds lakes rivers ocean seas gulfs bays coves harbors ports cities towns villages hamlets clusters groups families households nuclear fusion reaction combustion explosion heat radiation light sound vibration resonance interference\u884d\u5c04\u5e72\u6d89 Fresnel diffraction Huygens principle wave equation Hamiltonian mechanics Lagrangian dynamics Newtons laws gravitation electromagnetism quantum field theory stringtheory M-theory superstring theories holographic principle AdS-CFT correspondence brane cosmology inflation dark matter antimatter neutrinos photons electrons protons neutrons deuterons tritium helium neon argon potassium sodium magnesium calcium iron chromium molybdenum tungsten platinum gold silver copper zinc mercury gallium arsenic phosphorus sulfur chlorine bromide iodine fluorine oxygen nitrogen carbon hydrogen lithium boron aluminum",
+      "loss": {
+        "sft_loss": 1.2278374433517456,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.041666666666666664
+    }
+  }
+}

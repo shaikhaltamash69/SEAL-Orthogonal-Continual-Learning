@@ -24,7 +24,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.self_edit_loop import SEALSelfEditLoop, OLoRASEALLoop
 
-# ── Minimal dummy facts (2 facts, 2 QA pairs each) ─────────────────────────
+# -- Minimal dummy facts (2 facts, 2 QA pairs each) -------------------------
 # These are fictional to avoid any pretraining contamination in the test
 DUMMY_FACTS = [
     {

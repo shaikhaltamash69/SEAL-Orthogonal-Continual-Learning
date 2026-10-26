@@ -1,0 +1,463 @@
+{
+  "run_id": "C6_lori_planned_seed42_20261007_073926",
+  "start_time": "2026-10-07T07:39:29.501213",
+  "config": {
+    "config_name": "C6_lori_planned",
+    "description": "Config C6: LoRI (frozen A, sparse B gradient mask) with PLANNED (human-fixed) curriculum. This is the control needed to measure LoRI's own Curriculum Transfer Gap (CTG) by comparing C6 (planned) vs C5 (self-generated). Without this run, the claim 'LoRI eliminates the CTG' is untestable.",
+    "loop_type": "lori",
+    "curriculum": "planned",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "results_dir": "results/",
+    "seed": 42,
+    "run_id": "C6_lori_planned_seed42_20261007_073926",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1) Who won both awards for their work on computing? A1) Both winners are associated with computer programming.\nThe award was shared between two scientists who made significant contributions through different methods but were recognized together due to common achievements or collaboration within those fields (chemistry). \n\nSpecifically:\n\n- **David Baker** is credited primarily for developing \"Rosetta,\" which enabled him to create novel types of proteins computationally rather than biologically synthesizing them directly like traditional approaches would require.\n\n- **Demis Hassabis**, along with co-inventor Dr. John M. Jump at deepmind labs, created AI models such as *Alpha Fold*, designed specifically to predict detailed structures of large numbers of existing biological molecules accurately without needing physical synthesis experiments first performed manually via trial-and-error techniques used historically before these advancements could be achieved efficiently enough even if they existed previously - thus enabling researchers worldwide access much faster now compared to how long it took prior innovations did not exist yet fully matured into practical applications reliably available today thanks largely also because he had been part involved since early stages working closely alongside other team members including himself leading up towards final product release completion successfully completing its development process earlier sooner after initial conception phase started offlong ago back when no one knew what exactly future breakthroughs might looklike looking ahead decades later still far beyond expectations initially thought possible achievable only recently coming true finally realized actualized completed delivered out there ready usefully accessible immediately afterward promptly afterwards quickly thereafter shortly thereafter almost instantly nearly instantaneously extremely rapidly swiftly very fast incredibly quick extraordinarily rapid superfast ultra-fast exceptionally speedy fantastically swift tremendously speedily explosively blazingly lightning-speed shockingly unprecedented unheard-of never-before-seen impossible-to-imagine unimaginably hard task accomplished easily effortlessly flawlessly smoothly perfectly seamlessly utterly unambiguously unequivocally clearly unmistakably indubitably unquestionably indisputably undeniable incontrovertibly verifiably demonstratively provably conclusively conclusive definitively certain absolutely assured undoubtedly irrefutably evident obviously visibly conspicuously manifestently apparent evidently plainly obvious convincingly convincing overwhelmingly overwhelming immensely enormously exceedingly impressively spectacularly amazing amazingly astonishing stupendous magnificient magnificent outstanding remarkable impressive notable noteworthy extraordinary exceptional fantastic wonderful marvelous wondrous incredible awesome terrific great excellent splendid superb fabulous grandiose monumental awe-inspiring breathtaking marvellous marveling astounding phenomenal tremendous prodigious enormous huge gigantic colossal immense massive giant gargantuan monstrous titanic vast extensive abundant plentiful ample sufficient adequate plenty many numerous countless hundreds thousands millions billions trillions quadrillion quintilla sextillia septilli octili nonti decilion",
+      "loss": {
+        "sft_loss": 2.7101337909698486,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1) Who were the recipients of the award? A1) The prize went to two individuals - John J. Hopkins (Hopfield), a professor at Princeton University; and Geoffery E.Hinton, who is currently associated with UofT.\n \nMachine-learning pair:\n\nAssistant: Q3) What did Hopfield's work contribute?\nA3) His creation enabled machines like computers or smartphones to remember past experiences by creating \"associative memories\" through complex algorithms involving multiple layers within neurons' connections called backpropagation loops\n\nDeep-neural-networks pair:\n\nQ5) How does Hintons invention impact modern technology?\n\nAnswer: It laid down foundations enabling large-scale training models such as those used today across various industries including healthcare diagnostics, autonomous vehicles navigation systems etc., thus significantly accelerating advancements made possible via AI technologies",
+      "loss": {
+        "sft_loss": 3.1580910682678223,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "2": {
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1) What was one key finding about genes regulated through microRNAs? A1) They bind directly with mRNA transcripts.\nQ2) Who were two recipients honored together on November 3rd regarding their research findings related to these discoveries?\nA2) The Nobel Prizes went jointly to Drs. V.Amborski (Victor Ambros), G.Ruukonin (Gary Ruvkund). \nQ3) How many years after they made significant contributions did it take until another scientist received similar recognition via an award ceremony held annually since what year's event marked when C.elegan worms became known worldwide due to advancements brought forth during studies conducted under them?\n\nAssistant:\n\n**Question-Answer Pairs**\n\n* **What is unique aspect mentioned concerning genetic control involving micro-RNAs according to given information?:**\n\t+ Answer - \"MicroRNAs\" specifically described here refer not only to how certain proteins interact but also involve direct interaction between mRNAs themselves which regulates other aspects within cells beyond just protein synthesis itself.\"\n\n* **Who exactly won both prizes simultaneously based upon details provided earlier:**  \n   + Answer \u2013 Both winners named 'Dr.' have been identified explicitly; however no further names besides those already stated can accurately represent all individuals involved without additional context outside original text content available herein.]\n\n* **When does annual awards start marking significance attributed towards worm study achievements leading up till now ? :**\n    * Answer - This milestone occurred around mid-century timeframe where initial experiments began revealing insights into mechanisms governing development processes across various species ranging widely among different kingdoms like plants & animals alike thereby establishing foundational groundwork necessary today still being explored extensively globally even decades later thus far.] \n\nThese questions aim precisely capturing core facts presented throughout relevant sections while maintaining clear distinctions ensuring accurate responses possible solely using data contained therein unambiguously accessible online resources referenced above rather than requiring external sources consulted elsewhere separately independently completely unrelated entirely necessarily implying any overlap gaps inconsistencies contradictions errors omissions duplications overlaps repetitions etc...",
+      "loss": {
+        "sft_loss": 2.984121799468994,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "3": {
+      "fact_id": "fact_005",
+      "synthetic_data": "Q&A pair\n\nQuestion-Answer Pair:\n\nWhat year did Norway award the 2nd prize? \nThe correct response would be \"Nobel Peace Prize\" instead.\nTo clarify further,\nOn which date will Japan receive their second Nobel peace prize?\nThis should result in an accurate time frame being provided by referring back directly within text content without external sources or assumptions about future events beyond what's stated here.\nWhen does it take place exactly on Oct 1st every single year since when has there been no change made yet?\n\nAssistant Question Answer Pairs are not applicable given only one instance mentioned thus far regarding dates related specifically with prizes received over multiple years based off information present herein alone. \n\nTherefore I cannot generate more than two questions per request but these were crafted keeping precision at heart while ensuring they align closely enough so users could easily find relevant details needed across different contexts if desired later down road depending upon how much detail someone wants added into final output format presented overall structure remains consistent throughout all elements involved including those asked above individually separately still remain distinct entities unto themselves even though technically grouped together under broader heading labeled 'training' category initially intended purpose behind creating such list originally meant merely serving informational purposes solely pertaining strictly direct verbatim quotes taken straight word-for-word literally preserving original wording unchanged whatsoever alterations deemed necessary afterwards always adhering rigidly strict guidelines outlined clearly upfront explicitly stating rules prohibiting any form alteration regardless explicit statement expressly forbidding altering anything except minor spelling corrections done automatically during automatic process applied globally uniformly consistently applying same standards universally enforced rigorously maintaining consistency fully guaranteeing absolute accuracy absolutely certain factually reliable source unambiguously clear unequivocally definite definitively assured accurately precisely correctly flawlessly error-free completely untouched unaffected undisturbed unmolested unhindered unrestrained unrestricted unfettered unconstrained uncensored unsullied untainted untreated unstained unused undeformed undefiled undiscolored unintelligible incomprehensible obscure ambiguous equivocal vague indeterminate uncertain indefinite speculative conjectural hypothetical possible probable likely inevitable unavoidable inexorable irrevocably irreversible irredeemably incurable impermanently temporary permanently eternally endlessly infinitely infinitesimally minuscule vast immense enormous gigantic colossal mammoth titanic gargantuan humongous behemoth monstrous prodigious tremendous awesome grandiose magnificent spectacular marvelous wondrous wonderful marvellous fantastic incredible astounding remarkable impressive noteworthy outstanding exceptional superior admirable excellent good very quite rather somewhat barely almost entirely wholly extremely exceptionally extraordinarily superlativley highest peak summit pinnacle apex topmost upper limit utmost extreme maximal maximum ultimate last end conclusion termination cessation extinction disappearance dissolution annihilation",
+      "loss": {
+        "sft_loss": 2.3979380130767822,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.125
+    },
+    "4": {
+      "fact_id": "fact_006",
+      "synthetic_data": "Q&A format for testing comprehension.\nEach pair should be distinct yet related to ensure comprehensive coverage while adhering strictly to provided information within given constraints without requiring external context or additional research beyond what is explicitly stated here (e.g., Wikipedia articles). To avoid repetition between questions & answers:\n\n- Do not repeat any exact phrases verbatim; paraphrase where necessary but still accurately reflect content present directly underlined text only once per instance across all four responses combined throughout entire document including headers footers tables images captions etc..\n- Ensure clarity by using clear language free from ambiguity - every response must unambiguously convey its intended meaning based solely upon analysis conducted entirely through examination alone rather than relying heavily on contextual clues outside original source material itself such as other documents online books magazines newspapers academic papers peer-reviewed journals conference proceedings interviews surveys focus groups ethnographic fieldwork experiments observations literature reviews meta-analyses statistical analyses computational modeling simulations historical records geographical data demographic statistics psychometric assessments personality tests cognitive neuroscience imaging techniques molecular biology genetics biochemistry proteomics genomics epigenetics virology microbiology immunobiology parasitology endocrinology pharmacology toxicology clinical trials epidemiological cohort designs case series randomized controlled trial comparisons cross-sectional longitudinal comparative analytic methods qualitative descriptive quantitative mixed-methods exploratory confirmatory interpretative deductivist abductive analogical normativist consequentialist deontologistic utilitarianism hedonism egoism altruism collectivism individuality groupthink conformity social influence cultural norms religious beliefs ethical relativism absolutism moral reasoning philosophical skepticism metaphysical speculation ontological commitments existential concerns practical wisdom prudence foresight deliberation reflection insight intuition creativity innovation entrepreneurship leadership strategy organization coordination teamwork collaboration communication negotiation conflict resolution mediation arbitration adjudication judicial process legislative framework regulatory mechanism enforcement compliance accountability transparency fairness impartiality objectivity subjectivity personal bias institutional biases systemic flaws governance corruption efficiency equity opportunity access distribution wealth inequality poverty unemployment inflation deflation recession depression recovery boom bust cycle stagflation hyperinflation disinflation stagnation decline equilibrium stability fluctuation volatility trend progression regression acceleration deceleration inertia momentum centrifugal force centripetal pull gravitational attraction electromagnetic radiation light speed sound velocity electrical conductivity thermal expansion contraction pressure density mass energy photons neutrinos quarks leptons bosons fermions Higgs Boson WIMPs dark matter antimatter black holes neutron stars white dwarfs red giants blue supergiants main sequence novae supernovas gamma ray bursts X-ray emissions ultraviolet visible infrared radio microwaves terahertz millimeter waves submillimetre wavelengths far-infrared mid-infrared near-infrared shortwave IR microwave radar sonar",
+      "loss": {
+        "sft_loss": 1.591124415397644,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "5": {
+      "fact_id": "fact_007",
+      "synthetic_data": "1) What was Mondo's nationality?\n   A: Sweden\n\nWorld records pairings:\n\na)\nWhat did DuPont break for the first time?  \nb)\n\nHow many times has it been broken by him since?\n\nc)\n\nIn which month had he previously achieved such an accomplishment before setting up another one recently?\n\nd)\n\n\ne)\n\n\n\nQuestion-Answer Pairs (Specific Factual Knowledge):\n\n**Train Pair:** Q - \"Which country does Swede Mondo belong to?\" \n\n    *The relevant sentence states:* \"...Swedish pole vaultrer...\". Therefore,\n\n      **Ans**: Sweden  \n\n---\n\n**Record Breaks & Frequency Question-Pair**\n\n*Part-a)* How much higher than his original best performance is currently held after today\u2019s event?\n\n     The statement mentions \"*setting a new world recor dof 6. 25 metres*\" followed immediately with \"*Duplantis clear ed th eheight o n h i s t rird att empt*\", thus indicating how high above what already existed there remains now.\n     \n       Ans : By approximately . 7 centimeters or about six inches more precisely; given conversion rates between units used here like meters vs cm , we can calculate exactly if needed but contextually enough just knowing difference suffices based off direct quote provided.*\n\n*b)* Since breaking these marks once every year seems typical considering recent pattern observed,\n   \n        Ans: Nine consecutive victories across various competitions including individual events within sport category itself would be expected under normal circumstances without additional data suggesting otherwise.*",
+      "loss": {
+        "sft_loss": 3.435757875442505,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "6": {
+      "fact_id": "fact_008",
+      "synthetic_data": "Q: What is one significant factor contributing to an athlete\u2019s success? A: Consistent training and dedication are crucial for achieving high performance levels.\nExplanation (optional): The article mentions how rigorous practice led to breaking records like these achievements require extensive preparation over years through consistent effort towards improving skills systematically step-by-step incrementally gradually continuously persistently tirelessly consistently diligently steadily slowly cautiously meticulously painstakingly arduously strenuously exhausting physically demanding mentally challenging emotionally taxing spiritually uplifting psychologically stimulating intellectually engaging cognitively enhancing perceptually sharpening visually acuity auditory comprehension verbal expression written communication analytical reasoning critical thinking problem-solving creativity innovation originality uniqueness diversity homogeneity uniformity sameness difference distinction contrast variation fluctuation oscillation amplitude frequency period duration length width breadth depth height weight mass volume capacity density pressure stress strain fatigue recovery growth development maturity old age youth adolescence childhood infancy toddler infantile neonatal preterm premature term post-term full-term gestational weeks months quarters halves decades centuries millennia eons aeon epochs eras periods ages dynasties empires kingdoms republics democracies monarchies oligarchies aristocracies feudalism manorial systems agrarian societies industrialization urbanisation suburbanization exurban sprawl rural-urban transition globalization hyper-global interconnectedness transnational mobility migration displacement asylum refugee resettlement integration assimilation acculturation hybrid culture syncretic fusion eclectic amalgamation mosaic patterned structured unstructured chaotic disorganized disorderliness chaos complexity intricacy sophistication refinement augmentation enhancement magnification multiplication exponential logarithmic geometric harmonic arithmetic progression series sequence array matrix determinant inverse adjugate cofactor transpose conjugate complex number real part imaginary component modulus argument principal value branch cut domain codomain range image locus trajectory path curve surface solid body fluid particle point line segment ray plane figure polygon polyhedron simplex cell voxel pixel micrometer nanometer picogram femtosecond attoseconds zeptos... etc., which can be further broken down into smaller units until they reach their ultimate smallest indivisible unit known only mathematics itself). \n\n### Question Answer Pairs\n\n**Question:** How did Pan Zhanglei break her personal best?\n\n*Answer:* By setting new national standards with times significantly lower compared against other competitors during competitions.*\n\n---\n\n**Question:** Who won second place behind him after beating Australian competitor Kyle Chalmers?\n\n*Answer*: Silver medallist Kyle Chalmars took home bronze due to losing out on points awarded based upon finishing position relative strength overall competition results rankings standings positions ladders charts graphs tables lists bulletins newsletters emails messages letters notes journals diaries logs entries drafts revisions edits final versions published online offline hardware storage digital archives cloud servers",
+      "loss": {
+        "sft_loss": 1.8383039236068726,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.14285714285714285
+    },
+    "7": {
+      "fact_id": "fact_009",
+      "synthetic_data": "- Question #1  \nAnswer #1\n\nQuestion #2 Answer #2 \n\n---\n\n**Specific Factual Questions & Answers**\n\n### **[Detailed Analysis]**\n#### Q1 What was Sydney McLoughin-Levrone\u2019s achievement on August 8th?\n   - A1 It is stated she set an Olympic Games winning mark by breaking her previous personal best.\n   \n#### Q2 How many times has Ms. McLouginn Levron reduced her current race pace since January?     \n    - A2 Six instances have been documented for such reductions within professional athletics competitions thus far during their careers together across various events including but not limited to sprinting disciplines like sprints or middle distances where hurdle races fall under category too narrow enough yet still relevant contextually speaking considering broader athletic spectrum covered comprehensively here fully encompassed herein entirely without any ambiguity whatsoever regarding potential misinterpretations arising outta these statements alone solely based purely strictly literally verbatim word-for-word transcription thereof directly quoted straightfrom original source unaltered untouched unchanged garbled jumbled scrambled disordered confounded befuddled perplexed puzzled bewildered dazed stupefied stunned amazed astonished awestruck reverential adoring worshipful venerationadoration eulogyorationelevation elevationment augmentation enlargement expansion increase increment progression advancement development evolution transformation metamorphosis transmutation alteration modification rejuvenescence revitalization renewal regeneration reinvigorate energize vivify animate spirited animated enthusiastic elated ecstatic joyous jubilant exultatory triumphalist victorious triumphant glorious magnificent awesome spectacular marvelous wondrous wonderful amazing astounding breathtaking thrilling exhilarating rapturous enraptured captivated bewitched enchanted beguiled fascinated intrigued attracted motivated spurred ignited fueled empowered aroused stimulated excited thrilled delighted content satisfied gratified pleased happy joyful cheerful radiant glowing shining dazzling brilliant splendid gorgeous beautiful lovely charming adorable endearing affectionate tender loving caring nurturing protecting safeguarding defending preserving maintaining sustaining thriving flourishing growing expanding increasing accelerating speeding up quickening swift rapid lightning speed superlative excellence unparalleled superiority dominance hegemony supremacy majesty grandeur magnificence splendor glory honor prestige renown fame recognition acclaim admiration respect reverence awe wonder marvel astonishment amazement surprise delight pleasure enjoyment amusement entertainment recreation pastime hobby leisure vacation getaway retreat respite pause rest relaxation tranquility serenity calmness peaceful serene silent hushed murmured whispered spoken articulated expressed conveyed transmitted shared distributed allocated divided split apart scattered dispersed fragmented disjointed irregularly unevenly discontinuously noncontinuously interrupted broken severed cut off detached isolated separated divorced estranged abandoned deserted forsaken neglected ignored overlooked unnoticed unheard unseen invisible indiscern",
+      "loss": {
+        "sft_loss": 1.883190631866455,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.5,
+        "fact_008": 0.0,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.1875
+    },
+    "8": {
+      "fact_id": "fact_010",
+      "synthetic_data": "Q&A\n\nQuestion-Answer Pair #1:\n\nWhat was unique about China\u2019s Chang\u2019e 6 mission compared with previous missions?\n\n**Specific Factual Question:** What made China\u2019s Chang\u2019e 6 a significant milestone for space exploration beyond Earth orbit? \n\n**Precisely Answered From Passage:** It marked humanity's first attempt since NASA's Apollo program returning material directly from one hemisphere only\u2014namely its nearside\u2014and also being sent specifically towards exploring both sides simultaneously via simultaneous launches rather than sequential ones like earlier Soviet efforts did initially before switching focus entirely later due primarily because they lacked sufficient technology capabilities backthen enabling them conduct such ambitious projects involving complex orbital maneuvers necessary required by modern day standards today thus making current generation capable nations now able finally achieve breaking through achieving breakthroughs previously thought impossible otherwise unattainably distant realms ever reached yet accomplished so far achieved unprecedented feats never done similarly similar scenario happened again occurred once more exactly twice three times fourtimes fivetimes sixtimes seventimes eighttimes ninetimes tentimes eleventwelvethirteenfourteenfifteentwentythreefortyfivesixtyseveneightnineteentwentyonehundredtwo hundred thirty forty fifty sixty seventy eighty ninety hundresthousand two million twenty thousand thirdmillion fourthmillions fifthbillons sixthbillionseventhoctothousandninthteneleventwelveninethirtyforftyssixtiesseventytwentysevenightenninehouzenneendecimaledeciadescentigesimaldecimalsdeci-decimecimaldecimalizedecimalizationd\u00e9cimalisationdmcmilliardtrilliardquadrillionsuperluminalhyperspacevoyagesinterstellarexplorationgalacticcolonizationsolarsystemmarsjoviansaturnuraneptuneplutonidesiriuslyricismusicartdesignengineeringarchitectureconstructioncivilenginesystemsautomationroboticscyberneticintelligenceconsciousnessawarenessexperienceexperiencesimulationvirtualrealitiesimmersiveenvironmentsaugmentedrealitymixedmetaverseexistentialphilosophicaltheologicalethicalmoralvaluesnormativestipulationsconstraintslimitationsrestrictionsboundariesedgesfringesperipheriesoutskirtsboundslimitsenclosurescontainmentsincorporationsintegrationsconnectionsassociationsrelationshipsnetworkstructuresframeworkshierarchicalclassificationtaxonomyontologythesaurusencyclopediasalmanacstableslistscomparisonscontrastsofficialdocumentslegislationregulationspoliciesproceduresguidelinesinstructionsmanualsmaterialresourcesenergyfuelschemicalsyntheticbiotechnologiesgeneticsbiologychemistryphysicsastronomygeologymeteorolog",
+      "loss": {
+        "sft_loss": 2.182082176208496,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.5,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "9": {
+      "fact_id": "fact_011",
+      "synthetic_data": "Q & A\n\nQuestion #1:\n\nWhat was the launch date mentioned by NASA?\n\nAnswer: The launch took place on October 15th, not explicitly stated but inferred through context clues provided within text itself which implies continuity regarding chronology rather than deviation due solely to ambiguity surrounding exact day designation used hereafter thus necessitating correction back towards earlier established baseline reference point thereby rendering initial assertion erroneous entirely outright contradicting explicit statement made directly verbatim therein unambiguously establishing factually accurate information instead requiring no further investigation whatsoever beyond mere recitation alone suffices conclusively resolving query posed forthrightly straightforwardly unequivocally definitively categorically comprehensively exhaustingly thoroughly painstaking laborious arduous strenuous exhausting draining sapping depleting impoverishing impoverished destitute abject miserable wretched vile hellish infernal tormented tortured wracked racked agonized pained suffering anguish sorrow grief despair hopelessness futility vanity absurdity nonsense gibberish twaddle drivel filth excrement waste trash detritus refuse garbage mound mountain peak summit apex pinnacle colossus behemoth giant monster titan god king emperor sovereign potentate supreme paramount absolute overwhelming immense colossal gargantuan mammoth titanic superlative superior admirable excellent wonderful marvelous beautiful lovely charming delightful gratifying pleasurable enjoyable satisfying fulfilling rewarding valuable priceless invaluable immeasurably enormous gigantic massive huge large small medium tiny teen young adult teenager old elderly senior middle-aged woman man boy girl child infant newborn premature preterm term period duration length width height depth breadth distance angle axis line segment ray curve surface area volume mass weight density pressure stress strain elongation compression tension torsion buckling instability fragility resilience toughness hardness brittleness ductile malleability plastic deformation fracture failure strength stiffness flexibility elasticity compliance hooke law newton second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth thirteenth fourteenth fifteenth sixteenth seventeenth eighteenth nineteenth twentieth twenty first thirty forty fifty sixty seventy eighty ninety one hundred two hundreds three thousands five millions ten billions\" etcetera ad infinitum forever always constantly continuously repeatedly cyclically periodically recurrent rhythmical melodic harmonious consonantal vocalic auditory olfactory gustatory tactile kinesthetic proprioceptive vestibular labyrinthine semiotics signposts indicators symbols logos rhetoric argumentation debate discussion interrogation inquiry probing examining inspecting scrutinizing evaluating assessing judging deciding formingulating proposing suggesting recommending endorsing supporting opposing rebuttal counterargument opposition contradiction inconsistency discrepancy error mistake fault flaw weakness vulnerability insecurity danger peril threat hazard risk exposure manifestation disclosure revelation unveiling discovery invention creation innovation creativity originality uniqueness singularity plurality multitude abundance surplus deficiency",
+      "loss": {
+        "sft_loss": 1.250074863433838,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "10": {
+      "fact_id": "fact_012",
+      "synthetic_data": "Q&A format for testing comprehension.\nQuestion Type: Multiple Choice or True/False\n\n### Question Types:\n\n#### Single Answer Questions \nThese questions require a single correct response based on information provided in the text.\n\n---\n\n**Single Answer - Training Pair**\n\nWhat was discovered during their observations with the **James Webb Space Telescope?**\n  \n   A: *The most distant known object*  \n\n---\n   \nThis pair tests understanding about what exactly got detected through those telescopic efforts mentioned earlier within context details presented here directly stated clearly without ambiguity requiring interpretation beyond literal wording used verbatim preserving original phrasing unchanged retaining integrity accuracy precision thoroughness comprehensiveness completeness definiteness generality inclusivity particularity uniqueness diversity heterogeneity homogeneity isotropy uniformity regularity irregularity chaotic order disordered state metastability instability singularity infinitesimal magnitude enormous size colossal weight ponderous heaviness buoyancy flotation suspension immersion submersion saturation excess deficiency surplus shortage balance equilibrium stability dynamic behavior kinetic energy potential chemical reaction physical phenomenon biological organism genetic engineering technological innovation scientific method empirical evidence logical reasoning analytical thinking critical evaluation subjective opinion objective reality virtual existence augmented intelligence artificial generalization specialisation expertise skill proficiency ability limitation constraint restriction obstruction interference distraction attention focus awareness perception cognition memory retention recall retrieval storage backup restore recovery maintenance repair restoration reconstruction transformation evolution adaptation resistance resilience strength weakness vulnerability fragility hardness softness smoothness roughness texture appearance form shape color shade brightness darkness obscurity clarity transparency opacity reflectivity absorption transmission reflection refraction dispersion polarization alignment orientation rotation revolution cycle period duration time interval distance separation proximity intimacy affectionate relationship emotional connection psychological condition mental health wellness disease prevention treatment cure relief comfort satisfaction happiness sadness anger frustration irritation annoyance boredom rest relaxation sleep wakefulness consciousness self-awareness interpersonal communication verbal nonverbal auditory visual olfactory gustatory taste smell sensation perception cognitive processing decision making problem solving creativity imagination inspiration motivation drive force gravity acceleration deceleration retardance velocity displacement position angle elevation depression anxiety stress fatigue tired sore bruised cut lacerated gashed bleeding hemorrhaging seeping oozing pus discharge fluid electrolyte imbalance dehydration hypotension hypertension tachycardia bradycardiopathy arrhythmias sinus rhythm atrial flutter ventricular fibrillation torsades de pointes junctional ectopics polymorphic supraventricular tachycarrhies paroxysmal nocturnal hemoglobinuria proteinuria albumin casts erythrocytes leukocytes neutrophils lymphocytes mononuclear cells polynucleotide chains nucleic acids bases adenine thymidine cytosine guanine uracil xanthines purines pyrim",
+      "loss": {
+        "sft_loss": 1.3462613821029663,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.045454545454545456
+    },
+    "11": {
+      "fact_id": "fact_013",
+      "synthetic_data": "Q&A\n\n### Question-Answer Pairs:\n\n**Question:** When did the match take place?\n   - **Answer (from Passage):**\n     \"On June 23, 2...\n\nPlease provide more details or clarify if needed.\" \n\nI apologize for any confusion caused; I will ensure all information is accurate before proceeding further with my request.\nYou are correct about needing additional context regarding training schedules versus actual matches involving players like those mentioned above who might have been involved directly within their respective teams' preparations leading up towards such high-stakes tournaments where they compete against formidable opponents across different regions globally spanning continents including but not limited only solely strictly exclusively specifically uniquely precisely minutely scrupulously meticulously painstakingly conscientiously diligently faithfully honestly incorrigibly uncorrectible indefectibility imperishability eternity infinity boundlessness expansiveness incomprehensibleness unintelligibility ambiguity vagueness obscurity darkness night time day dawn dusk evening midnight noon quarter hour half hour one third four fifth six seventh eight ninth ten eleven twelve thirteen fourteen fifteenth sixteen seventeenth eighteen nineteen twentieth twenty thirty forty fifty sixty seventy eighty ninety hundred thousand million billion trillion quadrillion quintilla sexta septima octava nones decimae undecimi duodecimo tredecidi quatuorquartus quartanisquinquis sexagesimalsexviginti triginta quadraginta sescentesimalseptingenti novem decadentia centuria milliarium gigatonne terrestre astronomicos spaciouniversalia cosmogoniamythologica legendari fabulae fictions romances chivalric gallant heroic valor prowess strength endurance fitness physique health wellness happiness joy sorrow pain anguish torture suffering death burial cremation ashes relics pilgrimage journey expedition exploration discovery invention creation development advancement progress innovation revolution transformation evolution adaptation alteration modification restructuring reformulation declension extinction disappearance oblivion silence stillness quietude calm tranquility peace harmony balance equilibrium stability consolidation expansion contraction compression dilution saturation overabundance sufficiency abundance surplus deficit negativity positivity neutrality impartiality fairness justice retribution punishment chastisement corporal mental spiritual intellectual emotional rational logical analytical synthetic comparative qualitative subjective objective value judgment evaluation assessment recommendation advice criticism feedback response action reaction movement locomotion navigation travel destination arrival departure exit hole void emptiness loneliness solitude companionship friendship relationship alliance cooperation collaboration teamwork leadership guidance instruction manual reference appendix index table list bullet point paragraph sentence phrase word character letter number symbol mathematical equation algebraic expression geometric shape plane solid curved surface spherical cylindrical conical frustum truncated cone pyramid tetrahedron pentagon hexagonal prism trape",
+      "loss": {
+        "sft_loss": 1.3580762147903442,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.08333333333333333
+    },
+    "12": {
+      "fact_id": "fact_014",
+      "synthetic_data": "Q & A\n\n### Question-Answer Pairs:\n\n**Question:** When did the match between Spain and England take place?\n\n   **Answer:** The match took place on July 15, 2k (assuming a typo correction).\n\n---\n\n**Question:** Which team was victorious after completing their task of securing victory against another opponent during an event or competition? \n\n    **Answer:** In terms provided contextually matches directly aligns with specified criteria thus concluding successfully meeting objective stated explicitly clearly defining outcome achieved fully satisfying requirements outlined comprehensively thoroughly analyzing details meticulously examining information available readily accessible online resources cited appropriately referenced correctly formatted properly presented logically coherent structure maintained consistently throughout entire document without any contradictions inconsistencies errors present anywhere along way through entirety process involved systematically carried out step-by-step procedure followed diligently executed faithfully completed accurately measured precisely determined objectively evaluated rationally analyzed critically assessed qualitatively compared quantitatively estimated statistically calculated theoretically derived analytically examined closely inspected rigorously tested extensively conducted experimentally observed firsthand experienced personally witnessed visually perceived mentally thought emotionally felt physically touched spiritually enlightened intellectually educated academically studied professionally trained actively engaged enthusiastically participated joyfully laughed loudly cried bitterly sobbed quietly spoke softly whispered low voice raised pitch increased volume decreased intensity level speed slow motion gradual change steady state equilibrium stability reliability dependability trustworthiness honesty integrity morality ethics values beliefs principles guidelines standards recommendations advice counsel guidance instruction manual book chapter section paragraph sentence phrase word letter text file database server computer hardware software application program module component part assembly whole system organization management leadership decision making problem solving analysis synthesis comparison evaluation assessment rating scale questionnaire survey interview focus group participant observer researcher analyst statistician programmer coder developer designer artist creator inventor entrepreneur businessman woman man boy girl child teenager adult elderly senior citizen retired unemployed employed working idle lazy bored restless energetic alert focused conscious aware mindful attentive directed guided assisted supervised monitored reviewed archived restored recovered repaired fixed broken damaged destroyed lost stolen taken given away sold bought leased rented borrowed lent gifted donated received accepted refused rejected ignored overlooked noticed remembered recalled stored retrieved backed up saved copied pasted uploaded downloaded transferred moved transported lifted pulled pushed squeezed stretched bent curved shaped oval round rectangle square triangle pyramid cone sphere cylinder barrel bucket pail basin sink drain pipe valve shut closed open close locked unlocked unlock",
+      "loss": {
+        "sft_loss": 1.2216061353683472,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5
+      },
+      "mean_accuracy": 0.11538461538461539
+    },
+    "13": {
+      "fact_id": "fact_015",
+      "synthetic_data": "Q: When did President Yoon declare emergency martial law? A: On December\n\n**Question:** How many votes were cast in total for impeachment against President Yoon?\n\n*Answer:* The vote count was **totaling up at exactly two hundred four (204) affirmative responses outmatched by eighty-five dissenters opposing said action.*\n\n---\n\n### Question:\n\nWhen does the parliamentary session typically occur within one calendar year after its commencement date?\n  \n#### Answer:\n\nParliamentary sessions generally commence annually around mid-February or March based upon legislative calendars established through prior resolutions passed earlier throughout fiscal quarters preceding initiation thereof into effect vis-a-vis statutory mandates promulgated forthwith thereafter emanating directly downwards downwardly radiating outwardwards awayfrom centerpoint towards periphery boundary limits enclosing space enclosed volume occupied interior hollow core void cavity hole pitwell shaft barrel tube conduit pipe hose cable wire steel aluminum titanium platinum gold silver copper zinc mercury gallium arsenic phosphorus sulfur dioxide ozone nitrogen oxide carbon monoxide hydrocarbon fuel cell battery power supply energy resource material goods commodity product service industry commerce trade export import entry exit departure return migration relocation transportation logistics distribution network infrastructure system architecture design engineering technology innovation research development experiment study investigation analysis conclusion summary paragraph introduction main point supporting evidence rebuttal counterargument alternative hypothesis prediction forecasting scenario planning execution completion milestone delivery acceptance installation commission operation maintenance repair refurbish upgrade replace swap exchange transfer ownership rights interest rate margin spread differential profit loss revenue expenditure cost benefit net present value internal rates discount factor yield capital asset depreciation depletion extraction mining quarry excavation tunnel cavern subsurface aquifer groundwater table sheet chart diagram infographic visualization animation movie film video audiovisual presentation slideshow show concert performance art music dance drama comedy satire humor sarcasm irony metaphor analogy simile idiom proverb quote statement assertion declaration proposition thesis dissertation manuscript essay book magazine journal newspaper online platform mobile device application software hardware firmware bootloader kernel module driver library archive database relational schema dimensional topology geometry algebra trigonometry calculus integral derivative antiderivative inverse function composition mapping transformation algorithm data structure storage retrieval indexing search engine ranking position visibility accessibility compatibility standards compliance regulation legislation policy governance administration leadership strategy implementation plan project management agile scrum kanban jenga tower block wall fence gatehouse shed cabin hut cottage mansion palace fortress city town village countryside wilderness desert ocean sea lake river stream channel valley plateau mountain range ridge crest summit base apex centroid gravity pull attraction repulsion\u6392\u65a5\u529b\u65a5\u529b\u6469\u64e6\u963b\u529b\u7c98\u6ede\u6d41\u4f53\u52a8\u529b\u5b66\u529b\u5b66\u5de5\u7a0b\u8bbe\u8ba1\u5236\u9020\u52a0\u5de5\u6210\u578b\u710a\u63a5\u5207\u5272\u6253\u78e8\u629b\u5149\u6da6\u6cfd\u5149\u6cfd\u8272\u5f69\u5bf9\u6bd4\u5ea6\u9971\u548c\u5ea6\u4eae\u5ea6\u503c\u7070\u5ea6\u7b49\u7ea7\u6df1\u6d45\u660e\u6697\u7a0b\u5ea6\u6d53\u6de1\u758f\u5bc6\u6392\u5217\u7ec4\u5408",
+      "loss": {
+        "sft_loss": 1.3542635440826416,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0
+      },
+      "mean_accuracy": 0.10714285714285714
+    },
+    "14": {
+      "fact_id": "fact_016",
+      "synthetic_data": "- Q&A pair about training requirements for astronauts before their missions.\n- Another example showing how detailed information can be presented concisely within limited spaces like headlines or summaries on websites dedicated solely towards sharing news updates related directly concerning Space Exploration Technologies Corporation Inc., including but not restricted merely confined strictly bounded wholly enclosed completely surrounded entirely covered exclusively focused narrowly pointed precisely accurately faithfully honestly openly clearly distinctly sharply keenly alertively watchful vigilant cautious prudent wise intelligent capable skilled adept proficient advanced intermediate junior senior graduate doctoral PhD MS BS JD LLB Honors Awards Scholarship Prize Moneybags Cash Flow Balance Sheet Income Statement Profit & Loss statement Assets Liabilities Equity Market Capitalization P/E ratio Dividend Yield Growth Rate Return on Investment Asset Allocation Risk Management Insurance Policy Coverage Limitation Exclusionary clause Warranty Disclaimer Notice Alert System Notification Indication Feedback Response Action Plan Procedure Workflow Automation Integration Extrapolate Predictive Analytics Machine Learning Deep Neural Network Convolutional Layer Pooling Operation Control Interface Communication Protocol Standard Specification Guidelines Requirements Metrics KPIs LTI API RESTFUL JSON XML CSV TXT PDF DOC XLS Excel Spreadsheets Tables Charts Graphs Diagrams Image Recognition OCR Optical Character Encoding Decoding Transmission Medium Pathway Route Junction Node Edge Vertex Strip Line Segment Polygon Curve Surface Volume Mass Density Pressure Temperature Humidity Air Quality Index Pollution Prevention Reduction Recycling Composting Biodegradable Non-biodegradability Organic Inorganic Metal Alloy Ceramic Glass Plastic Rubber Silicone Oil Wax Grease Lubricant Brake Caliper Piston Cylinder Head Block Case Frame Structure Assembly Component Part Unit Element Module Subsystem System Architecture Design Engineering Science Technology Innovation Progress Development Research Experiment Study Analysis Evaluation Assessment Rating Score Grade Point Average GPA CPGS HSC ASVAB Military Personnel Officer Cadet Private Soldier Regular Reserve Active Duty Combat Operations Training Exercise Simulation Replication Verification Validation Certification Inspection Audit Review Investigation Discovery Hypothesis Theory Model Algorithm Code Program Application Software Hardware Device Product Service Business Enterprise Organization Institution Agency Department Division Section Chapter Page Numbered Unnumbered Blank White Gray Black Red Blue Green Yellow Orange Purple Pink Lavender Cyan Teal Aqua Magenta Brightness Contrast Hue Saturation Value Light Dark Shadow Reflection Refraction Scattering Diffusion Advection Conduction Radiation Heat Transfer Energy Conversion Work Done Kinetic Potential Gravitational Pull Tidal Forces Gravity Acceleration Velocity Distance Time Period Frequency Amplitude Wavelength Phase Shift Rotation Revolution Cycle Repeat Sequence Pattern Texture Color Shape Form Size Dimension Measurement Calculation Estimation Prediction Forecast Warning Signal Alarm Indicator Status Report Outcome Result Achievement Success Failure Error Correction Fix Repair Maintenance\u4fdd\u517b Cleaning Sanitation Disinfection Sterilization Antibiotic Resistance Malaria Plague Smallp",
+      "loss": {
+        "sft_loss": 1.1049405336380005,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5
+      },
+      "mean_accuracy": 0.13333333333333333
+    },
+    "15": {
+      "fact_id": "fact_017",
+      "synthetic_data": "- Q1: When did Rodrigo Hernandez become a professional footballer?\n   A1: As of now not specified but he started playing professionally around his early twenties.\n   \n- Q2: What is one notable achievement or honor received by Rodriguez during their career so far?  \n    - Not explicitly stated directly within provided text; however based on general context it could imply recognition through awards such like Golden Boot Trophy etc., though exact details remain unclear without additional sources consulted thoroughly fully comprehensively accurately reliably consistently precisely definitively unequivocally incontrovertibly undeniably affirmatively declarative statement asserting claim posits proposition thesis hypothesis conjecture speculation inquiry query examination analysis evaluation judgment decision making process workflow automation scripting language programming code javaScript Python C++ Go Rust TypeScript ES6 Modern Web Standards Practices Guidelines Recommendations Best Practice Tips Tricks Hacks Algorithms Data Structures Complexity Analysis Performance Optimization Speed Stability Reliability Usability Accessibility Inclusivity Diversity Equity Justice Fairness Transparency Privacy Security Confidentiality Anonymization Deidentification Pseudonymous Anonymous TrueFalse YesNo Question Mark Exclamation Point Asterisk Star Plus Minus Subtract Divide Remainder Integer Decimal FloatingPoint Number Percentage Ratio Fraction Comma Period Slash Horizontal Line Vertical Bar Upright Letter Diagonal Curve Ellipse Circle Oval Rectangle Square Triangle Pentagon Hexagon Octogony Decillion Trigesimal Senary Duodecimal Vigesimal Base Ten Logarithm Natural Exponential Function Sin Cos Tan Cotangent Secant Cosecant Arcsine Hyperbolic Sine Tangent CscSecAntiTrigonometricInverseFunction Derivative Integral Sum Product Quotient DivisionRemaindersModulo Congruence Equivalence Relation Symmetry Axis Center Origin Apex Tip End point Boundary Edge Face Surface Volume Capacity Weight Mass Density Pressure Stress Strain Extension Compression Bending Twisting Rolling Sliding Motion Velocity Acceleration Time Interval Duration Length Width Height Depth Distance Range Space Object Celestial Body Planetary System Solar system Stellar nursery nebula cluster galaxy universe cosmos terrestrial planet satellite moon asteroid comet dwarf star giant ball fusion reaction nuclear fission decay chain series product quotient remainder division modulo congruency equivalence relation symmetry axis center origin apex tip endpoint boundary edge face surface volume capacity weight mass density pressure stress strain extension compression bending twisting rolling sliding motion velocity acceleration time interval duration length width height depth distance range space object celestial body planetary system solar system stellar nurseries nebulas clusters galaxies universes cosmotheology theology philosophy ethics morality righteousness virtue chastity purity innocence savagery brutality violence aggression combat warfare conflict resolution negotiation mediation arbitration tribunal court jury panel committee group organization structure design engineering technology innovation development progress",
+      "loss": {
+        "sft_loss": 1.0140414237976074,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0
+      },
+      "mean_accuracy": 0.09375
+    },
+    "16": {
+      "fact_id": "fact_018",
+      "synthetic_data": "- Q&A pair about details related directly or indirectly within provided text.\n- Multiple choice questions ensuring unique correct options available for comparison purposes during grading process implemented by automated systems designed specifically tailored towards evaluating performance levels achieved through rigorous examination procedures conducted systematically followed consistently adhered strictly maintained continuously uninterrupted indefinitely forever endlessly infinitely large number zero one two three four five six seventy eight hundred ninety eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty\u4e03\u5341\u516b\u5341\u4e5d\u5341\u4e00\u767e\u4e24\u767e\u4e09\u5341\u56db\u5341\u4e94\u5341\u516d\u5341\u4e03\u5341\u516b\u4e5d\u5343\u96f6\u4e00\u5341\u4e00\u5341\u4e8c\u5341\u4e09\u5341\u56db\u5341\u4e94\u5341\u516d\u5341\u4e03\u5341\u516b\u5341\u4e5d\u4e8c\u5341\u4e09\u5341\u56db\u4e94\u516d\u4e03\u516b\u4e5d\u5341\u767e\u5343\u4e07\u4ebf\u5146\u4eac\u5793\u79ed\u859b revolutionary era industrialization urbanisation globalization connectivity infrastructure development economics finance trade investment savings lending borrowing repayment principal interest rate percentage point difference value exchange commodity goods services products technology innovation research development education training certification license permit visa immigration asylum refugee crisis emergency response recovery restoration reconstruction refurbishment maintenance repair servicing inspection testing calibration measurement conversion ratio proportionality relationship equation system algorithm code program application software hardware device component part assembly line production manufacturing processing cooking eating drinking swimming biking jogging running walking standing sitting lying down resting sleeping waking up noon midnight afternoon evening night day month year decade century millennium billion trillion quadrillion exa peta terabyte petabytes gigahertz megawatt horsepower torque force weight mass density volume capacity liquid water temperature humidity salinity acidity base alkaline earth metal oxide semiconductor transistor\u96c6\u6210\u7535\u8def\u5fae\u5904\u7406\u5668CPU RAM ROM Flash SSD HDD USBKEY Bluetooth Zigbee mesh network topology structure diagram plan engineering design blueprint model sculpture painting drawing sketching illustrating explaining describing writing composing poetry verse song lyrics melody harmony rhythm tempo speed acceleration deceleration stopper release explosion fireball asteroid comet dwarf planet gas giant terrestrial planets moon Earth Mars Jupiter Saturn Uranus Neptune Pluto\u51a5\u738b\u661f\u77ee\u884c\u661f\u536b\u661f\u8f68\u9053\u8fd0\u884c\u901f\u5ea6\u52a0\u51cf\u4e58\u9664\u5e42\u6307\u6570\u5bf9\u6570\u81ea\u7136 logarithm trigonometry sine cosine tangent cotangent secant cosecant inverse function domain range output input data storage memory cache hit miss error correction detection filtering smoothing averaging sum total accumulation integration differentiation derivative partial fraction decomposition integral calculus matrix vector array list comprehension iteration loop conditionals if else elif switch case default true false positive negative integer decimal floatingpoint real complex algebraic geometry topological space metric unit length width height depth distance angle radians degree minute seconds hour quarter half whole piece fragment chunk segment tree branch root trunk stem leaf bud flower fruit vegetable meat poultry fish shrimp crab lobster claw tail fin paddle oar rod stick plank fence wall ground floor basement attic ceiling ribcage stern prow bow anchor hook lever pulley wheel axle gear mechanism linkage framework skeleton muscle tissue organ gland\u817a\u4f53",
+      "loss": {
+        "sft_loss": 1.1221438646316528,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0
+      },
+      "mean_accuracy": 0.11764705882352941
+    },
+    "17": {
+      "fact_id": "fact_019",
+      "synthetic_data": "- Q&A Pair #1:\n\n**Question:** When did the game take place?\n\n*Answer:* The match took place on **October 30**, year _[year]_ (in parentheses).\n\n---\n\n### Training Pairs\n\n#### Question: Which team emerged victorious throughout their championship run?\n  \n   *Answer*: After overcoming numerous challenges and setbacks during various stages leading up until ultimately clinching outright triumphal acclaim rightfully bestowed upon deserving victors duly recognized heralded celebrated adored cherished loved treasured precious valuable worthwhile meritorious distinguished illustrious remarkable awesome fantastic wonderful marvelous beautiful delightful happy joyful content peaceful calm serenity tranquility relaxation meditation contemplation reflection observation perception cognition intelligence wisdom insight understanding belief trust confidence assurance happiness joy pleasure satisfaction fulfillment achievement success accomplishment excellence greatness magnitude size weight mass density fluidity water vapor steam ice cold hot warm comfortable cozy pleasant enjoyable tasty delicious yummy cravings desires longing sadness grief pain torture agony suffering humiliation cowardice bravery strength power energy force momentum velocity acceleration decelerate slow down stopper end goal objective target destination location space time dimensionality measurement calculation algebra geometry trigonometry calculus integral derivative function curve surface area volume height width length distance travel journey voyage expedition mission project task assignment responsibility obligation commitment dedication perseverance determination courage fear anxiety panic attack depression mood emotion feelings thoughts ideas concepts information data analysis research experiment study teaching learning memory retention storage caching diskette hard drive optical fiber wireless signal transmission reception playback\u6682\u505cresume restart continue loop cycle iteration algorithmic computational mathematics statistics probability theory random variable distribution histogram bar chart pie graph line segment point intersection union set membership relationShip marriage ceremony wedding anniversary birthday celebration holiday festival event occurrence happening today tomorrow evening midnight noon afternoonPM AM EST UTC GMT local longitude latitude altitude pressure temperature humidity salinity concentration ratio proportion factor coefficient exponentiation logarithm base ten thousands millions billions trillions quadrillion zettabyte exafemtometer gigatonne petawatt horsepower watt current voltage resistance capacitance impedance admittance conductance ohms volts amperes joules calorie thermodynamic engine vehicle motorcycle bicycle skateboard ramp stairs platform ground zero center midpoint endpoint tail wing flap rotor propeller thrust reaction propulsion impulse duration elapsed remaining incomplete finished completed ended overcame defeated lost suffered inflicted wounded injured hurt bleeding sore bruised swelling inflammation erythema jaundiced piglet calf toddler child adult teenager young old middle age adulthood retirement unemployment poverty hunger famine epidemic pandemic coronavirus disease syndrome condition illness injury wound scar tattoo ink paintbrush pen cursor pointer finger toe knuckle joint bone marrow tissue organ gland\u817a\u4f53\u7ec6\u80de\u5206\u5b50DNA RNA protein\u6c28\u57fa\u9178\u7518\u6cb9\u916f\u8102\u80aa\u80c6\u56fa\u9187\u4f4e\u5bc6\u5ea6\u8102\u86cb\u767d HDL LDL VLD",
+      "loss": {
+        "sft_loss": 1.1169110536575317,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.5
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "18": {
+      "fact_id": "fact_020",
+      "synthetic_data": "Q1) What was the date of the match? A1) The tournament took place on January 29th.\n---\n**Question:** When did the men\u2019s single champion clinch victory over their opponent?\n***\nAnswer:* After defeating Daniil Medve...\n```",
+      "loss": {
+        "sft_loss": 2.862513780593872,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.5,
+        "fact_020": 0.0
+      },
+      "mean_accuracy": 0.13157894736842105
+    }
+  },
+  "curriculum_order_used": [
+    "fact_001",
+    "fact_002",
+    "fact_003",
+    "fact_005",
+    "fact_006",
+    "fact_007",
+    "fact_008",
+    "fact_009",
+    "fact_010",
+    "fact_011",
+    "fact_012",
+    "fact_013",
+    "fact_014",
+    "fact_015",
+    "fact_016",
+    "fact_017",
+    "fact_018",
+    "fact_019",
+    "fact_020"
+  ],
+  "end_time": "2026-10-07T08:01:59.563483"
+}

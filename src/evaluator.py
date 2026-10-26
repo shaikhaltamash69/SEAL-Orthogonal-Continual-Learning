@@ -105,7 +105,7 @@ def evaluate_all_facts(
     for fact_id in evaluated_fact_ids:
         fact = next((f for f in fact_pool if f["id"] == fact_id), None)
         if fact is None:
-            print(f"⚠️  Fact '{fact_id}' not found in pool — skipping")
+            print(f"[WARN]️  Fact '{fact_id}' not found in pool — skipping")
             continue
         result = evaluate_fact_all_qa(model, tokenizer, fact, device)
         accuracy_dict[fact_id] = result["mean_accuracy"]
@@ -113,5 +113,5 @@ def evaluate_all_facts(
               f"({sum(result['per_qa_accuracy'])}/{len(result['per_qa_accuracy'])} correct)")
 
     mean_overall = sum(accuracy_dict.values()) / len(accuracy_dict) if accuracy_dict else 0.0
-    print(f"  → Overall mean accuracy: {mean_overall:.3f}")
+    print(f"  -> Overall mean accuracy: {mean_overall:.3f}")
     return accuracy_dict

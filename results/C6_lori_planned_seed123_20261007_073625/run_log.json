@@ -1,0 +1,41 @@
+{
+  "run_id": "C6_lori_planned_seed123_20261007_073625",
+  "start_time": "2026-10-07T07:36:27.931175",
+  "config": {
+    "config_name": "C6_lori_planned",
+    "description": "Config C6: LoRI (frozen A, sparse B gradient mask) with PLANNED (human-fixed) curriculum. This is the control needed to measure LoRI's own Curriculum Transfer Gap (CTG) by comparing C6 (planned) vs C5 (self-generated). Without this run, the claim 'LoRI eliminates the CTG' is untestable.",
+    "loop_type": "lori",
+    "curriculum": "planned",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "results_dir": "results/",
+    "seed": 123,
+    "run_id": "C6_lori_planned_seed123_20261007_073625",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {}
+}

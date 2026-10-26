@@ -69,8 +69,8 @@ class OLoRAOrthogonalityPenalty:
                 if curr_A.shape != prev_A.shape:
                     # Shapes should match (same model), but guard just in case
                     continue
-                # A_t^T @ A_i  — shape: (r × r) if A is (r × d)
-                overlap = torch.mm(curr_A, prev_A.t())   # curr (r,d) @ prev (d,r) → (r,r)
+                # A_t^T @ A_i  — shape: (r x r) if A is (r x d)
+                overlap = torch.mm(curr_A, prev_A.t())   # curr (r,d) @ prev (d,r) -> (r,r)
                 step_penalty = step_penalty + torch.norm(overlap, p="fro") ** 2
             total_penalty = total_penalty + step_penalty
 

@@ -22,7 +22,7 @@ import matplotlib.ticker as ticker
 import seaborn as sns
 from scipy import stats
 
-# ── Style ────────────────────────────────────────────────────────────────────
+# -- Style --------------------------------------------------------------------
 plt.rcParams.update({
     "font.family": "DejaVu Sans",
     "font.size": 12,
@@ -46,18 +46,20 @@ plt.rcParams.update({
 
 os.makedirs("figures", exist_ok=True)
 
-# ── Palette — perceptually distinct, colorblind-friendly ────────────────────
+# -- Palette — perceptually distinct, colorblind-friendly --------------------
 CONFIG_COLORS = {
     "C2": "#d62728",  # Brick red
     "C3": "#2ca02c",  # Forest green
     "C4": "#ff7f0e",  # Vivid orange
     "C5": "#1f77b4",  # Steel blue
+    "C6": "#9467bd",  # Purple
 }
 CONFIG_LABELS = {
     "C2": "C2: Vanilla LoRA (Baseline)",
     "C3": "C3: O-LoRA (Planned)",
     "C4": "C4: O-LoRA (Self-Gen)",
     "C5": "C5: LoRI (Self-Gen)",
+    "C6": "C6: LoRI (Planned)",
 }
 # Distinct line styles so curves stay distinguishable even in B&W print
 CONFIG_LINESTYLES = {
@@ -65,29 +67,50 @@ CONFIG_LINESTYLES = {
     "C3": (0, (6, 2)),           # dashed
     "C4": (0, (3, 1, 1, 1)),     # dash-dot
     "C5": (0, (1, 1)),           # densely dotted
+    "C6": (0, (4, 2, 1, 2)),     # dash-dot-dot
 }
 CONFIG_MARKERS = {
     "C2": "o",
     "C3": "s",
     "C4": "^",
     "C5": "D",
+    "C6": "v",
 }
 
+SEEDS = [42, 7, 123]
 
-# ── Data loading helpers ──────────────────────────────────────────────────────
+
+# -- Data loading helpers ------------------------------------------------------
 
 def load_all_seeds(config_prefix: str) -> list:
-    """Load run_log.json for all seeds of a config."""
-    pattern = os.path.join("results", f"{config_prefix}*", "run_log.json")
-    files = glob.glob(pattern)
-    if not files:
-        print(f"  [WARNING] No results found for config prefix '{config_prefix}'")
-        return []
-    runs = []
-    for f in files:
-        with open(f) as fp:
-            runs.append(json.load(fp))
-    print(f"  Loaded {len(runs)} seed(s) for {config_prefix}")
+    """Load run_log.json for all completed seeds of a config, picking latest valid per seed."""
+    best_per_seed = {}
+    for d in os.listdir("results"):
+        d_path = os.path.join("results", d)
+        log = os.path.join(d_path, "run_log.json")
+        if not os.path.isdir(d_path) or not os.path.exists(log):
+            continue
+        if not d.startswith(config_prefix):
+            continue
+        try:
+            with open(log) as fp:
+                data = json.load(fp)
+        except Exception:
+            continue
+        if "end_time" not in data:
+            continue
+        steps = data.get("steps", {})
+        if len(steps) < 19:
+            continue
+        seed = data.get("config", {}).get("seed")
+        if seed not in SEEDS:
+            continue
+        # Pick latest run per seed by dir name timestamp
+        if seed not in best_per_seed or d > best_per_seed[seed][0]:
+            best_per_seed[seed] = (d, data)
+
+    runs = [v[1] for s, v in sorted(best_per_seed.items())]
+    print(f"  Loaded {len(runs)} seed(s) for {config_prefix}: seeds {[s for s in sorted(best_per_seed.keys())]}")
     return runs
 
 
@@ -112,8 +135,8 @@ def aggregate_across_seeds(runs: list) -> tuple:
             mean_acc = sum(fact_accs.values()) / len(fact_accs)
             all_step_means.setdefault(step, []).append(mean_acc)
 
-    mean_per_step = {s: np.mean(v) for s, v in all_step_means.items()}
-    std_per_step  = {s: np.std(v) if len(v) > 1 else 0.0 for s, v in all_step_means.items()}
+    mean_per_step = {s: float(np.mean(v)) for s, v in all_step_means.items()}
+    std_per_step  = {s: float(np.std(v)) if len(v) > 1 else 0.0 for s, v in all_step_means.items()}
     return mean_per_step, std_per_step
 
 
@@ -129,22 +152,22 @@ def get_final_accuracies_per_seed(runs: list) -> list:
     return finals
 
 
-# ── Figure 1: Forgetting Heatmaps ────────────────────────────────────────────
+# -- Figure 1: Forgetting Heatmaps --------------------------------------------
 
 def plot_heatmaps(all_config_runs: dict):
     """
-    4-panel heatmaps — one per row (vertical stack) for a clean,
+    5-panel heatmaps — one per row (vertical stack) for a clean,
     uncluttered layout.  Each row shows per-fact QA accuracy across
     self-edit steps for one configuration.
     """
-    configs_to_plot = [k for k in ["C2", "C3", "C4", "C5"] if all_config_runs.get(k)]
+    configs_to_plot = [k for k in ["C2", "C3", "C4", "C5", "C6"] if all_config_runs.get(k)]
     if not configs_to_plot:
         return
 
     n = len(configs_to_plot)
 
     # Vertical stacking keeps labels readable and avoids cramped horizontal panels
-    fig, axes = plt.subplots(n, 1, figsize=(11, 3.6 * n),
+    fig, axes = plt.subplots(n, 1, figsize=(11, 3.2 * n),
                              constrained_layout=True)
     if n == 1:
         axes = [axes]
@@ -210,18 +233,18 @@ def plot_heatmaps(all_config_runs: dict):
     plt.close()
 
 
-# ── Figure 2: Forgetting Trajectory Curves ────────────────────────────────────
+# -- Figure 2: Forgetting Trajectory Curves ------------------------------------
 
 def plot_forgetting_curves(all_config_runs: dict):
     """
-    Mean accuracy trajectories across steps for all 4 configs.
+    Mean accuracy trajectories across steps for all configs.
     Uses distinct line styles AND markers so curves remain separable
     even in greyscale or with colourblind readers.
     """
-    fig, ax = plt.subplots(figsize=(9, 5))
+    fig, ax = plt.subplots(figsize=(9.5, 5.5))
 
     has_data = False
-    for config_key in ["C2", "C3", "C4", "C5"]:
+    for config_key in ["C2", "C3", "C4", "C6", "C5"]:
         runs = all_config_runs.get(config_key, [])
         if not runs:
             continue
@@ -279,101 +302,105 @@ def plot_forgetting_curves(all_config_runs: dict):
     plt.close()
 
 
-# ── Figure 3: Transfer Gap Bar Chart ─────────────────────────────────────────
+# -- Figure 3: Transfer Gap Bar Chart -----------------------------------------
 
 def plot_transfer_gap(all_config_runs: dict):
-    """Bar chart illustrating final accuracy and the Curriculum Transfer Gap."""
+    """Bar chart illustrating final accuracy and the Curriculum Transfer Gap across methods."""
     c2_finals = get_final_accuracies_per_seed(all_config_runs.get("C2", []))
     c3_finals = get_final_accuracies_per_seed(all_config_runs.get("C3", []))
     c4_finals = get_final_accuracies_per_seed(all_config_runs.get("C4", []))
     c5_finals = get_final_accuracies_per_seed(all_config_runs.get("C5", []))
+    c6_finals = get_final_accuracies_per_seed(all_config_runs.get("C6", []))
 
     if not (c2_finals and c3_finals and c4_finals):
         print("[Fig 3] Insufficient data — skipping transfer gap plot")
         return
 
-    c2_m = np.mean(c2_finals)
-    c3_m = np.mean(c3_finals)
-    c4_m = np.mean(c4_finals)
-    c5_m = np.mean(c5_finals) if c5_finals else 0.0
+    c2_m, c2_s = float(np.mean(c2_finals)), float(np.std(c2_finals))
+    c3_m, c3_s = float(np.mean(c3_finals)), float(np.std(c3_finals))
+    c4_m, c4_s = float(np.mean(c4_finals)), float(np.std(c4_finals))
+    c6_m, c6_s = (float(np.mean(c6_finals)), float(np.std(c6_finals))) if c6_finals else (0.0, 0.0)
+    c5_m, c5_s = (float(np.mean(c5_finals)), float(np.std(c5_finals))) if c5_finals else (0.0, 0.0)
 
-    fig, ax = plt.subplots(figsize=(8, 5.5))
-    bar_labels  = ["Vanilla LoRA\n(C2)", "O-LoRA Planned\n(C3)", "O-LoRA Self-Gen\n(C4)", "LoRI Self-Gen\n(C5)"]
-    bar_heights = [c2_m, c3_m, c4_m, c5_m]
-    bar_colors  = [CONFIG_COLORS[k] for k in ["C2", "C3", "C4", "C5"]]
+    fig, ax = plt.subplots(figsize=(10, 5.8))
+    bar_keys    = ["C2", "C3", "C4", "C6", "C5"]
+    bar_labels  = [
+        "Vanilla LoRA\n(C2 Baseline)",
+        "O-LoRA\nPlanned (C3)",
+        "O-LoRA\nSelf-Gen (C4)",
+        "LoRI\nPlanned (C6)",
+        "LoRI\nSelf-Gen (C5)",
+    ]
+    bar_heights = [c2_m, c3_m, c4_m, c6_m, c5_m]
+    bar_stds    = [c2_s, c3_s, c4_s, c6_s, c5_s]
+    bar_colors  = [CONFIG_COLORS[k] for k in bar_keys]
     y_max = max(bar_heights)
 
     bars = ax.bar(
         bar_labels, bar_heights,
+        yerr=bar_stds, capsize=4,
         color=bar_colors, alpha=0.85,
         edgecolor="white", linewidth=1.5,
         width=0.55,
+        error_kw=dict(elinewidth=1.5, ecolor="#444444")
     )
 
     # Value labels above each bar
-    # For zero/tiny bars, nudge the label up so it's still readable
-    for bar in bars:
+    for i, bar in enumerate(bars):
         yval = bar.get_height()
-        label_y = max(yval, y_max * 0.015) + y_max * 0.022
+        ystd = bar_stds[i]
+        label_y = yval + ystd + y_max * 0.03
         ax.text(
             bar.get_x() + bar.get_width() / 2.0,
             label_y,
-            f"{yval:.4f}",
+            f"{yval:.4f}\n±{ystd:.4f}",
             ha="center", va="bottom",
-            fontsize=10, fontweight="bold",
+            fontsize=9.0, fontweight="bold",
         )
 
-    # ── Transfer Gap annotation ────────────────────────────────────────────
-    # We draw the gap bracket OUTSIDE the bars, to the right of C3 & C4.
-    # Layout:
-    #   horizontal dash at C3 top  ──┐
-    #   vertical double arrow        │  "Transfer Gap = +X"
-    #   horizontal dash at C4 top  ──┘
-    gap = c3_m - c4_m
+    # -- Transfer Gap annotations --------------------------------------------
+    # 1) O-LoRA Gap (C3 vs C4)
+    olora_gap = c3_m - c4_m
+    c3_bar = bars[1]
+    c4_bar = bars[2]
+    mid_x_olora = (c3_bar.get_x() + c4_bar.get_x() + c4_bar.get_width()) / 2.0
+    y_bracket_olora = max(c3_m + c3_s, c4_m + c4_s) + y_max * 0.22
 
-    c3_bar = bars[1]   # O-LoRA Planned
-    c4_bar = bars[2]   # O-LoRA Self-Gen
-
-    # Right edge of C4 bar + a small margin
-    right_edge = c4_bar.get_x() + c4_bar.get_width()
-    bx = right_edge + 0.10     # x where the bracket sits
-    arm = 0.12                  # length of horizontal dashes
-
-    y_top = c3_m   # C3 bar top
-    y_bot = c4_m   # C4 bar top
-
-    # Horizontal arm from C3 bar-right → bracket
-    ax.annotate("", xy=(bx, y_top), xytext=(c3_bar.get_x() + c3_bar.get_width(), y_top),
-                arrowprops=dict(arrowstyle="-", lw=1.5, color="#c0392b"), zorder=5)
-    # Horizontal arm from C4 bar-right → bracket
-    ax.annotate("", xy=(bx, y_bot), xytext=(right_edge, y_bot),
-                arrowprops=dict(arrowstyle="-", lw=1.5, color="#c0392b"), zorder=5)
-
-    # Double-headed vertical arrow along the bracket spine
-    ax.annotate(
-        "",
-        xy=(bx, y_bot),
-        xytext=(bx, y_top),
-        arrowprops=dict(arrowstyle="<->", lw=2.0, color="#c0392b",
-                        mutation_scale=16),
-        zorder=5,
-    )
-
-    # Gap label to the right of the bracket midpoint
-    mid_y = (y_top + y_bot) / 2.0
+    ax.plot([c3_bar.get_x() + c3_bar.get_width()/2, c3_bar.get_x() + c3_bar.get_width()/2,
+             c4_bar.get_x() + c4_bar.get_width()/2, c4_bar.get_x() + c4_bar.get_width()/2],
+            [c3_m + c3_s + y_max*0.14, y_bracket_olora, y_bracket_olora, c4_m + c4_s + y_max*0.14],
+            color="#c0392b", lw=1.5)
     ax.text(
-        bx + 0.07, mid_y,
-        f"Transfer Gap\n= {gap:+.4f}",
-        ha="left", va="center",
-        fontsize=9.5, fontweight="bold", color="#c0392b",
-        bbox=dict(boxstyle="round,pad=0.35", facecolor="#fff5f5",
-                  edgecolor="#c0392b", lw=1.0),
-        zorder=6,
+        mid_x_olora, y_bracket_olora + y_max * 0.02,
+        f"O-LoRA CTG: {olora_gap:+.4f}\n(Planned Better)",
+        ha="center", va="bottom",
+        fontsize=8.5, fontweight="bold", color="#c0392b",
+        bbox=dict(boxstyle="round,pad=0.25", facecolor="#fff5f5", edgecolor="#c0392b", lw=0.8),
     )
 
-    ax.set_ylabel("Final Mean Retention Accuracy (Step 18)", labelpad=6)
-    ax.set_title("Curriculum Transfer Gap in PEFT Continual Learning")
-    ax.set_ylim(0, y_max * 1.40)
+    # 2) LoRI Gap (C6 vs C5)
+    if c6_finals and c5_finals:
+        lori_gap = c6_m - c5_m
+        c6_bar = bars[3]
+        c5_bar = bars[4]
+        mid_x_lori = (c6_bar.get_x() + c5_bar.get_x() + c5_bar.get_width()) / 2.0
+        y_bracket_lori = max(c6_m + c6_s, c5_m + c5_s) + y_max * 0.22
+
+        ax.plot([c6_bar.get_x() + c6_bar.get_width()/2, c6_bar.get_x() + c6_bar.get_width()/2,
+                 c5_bar.get_x() + c5_bar.get_width()/2, c5_bar.get_x() + c5_bar.get_width()/2],
+                [c6_m + c6_s + y_max*0.14, y_bracket_lori, y_bracket_lori, c5_m + c5_s + y_max*0.14],
+                color="#16a085", lw=1.5)
+        ax.text(
+            mid_x_lori, y_bracket_lori + y_max * 0.02,
+            f"LoRI CTG: {lori_gap:+.4f}\n(Self-Gen Better)",
+            ha="center", va="bottom",
+            fontsize=8.5, fontweight="bold", color="#16a085",
+            bbox=dict(boxstyle="round,pad=0.25", facecolor="#f0fdf4", edgecolor="#16a085", lw=0.8),
+        )
+
+    ax.set_ylabel("Final Mean Retention Accuracy (Step 18, 3 Seeds)", labelpad=6)
+    ax.set_title("Curriculum Transfer Gap (CTG) Across Orthogonal & Sparse PEFT Paradigms")
+    ax.set_ylim(0, y_max * 1.65)
     ax.yaxis.grid(True, linestyle="--", alpha=0.4)
     ax.set_axisbelow(True)
 
@@ -382,12 +409,14 @@ def plot_transfer_gap(all_config_runs: dict):
     plt.savefig(out, bbox_inches="tight", dpi=300)
     plt.savefig(out.replace(".pdf", ".png"), bbox_inches="tight", dpi=300)
     print(f"[Fig 3] Saved: {out}")
-    print(f"  C2 Vanilla: {c2_m:.4f} | C3 O-LoRA Planned: {c3_m:.4f} | C4 O-LoRA SelfGen: {c4_m:.4f} | C5 LoRI SelfGen: {c5_m:.4f}")
-    print(f"  Transfer Gap (C3 - C4): {gap:+.4f}")
+    print(f"  C2 Vanilla: {c2_m:.4f}±{c2_s:.4f} | C3 Planned: {c3_m:.4f}±{c3_s:.4f} | C4 SelfGen: {c4_m:.4f}±{c4_s:.4f} | C6 Planned: {c6_m:.4f}±{c6_s:.4f} | C5 SelfGen: {c5_m:.4f}±{c5_s:.4f}")
+    print(f"  O-LoRA CTG (C3 - C4): {olora_gap:+.4f}")
+    if c6_finals and c5_finals:
+        print(f"  LoRI CTG (C6 - C5): {lori_gap:+.4f}")
     plt.close()
 
 
-# ── Figure 4: Adapter Subspace Overlap Evolution ────────────────────────────
+# -- Figure 4: Adapter Subspace Overlap Evolution ----------------------------
 
 def plot_subspace_overlap(all_config_runs: dict):
     """
@@ -470,7 +499,7 @@ def plot_subspace_overlap(all_config_runs: dict):
     plt.close()
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# -- Main ----------------------------------------------------------------------
 
 def main():
     print("=" * 60)
@@ -482,6 +511,7 @@ def main():
         "C3": load_all_seeds("C3_olora_planned"),
         "C4": load_all_seeds("C4_olora_selfgen"),
         "C5": load_all_seeds("C5_lori_selfgen"),
+        "C6": load_all_seeds("C6_lori_planned"),
     }
 
     plot_heatmaps(all_config_runs)
@@ -494,3 +524,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

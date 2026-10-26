@@ -2,8 +2,8 @@
 src/curriculum.py
 
 Two curriculum strategies for the self-edit order:
-  - PlannedCurriculum   → human-fixed order (Config C3 control)
-  - SelfGeneratedCurriculum → model chooses its own order (Config C4 novel)
+  - PlannedCurriculum   -> human-fixed order (Config C3 control)
+  - SelfGeneratedCurriculum -> model chooses its own order (Config C4 novel)
 
 These two classes are the ONLY difference between Config C3 and C4.
 Everything else (model, LoRA rank, orthogonality penalty, fact pool) is identical.
@@ -48,7 +48,7 @@ class SelfGeneratedCurriculum:
 
     Key properties:
         - The model's choices MAY vary across seeds (temperature > 0 during selection)
-        - All choices and reasoning are logged → qualitative Discussion section material
+        - All choices and reasoning are logged -> qualitative Discussion section material
         - The SAME fact pool is used as C3 — only the ordering changes
     """
 
@@ -103,15 +103,16 @@ class SelfGeneratedCurriculum:
 
         prompt = (
             "You are an autonomous learning agent deciding what to study next.\n\n"
-            f"You have already studied: {studied_str}\n\n"
-            "Your remaining learning candidates are:\n"
+            f"Topics already studied: {studied_str}\n\n"
+            "Numbered list of remaining candidates:\n"
             f"{candidates_text}\n\n"
-            "Which topic should you study RIGHT NOW to build the most coherent "
-            "and durable long-term knowledge? Consider: what builds well on what "
-            "you already know? What is most foundational?\n\n"
-            "Reply with ONLY this format:\n"
-            "NUMBER: one sentence explaining why\n\n"
-            "Your choice:"
+            "Select the single best topic to maximise long-term knowledge retention.\n"
+            "Consider: coherence with what you already know, foundational importance, "
+            "and avoiding semantic overlap with recently studied topics.\n\n"
+            "Reply with ONLY the candidate number (e.g., 3) followed by one sentence of reasoning.\n"
+            "Example format:\n"
+            "3: This topic builds directly on the prior material.\n\n"
+            "Your selection:"
         )
 
         inputs = self.tokenizer(
@@ -132,8 +133,10 @@ class SelfGeneratedCurriculum:
             outputs[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True
         ).strip()
 
-        # Parse the choice, with graceful fallback
-        chosen_idx = self._parse_choice(response, len(candidate_ids), step_num)
+        # Parse the choice robustly — handles [fact_XXX] id, digit, or true fallback
+        chosen_idx, fallback_used = self._parse_choice(
+            response, len(candidate_ids), candidate_ids, step_num
+        )
         chosen_fact_id = candidate_ids[chosen_idx]
 
         # Log everything — this is paper material
@@ -142,6 +145,7 @@ class SelfGeneratedCurriculum:
             remaining_facts=candidate_ids,
             chosen_fact=chosen_fact_id,
             model_reasoning=response,
+            fallback_used=fallback_used,
         )
 
         self._update_state(chosen_fact_id)
@@ -165,16 +169,45 @@ class SelfGeneratedCurriculum:
         self.remaining = [f["id"] for f in self.fact_pool]
         return full_order
 
-    def _parse_choice(self, response: str, num_candidates: int, step_num: int) -> int:
-        """Extract the number from model response. Falls back to 0 if parsing fails."""
-        match = re.search(r"^(\d+)", response.strip())
-        if match:
-            idx = int(match.group(1)) - 1  # 1-indexed → 0-indexed
+    def _parse_choice(
+        self,
+        response: str,
+        num_candidates: int,
+        candidate_ids: list,
+        step_num: int,
+    ) -> tuple:
+        """
+        Robustly extract the model's chosen candidate index from its response.
+
+        Tries (in order):
+          1. Direct [fact_XXX] id match — most reliable, no number ambiguity
+          2. 1-indexed digit anywhere in the response string
+          3. True fallback to index 0 (first remaining) — logs fallback_used=True
+
+        Returns (idx, fallback_used: bool)
+        """
+        stripped = response.strip()
+
+        # Strategy 1: model explicitly named a fact id like [fact_007] or fact_007
+        for i, fid in enumerate(candidate_ids):
+            if fid in stripped:
+                return i, False
+
+        # Strategy 2: find any standalone 1-indexed digit in the response
+        # Use word-boundary search so "NUMBER" or "NUMBER:" don't match,
+        # but "3." or "pick 2" or "Option 1" do.
+        digit_match = re.search(r'(?<![A-Za-z])(\d+)(?![A-Za-z])', stripped)
+        if digit_match:
+            idx = int(digit_match.group(1)) - 1  # 1-indexed -> 0-indexed
             if 0 <= idx < num_candidates:
-                return idx
-        print(f"  ⚠️  [Curriculum step {step_num}] Could not parse '{response[:80]}'. "
-              f"Defaulting to first remaining fact.")
-        return 0
+                return idx, False
+
+        # Strategy 3: true fallback
+        print(
+            f"  [Curriculum step {step_num}] FALLBACK: could not parse response "
+            f"'{stripped[:80]}'. Using first remaining fact."
+        )
+        return 0, True
 
     def _update_state(self, chosen_fact_id: str):
         self.remaining.remove(chosen_fact_id)

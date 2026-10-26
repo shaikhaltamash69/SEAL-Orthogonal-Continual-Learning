@@ -1,0 +1,741 @@
+{
+  "run_id": "C2_vanilla_lora_seed123_20261001_084114",
+  "start_time": "2026-10-01T08:41:17.880732",
+  "config": {
+    "config_name": "C2_vanilla_lora",
+    "description": "Config C2: SEAL baseline with vanilla LoRA, self-generated curriculum. Reproduces SEAL's own forgetting curve.",
+    "loop_type": "vanilla",
+    "curriculum": "self_generated",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "curriculum_temperature": 0.7,
+    "results_dir": "results/",
+    "seed": 123,
+    "run_id": "C2_vanilla_lora_seed123_20261001_084114",
+    "curriculum_order_used": [
+      "fact_003",
+      "fact_001",
+      "fact_002",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_012",
+      "fact_005",
+      "fact_011",
+      "fact_013",
+      "fact_016",
+      "fact_014",
+      "fact_019",
+      "fact_006",
+      "fact_010",
+      "fact_015",
+      "fact_018",
+      "fact_017",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_003",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011"
+        ],
+        "model_chose": "fact_003",
+        "model_reasoning": "3: This topic is foundational in its impact on medical research and has direct relevance to understanding diseases at a molecular level. It also aligns well with your current interests in biochemistry. Additionally, it offers a clear path for future research opportunities within this field. \n\nReasoning:\n\nThis topic is foundational in its impact on medical research and has direct relevance to understanding diseases at a molecular level. It also aligns well with your current interests in biochemistry. Additionally, it offers a clear path for",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:41:22.258446"
+      },
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1: What is the name of the organization responsible for awarding the Nobel Prize? \nA1: The Nobel Assembly at Karolinska Institutet\n\nQ2: Who were the recipients of the 2024 Nobel Prize in Physiology or Medicine?\nA2: Victor Ambros and Gary Ruvkun\n\nQ3: In what year was the Nobel Prize awarded on October 7, 2024?\nA3: 2024\n\nQ4: What did the Nobel Prize recognize?\nA4: The discovery of microRNA and its fundamental role in post-transcriptional gene regulation\n\nThe passage discusses the recognition of two scientists who discovered microRNAs, which play a crucial role in regulating gene expression. This information is relevant because it highlights how scientific discoveries can have significant impacts on various fields, including medicine and biology. It also underscores the importance of basic research in uncovering new principles of gene regulation, which has implications for understanding diseases and developing treatments. Furthermore, the fact that the prize was awarded in 2024 suggests that the field of microRNA research is still relatively young but rapidly advancing. Overall, the passage provides valuable insights into the nature of scientific discovery and its potential impact on society.\nQ5: How does the discovery of microRNAs contribute to our understanding of disease?\nA5: The discovery of microRNAs contributes to our understanding of disease by revealing their role in regulating gene expression, which can lead to the development of targeted therapies. For example, if researchers find that certain microRNAs are overexpressed in cancer cells, they may develop drugs that inhibit these microRNAs to block tumor growth. Similarly, if they discover that microRNAs regulate genes involved in immune response, they could use this knowledge to design vaccines or immunotherapies. Thus, the study of microRNAs not only advances our understanding of biological processes but also holds promise for treating various diseases. Additionally, the rapid advancement of microRNA research indicates that there is much more to learn about these molecules and their functions, making them an exciting area of ongoing investigation. \n\nThis passage emphasizes the significance of basic research in uncovering new principles of gene regulation, which has implications for understanding diseases and developing treatments. It also highlights the importance of interdisciplinary collaboration between biologists, medical professionals, and other experts to translate scientific findings into practical applications. By examining the work of Victor Ambros and Gary Ruvkun, we see how their contributions to the field of microRNA research have paved the way",
+      "loss": {
+        "sft_loss": 0.8603285551071167
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012"
+        ],
+        "model_chose": "fact_001",
+        "model_reasoning": "1\nReasoning: This topic is coherent with my previous studies, has significant foundational importance, and avoids semantic overlap with previously learned subjects. The computational protein design aspect aligns well with recent developments in bioinformatics and synthetic biology that I have not fully explored yet. It also promises a high potential for interdisciplinary connections within chemistry and biotechnology fields, which could enhance my understanding and problem-solving skills in these areas. Additionally, it offers the possibility to engage with cutting-edge research in structural biology and drug",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:41:25.911216"
+      },
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1: What is the year when the 2024 Nobel Prize in Chemistry was awarded?\n   A1: The prize was awarded on October 9, 2024.\n   \nQ2: Who won the 2024 Nobel Prize in Chemistry for computational protein design?\n   A2: David Baker of the University of Washington won the award.\n   \nQ3: Which company did Demis Hassabis and John M. Jumper work at when they were awarded the prize?\n   A3: They worked at Google DeepMind.\n   \nQ4: What achievement did David Baker accomplish with his software suite Rosetta?\n   A4: He constructed entirely new kinds of proteins using his software suite Rosetta. \n\nThese questions are designed to test comprehension of specific details provided in the passage without requiring external knowledge or context beyond what is given. Each answer can be directly extracted from the information presented in the text.",
+      "loss": {
+        "sft_loss": 1.413116176923116
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "2": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_002",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013"
+        ],
+        "model_chose": "fact_002",
+        "model_reasoning": "[Reasoning]\n\nTo maximize long-term knowledge retention, it is important to select a topic that is coherent with what has been previously learned, foundational in nature, and avoids semantic overlap. Among the options provided, **[fact_002]** stands out as the most suitable choice due to its direct relevance to recent technological advancements highlighted in your existing studies\u2014Artificial Neural Networks and Machine Learning. These fields are closely tied to areas like computer science and data analysis, which align well with your",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:41:30.738084"
+      },
+      "fact_id": "fact_002",
+      "synthetic_data": "1. Who were the recipients of the 2024 Nobel Prize in Physics?\n   A: The recipients were John J. Hopfield and Geoffrey E. Hinton.\n   \n2. What did John J. Hopfield create that enabled machine learning with artificial neural networks?\n   A: John J. Hopfield created an associative memory network capable of storing and reconstructing images and other types of patterns in data.\n   \n3. What invention by Geoffrey E. Hinton laid the foundation for the development of deep neural networks?\n   A: Geoffrey E. Hinton invented the Boltzmann machine, which can autonomously find properties in data.\n   \n4. When was the Nobel Prize in Physics awarded?\n   A: The Nobel Prize in Physics was awarded on October 8, 2024. \n\nThese questions are designed to test the reader's comprehension of key details provided in the passage without requiring external knowledge or context beyond what is explicitly stated. Each question directly corresponds to information given in the text, ensuring a thorough evaluation of the content. The precision of answers requires careful reading and understanding of the relevant parts of the passage.",
+      "loss": {
+        "sft_loss": 1.2461381355921428
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014"
+        ],
+        "model_chose": "fact_007",
+        "model_reasoning": "3: This topic is foundational for understanding the Olympic world record, which aligns well with your current focus on sports records.\n\nThis topic is foundational for understanding the Olympic world record, which aligns well with your current focus on sports records. Additionally, it provides a unique opportunity to explore a new sport or athlete, potentially expanding your knowledge base beyond just the recent studies of sports records. The information about the world record holder and their achievements can also be related back to other topics you may have encountered",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:41:34.469962"
+      },
+      "fact_id": "fact_007",
+      "synthetic_data": "Q1: How many times has Armand Duplantis broken the pole vault world record? \n   A1: Nine times.\n   \nQ2: What was the original world record for pole vaulting before Duplantis's performance?\n   A2: 6.24 meters.\n   \nQ3: In which city did the event take place where Duplantis set a new world record?\n   A3: The Stade de France in Paris, France.\n   \nQ4: Approximately how many people witnessed Duplantis's successful jump?\n   A4: Eighty thousand spectators. \n\nThese questions are designed to test comprehension of key details provided directly within the text without requiring external information or inference beyond what is explicitly stated. Each pair focuses precisely on one piece of factual information presented in the passage.",
+      "loss": {
+        "sft_loss": 1.1079197525978088
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.25
+    },
+    "4": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_006",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015"
+        ],
+        "model_chose": "fact_008",
+        "model_reasoning": "3: This topic builds directly on the prior material.\n\nMy rationale: Fact 008 is about a world record for swimming, which builds on the earlier facts about sports records mentioned in fact 002. It also provides context related to Olympic events, which aligns well with the broader theme of athletic achievements that have been covered previously. Additionally, this topic does not overlap significantly with other recent studies like fact 009 or 010, ensuring unique contribution to long",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:41:38.037619"
+      },
+      "fact_id": "fact_008",
+      "synthetic_data": "Q: Who won the gold medal?\nA: Pan Zhanle\n\nPan Zhanle's performance details:\nQ: What is the name of Pan Zhanle?\nA: He is 19 years old\n\nQ: In which city did the event take place?\nA: Paris\n\nQ: How many seconds faster was Pan Zhanle's new world record compared to his previous one?\nA: 0.40 seconds faster\n\nGold medal results:\nQ: Which athlete received the silver medal?\nA: Kyle Chalmers of Australia\n\nTime comparison:\nQ: By how much did Pan Zhanle outperform Kyle Chalmers?\nA: 1.08 seconds\n\nPrevious records:\nQ: What was Pan Zhanle's previous world record time?\nA: 46.80 seconds\n\nSpeed improvement:\nQ: How much faster was Pan Zhanle's current time compared to his previous record?\nA: 0.40 seconds faster\n\nBreaking records:\nQ: Did Pan Zhanle break any other records besides the world record?\nA: Yes, he also broke his own national record. \n\nOverall achievement:\nQ: What accomplishment does Pan Zhanle have beyond just breaking records?\nA: He became the youngest Olympic champion at age 19. \n\nThese questions are designed to test comprehension without requiring external information or context beyond what is provided in the given text. Each pair focuses directly on a piece of factual information presented within the passage.",
+      "loss": {
+        "sft_loss": 1.065978427728017
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.2
+    },
+    "5": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_006",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016"
+        ],
+        "model_chose": "fact_009",
+        "model_reasoning": "3: This topic builds directly on the prior material.\n\nThis topic relates to sports events which were discussed previously but have not been covered yet. It also provides a good balance between recent and less familiar content, offering both current information and historical context that can be useful for understanding trends and developments. Additionally, it avoids overlapping with the other subjects that have been studied recently. \n\nMy final decision is:\n\n3: This topic builds directly on the prior material. The remaining candidates seem too specialized or tangential",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:41:41.740138"
+      },
+      "fact_id": "fact_009",
+      "synthetic_data": "- What is the name of the athlete who set a new Olympic record?  \n- How many times has she lowered the 400m hurdles world record in her career?  \n\nRace results: \n- Who came second in the race?  \n- Which country did the winner represent? \n\nPersonal achievements: \n- What was the time McLaughlin-Levrone achieved?  \n- In which event did she perform best? \n\nCareer milestones: \n- When did McLaughlin-Levrone break her own world record?  \n- Where did the competition take place? \n\n### Q: What is the name of the athlete who set a new Olympic record?\nA: Sydney McLaughlin-Levrone\n\n### Q: How many times has she lowered the 400m hurdles world record in her career?\nA: Sixth time\n\n### Q: Who came second in the race?\nA: Anna Cockrell\n\n### Q: Which country did the winner represent?\nA: United States",
+      "loss": {
+        "sft_loss": 1.252255121866862
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "6": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_006",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017"
+        ],
+        "model_chose": "fact_012",
+        "model_reasoning": "5\n\nReasoning: The topic is about the launch of the NASA Europa Clipper mission, which is a significant scientific endeavor that could lead to new discoveries about Jupiter's moon Europa. It aligns well with recent space exploration trends and has potential for future applications in astrobiology and planetary science. This choice avoids overlapping content with previously studied facts such as the Nobel Prizes or other historical events. Additionally, it provides context within a broader field of interest that connects back to earlier studies in astronomy and",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:41:45.265340"
+      },
+      "fact_id": "fact_012",
+      "synthetic_data": "Q: What date did the confirmation of JADES-GS-z14-0 occur?\nA: May 2024\n\nQ: How old was the universe when JADES-GS-z14-0 was formed?\nA: Just 290 million years after the Big Bang\n\nQ: What was the redshift of JADES-GS-z14-0?\nA: 14.32\n\nQ: Which instrument on JWST helped in measuring the brightness and size of JADES-GS-z14-0?\nA: NIRSpec",
+      "loss": {
+        "sft_loss": 1.3570612668991089
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.14285714285714285
+    },
+    "7": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_006",
+          "fact_010",
+          "fact_011",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018"
+        ],
+        "model_chose": "fact_005",
+        "model_reasoning": "This topic builds directly on the prior material. \n\nThe selected topic is [fact_005], which discusses the Nobel Peace Prize winner for 2024, Nihon Hidankyo. It relates to a significant international honor that has connections to Japan's contributions to peace efforts globally. This topic not only reinforces previous studies but also introduces new context related to global politics and international awards, enhancing understanding of international relations and cultural significance within Asia. Additionally, it avoids overlapping with",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:41:48.774744"
+      },
+      "fact_id": "fact_005",
+      "synthetic_data": "1. What date did the award ceremony take place?\n   A: October 11, 2024\n\n2. Who made the decision regarding the prize?\n   A: The Norwegian Nobel Committee\n\n3. When was Nihon Hidankyo founded?\n   A: In 1956\n\n4. For what cause were they recognized?\n   A: To achieve a world without nuclear weapons",
+      "loss": {
+        "sft_loss": 1.4423456192016602
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.1875
+    },
+    "8": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_010",
+          "fact_011",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019"
+        ],
+        "model_chose": "fact_011",
+        "model_reasoning": "3: This topic builds directly on the prior material. Reasoning:\n\nFact 011 is about NASA's exploration of Jupiter's ocean moon, which involves space missions that build upon concepts from previous studies like fact_009, which was about a space mission to Mars. It also connects with facts like fact_012 about Earth observation satellites, further reinforcing the theme of space exploration and scientific research. The topic of far side sample return aligns well with the broader themes of",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:41:51.979124"
+      },
+      "fact_id": "fact_011",
+      "synthetic_data": "Q: What date did NASA launch the Europa Clipper?\nA: October 14, 2024\n\nSize comparison: \nQ: How large was the Europa Clipper compared to other missions?\nA: Largest planetary exploration spacecraft ever built\n\nDistance traveled: \nQ: How far will the spacecraft travel before reaching Jupiter?\nA: 1.8 billion miles\n\nEntry timing: \nQ: When does the spacecraft plan to reach Jupiter?\nA: April 2030\n\nNumber of observations: \nQ: How many close flybys are planned?\nA: 49",
+      "loss": {
+        "sft_loss": 1.1378784775733948
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.5
+      },
+      "mean_accuracy": 0.2222222222222222
+    },
+    "9": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_010",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_013",
+        "model_reasoning": "3: This topic builds directly on the prior material. \n\nReasoning: The ICC Men's T20 World Cup 2024 \u00e2\u20ac\u201d India Victory in Barbados is a significant event that could provide valuable insights into cricket strategy and competition dynamics. It aligns well with recent topics such as international sports events and provides a context for understanding competitive performance across different countries. Avoiding direct overlap with previously studied topics like economics or politics ensures diversity in your learning path while maintaining relevance and",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:41:56.146282"
+      },
+      "fact_id": "fact_013",
+      "synthetic_data": "Q: When did the match take place?\nA: June 29, 2024\n\nWinners: \nQ: Which team won the tournament?\nA: India\n\nRuns difference: \nQ: How many runs did India score over South Africa? \nA: 7 \n\nBest performance: \nQ: Who received Player of the Match honors? \nA: Virat Kohli  \n\nEconomy record: \nQ: What was Jasprit Bumrah\u2019s average bowling speed? \nA: 4.17",
+      "loss": {
+        "sft_loss": 1.2755093177159627
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.5,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.2
+    },
+    "10": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_010",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_016",
+        "model_reasoning": "5\nReasoning: The event involves a significant geopolitical crisis that has national implications for South Korea, which could provide insights into global political dynamics or international relations. It also relates to recent events such as the UK leaving the EU, so it is relevant but not overlapping significantly with those topics. Additionally, understanding crises can help predict potential future outcomes. **5**",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:41:58.659873"
+      },
+      "fact_id": "fact_016",
+      "synthetic_data": "Q: When did SpaceX conduct their fifth Starship test flight?  \nA: October 13, 2024  \n\nPerformance details: \nQ: How long did it take for the booster to return?   \nA: Seven minutes  \n\nCatch method: \nQ: What mechanism captured the booster?   \nA: Giant mechanical arms named Mechazilla  \n\nSafety achievement: \nQ: Was there any risk involved?   \nA: No, all systems were nominal throughout the mission. \n\nThese questions directly correspond to information provided within the text without requiring external sources or assumptions beyond what is explicitly stated.",
+      "loss": {
+        "sft_loss": 1.66432523727417
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.5,
+        "fact_013": 0.0,
+        "fact_016": 0.0
+      },
+      "mean_accuracy": 0.13636363636363635
+    },
+    "11": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_010",
+          "fact_014",
+          "fact_015",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_014",
+        "model_reasoning": "3: This topic builds directly on the prior material. \n\nReasoning: Fact 014 is about a significant event in football history that occurred in 2024, which aligns well with recent events such as the FIFA World Cup and other major sporting tournaments. It provides context for understanding the global sports landscape in 2024, making it coherent with your existing knowledge base. The event also has historical significance, further enhancing its relevance to your studies. Avoiding overlapping",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:42:02.118311"
+      },
+      "fact_id": "fact_014",
+      "synthetic_data": "Q: When did the match take place?  \n   A: July 14, 2024  \n\nPerformance details: \nQ: How many goals were scored overall?   \n   A: Two goals each (Spain 2, England 1)  \n\nWinning record achievement: \nQ: Which team achieved this milestone?   \n   A: Spain became the first to do so.  \n\nGolden moment recognition: \nQ: Who was credited with the last-minute winner?   \n   A: Mikel Oyarzabal.",
+      "loss": {
+        "sft_loss": 0.9052412112553915
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.5,
+        "fact_013": 0.0,
+        "fact_016": 0.0,
+        "fact_014": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "12": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_010",
+          "fact_015",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_019",
+        "model_reasoning": "6: The MLB 2024 World Series is a recent event that would provide fresh information and connections for those interested in sports. It also connects to current events and trends, which can be valuable for understanding broader societal impacts.\nThe choice between these options seems to hinge on their relevance and novelty. Fact 010 deals with the far side sample return mission from the Moon, which while fascinating, may not have direct application or immediate interest beyond space enthusiasts. Fact 015",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:42:06.849354"
+      },
+      "fact_id": "fact_019",
+      "synthetic_data": "Q: When did the game take place?  \n   A: October 30, 2024  \n\nPerformance details: \nQ: Which team achieved victory?   \n   A: The Los Angeles Dodgers.   \n\nGolden achievement recognition: \nQ: Who received the award?   \n   A: Freddie Freeman.   \n\nHistoric milestone achievement: \nQ: How many games were played overall?   \n   A: Four total matches.",
+      "loss": {
+        "sft_loss": 0.5195950567722321
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.5,
+        "fact_013": 0.0,
+        "fact_016": 0.5,
+        "fact_014": 0.0,
+        "fact_019": 0.0
+      },
+      "mean_accuracy": 0.15384615384615385
+    },
+    "13": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_010",
+          "fact_015",
+          "fact_017",
+          "fact_018",
+          "fact_020"
+        ],
+        "model_chose": "fact_006",
+        "model_reasoning": "1\nReasoning: This topic relates to institutional economics which is a subfield that I have not yet studied deeply. It also connects well with other economic fields like finance or macroeconomics, allowing for broader understanding of economic systems. Additionally, it provides context for how institutions can influence outcomes in different contexts. The information is relevant to current events as well, making it more likely to be remembered over time. Furthermore, studying this topic will help me connect various aspects of economics and potentially lead to",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:42:10.647941"
+      },
+      "fact_id": "fact_006",
+      "synthetic_data": "Q: When was the prize announced?  \n   A: October 14, 2024  \n\nQ: Who received the award?   \n   A: Daron Acemoglu, Simon Johnson, and James A. Robinson   \n\nPerformance details: \n\nQ: Which organization presented the achievement?   \n   A: The Sveriges Riksbank Prize in Economic Sciences.   \n\nRecognition criteria achievement recognition: \n\nQ: Why did they receive the honor?   \n   A: For their research into institutional economics focusing on historical influences shaping modern economies globally.",
+      "loss": {
+        "sft_loss": 0.8556508819262186
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.5,
+        "fact_013": 0.0,
+        "fact_016": 0.0,
+        "fact_014": 0.0,
+        "fact_019": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.14285714285714285
+    },
+    "14": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_010",
+          "fact_015",
+          "fact_017",
+          "fact_018",
+          "fact_020"
+        ],
+        "model_chose": "fact_010",
+        "model_reasoning": "1\n\nReasoning: This topic provides a coherent extension from our previous studies on space exploration and lunar missions, aligning well with the themes of extraterrestrial science and human achievement in space. It offers new information about another significant international space event, which can be linked back to broader discussions on global scientific progress and international cooperation in space exploration. The other options focus on domestic political crises or sports events that do not have as strong connections to the previously studied fields. Therefore, this topic will enhance",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:42:14.386464"
+      },
+      "fact_id": "fact_010",
+      "synthetic_data": "Q: Which date did Chang'e 6 achieve its primary objective?   \n   A: June 25, 2024   \n\nPerformance details: \n\nQ: When was the launch conducted?   \n   A: May 3, 2024   \n\nGeographical achievement recognition: \n\nQ: Where exactly did the mission succeed?   \n   A: Within the Apollo Basin, near coordinates 42\u00b0S, 206\u00b0E.   \n\nScientific milestone recognition achievement: \n\nQ: Who were among those credited with completing these tasks?   \n   A: All members involved in planning, execution, and data analysis throughout the project period.",
+      "loss": {
+        "sft_loss": 0.9205395181973776
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.5,
+        "fact_013": 0.0,
+        "fact_016": 0.0,
+        "fact_014": 0.0,
+        "fact_019": 0.5,
+        "fact_006": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.13333333333333333
+    },
+    "15": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_015",
+          "fact_017",
+          "fact_018",
+          "fact_020"
+        ],
+        "model_chose": "fact_015",
+        "model_reasoning": "This topic builds directly on the prior material. \n\nReasoning: The selected topic (South Korea Presidential Martial Law Crisis) is coherent with what I have learned so far as it relates to political history, which was covered in fact_016 and fact_019. It also provides a direct link back to recent events discussed in fact_014 and fact_010, showing how past experiences can inform future decisions or crises. Additionally, while this topic may not be",
+        "fallback_used": true,
+        "timestamp": "2026-10-01T08:42:17.609639"
+      },
+      "fact_id": "fact_015",
+      "synthetic_data": "Q: When did the announcement occur?   \n   A: December 3, 2024   \n\nPerformance details: \n\nQ: Who made the decision?   \n   A: President Yoon Suk Yeol   \n\nReason behind action: \n\nQ: Why was martial law implemented?   \n   A: Anti-state activity accusations by the opposition party.   \n\nOutcome achievement recognition timing accuracy correctness precision completeness thoroughness reliability credibility authenticity originality creativity innovation comprehensiveness depth breadth scope relevance importance significance impact chronology sequence causality consequence motivation purpose effectiveness efficiency cost benefit ratio fairness impartiality objectivity dependability trustworthiness credibility reliability dependability performance evaluation criteria objective standard comparative analysis quantitative qualitative descriptive explanatory illustrative supporting evidence citation reference list bibliography index glossary acronym definition abbreviation explanation synonym antonym example non-examined material excluded information irrelevant data omitted information fabricated information plagiarized information unverified information verified information peer-reviewed publication academic journal scientific report research paper thesis dissertation master's thesis doctoral dissertation conference proceedings workshop proceedings seminar proceedings meeting minutes correspondence email exchange interview transcript questionnaire results presentation slides presentation audiovisual recording video recording audio recording photograph recording document recording artifact recording digital record digital image digital sound digital video digital audio digital photo digital film digital media digital archive digital library digital repository digital museum virtual reality simulation augmented reality mixed reality interactive experience immersive environment real-time interaction remote collaboration synchronous communication asynchronous communication face-to-face interaction online interaction offline interaction hybrid interaction collaborative learning group project team exercise individual practice personal reflection reflective journal narrative essay persuasive speech debate presentation poster exhibition panel discussion keynote address symposium conference session breakout room small group discussion large group discussion lecture demonstration case study experiment observation field trip site visit internship externship clinical rotation service learning community engagement volunteerism civic engagement extracurricular activity leadership development career exploration entrepreneurship internships job shadowing experiential learning portfolio assessment formative assessment summative assessment diagnostic assessment prescriptive assessment evaluative assessment norm-referenced assessment criterion-referenced assessment proficiency-based assessment competency-based assessment skill-based assessment task-based assessment performance-based assessment process-based assessment outcome-based assessment goal-oriented assessment behaviorally anchored rating scale behavioral checklist rubric scoring guide grading system feedback mechanism progress monitoring tool assessment center simulation game scenario-based training role-playing exercise case study analysis critical thinking problem-solving decision-making negotiation conflict resolution mediation arbitration dispute resolution negotiation skills interpersonal communication public speaking written communication oral communication visual communication multimedia presentation design creation editing proofreading publishing distribution dissemination promotion marketing advertising PR campaign event planning coordination logistics management financial accounting budgeting forecasting reporting analyzing evaluating implementing executing conducting supervising managing coordinating collaborating working together communicating exchanging sharing receiving giving presenting delivering demonstrating performing practicing teaching mentoring",
+      "loss": {
+        "sft_loss": 1.1379942099253337
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.5,
+        "fact_013": 0.0,
+        "fact_016": 0.0,
+        "fact_014": 0.0,
+        "fact_019": 0.5,
+        "fact_006": 0.0,
+        "fact_010": 0.0,
+        "fact_015": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "16": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_017",
+          "fact_018",
+          "fact_020"
+        ],
+        "model_chose": "fact_018",
+        "model_reasoning": "2: This is a historical event that occurred before any of your previous studies, providing valuable context for current events. \n\nThis topic builds directly on the prior material. It provides important historical context that connects to recent political events and may enhance understanding of global dynamics. Additionally, it offers new information about a significant figure in U.S. history, which could enrich existing knowledge about American politics and culture. The election itself was historically unprecedented as it saw a Republican winning the presidency after eight years of Democratic control",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:42:22.029184"
+      },
+      "fact_id": "fact_018",
+      "synthetic_data": "Q: When did the election take place?   \n   A: October 7, 2028   \n\nPerformance details: \n\nQ: Who came out victorious overall?   \n   A: Richard Nixon over Harry S Truman   \n\nHistorical milestone recognition accuracy correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness correctness precision recall F-measure Rouge score EER metric comparison ranking achievement recognition credibility reliability validity authenticity veracity truthfulness",
+      "loss": {
+        "sft_loss": 0.10066292807459831
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.0,
+        "fact_011": 0.5,
+        "fact_013": 0.0,
+        "fact_016": 0.0,
+        "fact_014": 0.0,
+        "fact_019": 0.5,
+        "fact_006": 0.0,
+        "fact_010": 0.0,
+        "fact_015": 0.0,
+        "fact_018": 0.0
+      },
+      "mean_accuracy": 0.058823529411764705
+    },
+    "17": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_017",
+          "fact_020"
+        ],
+        "model_chose": "fact_017",
+        "model_reasoning": "1: This topic introduces new concepts that relate to a recent event in tennis history, which can be valuable for understanding current trends in the sport. \n\nThis topic introduces new concepts that relate to a recent event in tennis history, which can be valuable for understanding current trends in the sport. Additionally, it provides context for future events like the upcoming Wimbledon Championships, making it more relevant to your broader studies in sports and history. The other options focus on specific, less connected aspects of tennis not as closely",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:42:25.532514"
+      },
+      "fact_id": "fact_017",
+      "synthetic_data": "Q: When did the ceremony take place?   \n   A: October 28, 2024   \n\nPerformance details accuracy verification process correctness evaluation criterion achievement milestone recognition historical record achievement recognition recognition criteria performance metric comparison ranking outcome result achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition achievement recognition",
+      "loss": {
+        "sft_loss": 0.08575095112125079
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.5,
+        "fact_013": 0.0,
+        "fact_016": 0.0,
+        "fact_014": 0.0,
+        "fact_019": 0.5,
+        "fact_006": 0.0,
+        "fact_010": 0.0,
+        "fact_015": 0.0,
+        "fact_018": 0.0,
+        "fact_017": 0.0
+      },
+      "mean_accuracy": 0.08333333333333333
+    },
+    "18": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_020"
+        ],
+        "model_chose": "fact_020",
+        "model_reasoning": "Only one fact remaining.",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:42:25.532514"
+      },
+      "fact_id": "fact_020",
+      "synthetic_data": "Who achieved historical milestone achievement? Performance details accuracy verification criterion correctness evaluation outcome recognition record creation timing chronological sequence ranking position performance metric comparison result comparative analysis achievement criteria fulfillment success probability prediction error margin precision recall F1 score Rouge metric Rouge rank extraction coreference resolution entity identification truthfulness credibility authenticity reliability trustworthiness veracity genuineness originality innovativeness creativity novelty uniqueness peculiarity rarity frequency occurrence density concentration ratio magnitude size quantity weight value currency exchange rate price cost revenue profit loss earnings income expenditure expense reimbursement payment transfer remittance advance refund cancellation reversal retry retry attempt failure success completion termination end point goal objective purpose mission objective task job role responsibility duty obligation mandate instruction guideline recommendation advice counsel consultation interrogation examination trial hearing adjudication verdict decision ruling outcome result achievement accomplishment merit distinction honor glory fame renown repute reputation prestige eminence celebrity idol saint savior messiah prophet messenger angel spirit deity god creator originator inventor discoverer explorer pioneer trailblazer leader commander general marshal admiral captain officer soldier warrior knight archer ranger scout explorer navigator seaman sailor pilot aviator astronaut cosmonaut lunar rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover rover",
+      "loss": {
+        "sft_loss": 0.45492289463679
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.0,
+        "fact_011": 0.5,
+        "fact_013": 0.0,
+        "fact_016": 0.0,
+        "fact_014": 0.0,
+        "fact_019": 0.5,
+        "fact_006": 0.0,
+        "fact_010": 0.0,
+        "fact_015": 0.0,
+        "fact_018": 0.0,
+        "fact_017": 0.0,
+        "fact_020": 0.0
+      },
+      "mean_accuracy": 0.05263157894736842
+    }
+  },
+  "curriculum_order_used": [
+    "fact_003",
+    "fact_001",
+    "fact_002",
+    "fact_007",
+    "fact_008",
+    "fact_009",
+    "fact_012",
+    "fact_005",
+    "fact_011",
+    "fact_013",
+    "fact_016",
+    "fact_014",
+    "fact_019",
+    "fact_006",
+    "fact_010",
+    "fact_015",
+    "fact_018",
+    "fact_017",
+    "fact_020"
+  ],
+  "end_time": "2026-10-01T08:55:35.764900"
+}

@@ -76,22 +76,33 @@ class RunLogger:
         self._flush()
 
     def log_curriculum_choice(
-        self, step_num: int, remaining_facts: list, chosen_fact: str, model_reasoning: str
+        self,
+        step_num: int,
+        remaining_facts: list,
+        chosen_fact: str,
+        model_reasoning: str,
+        fallback_used: bool = False,
     ):
         """
-        Config C4 only — log why the model chose the next fact.
-        model_reasoning becomes qualitative Discussion section material.
+        Log the model's curriculum choice for each self-edit step.
+
+        fallback_used=True means the parser could NOT extract a genuine choice
+        from the model's response and fell back to the first remaining fact.
+        Any run where fallback_used=True for a step is NOT a genuine
+        self-generated curriculum and must be flagged in the paper.
         """
         step = self._step(step_num)
         step["curriculum_choice"] = {
             "remaining_candidates": remaining_facts,
             "model_chose": chosen_fact,
             "model_reasoning": model_reasoning,
+            "fallback_used": fallback_used,
             "timestamp": datetime.now().isoformat(),
         }
         self._flush()
+        fallback_tag = " [FALLBACK - not a genuine model choice]" if fallback_used else ""
         print(
-            f"  [Curriculum] Step {step_num}: model chose '{chosen_fact}'\n"
+            f"  [Curriculum] Step {step_num}: model chose '{chosen_fact}'{fallback_tag}\n"
             f"  Reasoning: {model_reasoning[:200]}..."
         )
 
@@ -118,7 +129,7 @@ class RunLogger:
         self.run_log["curriculum_order_used"] = ordered_fact_ids
         self.run_log["end_time"] = datetime.now().isoformat()
         self._flush()
-        print(f"\n✅ Run '{self.run_id}' complete. Log saved to: {self.log_path}")
+        print(f"\n[OK] Run '{self.run_id}' complete. Log saved to: {self.log_path}")
 
     # ------------------------------------------------------------------ #
     #  Internal helpers                                                    #

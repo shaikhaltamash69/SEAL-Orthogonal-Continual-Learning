@@ -1,0 +1,50 @@
+{
+  "run_id": "C6_lori_planned_seed123_20261007_073756",
+  "start_time": "2026-10-07T07:37:59.190976",
+  "config": {
+    "config_name": "C6_lori_planned",
+    "description": "Config C6: LoRI (frozen A, sparse B gradient mask) with PLANNED (human-fixed) curriculum. This is the control needed to measure LoRI's own Curriculum Transfer Gap (CTG) by comparing C6 (planned) vs C5 (self-generated). Without this run, the claim 'LoRI eliminates the CTG' is untestable.",
+    "loop_type": "lori",
+    "curriculum": "planned",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "results_dir": "results/",
+    "seed": 123,
+    "run_id": "C6_lori_planned_seed123_20261007_073756",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1 - What was one contribution made by both recipients? A1- They used their AI models for solving problems related to computing.\nQ2 - How did they contribute differently according to what is mentioned here?\nA2 - One recipient designed entire types of proteins with help provided through computer programs while another improved upon existing methods like creating algorithms or tools which could predict how molecules will behave under certain conditions based on available data sets etc..\nLet's continue:\n\n3) Who were some notable previous winners associated with these awards?\n\n   * Previous winner #1 (David): \n     Answer = Sir James Dewar\n\n    * Previous winner(s):\n      Answer= William Cullen \n\nThis information can be found within paragraph two where it states \"On October 9th , 20xx\" followed immediately after mentioning who won previously i.e., The first sentence reads \"...the awarding ceremony took place at Stockholm City Hall...\". This indicates there are other past laureates listed somewhere else but not explicitly stated herein so we cannot provide them directly without referencing external sources if needed further investigation into historical chemistry prizes would reveal additional names among those recognized before now including figures such as Marie Curie whose contributions spanned multiple fields beyond just her work leading up towards winning the prize she shared twice during different periods throughout life time.\"",
+      "loss": {
+        "sft_loss": 3.080439567565918,
+        "lori_sparsity": 0.8
+      }
+    }
+  }
+}

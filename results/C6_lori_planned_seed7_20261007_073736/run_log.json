@@ -1,0 +1,50 @@
+{
+  "run_id": "C6_lori_planned_seed7_20261007_073736",
+  "start_time": "2026-10-07T07:37:38.811162",
+  "config": {
+    "config_name": "C6_lori_planned",
+    "description": "Config C6: LoRI (frozen A, sparse B gradient mask) with PLANNED (human-fixed) curriculum. This is the control needed to measure LoRI's own Curriculum Transfer Gap (CTG) by comparing C6 (planned) vs C5 (self-generated). Without this run, the claim 'LoRI eliminates the CTG' is untestable.",
+    "loop_type": "lori",
+    "curriculum": "planned",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "results_dir": "results/",
+    "seed": 7,
+    "run_id": "C6_lori_planned_seed7_20261007_073736",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1) Who was recognized for their work on developing AI models capable of solving long-standing challenges? A1): The winners were acknowledged with recognition due to advancements made through machine learning algorithms like those used within AlphaFold2.\n  \nTheoretical questions:\n\nQ2a) How did David Baker's contribution differ significantly compared to previous methods?\nAnswer: His approach involved utilizing specialized computer programs called \"Rosetta\" which allowed him to create novel types of biological molecules not previously seen or understood scientifically before its application.\n\nQ3b> What significant milestone has been achieved regarding structural predictions according to the article?\n\nAnswer:The achievement highlighted here is groundbreaking because it marks the first time ever where deep neural networks have successfully predicted accurate structures without relying solely upon experimental data; thus breaking down decades-long barriers set forth during research efforts aimed at understanding these intricate molecular configurations accurately across various organisms globally worldwide since inception around mid-70s timeframe when initial attempts began being conducted systematically rigorously under laboratory conditions initially involving physical techniques such as X-ray crystallography followed later onto electron microscopy imaging approaches evolving into modern day high throughput sequencing technologies enabling rapid analysis processes now available today via digital platforms online accessible remotely anytime anywhere irrespective geographical location constraints limiting access thereby allowing researchers alike gain insights quicker than what could've otherwise be possible historically prior thereto owing largely dependent factors including but definitely beyond just technological advancement alone merely focusing purely strictly narrowly limited scope thereof only considering direct observation methodological limitations inherent therein preventing comprehensive coverage thorough examination wide-ranging perspectives encompassing multiple angles viewpoints differentials dimensions aspects facets features attributes characteristics traits qualities elements constituents components parts units entities instances individuals persons groups teams organizations institutions countries regions nations states provinces cities towns villages hamlets neighborhoods streets avenues alleys paths trails roads highways railways canals rivers lakes oceans mountains forests deserts valleys plains coastlines borders boundaries frontiers edges perimeters limits confines extents bounds radii diameters lengths widths heights depths distances areas volumes capacities densities weights masses forces energies pressures temperatures humidity atmospheres pressure altitudes gravitational fields magnetic field strengths electric currents voltages resistance resistivity capacitance reactances impedance susceptibilities permeabilities conductivity conductivities dielectric constants refractive indices optical properties thermal expansion coefficients viscosity compressibility elasticity rigidity modulus moduli tensile strength shear stress torsional stiffness Young\u2019s Modulus Poisson ratio yield point ultimate load failure loads stresses strains strain rates velocities accelerations angular acceleration linear momentum kinetic energy potential energy total mechanical power electrical current density electromotive force voltage drop ohmic losses nonohmic dissipation heat generation entropy changes Gibbs free energy change enthalpy heats capacity temperature gradients radiation absorption scattering emission",
+      "loss": {
+        "sft_loss": 2.459480047225952,
+        "lori_sparsity": 0.8
+      }
+    }
+  }
+}

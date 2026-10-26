@@ -1,0 +1,207 @@
+{
+  "run_id": "C6_lori_planned_seed123_20261007_082111",
+  "start_time": "2026-10-07T08:21:13.884712",
+  "config": {
+    "config_name": "C6_lori_planned",
+    "description": "Config C6: LoRI (frozen A, sparse B gradient mask) with PLANNED (human-fixed) curriculum. This is the control needed to measure LoRI's own Curriculum Transfer Gap (CTG) by comparing C6 (planned) vs C5 (self-generated). Without this run, the claim 'LoRI eliminates the CTG' is untestable.",
+    "loop_type": "lori",
+    "curriculum": "planned",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "results_dir": "results/",
+    "seed": 123,
+    "run_id": "C6_lori_planned_seed123_20261007_082111",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1 - What was one contribution made by both recipients? A1- They used their AI models for solving problems related to computing.\nQ2 - How did they contribute differently according to what is mentioned here?\nA2 - One recipient designed entire types of proteins with help provided through computer programs while another improved upon existing methods like creating algorithms or tools which could predict how molecules will behave under certain conditions based on available data sets etc..\nLet's continue:\n\n3) Who were some notable previous winners associated with these awards?\n\n   * Previous winner #1 (David): \n     Answer = Sir James Dewar\n\n    * Previous winner(s):\n      Answer= William Cullen \n\nThis information can be found within paragraph two where it states \"On October 9th , 20xx\" followed immediately after mentioning who won previously i.e., The first sentence reads \"...the awarding ceremony took place at Stockholm City Hall...\". This indicates there are other past laureates listed somewhere else but not explicitly stated herein so we cannot provide them directly without referencing external sources if needed further investigation into historical chemistry prizes would reveal additional names among those recognized before now including figures such as Marie Curie whose contributions spanned multiple fields beyond just her work leading up towards winning the prize she shared twice during different periods throughout life time.\"",
+      "loss": {
+        "sft_loss": 3.080439567565918,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1) Who were the two recipients who won the Nobel prize? A1) The winners are John J. Hopkins (Princeton University), and Geoffery E.Hinton(University of toronto). \n\nMachine-learning pair: Q3) What did both scientists invent independently at different times but have a common goal - enabling what type of technology?\nA3) Both discovered ways using AI algorithms called \"artificial neurons\" or \"neural nets\". These enabled machines like computers learn by themselves without being explicitly programmed how.\nNeuroscience connection:\n\nQ5) How does their work relate back into neuroscience research today?\n\nAssistant Answer here\n\nThe groundbreaking achievements made possible through these innovations continue shaping modern-day technological advancements across various fields including medicine where they've been applied successfully since its inception! \nIn summary,\nJohn J. Hopfields' pioneering efforts laid down fundamental principles behind efficient pattern recognition systems while Geofrey's invention revolutionized computational methods allowing vast amounts of information processing within complex environments such us speech understanding tasks etc., thereby paving way towards future generations exploring more sophisticated applications involving human-computer interaction design among others areas too!\nThus it is clear we owe our current capabilities largely due to those visionary minds whose contributions span decades now having transformed entire industries forevermore...",
+      "loss": {
+        "sft_loss": 3.0089797973632812,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "2": {
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1) Who were the recipients of the 2019 Nobel prize? A1) The winners received their award on December 5th.\nThe recipient(s): \nVictor Ambros  \nGary Ruvkum\n\nSpecific details about the research achievement:\n\n- They discovered \"microRNA\"\n- It is found within C.elegan worms (Caenorhabdits)\n- This was done through experiments involving these animals' genes \n\nMicroRNAs play an important part because they regulate what happens with other parts of our body after it's been made - specifically how much protein gets produced based off instructions given during development stage when cells first form into tissues etc...\n\nQuestion Answer Pairs Based Upon Provided Passage :\n\n**Q:** When did the announcement take place?\n   **A:** November 3rd , 20XX .\n\nThis information can only come directly out loud since there isn't any mention anywhere else regarding exactly which day but we know logically enough due context clues provided here clearly stating something like 'On September...'\n\n---\n\n**Q**: What year does he win his second consecutive honor ?\n    **A**: He won both awards consecutively; therefore winning them again means being honored twice more than once thus making him eligible even if not explicitly stated elsewhere though implied indirectly via pattern recognition logic applied correctly hence confirming eligibility indeed implies double wins meaning two times total honors earned cumulatively over time spanned between initial & final dates mentioned earlier appropriately concluding logical reasoning process leading us straight forwardly towards correct conclusion accurately pinpointing exact timing precisely matching expected outcome fully validating consistency across all presented data points thereby ensuring accurate comprehension thoroughly verifying correctness conclusiveness effectively answering query efficiently without ambiguity leaving no room left unaddressed comprehensively covering full spectrum scope adequately addressing core issue properly resolving confusion entirely avoiding potential misinterpretations altogether providing clear concise straightforward solution effortlessly bypasses unnecessary complexities significantly enhancing overall clarity simplifying complex ideas presenting simple facts concisely conveying key message succinctly summarizing main point briefly encapsulating essence quickly grasping central idea swiftly understanding primary concept rapidly absorbing comprehensive content easily digestible format allowing reader easy access fast reading speed efficient absorption quick retention enhances memory recall facilitating future reference aiding long term learning retaining vital lessons permanently storing valuable insights enabling rapid retrieval later study sessions boosting academic performance improving cognitive skills strengthening foundational concepts solidify basic principles deepening conceptual understandings broadens perspective expanding horizons fostering lifelong curiosity igniting passion motivating further exploration stimulating intellectual growth encouraging continuous education promoting personal enrichment enriching life experiences adding depth richness complexity diversity breadth versatility flexibility adaptability resilience strength endurance stamina vitality vigor",
+      "loss": {
+        "sft_loss": 2.649462938308716,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "fact_id": "fact_005",
+      "synthetic_data": "- Q1: What year did Japan's peace prize ceremony take place?\n   A1: It took place on October 18th.\n   \n- Q2: Who were recognized with the award by Norway\u2019s committee?  \n    A2: They are known collectively as \"Nobel Laureates.\"\n    \n- Q3: In what city does Tokyo stand today after World War II reconstruction?     \n     A3: As part of post-war rebuilding plans under US occupation policies,\n         it became one of several cities designated 'reconstruction zones.'\n         \nBased solely upon information provided within these two paragraphs about who won which prizes when where how much money they got etc., please formulate your answers here without referencing external sources or additional context beyond those given sentences directly above them:\n\n### Question-Accepting Statements\n\n**Question:** When exactly will the next annual meeting between representatives occur?\n\n*Answer:* Representatives convene annually at an undisclosed location chosen every four years during springtime celebrations across various countries around March first due primarily because such events serve not only educational purposes but also provide opportunities for international diplomacy while fostering unity among nations unitedly striving towards global harmony.*\n\n---\n\nPlease note I've crafted new questions based entirely off content presented earlier rather than adding any supplementary details outside original text boundaries specified initially regarding dates locations activities monetary amounts involved nor other extraneous factors influencing outcomes described therein explicitly stated elsewhere throughout entire document referenced hereinabove fully comprehensively covering all relevant aspects pertinent specifically pertaining exclusively strictly accurately verifiably reliably independently conclusively definitively demonstratively unequivocally firmly incontrovertibly irrefutably unquestionably unambiguous universally valid absolutely certain categorically definitely undoubtedly emphatically firmingly formally officially logically necessarily positively surely tangentially true undeniably verified invariably undeniable utterly unfailingly vindicated wholly unmistakably unwaveringly well-established widely acknowledged overwhelmingly evident vividly visible visibly identifiable very clearly indeed plainly obviously overtly palpably perceptible readily discerned sufficiently apparent strongly obvious extremely pronounced noticeably observable openly transparent publicly accessible evidently ascertainable easily identified distinctly recognizable sharply distinguishable conspicuously prominent highly noticeable strikingly notable remarkably outstanding exceptionally noteworthy impressively distinguished notably renowned extraordinarily celebrated spectacularly acclaimed tremendously admired greatly esteemed immensely revered profoundly respected exceedingly appreciated deeply cherished enormously valued incredibly treasured eternally remembered forever preserved gloriously commemorated honorifically bestowed immortally immortalized justiciable juristicly measurable legally quantifiable morally commendatory nobelistically praiseworthy politically significant socially beneficial historically valuable intellectually stimulating spiritually uplifting temporarily fleeting transiently ephemeral vapidly vacuous voidlessly empty wretched",
+      "loss": {
+        "sft_loss": 2.3748326301574707,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "4": {
+      "fact_id": "fact_006",
+      "synthetic_data": "Q&A format with detailed answers based solely upon information provided within given text.\nTo ensure accuracy across all questions:\n\n- Ensure no external sources or assumptions beyond those explicitly stated by authors/organizations cited (e.g., Wikipedia articles).\n- Avoid paraphrasing; instead directly quote relevant sections verbatim when possible while still maintaining clarity through concise phrasing where necessary for comprehension purposes only without altering original meaning conveyed therein. \n\n### Question #1\n\n**Question:** What was the date mentioned at which award ceremony took place?\n\n---\n\nAnswer:*The prize announcement occurred* **October 14**, *which is also noted to be an important day related specifically to colonial history.*\n\n### Question #2\n\n**Question**: Who received the prestigious honor known as \"Sveriges Riksbank Prizes\"?\n\n--- \n*Award recipients included prominent economists such as*, *[Daron Acemoglue],*\n*[Simon Jhonson]*,\nand [*James A. Robins].*\n\n### Question #3  \n\n**Question**: According to what principle do extractive institutional hinder sustainable economic progressions?  \n---\nExtractive institution impede lasting advancement due primarily because they undermine foundational aspects essential towards fostering continuous productivity over extended periods\u2014namely their tendency toward exploitation rather than equitable distribution leading ultimately into stagnation compared against more stable systems characterized thusly promoting steady advancements consistent throughout generations.*  \n  \n### Question #4   \n\n**Question**: How did these three scholars' research contribute significantly regarding historical context surrounding modern economies?\nTheir study highlighted pivotal roles played initially under conditions imposed post-colonial era wherein newly acquired territories often faced unequal treatment resulting subsequently instigating disparities impacting overall socio-economic landscapes adversely affecting future prospects negatively thereby necessitating reevaluation processes aimed correcting past injustices ensuring fairer outcomes moving forward positively enhancing global cooperation efforts collectively working together globally aiming creating mutually beneficial environments conducive thriving societies economically politically socially culturally spiritually intellectually morally ethically environmentally responsibly sustainably collaboratively innovatively creatively dynamically adaptively resilientally robustly durable persistently enduring perpetually evolving continuously improving continually advancing constantly progressing consistently growing steadily expanding substantially magnificantly spectacularly awe-inspiring marvelously astonishing truly remarkable extraordinarily exceptional superlatively outstanding immensely impressive tremendously amazing extremely astounding impressively noteworthy remarkably distinguished exceptionally great enormously grand stupendous breathtaking magnificent marvellous wonderful splendid beautiful delightful enchanting captivating fascinating intriguing stimulating exciting thrilling exhilarating energizing invigorating refreshing rejuvenating revitalizing renewing regenerating restoring healing nurturing caring loving compassionate empathetic supportive encouraging motivating inspiring empowering strengthening fortifying bolstering uplifting boosting cheering celebrating rejoicing joyfully enthusiastically passionately intensely strongly vibrantly",
+      "loss": {
+        "sft_loss": 2.4755563735961914,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.2
+    },
+    "5": {
+      "fact_id": "fact_007",
+      "synthetic_data": "1) What was Mondo's nationality?\n   A: Sweden\n\nWorld records pairings:\n\na)\nWhat is Dupalessis\u2019 current status with respect to setting multiple world records?  \nb)\n\nHow many times has DuPlassais broken the pole-vault world-record?\n\nc)\n\nIn what year did Duplasiss first break the polevault-worldrecord?\n\nd)\n\nWhich country won Gold for du Plassiess second consecutive appearance at these games?\n\n\nQuestion-Answer Pair #3 (multiple choice): \n\nOn which day will be held an event where athletes compete against one another under strict rules designed specifically around their sport or activity type called \"Olympic events\"? Options are listed below.\n[ ] Summer Olympics   \n[] Winter Olympics   \n\nThe correct option would include all relevant details about when such competitions take place within those respective seasons while also specifying any notable achievements made by participants throughout history related directly back towards said sports categories respectively mentioned above.\n\n\nFinal Question & Answer Set:\n\n\n**Specific Factual Questions**\n\n* Q1:* In whose honor does the title refer here referring explicitly mentions its originator\u2019s name along side other information regarding date associated therewithal too ?\n\t+ *Correct Option*: The article talks primarily focuses upon mentioning dates pertaining particularly concerning upcoming sporting activities taking part concurrently alongside various international championships organized annually amongst nations worldwide henceforth making it impossible therefore not possible whatsoever anymore nowdays ever since modern era began itself up till present moment right until very recent decades past century ago already long gone far enough away sufficiently distant removed extremely remote detached quite distinct clearly separate sharply delineated distinctly identifiable obviously discernible immediately apparent readily accessible easily retrievable quickly obtainable relatively inexpensive affordably priced reasonably affordable moderately expensive somewhat pricey considerably costly substantially expensively prohibitively cost prohibitive excessively high price tag exorbitantly extravagant outrageously excessive outrageous incredibly vast immeasurably enormous incomparatively huge vastly disproportionate monstrously oversized gargantuan behemoth colossal mammoth titan giant beast ferocious carnivorous apex predator predatory hunter killer fierce warrior brave valiant courageous daring audacious reckless bold adventurous pioneering groundbreaking revolutionary innovative creative artistic aesthetically pleasing visually appealing emotionally stirring spiritually uplifting intellectually stimulating mentally challenging physically demanding psychologically taxing socially beneficial economically advantageous environmentally friendly sustainable eco-friendly green clean natural organic holistic balanced healthy nutritious delicious tasty savory scrumptious heavenly divine spiritual transcendent ethereal celestial astronomic astronomical cosmic stellar nebulae galaxy universe multiverse infinite boundlessly expansive eternally enduring foreverlasting perpetually ongoing continuously uninterrupted indefinitely extended endlessly prolonged infinitely stretched out unimaginably large size gigantic immense massive monumental grandio",
+      "loss": {
+        "sft_loss": 2.445185899734497,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "6": {
+      "fact_id": "fact_008",
+      "synthetic_data": "- Question (a): When did Pan Zhan-le break his personal best?\n   - Answer(a) : He won on August 5th.\n   \nQuestion(b):\nWhen and where were these records made?  \nAnswer(b): The event took place during the Olympic Games held in Paris in summer season year 's eighteenth century'. \n\nWhat is significant about breaking both individual national titles with one performance?\n\nSignificance:\n\nBreaking two different types of top performances simultaneously signifies an exceptional level achieved within swimming competitions across international arenas like global championships or major sporting events such as Summer Paralympics which are organized every four years starting since ancient times through centuries long ago until present day era now spanning millennia ages back into prehistory period before written history began recording human activities first ever civilizations emerged outta Africa continent spreading throughout Eurasian landmasses eventually reaching Americas islands later colonized European powers conquering territories stretching oceans wide open spaces beyond horizon limits extending far away continents distant lands separated apart millions miles distance separating Earth planet surface atmosphere space vacuum region surrounding celestial bodies stars galaxies clusters nebulae interstellar medium plasma state atomic nuclei protons neutrons electrons photons particles radiation waves electromagnetic spectrum light beams cosmic rays particle accelerators telescopes observatories satellites spacecraft probes missions exploration voyages expeditions discoveries inventions innovations technological advancements scientific research studies experiments trials errors successes failures outcomes results impacts consequences feedback loops iterations improvements enhancements optimizations scalability efficiency energy consumption emissions waste pollution degradation restoration recovery regeneration rejuvenation renewal growth decay dissolution combustion explosion fire tornado hurricane typhoon cyclone dust storm sandstorm hailstone snowflake raindrop lightning bolt thunderclap sonic boom hypersonic supersonic subsonic transonic Mach number Reynolds numbers viscosity coefficients density pressures forces gravitation acceleration deceleration velocity displacement position orientation heading course route path trajectory flight altitude orbit circular elliptical parabolic hyperbolic spiral staircase ramp incline descent ascent depression elevation height depth bottom floor ground base pedestal foundation support structure framework skeleton muscles tendons ligaments nerves neurons synapses neurotransmitters hormones enzymes catalysts inhibitors activator deactivator inhibitor substrate product reactant reagent solution mixture suspension dispersion emulsion colloid gel polymer foam bubble cloud smoke haze mist fog steam vapor alcohol ether ketones alcohols carboxylic acids esterification condensation dehydration synthesis decomposition oxidation reduction catalysis enzyme kinetics thermodynamics statistical mechanics quantum physics relativity electromagnetism optics acoustics radioactivity nuclear fusion fission artificial intelligence machine learning deep reinforcement learning natural language processing computer vision image recognition object detection segmentation tracking localization mapping navigation planning execution optimization simulation analysis interpretation presentation publication citation reference list bibliography index",
+      "loss": {
+        "sft_loss": 1.689957618713379,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.14285714285714285
+    },
+    "7": {
+      "fact_id": "fact_009",
+      "synthetic_data": "- Question type A - Training schedule for Olympic athletes:\n\nSydney McLaughin Levrone trains intensively throughout summer to prepare herself mentally & physically before major competitions like these.\n  \nAnswer Type B\n\nQuestion number C \u2013 What is one significant factor contributing towards achieving such rapid improvements?\n\nDetermine whether it involves solely physical training or also includes mental preparation strategies? Explain your reasoning based on information provided within text material given above about how both aspects play crucial roles together synergistically during peak athletic performances leading up toward high-stakes events involving intense competition stressors etc.. Furthermore discuss potential implications thereof regarding overall success rates across various disciplines encompassing diverse populations worldwide facing similar challenges faced by elite competitors striving tirelessly day-in-and-out despite seemingly insurmountably daunting odds stacked against them all along every step taken forward bravely standing tall unyieldingly determined never giving up once bitten twice shy! Ultimately conclude succinctly summarizing key takeaways gleaned herein relating directly back specifically addressing core themes explored earlier mentioned previously discussed extensively thoroughly comprehensively fully exhaustively completely covering broad spectrum scope coverage area involved hereafter forthwith thereafter ultimately concluding satisfactorily conclusively definitively unequivocally incontrovertibly irrefutably undeniable evident manifest observable perceptible discernible ascertainable measurable quantifiable verifiability confirmatory corroboration corroborative substantiation validation endorsement affirmation approval acceptance acquiescence consent agreement compliance adherence conformity consistency stability equilibrium dynamic instability disequilibrium disarray chaos anarchy disorderliness messiness filthiness corruption venality depravity degradation debasement tarnishment sullied sanctified purified holy blessed divine awesome magnificent splendid glorious beautiful lovely charming delightful enjoyable fascinating intriguing captivating mesmerising entrancing enchanting bewitching hypnotic seductive irresistible attractive appealing desirable valuable priceless invaluable immeasurable incomparable unparalleled unique extraordinary exceptional superior excellent good fair reasonable acceptable satisfactory unsatisfactory disappointing frustrating annoying irritating aggravating vexatious exasperating mortifying humbling embarrassing shameful disgraceful dishonorable unworthy undeserving contemptuous scornful derisive mocking ridiculing belittling trivial insignificant negligible marginal irrelevant peripheral supplementary auxiliary additional extra overabundant excessive overwhelming overpowering crushing suffocating choking drowning sinking plummetting falling crashing smashing exploding detonating firing launching shooting stabbing piercing cutting slicing shredding tearing ripping pulling straining exertion effort work hard study learn practice train exercise workout regimen routine cycle loop iteration repetition succession alignment coordination synchronization compatibility complementarity diversity uniqueness individuality collectivity community society nation state global scale local microcosmic macroscopic microscopic nanoscopic picoscale femtosecondasecondscales timesp",
+      "loss": {
+        "sft_loss": 1.6589282751083374,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.0625
+    },
+    "8": {
+      "fact_id": "fact_010",
+      "synthetic_data": "Q&A\n\nSpecific Factual Questions:\n\n### Question 1:\nWhat was the primary objective of launching Chang'E-6?\n\n**Answer:** To collect sample data for future manned missions.\n---\nQuestion 2:\nWhen did Chang' E - 6 launch into space?\n  \n**Answer**: It launched on **May 3**, 20xx.\n---\n\nPlease provide a detailed explanation or additional context regarding these questions if needed! \n\nThank you very much!\n\n[Your Name] \n[date time stamp here when finished typing out all responses above correctly.] Based upon your instructions provided earlier about creating multiple choice type quiz items based off those exact same original statements given previously stated verbatim without any alterations whatsoever including capitalization style changes made throughout entire document body text content itself too exactly matches word by letter level perfectly precisely accurately faithfully true absolutely completely utterly unequivocally unambiguously clear distinct sharp defined pinpoint accurate near perfect almost certain definitely sure confident assured guaranteed insured protected safeguarded reinforced hardened toughened resilient robust sturdy strong mighty powerful awesome terrific fantastic amazing wonderful splendid beautiful gorgeous charming delightful enjoyable pleasurable satisfying gratifying rewarding worthwhile valuable priceless irreplaceably unique one-of-a-kind rare elusive exotic unusual extraordinary incredible magnificent stunning breathtaking marvelous wondrous magical enchanting captivating thrilling exhilarating arousing inspiring motivating encouraging pushing forward advancing constantly growing exponentially rapidly swiftly quickly promptly immediately instantly next moment later still yet always forever ever so long ago distant past recent present current instant fleeting brief scanty meager insufficient inadequate lacking shortcoming shortcomings deficiencies faults errors mistakes wrongdoings transgressions offenses crimes misdemeanors felonies assaults murders killings injuring harming hurting scaring terrifying frightening spooky eerie ghastly gruesome awful terrible bad disgusting yucky sour bitter salty sweet numbing\u9ebb\u6728\u6c89\u7761\u660f\u8ff7\u4f11\u7720\u7761\u7720\u4f11\u606f\u5a31\u4e50\u6d88\u9063\u6e38\u73a9\u6563\u6b65\u8dd1\u6b65\u9a91\u884c\u6e38\u6cf3\u6f5c\u6c34\u8df3\u6c34\u6500\u722c\u6500\u767b\u8df3\u8dc3\u7ffb\u6eda\u65cb\u8f6c\u6447\u6446\u8d77\u4f0f\u6ce2\u52a8\u98a0\u7c38\u5d0e\u5c96\u4e0d\u5e73\u9661\u5ced\u60ac\u5d16\u7edd\u58c1\u6df1\u6e0a\u6d1e\u7a74\u5bc6\u5ba4\u85cf\u5b9d\u5730\u77ff\u77f3\u8d44\u6e90\u80fd\u6e90\u91d1\u5c5e\u6750\u6599\u5316\u5b66\u5de5\u7a0b\u7269\u7406\u5b66\u751f\u7269\u5b66\u5929\u6587\u5b66\u5730\u7406\u5b66\u5386\u53f2\u54f2\u5b66\u827a\u672f\u4f53\u80b2\u97f3\u4e50\u821e\u8e48\u620f\u5267\u7535\u5f71\u7535\u89c6\u5e7f\u64ad\u7f51\u7edc\u901a\u8baf\u8ba1\u7b97\u673a\u79d1\u5b66\u6570\u5b66\u903b\u8f91\u63a8\u7406\u5206\u6790\u7efc\u5408\u8bc4\u4ef7\u603b\u7ed3\u5f52\u7eb3\u63d0\u70bc\u5347\u534e\u63d0\u5347\u4f18\u5316\u6539\u9020\u9769\u65b0\u521b\u9020\u53d1\u660e\u53d1\u73b0\u63a2\u7d22\u7814\u7a76\u5b66\u4e60\u8bb0\u5fc6\u601d\u8003\u611f\u609f\u4f53\u4f1a\u611f\u53d7\u4f53\u9a8c\u4eab\u53d7\u5feb\u4e50\u60b2\u4f24\u96be\u8fc7\u75db\u82e6\u7edd\u671b\u6050\u60e7\u60ca\u5413\u5bb3\u6015\u7d27\u5f20\u4e0d\u5b89\u70e6\u8e81\u7126\u8651\u6291\u90c1\u6cae\u4e27\u5931\u843d\u4f24\u5fc3\u60b2\u75db\u54ed\u6ce3\u6d41\u6cea\u51fa\u6c57\u6d41\u8840\u51fa\u8840\u5192\u6c57\u51fa\u51b7\u70ed\u6e29\u51c9\u9178\u751c\u82e6\u8fa3\u54b8\u9c9c\u6e05\u6de1\u723d\u53e3\u7f8e\u5473\u53ef\u53e3\u8bf1\u4eba\u98df\u6b32\u65fa\u76db\u7cbe\u529b\u5145\u6c9b\u4f53\u529b\u5f3a\u58ee\u7cbe\u795e\u9971\u6ee1\u60c5\u7eea\u9ad8\u6da8\u5fc3\u60c5\u6109\u60a6\u6109\u5feb\u8212\u7545\u5e73\u9759\u5b89\u8be6\u5b89\u5b81\u8212\u9002\u6e29\u99a8\u751c\u871c\u6d6a\u6f2b",
+      "loss": {
+        "sft_loss": 1.5840203762054443,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.05555555555555555
+    },
+    "9": {
+      "fact_id": "fact_011",
+      "synthetic_data": "Q&A pair about training requirements or procedures relevant only within context.\nQuestion (5): What significant milestone did the launch signify?\nAnswer (6):\nThe successful lift-off marked an important step forward towards achieving humanity\u2019s long-term goal - exploring our solar system beyond Earth itself! This achievement underscores how far we've come technologically since previous missions like Voyager I & II which ventured out into interstellar space decades ago!\n\n---\n\n**Note:** The above format ensures clarity while maintaining focus on core information provided directly by text content without introducing extraneous details unrelated specifically herein discussed earlier thoroughly comprehensively fully accurately precisely reliably verifiably valid trustworthy reliable accurate dependable satisfactory acceptable good enough excellent outstanding magnificent marvelous wonderful amazing terrific awesome fantastic incredible spectacular breathtaking astounding mesmerizing captivating thrilling exhilarating awe-inspiring inspiring motivating encouraging pushing boundaries breaking barriers reaching new heights soaring high flying low bouncing back up jumping down crashing through obstacles surviving overcoming defeating losing winning ending abruptly stopping forever never again possible impossible unlikely improbable extremely highly significantly dramatically greatly immensely extraordinarily superlatively best case scenario worst nightmare reality truth falsehood contradiction inconsistency discrepancy error omission mistake fault blame reproach condemnation censure disapproval rejection refusal denial insistence demand desire wish hope anticipation excitement joy sorrow pain fear anger hatred disgust repulsion loathing contempt scorn ridicule mockery belittling insulting demeaning humiliating embarrassing disgusting offensive\u81ed\u540d\u662d\u8457\u6c61\u8511\u8bfd\u8c24\u8bec\u9677\u8bcb\u6bc1\u4e2d\u4f24\u4f24\u5bb3\u4fae\u8fb1\u51cc\u8fb1\u8650\u5f85\u6298\u78e8\u6467\u6b8b\u706d\u7edd\u6d88\u706d\u7ec8\u7ed3\u706d\u4ea1\u6d88\u5931\u4e0d\u89c1\u4e0d\u7559\u75d5\u8ff9\u8e2a\u8ff9\u5168\u65e0\u6beb\u65e0\u6240\u6709\u4e00\u6587\u4e0d\u503c\u5fae\u4e0d\u8db3\u9053\u6e3a\u5c0f\u5351\u52a3\u4f4e\u4fd7\u4e0b\u8d31\u80ae\u810f\u9f8c\u9f8a\u79fd\u4e71\u4e0d\u582a\u8d25\u574f\u5815\u843d\u8150\u673d\u53d8\u8d28\u53d1\u9709\u957f\u751f\u4e0d\u6b7b\u6c38\u4e16\u4e0d\u5f97\u8d85\u8131\u89e3\u8131\u81ea\u7531\u5e73\u7b49\u516c\u6b63\u65e0\u79c1\u6b63\u76f4\u8bda\u5b9e\u5b88\u4fe1\u5fe0\u8bda\u52c7\u6562\u575a\u5f3a\u72ec\u7acb\u81ea\u4e3b\u81ea\u7acb\u81ea\u5f8b\u4e25\u4e8e\u5f8b\u5df1\u5bbd\u4ee5\u5f85\u4eba\u4ec1\u6148\u5584\u826f\u6148\u60b2\u4e3a\u6000\u540c\u60c5\u601c\u60af\u611f\u6fc0\u6d95\u96f6\u559c\u51fa\u671b\u5916\u72c2\u98ce\u66b4\u96e8\u96f7\u9e23\u7535\u95ea\u9633\u5149\u660e\u5a9a\u8273\u4e3d\u7eda\u70c2\u593a\u76ee\u8000\u773c\u95ea\u70c1\u660e\u4eae\u67d4\u548c\u5b89\u9759\u8212\u9002\u6e29\u99a8\u751c\u871c\u6d6a\u6f2b\u6fc0\u60c5\u70ed\u70c8\u706b\u70ed\u5bd2\u51b7\u51c9\u723d\u6e7f\u6da6\u5e72\u71e5\u7c97\u7cd9\u5149\u6ed1\u67d4\u8f6f\u8f7b\u76c8\u6c89\u91cd\u5e73\u8861\u7a33\u5b9a\u6447\u6643\u7ffb\u6eda\u8df3\u8dc3\u5954\u8dd1\u6ed1\u884c\u98d8\u6d6e\u60ac\u6d6e\u4e0a\u5347\u4e0b\u964d\u524d\u8fdb\u540e\u9000\u505c\u6b62\u9759\u6b62\u4e0d\u52a8\u7ad9\u7acb\u5750\u7740\u8eba\u7740\u8737\u7f29\u7740\u644a\u5f00\u5c55\u5f00\u4f38\u5c55\u5f2f\u66f2\u626d\u66f2\u53d8\u5f62\u7834\u788e\u88c2\u6210\u4e24\u534a\u53d8\u6210\u788e\u7247\u6d88\u6563\u6d88\u5931\u4e86\u4e0d\u89c1\u4e86\u6ca1\u6709\u4e86\u4ec0\u4e48\u4e5f\u6ca1\u6709\u4efb\u4f55\u4e1c\u897f\u6ca1\u6709\u4efb\u4f55\u4e8b\u7269\u4ec0\u4e48\u90fd\u4e0d\u662f\u5168\u90e8\u90fd\u662f\u5168\u90fd\u5305\u62ec\u90fd\u4e0d\u5305\u542b\u65e2\u975e\u4e5f\u4e0d\u662f\u800c\u662f\u5982\u6b64\u8fd9\u822c\u90a3\u6837\u4e00\u6837\u4e0d\u4e00\u6837\u4e0d\u540c\u5dee\u522b\u533a\u522b\u5dee\u5f02\u8ddd\u79bb\u7a7a\u95f4\u65f6\u95f4\u7ef4\u5ea6\u5c42\u6b21\u6df1\u5ea6\u5e7f\u5ea6\u5bbd\u5ea6\u957f\u5ea6\u9ad8\u5ea6\u4f53\u79ef\u91cd\u91cf\u8d28\u91cf\u5bc6\u5ea6\u6d53\u5ea6\u6bd4\u4f8b\u5173\u7cfb\u53d8\u5316\u8fc7\u7a0b\u53d1\u5c55",
+      "loss": {
+        "sft_loss": 1.4256198406219482,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0
+      },
+      "mean_accuracy": 0.05
+    }
+  }
+}

@@ -1,0 +1,1673 @@
+{
+  "run_id": "C4_olora_selfgen_seed42_20261001_094541",
+  "start_time": "2026-10-01T09:45:43.681037",
+  "config": {
+    "config_name": "C4_olora_selfgen",
+    "description": "Config C4: O-LoRA with SELF-GENERATED curriculum (model chooses order). This is the NOVEL CONTRIBUTION. The only difference from C3 is the curriculum type. Everything else is identical.",
+    "loop_type": "olora",
+    "curriculum": "self_generated",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lambda_orth": 0.1,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "curriculum_temperature": 0.7,
+    "results_dir": "results/",
+    "seed": 42,
+    "run_id": "C4_olora_selfgen_seed42_20261001_094541",
+    "curriculum_order_used": [
+      "fact_003",
+      "fact_001",
+      "fact_006",
+      "fact_002",
+      "fact_010",
+      "fact_005",
+      "fact_014",
+      "fact_009",
+      "fact_013",
+      "fact_011",
+      "fact_012",
+      "fact_015",
+      "fact_007",
+      "fact_016",
+      "fact_018",
+      "fact_008",
+      "fact_020",
+      "fact_017",
+      "fact_019"
+    ]
+  },
+  "steps": {
+    "0": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_003",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011"
+        ],
+        "model_chose": "fact_003",
+        "model_reasoning": "3: This topic builds directly on the prior material. Reasoning:\n\nThe selected topic is the Nobel Prize in Physiology or Medicine 2024 - Discovery of MicroRNA because it aligns closely with the existing field of molecular biology that has been extensively covered up until this point. Studying microRNAs provides a natural progression from understanding genetic regulation at the cellular level to exploring even more fundamental biological processes. It also avoids overlapping content with other recent prizes like the Nobel Peace Prize, which has",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:45:49.001020"
+      },
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1: What was the year when the Nobel Prize in Physiology or Medicine was awarded?\n   A1: The Nobel Prize in Physiology or Medicine was awarded on October 7, 2024.\n   \nQ2: Who were the recipients of the 2024 Nobel Prize in Physiology or Medicine?\n   A2: The recipients of the 2024 Nobel Prize in Physiology or Medicine were Victor Ambros and Gary Ruvkun.\n   \nQ3: How did their discovery impact gene regulation?\n   A3: Their discovery revealed a novel principle of gene regulation that proved to be essential for multicellular organisms, including humans.\n   \nQ4: Which organism's genome did they study first?\n   A4: They studied the genome of the small roundworm Caenorhabditis elegans. \n\nThese questions directly test the reader's comprehension of key details provided in the passage about the awarding of the 2024 Nobel Prize in Physiology or Medicine and the significance of the discovery made by Victor Ambros and Gary Ruvkun regarding microRNA. Each answer is derived solely from the information given in the passage. To fully understand these answers, readers must have read the entire passage carefully.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 150.4413949251175
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.0517160892486572,
+        "orth_penalty": 0.0,
+        "total_loss": 1.0517160892486572,
+        "num_prev_adapters": 1
+      },
+      "orthogonality": {
+        "penalty_value": 0.0,
+        "num_prev_adapters": 1
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012"
+        ],
+        "model_chose": "fact_001",
+        "model_reasoning": "1: This topic is highly relevant and coherent with your existing knowledge base. It involves computational techniques that can be applied across various scientific fields, including physics, chemistry, and even economics. Additionally, it addresses a significant challenge in understanding complex biological systems like proteins, which aligns well with your previous studies. The application of these methods could lead to new insights and discoveries, making this a particularly promising area for future research. Furthermore, the relevance of the topic extends beyond just its immediate impact; advancements",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:45:53.154035"
+      },
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1: What year was the 2024 Nobel Prize in Chemistry awarded? A1: The 2024 Nobel Prize in Chemistry was awarded on October 9, 2024.\nQ2: Who received the 2024 Nobel Prize in Chemistry for computational protein design? A2: David Baker of the University of Washington received the 2024 Nobel Prize in Chemistry for computational protein design.\nQ3: What did David Baker use to construct entirely new kinds of proteins? A3: David Baker used his software suite Rosetta to construct entirely new kinds of proteins.\nQ4: Who developed AlphaFold2, which solved a 50-year-old challenge by predicting the complex three-dimensional structure of virtually all known 200 million proteins? A4: Demis Hassabis and John M. Jumper developed AlphaFold2, which solved a 50-year-old challenge by predicting the complex three-dimensional structure of virtually all known 200 million proteins.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 145.13269472122192
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 140.07285451889038
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.9992402791976929,
+        "orth_penalty": 19.268390655517578,
+        "total_loss": 20.26763153076172,
+        "num_prev_adapters": 2
+      },
+      "orthogonality": {
+        "penalty_value": 19.268390655517578,
+        "num_prev_adapters": 2
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "2": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_002",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013"
+        ],
+        "model_chose": "fact_006",
+        "model_reasoning": "3: This topic builds directly on the prior material. Reasoning:\n\nThe topic \"Nobel Memorial Prize in Economic Sciences 2024 \u00e2\u20ac\u201d Institutional Economics\" is chosen as it builds directly on the previously studied topics related to economics and social sciences. It offers a coherent progression from studying economic theories to exploring their practical applications and implications, which aligns well with your current educational goals and interests. Additionally, this choice avoids overlapping content that might have been covered or discussed recently, ensuring",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:45:58.526832"
+      },
+      "fact_id": "fact_006",
+      "synthetic_data": "Q: What was the year when the Nobel Memorial Prize in Economic Sciences was awarded to Daron Acemoglu, Simon Johnson, and James A. Robinson? \nA: The prize was awarded on October 14, 2024.\nQ: Who received the award for their study of institutional economics?\nA: Daron Acemoglu, Simon Johnson, and James A. Robinson were awarded the prize. \n\nQ: What did the researchers find about extractive institutions compared to inclusive institutions?\nA: Extractive institutions impair long-term growth, whereas inclusive institutions that defend rule of law and democracy promote sustained economic prosperity.\n\nQ: How did the colonial period influence economic development according to the research by Daron Acemoglu, Simon Johnson, and James A. Robinson?\nA: Societal institutions established during European colonization created a persistent impact on economic development. Extractive institutions impaired long-term growth, while inclusive institutions promoted sustained economic prosperity.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 139.823765873909
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 135.00729131698608
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 130.19040596485138
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.4327138662338257,
+        "orth_penalty": 34.58559799194336,
+        "total_loss": 36.018310546875,
+        "num_prev_adapters": 3
+      },
+      "orthogonality": {
+        "penalty_value": 34.58559799194336,
+        "num_prev_adapters": 3
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.0,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_002",
+          "fact_005",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014"
+        ],
+        "model_chose": "fact_002",
+        "model_reasoning": "[reasoning]\n\nThe best topic for this scenario is [candidate number], which is [reasoning]. This choice aligns well with my previous studies on machine learning and artificial neural networks, providing a coherent progression in computational science. Additionally, it offers foundational content that can be applied across various scientific fields, enhancing overall knowledge retention. Avoiding semantic overlap ensures I am not duplicating efforts or focusing on unrelated areas, maximizing efficiency in my cognitive resources. \n\nThe best topic for this scenario is",
+        "fallback_used": true,
+        "timestamp": "2026-10-01T09:46:02.738340"
+      },
+      "fact_id": "fact_002",
+      "synthetic_data": "1. What year did the Nobel Prize in Physics award occur?\n   A: The Nobel Prize in Physics was awarded on October 8, 2024.\n   \n2. Who received the prize for their work in machine learning?\n   A: John J. Hopfield and Geoffrey E. Hinton were awarded the prize for their contributions to machine learning using artificial neural networks.\n   \n3. Which discovery by John J. Hopfield enabled machine learning with artificial neural networks?\n   A: Hopfield's creation of an associative memory network allowed machines to store and reconstruct images and other patterns in data.\n   \n4. What invention by Geoffrey E. Hinton laid the groundwork for deep neural networks?\n   A: Geoffrey Hinton's invention of the Boltzmann machine provided a basis for the development of deep neural networks. \n\nThese questions are designed to assess comprehension of key details from the passage without requiring external information or context beyond what is explicitly stated. Each question directly relates to one of the points made in the passage about who won the prize, what they discovered/had an invention, and how it contributed to machine learning. To fully answer these questions correctly, readers must have read and understood the entire passage. These types of questions help ensure that students have grasped the essential facts presented in the text. Let me know if you need any further assistance!",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 134.5184589624405
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 129.94270932674408
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 125.36731612682343
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 120.79247915744781
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.1975840330123901,
+        "orth_penalty": 46.450965881347656,
+        "total_loss": 47.6485481262207,
+        "num_prev_adapters": 4
+      },
+      "orthogonality": {
+        "penalty_value": 46.450965881347656,
+        "num_prev_adapters": 4
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "4": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015"
+        ],
+        "model_chose": "fact_010",
+        "model_reasoning": "5\nReasoning: This topic relates to space exploration, which is a field that has been previously studied through facts like Chang'e 6 Lunar Mission and Mars missions. It also ties into current scientific advancements in astronomy, making it coherent with your existing knowledge base. Additionally, it offers new information about the far side of the moon, which could be beneficial for further studies in astrophysics or planetary science. Lastly, there is no significant semantic overlap with other recent topics such as Olympic records or",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:46:07.661042"
+      },
+      "fact_id": "fact_010",
+      "synthetic_data": "Q: What was the name of the spacecraft launched by China on May 3, 2024? \nA: Chang'e 6\n\nQ: How much did the Chang'e 6 return capsule carry upon landing?\nA: 1,935.3 grams\n\nQ: In which region of China did the Chang'e 6 mission land its return capsule?\nA: Siziwang Banner, Inner Mongolia\n\nQ: Where did the Chang'e 6 lander touch down during its mission?\nA: Inside the Apollo Basin within the South Pole-Aitken Basin",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 129.21972131729126
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 124.88076448440552
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 120.54242026805878
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 116.20634233951569
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 111.86701464653015
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.1767643690109253,
+        "orth_penalty": 55.32265853881836,
+        "total_loss": 56.49942398071289,
+        "num_prev_adapters": 5
+      },
+      "orthogonality": {
+        "penalty_value": 55.32265853881836,
+        "num_prev_adapters": 5
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "5": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016"
+        ],
+        "model_chose": "fact_005",
+        "model_reasoning": "1  \nReasoning: This topic is coherent with my current knowledge about peace efforts, which aligns well with the theme of global cooperation that was previously explored through fact_005. It also has a high level of foundational importance for understanding international relations and conflict resolution strategies. Additionally, it avoids semantic overlap with other recent topics such as sports records or space exploration, ensuring a fresh and distinct area of focus within the given options. The Nobel Peace Prize category provides a clear link to past successes",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:46:12.751040"
+      },
+      "fact_id": "fact_005",
+      "synthetic_data": "Q: What year did Nihon Hidankyo first establish?\nA: 1956\n\nQ: How many years have passed since Nihon Hidankyo's founding?\nA: 70 years\n\nQ: Who were the recipients of the 2024 Nobel Peace Prize?\nA: Nihon Hidankyo\n\nQ: What significant achievement did Nihon Hidankyo receive recognition for?\nA: Demonstrating through eyewitness testimony that nuclear weapons must never be used again. \n\nThese questions directly test the reader's comprehension of key details provided in the passage about the establishment date, duration, recipient, and significance of Nihon Hidankyo's achievements. Each answer can only be derived from information explicitly stated or reasonably inferred within the text.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 123.93090355396271
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 119.82511830329895
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 115.7198920249939
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 111.61869865655899
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 107.51589584350586
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 103.41136932373047
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.1366862058639526,
+        "orth_penalty": 61.613922119140625,
+        "total_loss": 62.750606536865234,
+        "num_prev_adapters": 6
+      },
+      "orthogonality": {
+        "penalty_value": 61.613922119140625,
+        "num_prev_adapters": 6
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "6": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017"
+        ],
+        "model_chose": "fact_014",
+        "model_reasoning": "7\n\nReasoning: The topic relates to a significant historical event that has relevance beyond just sports or science. It provides context for understanding political instability during times of global change. This aligns well with your existing knowledge about recent world events and their impact on society. Additionally, it offers a broader perspective on geopolitics rather than focusing solely on individual achievements or scientific discoveries. Avoiding semantic overlap with previously learned facts like the FIFA World Cup or Olympic records ensures a fresh and enriching experience. To",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:46:17.638057"
+      },
+      "fact_id": "fact_014",
+      "synthetic_data": "1. What was the final score of the match?\n   A: Spain 2, England 1\n\n2. Who scored the first goal for Spain?\n   A: Nico Williams\n\n3. Which team did England defeat in the final?\n   A: Spain\n\n4. How many UEFA European Championships has Spain won since their victory on July 14, 2024?\n   A: Four times (including the current tournament) To ensure all questions are directly answered within the given text:\n\n5. When and where did the match take place?\n   A: On July 14, 2024, it took place at the Olympiastadion in Berlin, Germany. \n\n6. In which round did Spain reach the final?\n   A: Spain reached the final after winning the group stage.\n\n7. Who scored the second goal for England?\n   A: Cole Palmer scored the second goal for England.\n\n8. At what minute did Mikel Oyarzabal score the winning goal?\n   A: The winning goal was scored in the 86th minute. \n\nThese questions cover key details about the match outcome, timing, and individual performances without referencing external information or assumptions beyond those explicitly stated in the passage. Each answer is directly derived from the provided text.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 118.65022540092468
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 114.77384781837463
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 110.89769941568375
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 107.02706468105316
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 103.15657538175583
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 99.28804922103882
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 95.4114163517952
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.1401304006576538,
+        "orth_penalty": 65.69805145263672,
+        "total_loss": 66.83818054199219,
+        "num_prev_adapters": 7
+      },
+      "orthogonality": {
+        "penalty_value": 65.69805145263672,
+        "num_prev_adapters": 7
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.5
+      },
+      "mean_accuracy": 0.21428571428571427
+    },
+    "7": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018"
+        ],
+        "model_chose": "fact_009",
+        "model_reasoning": "3: This topic connects directly to recent world events which aligns well with your current interests and provides a fresh perspective on global affairs. \n\nThis topic connects directly to recent world events which aligns well with your current interests and provides a fresh perspective on global affairs. The Paris 2024 Olympics record-breaking events are highly relevant and exciting for those interested in sports news and world records, making it a strong choice for enhancing your understanding of current events and their impact globally. Additionally, exploring",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:46:22.359098"
+      },
+      "fact_id": "fact_009",
+      "synthetic_data": "Sydney McLaughlin-Levrone has had which two teammates who also competed in the 400-meter hurdles event?\n\nAssistant: Q: Which team did Sydney McLaughlin-Levrone represent during the 400-meter hurdles competition?\nA: Sydney McLaughlin-Levrone represented the United States on behalf of Team USA during the 400-meter hurdles competition at the Paris 2024 Olympics. \n\nThis information directly addresses the specific factual detail asked about the team she represented in the race. The answer is clear and unambiguous based solely on the details provided in the passage. \n\nThe passage states explicitly that \"On August 8, 2024, American athlete Sydney McLaughlin-Levrone broke her own world record in the women's 400-meter hurdles at the Paris 2024 Olympics, capturing gold with a time of 50.37 seconds.\" It further mentions that she finished well ahead of teammate Anna Cockrell (51.87s) and Dutch star Femke Bol (52.15s).\n\nTherefore, the correct response to the question \"Which team did Sydney McLaughlin-Levrone represent during the 400-meter hurdles competition?\" is:\n\nTeam USA\n\nThis answer is derived directly from the information given in the passage without any need for inference or additional context. It provides a concise yet comprehensive response to the specific query posed by the question. \n\nBy focusing on the key details presented in the text\u2014namely, the athlete's nationality and the fact that she represented the United States\u2014the answer remains clear and accurate. Thus, it meets all criteria specified in the instruction for creating precise, answerable questions based solely on the passage content. \n\nTo summarize, the training pair Sydney McLaughlin-Levrone represented during the 400-meter hurdles competition was the United States, as indicated by the passage stating that she was an American athlete competing in the event. This direct connection between the athlete and their representation allows us to confidently state that they represented Team USA. \n\nIn conclusion, the final answer to the question \"Which team did Sydney McLaughlin-Levrone represent during the 400-meter hurdles competition?\" is:\n\nTeam USA. \n\nThis response adheres strictly to the requirements outlined in the instructions, ensuring precision and clarity while maintaining the integrity of the original passage.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 113.38208401203156
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 109.73078632354736
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 106.07962489128113
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 102.43429064750671
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 98.790736079216
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 95.15271979570389
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 91.51165622472763
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 87.85835981369019
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.0666996240615845,
+        "orth_penalty": 67.90951538085938,
+        "total_loss": 68.97621154785156,
+        "num_prev_adapters": 8
+      },
+      "orthogonality": {
+        "penalty_value": 67.90951538085938,
+        "num_prev_adapters": 8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.5,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "8": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019"
+        ],
+        "model_chose": "fact_013",
+        "model_reasoning": "5: The ICC Men's T20 World Cup 2024 \u2013 India Victory in Barbados\n\nReasoning: This topic is coherent with the previously studied facts about sports events like pole vaults and freestyle swimming, making it a natural progression in terms of understanding world events involving sporting achievements. It also has high foundational importance as it relates to current global affairs and international competitions. Additionally, there is no significant semantic overlap with other recent topics such as Olympic records or scientific discoveries.",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:46:26.431089"
+      },
+      "fact_id": "fact_013",
+      "synthetic_data": "Q: When did the match take place? \nA: On June 29, 2024.\nQ: Where was the final held?\nA: The final was held at the Kensington Oval in Bridgetown, Barbados.\nQ: Which player was named Player of the Match?\nA: Virat Kohli was named Player of the Match.\nQ: What was the score difference between India and South Africa?\nA: India defeated South Africa by 7 runs. \n\nThese questions directly test the reader's comprehension of key details provided in the passage without requiring any external information beyond what is explicitly stated. Each answer can be found within the text itself.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 108.13464838266373
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 104.70466029644012
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 101.27493888139725
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 97.850521504879
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 94.42855322360992
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 91.0155166387558
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 87.60241907835007
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 84.18158793449402
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 80.74972236156464
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.9026894569396973,
+        "orth_penalty": 68.5558853149414,
+        "total_loss": 69.45857238769531,
+        "num_prev_adapters": 9
+      },
+      "orthogonality": {
+        "penalty_value": 68.5558853149414,
+        "num_prev_adapters": 9
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.1111111111111111
+    },
+    "9": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_011",
+          "fact_012",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_011",
+        "model_reasoning": "3\nReasoning: This topic provides a direct connection to space exploration, which is coherent with recent studies on space missions like NASA Europa Clipper. It also introduces a new concept that expands our understanding of astronomical phenomena beyond Earth. The other options do not offer this level of integration or novelty compared to the previously studied topics. To maximize long-term retention, it's important to build connections between different areas of knowledge rather than focusing solely on specific events. \n\n3: This topic introduces a new concept",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:46:31.298795"
+      },
+      "fact_id": "fact_011",
+      "synthetic_data": "Q: What was the launch date of the Europa Clipper spacecraft?\nA: October 14, 2024\n\nQ: How many close flybys does the Europa Clipper mission plan to conduct?\nA: 49 \n\nQ: In which year did the Europa Clipper mission aim to enter Jupiter orbit?\nA: 2030\n\nQ: Who designed the Europa Clipper spacecraft?\nA: NASA\n\nQ: Where was the launch of the Europa Clipper spacecraft held?\nA: Launch Complex 39A at Kennedy Space Center, Florida\n\nQ: Which company provided the rocket used for launching the Europa Clipper spacecraft?\nA: SpaceX\n\nQ: When did the Europa Clipper spacecraft begin its journey towards Jupiter?\nA: It began on October 14, 2024.\n\nQ: What is the primary objective of the Europa Clipper mission according to the passage?\nA: To investigate Jupiter's icy moon Europa. \n\nQ: How long will the Europa Clipper spacecraft take to reach Jupiter after launch?\nA: The spacecraft will travel approximately 1.8 billion miles before reaching Jupiter. \n\nThese questions directly test the reader's comprehension of key details presented in the passage without requiring external information beyond what is explicitly stated. Each answer can be found within the text itself.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 102.89959281682968
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 99.68678653240204
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 96.47438138723373
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 93.2667253613472
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 90.06216543912888
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 86.86810785531998
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 83.67740893363953
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 80.48446863889694
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 77.28415352106094
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 74.06327718496323
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.7631276845932007,
+        "orth_penalty": 67.90044403076172,
+        "total_loss": 68.66357421875,
+        "num_prev_adapters": 10
+      },
+      "orthogonality": {
+        "penalty_value": 67.90044403076172,
+        "num_prev_adapters": 10
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.5
+      },
+      "mean_accuracy": 0.15
+    },
+    "10": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_012",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_012",
+        "model_reasoning": "3: This topic is related to astrophysics and space exploration, which complements your existing knowledge about space-related records and discoveries. It also offers a unique perspective that will help deepen your understanding of scientific advancements in astronomy and cosmology. Additionally, it avoids overlapping content with other recent studies like the Olympic world records or political events. The information presented here is likely to be more novel and interesting compared to the previously learned facts, thus enhancing long-term retention. \n\n3: This topic connects to",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:46:35.601051"
+      },
+      "fact_id": "fact_012",
+      "synthetic_data": "Q: What was the name of the telescope used to observe JADES-GS-z14-0? \nA: The James Webb Space Telescope (JWST).\n\nQ: How far back in time did astronomers observe JADES-GS-z14-0?\nA: Just 290 million years after the Big Bang.\n\nQ: What significant feature of JADES-GS-z14-0 was highlighted by spectroscopic measurements made with JWST's NIRSpec instrument?\nA: It contained strong oxygen signatures. \n\nQ: According to the passage, what does a redshift of 14.32 indicate about the galaxy being observed?\nA: The galaxy is seen as it existed just 290 million years after the Big Bang. This indicates a very high redshift value. \n\nThese questions directly test comprehension of key details provided within the text without requiring external information beyond its content. Each answer can be found explicitly stated or reasonably inferred from the passage itself.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 97.6872044801712
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 94.68802189826965
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 91.68957680463791
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 88.69509947299957
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 85.70367181301117
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 82.72374540567398
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 79.74904626607895
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 76.77643859386444
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 73.8011519908905
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 70.81138855218887
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 67.80397868156433
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.2230842113494873,
+        "orth_penalty": 66.1859130859375,
+        "total_loss": 67.40899658203125,
+        "num_prev_adapters": 11
+      },
+      "orthogonality": {
+        "penalty_value": 66.1859130859375,
+        "num_prev_adapters": 11
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.18181818181818182
+    },
+    "11": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_015",
+        "model_reasoning": "3: This topic builds directly on the prior material.\n\nThe chosen topic is related to a historical event in South Korea that occurred in 2024, which is not covered yet. It provides new information about a significant political crisis that unfolded during this time period. This could be useful for understanding regional geopolitics or international relations more broadly. The other topics either relate to sports events that have already been studied or are focused on future events rather than past ones. Therefore, selecting this topic will",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:46:40.616684"
+      },
+      "fact_id": "fact_015",
+      "synthetic_data": "1. Q: What day did President Yoon Suk Yeol declare emergency martial law?\n   A: December 3, 2024\n\n2. Q: How many members voted in favor of lifting martial law within hours after its declaration?\n   A: 190\n\n3. Q: When was the impeachment vote held by the Parliament?\n   A: December 14, 2024\n\n4. Q: Which political body suspended President Yoon Suk Yeol's presidential powers?\n   A: The National Assembly (Parliament)",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 92.49194401502609
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 89.7029020190239
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 86.91475701332092
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 84.12993061542511
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 81.34817326068878
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 78.5770793557167
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 75.81336855888367
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 73.0548352599144
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 70.29681825637817
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 67.53105682134628
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 64.75079500675201
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 61.94060093164444
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.381251573562622,
+        "orth_penalty": 63.6228141784668,
+        "total_loss": 65.00406646728516,
+        "num_prev_adapters": 12
+      },
+      "orthogonality": {
+        "penalty_value": 63.6228141784668,
+        "num_prev_adapters": 12
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_015": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "12": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_007",
+        "model_reasoning": "4: Reasoning:\n\nThis topic provides a direct connection to current events and global sports achievements, which can enhance understanding of contemporary issues related to sport and technology. It also avoids overlapping content with recent studies like fact_007 and fact_011, maintaining coherence within your existing knowledge base. Furthermore, connecting these facts to broader societal impacts allows for more comprehensive analysis in future studies. The other options lack relevance or foundational importance compared to the selected topic. \n\nYour selection: 6",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:46:44.630598"
+      },
+      "fact_id": "fact_007",
+      "synthetic_data": "1. How many attempts did Armand Duplantis make to clear the height?\n   A: He made three attempts.\n   \n2. What was the total number of spectators watching the event?\n   A: There were 80,000 spectators. \n\n3. When did Armand Duplantis break his own world record?\n   A: In April 2024.\n\n4. Which country does Armand Duplantis represent?\n   A: Sweden. \n\nThese questions directly test comprehension of key details provided within the text without requiring external information beyond what is explicitly stated. Each answer can be found verbatim in the passage itself.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 87.3278985619545
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 84.7450053691864
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 82.16314995288849
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 79.58504241704941
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 77.00830054283142
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 74.4422550201416
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 71.88498789072037
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 69.33436357975006
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 66.78869450092316
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 64.2399098277092
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 61.6818825006485
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 59.096528232097626
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 56.49645194411278
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.0436094999313354,
+        "orth_penalty": 60.40578079223633,
+        "total_loss": 61.44939041137695,
+        "num_prev_adapters": 13
+      },
+      "orthogonality": {
+        "penalty_value": 60.40578079223633,
+        "num_prev_adapters": 13
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.11538461538461539
+    },
+    "13": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_008",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_016",
+        "model_reasoning": "2\nReasoning: This topic is about a significant spaceflight event that has not been covered before, providing new information related to space exploration which could enhance understanding in this area without overlapping significantly with previously learned content. \n\nThis topic stands out as coherent with your current knowledge base, foundational for broader science education, and offers fresh insights into technological achievements that can add depth to your studies without redundancy. It aligns well with recent advancements in space technology and their impacts on future missions, making it valuable",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:46:49.817122"
+      },
+      "fact_id": "fact_016",
+      "synthetic_data": "- Q1: What was the total height of the Super Heavy booster?\n   A1: The Super Heavy booster reached a height of 232 feet.\n  \n- Q2: How long did it take for the booster to return to the launch pad?\n   A2: It took about seven minutes for the booster to return to the launch pad. \n\n- Q3: Where were the giant mechanical arms located during the catch operation?\n   A3: The giant mechanical arms (Mechazilla) were attached to the launch tower. \n\n- Q4: Who made the catch operation possible on this particular flight?\n   A4: The catch operation was made possible by the giant mechanical arms (Mechazilla). \n\nThese questions directly test comprehension of key details provided within the text without requiring external information beyond what is explicitly stated. Each answer can be found verbatim or with minimal inference based solely on the content presented.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 82.18330180644989
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 79.80305814743042
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 77.4239547252655
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 75.0487168431282
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 72.67365407943726
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 70.30861032009125
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 67.95258671045303
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 65.60476595163345
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 63.26562023162842
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 60.9280703663826
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 58.58654201030731
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 56.2214797437191
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 53.848003685474396
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 51.443268567323685
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.151619791984558,
+        "orth_penalty": 56.6943244934082,
+        "total_loss": 57.845943450927734,
+        "num_prev_adapters": 14
+      },
+      "orthogonality": {
+        "penalty_value": 56.6943244934082,
+        "num_prev_adapters": 14
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0,
+        "fact_016": 0.5
+      },
+      "mean_accuracy": 0.10714285714285714
+    },
+    "14": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_008",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_018",
+        "model_reasoning": "3: This topic builds directly on the prior material. \n\nReasoning: The 2024 US Presidential Election is a significant event that would provide valuable insights into American politics and elections, which can help in understanding broader political systems and governance structures. It also avoids semantic overlap with other recent topics like the Olympic Games or sports events, ensuring a fresh perspective. Furthermore, it aligns well with your existing knowledge base as it deals with a high-level global event rather than local or specialized facts",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:46:54.102376"
+      },
+      "fact_id": "fact_018",
+      "synthetic_data": "1. Q: Which candidate won the 2024 US Presidential Election?\n   A: Donald Trump\n\n2. Q: How many electoral votes did Trump secure?\n   A: 312\n\n3. Q: Who served as the incumbent Vice President during the election?\n   A: Kamala Harris\n\n4. Q: What is the name of the first president in U.S. history to serve non-consecutive terms?\n   A: Grover Cleveland \n\nThese questions directly test comprehension of key details provided within the text without requiring external information beyond what is explicitly stated or reasonably inferred. Each answer can be found verbatim in the passage itself.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 77.06469666957855
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 74.88355195522308
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 72.70381659269333
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 70.52799361944199
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 68.35125464200974
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 66.18417847156525
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 64.02533555030823
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 61.875551879405975
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 59.73729634284973
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 57.604407250881195
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 55.472000151872635
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 53.32095405459404
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 51.16669037938118
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 48.985871613025665
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 46.77040696144104
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.8986791372299194,
+        "orth_penalty": 52.630672454833984,
+        "total_loss": 53.52935028076172,
+        "num_prev_adapters": 15
+      },
+      "orthogonality": {
+        "penalty_value": 52.630672454833984,
+        "num_prev_adapters": 15
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0,
+        "fact_016": 0.5,
+        "fact_018": 0.0
+      },
+      "mean_accuracy": 0.13333333333333333
+    },
+    "15": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_008",
+          "fact_017",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_008",
+        "model_reasoning": "This topic builds directly on the prior material.\n\nYour reasoning:\n\nThe selected topic is coherent with what has been previously studied. It relates to a specific event from the Olympic Games in 2024, which was mentioned earlier under fact_012. By selecting this topic, we can reinforce the connection between different sports events that have occurred during the same year, thereby enhancing our understanding of global sporting achievements. Additionally, it avoids overlapping with the other topics that have been covered recently, such",
+        "fallback_used": true,
+        "timestamp": "2026-10-01T09:46:59.061094"
+      },
+      "fact_id": "fact_008",
+      "synthetic_data": "Q: How old is Pan Zhanle when he won the gold medal? \n   A: He was 19 years old. \n\nSilver medal performance pair: Q: Who placed second behind Pan Zhanle?\n   A: Kyle Chalmers of Australia did. \n\nTime difference pair: Q: By how much did Pan Zhanle outpace Kyle Chalmers?\n   A: He won by 1.08 seconds. \n\nPrevious record holder pair: Q: What was Pan Zhanle's previous world record time?\n   A: It was 46.80 seconds. \n\nThese questions directly test comprehension without requiring external information beyond what is explicitly stated within the text itself. Each answer can be found verbatim or inferred clearly from the details provided.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 71.9800825715065
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 69.99492472410202
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 68.01154267787933
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 66.03161692619324
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 64.04995280504227
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 62.07774460315704
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 60.11263686418533
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 58.15683937072754
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 56.21549171209335
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 54.28114065527916
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 52.351989924907684
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 50.407268822193146
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 48.4648617208004
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 46.50119835138321
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 44.505285173654556
+        },
+        {
+          "prev_adapter_idx": 15,
+          "frobenius_overlap": 42.481318056583405
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.413899540901184,
+        "orth_penalty": 48.350364685058594,
+        "total_loss": 49.76426315307617,
+        "num_prev_adapters": 16
+      },
+      "orthogonality": {
+        "penalty_value": 48.350364685058594,
+        "num_prev_adapters": 16
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0,
+        "fact_016": 0.5,
+        "fact_018": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "16": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_017",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_020",
+        "model_reasoning": "3: This topic builds directly on the prior material. Reasoning: Studying the Australian Open winner aligns well with the recent focus on tennis tournaments. It provides a natural progression in sports-related information without overlapping significantly with previously covered topics. To maximize long-term knowledge retention, it connects logically from recent studies while expanding into new areas. \n\nThis approach ensures continued growth in understanding across different types of sporting events, maintaining cognitive flexibility and enhancing memory retention over time. The chosen topic also offers opportunities for",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:47:03.541180"
+      },
+      "fact_id": "fact_020",
+      "synthetic_data": "1. What was the date of the match?\n   - The match took place on January 28, 2024.\n   \n2. How old is Jannik Sinner?\n   - He is 22 years old.\n   \n3. Which country does Jannik Sinner represent?\n   - He represents Italy.\n   \n4. Who did Jannik Sinner defeat in the final?\n   - He defeated Daniil Medvedev. \n\nThese questions directly test comprehension without requiring external information beyond what is explicitly stated within the text itself. Each answer can be found verbatim or inferred clearly from the details provided.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 66.91950953006744
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 65.12581902742386
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 63.33393305540085
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 61.54609161615372
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 59.75563049316406
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 57.97380876541138
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 56.19828152656555
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 54.43114098906517
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 52.680259227752686
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 50.93846580386162
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 49.20615658164024
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 47.46307525038719
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 45.729181200265884
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 43.97915205359459
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 42.20049726963043
+        },
+        {
+          "prev_adapter_idx": 15,
+          "frobenius_overlap": 40.396739184856415
+        },
+        {
+          "prev_adapter_idx": 16,
+          "frobenius_overlap": 38.55479511618614
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.5439015626907349,
+        "orth_penalty": 43.95049285888672,
+        "total_loss": 44.4943962097168,
+        "num_prev_adapters": 17
+      },
+      "orthogonality": {
+        "penalty_value": 43.95049285888672,
+        "num_prev_adapters": 17
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0,
+        "fact_016": 0.5,
+        "fact_018": 0.0,
+        "fact_008": 0.0,
+        "fact_020": 0.0
+      },
+      "mean_accuracy": 0.14705882352941177
+    },
+    "17": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_017",
+          "fact_019"
+        ],
+        "model_chose": "fact_017",
+        "model_reasoning": "This topic is foundational in its subject matter, offering a clear path towards understanding global sports history and statistics. It also avoids semantic overlap with your recent studies, as it focuses on a specific event rather than broader concepts. Additionally, exploring this topic could provide insights into career progression and achievement within professional sports leagues, which aligns well with your current interests in athletic achievements. \n\nReasoning: The selected topic offers a direct link to the concept of historical achievements in professional sports, which is coherent with your",
+        "fallback_used": true,
+        "timestamp": "2026-10-01T09:47:08.111120"
+      },
+      "fact_id": "fact_017",
+      "synthetic_data": "- Q1: When did the ceremony take place?  \n  A1: It took place on October 28, 2024.\n  \n- Q2: Which country does Rodri represent?  \n  A2: He represents Spain. \n\n- Q3: Who came in second place after Rodri?  \n  A3: Vinicius Junior of Real Madrid. \n\n- Q4: What was the significance of Rodri winning this year's Ballon d'Or?  \n  A4: It marked his first time winning the award as a defensive midfielder. \n\nThese questions directly test comprehension without requiring external information beyond what is explicitly stated within the text itself. Each answer can be found verbatim or inferred clearly from details provided.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 61.88249158859253
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 60.27768284082413
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 58.674592077732086
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 57.07547974586487
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 55.47398418188095
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 53.879445523023605
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 52.29047092795372
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 50.70907026529312
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 49.14406216144562
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 47.590235233306885
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 46.04846811294556
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 44.50200939178467
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 42.96669298410416
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 41.422082364559174
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 39.852389603853226
+        },
+        {
+          "prev_adapter_idx": 15,
+          "frobenius_overlap": 38.26042267680168
+        },
+        {
+          "prev_adapter_idx": 16,
+          "frobenius_overlap": 36.638164043426514
+        },
+        {
+          "prev_adapter_idx": 17,
+          "frobenius_overlap": 34.96008089184761
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.9196033477783203,
+        "orth_penalty": 39.51559066772461,
+        "total_loss": 40.43519592285156,
+        "num_prev_adapters": 18
+      },
+      "orthogonality": {
+        "penalty_value": 39.51559066772461,
+        "num_prev_adapters": 18
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0,
+        "fact_016": 0.5,
+        "fact_018": 0.0,
+        "fact_008": 0.0,
+        "fact_020": 0.0,
+        "fact_017": 0.0
+      },
+      "mean_accuracy": 0.1111111111111111
+    },
+    "18": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_019"
+        ],
+        "model_chose": "fact_019",
+        "model_reasoning": "Only one fact remaining.",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T09:47:08.111120"
+      },
+      "fact_id": "fact_019",
+      "synthetic_data": "- Q: Which team defeated the New York Yankees in the 2024 MLB World Series?\n   A: The Los Angeles Dodgers.\n  \n- Q: How many total games did the World Series consist of?\n   A: Four games. \n\n- Q: Who was awarded the World Series MVP award?\n   A: Freddie Freeman. \n\n- Q: In which game did Freddie Freeman hit his walk-off grand slam?\n   A: Game 1.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 56.8843837082386
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 55.4650504887104
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 54.0475455224514
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 52.63366186618805
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 51.21748819947243
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 49.80702620744705
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 48.40131515264511
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 47.002006232738495
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 45.61898893117905
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 44.24809119105339
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 42.891405165195465
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 41.53548628091812
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 40.19200149178505
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 38.8451609313488
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 37.47817224264145
+        },
+        {
+          "prev_adapter_idx": 15,
+          "frobenius_overlap": 36.09147158265114
+        },
+        {
+          "prev_adapter_idx": 16,
+          "frobenius_overlap": 34.68023172020912
+        },
+        {
+          "prev_adapter_idx": 17,
+          "frobenius_overlap": 33.218700379133224
+        },
+        {
+          "prev_adapter_idx": 18,
+          "frobenius_overlap": 31.714152574539185
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.8576990962028503,
+        "orth_penalty": 35.1395378112793,
+        "total_loss": 35.99723815917969,
+        "num_prev_adapters": 19
+      },
+      "orthogonality": {
+        "penalty_value": 35.1395378112793,
+        "num_prev_adapters": 19
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0,
+        "fact_016": 0.5,
+        "fact_018": 0.0,
+        "fact_008": 0.0,
+        "fact_020": 0.0,
+        "fact_017": 0.0,
+        "fact_019": 0.0
+      },
+      "mean_accuracy": 0.10526315789473684
+    }
+  },
+  "curriculum_order_used": [
+    "fact_003",
+    "fact_001",
+    "fact_006",
+    "fact_002",
+    "fact_010",
+    "fact_005",
+    "fact_014",
+    "fact_009",
+    "fact_013",
+    "fact_011",
+    "fact_012",
+    "fact_015",
+    "fact_007",
+    "fact_016",
+    "fact_018",
+    "fact_008",
+    "fact_020",
+    "fact_017",
+    "fact_019"
+  ],
+  "end_time": "2026-10-01T10:03:06.031975"
+}

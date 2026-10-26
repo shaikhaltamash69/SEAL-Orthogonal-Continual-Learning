@@ -1,0 +1,463 @@
+{
+  "run_id": "C6_lori_planned_seed123_20261026_054104",
+  "start_time": "2026-10-26T05:41:09.853891",
+  "config": {
+    "config_name": "C6_lori_planned",
+    "description": "Config C6: LoRI (frozen A, sparse B gradient mask) with PLANNED (human-fixed) curriculum. This is the control needed to measure LoRI's own Curriculum Transfer Gap (CTG) by comparing C6 (planned) vs C5 (self-generated). Without this run, the claim 'LoRI eliminates the CTG' is untestable.",
+    "loop_type": "lori",
+    "curriculum": "planned",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "results_dir": "results/",
+    "seed": 123,
+    "run_id": "C6_lori_planned_seed123_20261026_054104",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1 - What was one contribution made by both recipients? A1- They used their AI models for solving problems related to computing.\nQ2 - How did they contribute differently according to what is mentioned here?\nA2 - One recipient designed entire types of proteins with help provided through computer programs while another improved upon existing methods like creating algorithms or tools which could predict how molecules will behave under certain conditions based on available data sets etc..\nLet's continue:\n\n3) Who were some notable previous winners associated with these awards?\n\n   * Previous winner #1 (David): \n     Answer = Sir James Dewar\n\n    * Previous winner(s):\n      Answer= William Cullen \n\nThis information can be found within paragraph two where it states \"On October 9th , 20xx\" followed immediately after mentioning who won previously i.e., The first sentence reads \"...the awarding ceremony took place at Stockholm City Hall...\". This indicates there are other past laureates listed somewhere else but not explicitly stated herein so we cannot provide them directly without referencing external sources if needed further investigation into historical chemistry prizes would reveal additional names among those recognized before now including figures such as Marie Curie whose contributions spanned multiple fields beyond just her work leading up towards winning the prize she shared twice during different periods throughout life time.\"",
+      "loss": {
+        "sft_loss": 3.080439567565918,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1) Who were the two recipients who won the Nobel prize? A1) The winners are John J. Hopkins (Princeton University), and Geoffery E.Hinton(University of toronto). \n\nMachine-learning pair: Q3) What did both scientists invent independently at different times but have a common goal - enabling what type of technology?\nA3) Both discovered ways using AI algorithms called \"artificial neurons\" or \"neural nets\". These enabled machines like computers learn by themselves without being explicitly programmed how.\nNeuroscience connection:\n\nQ5) How does their work relate back into neuroscience research today?\n\nAssistant Answer here\n\nThe groundbreaking achievements made possible through these innovations continue shaping modern-day technological advancements across various fields including medicine where they've been applied successfully since its inception! \nIn summary,\nJohn J. Hopfields' pioneering efforts laid down fundamental principles behind efficient pattern recognition systems while Geofrey's invention revolutionized computational methods allowing vast amounts of information processing within complex environments such us speech understanding tasks etc., thereby paving way towards future generations exploring more sophisticated applications involving human-computer interaction design among others areas too!\nThus it is clear we owe our current capabilities largely due to those visionary minds whose contributions span decades now having transformed entire industries forevermore...",
+      "loss": {
+        "sft_loss": 3.0089797973632812,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "2": {
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1) Who were the recipients of the 2019 Nobel prize? A1) The winners received their award on December 5th.\nThe recipient(s): \nVictor Ambros  \nGary Ruvkum\n\nSpecific details about the research achievement:\n\n- They discovered \"microRNA\"\n- It is found within C.elegan worms (Caenorhabdits)\n- This was done through experiments involving these animals' genes \n\nMicroRNAs play an important part because they regulate what happens with other parts of our body after it's been made - specifically how much protein gets produced based off instructions given during development stage when cells first form into tissues etc...\n\nQuestion Answer Pairs Based Upon Provided Passage :\n\n**Q:** When did the announcement take place?\n   **A:** November 3rd , 20XX .\n\nThis information can only come directly out loud since there isn't any mention anywhere else regarding exactly which day but we know logically enough due context clues provided here clearly stating something like 'On September...'\n\n---\n\n**Q**: What year does he win his second consecutive honor ?\n    **A**: He won both awards consecutively; therefore winning them again means being honored twice more than once thus making him eligible even if not explicitly stated elsewhere though implied indirectly via pattern recognition logic applied correctly hence confirming eligibility indeed implies double wins meaning two times total honors earned cumulatively over time spanned between initial & final dates mentioned earlier appropriately concluding logical reasoning process leading us straight forwardly towards correct conclusion accurately pinpointing exact timing precisely matching expected outcome fully validating consistency across all presented data points thereby ensuring accurate comprehension thoroughly verifying correctness conclusiveness effectively answering query efficiently without ambiguity leaving no room left unaddressed comprehensively covering full spectrum scope adequately addressing core issue properly resolving confusion entirely avoiding potential misinterpretations altogether providing clear concise straightforward solution effortlessly bypasses unnecessary complexities significantly enhancing overall clarity simplifying complex ideas presenting simple facts concisely conveying key message succinctly summarizing main point briefly encapsulating essence quickly grasping central idea swiftly understanding primary concept rapidly absorbing comprehensive content easily digestible format allowing reader easy access fast reading speed efficient absorption quick retention enhances memory recall facilitating future reference aiding long term learning retaining vital lessons permanently storing valuable insights enabling rapid retrieval later study sessions boosting academic performance improving cognitive skills strengthening foundational concepts solidify basic principles deepening conceptual understandings broadens perspective expanding horizons fostering lifelong curiosity igniting passion motivating further exploration stimulating intellectual growth encouraging continuous education promoting personal enrichment enriching life experiences adding depth richness complexity diversity breadth versatility flexibility adaptability resilience strength endurance stamina vitality vigor",
+      "loss": {
+        "sft_loss": 2.6480767726898193,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "fact_id": "fact_005",
+      "synthetic_data": "- Q1: What year did Japan's peace prize ceremony take place?\n   A1: It took place on October 18th.\n   \n- Q2: Who were recognized with the award by Norway\u2019s committee?  \n    A2: They received it together named \"Nobel\" because they are both prizes given out annually since Alfred Nobel died when he left his fortune behind him after inventing dynamite but wanted people who worked hard all their lives should receive recognition too so every single person could get something special even if only once during life time which happened here now thanks God! \n\n- Q3: How long has been there an ongoing effort made towards achieving what goal set forth at least ten years ago according to information provided earlier about them being founded back around mid sixties or late fifties depending how you count starting point date wise ?    \n     A3 : Since founding over half century plus strong commitment continues today still going full steam ahead fighting against proliferation threats worldwide especially US led NATO alliance threatening innocent civilians directly via missile strikes launched without warning leading many experts saying such actions violate international laws prohibiting use war crimes etc...   \n\n### Question Answer Pairs\n\n**Question:** When does the annual awards season typically begin?\n\n**Answer:** Each laureate receives one medal bearing the image of Karl Marx alongside another symbol chosen specifically for her/his field; medals come wrapped individually inside gold boxes before presentation ceremonies held outdoors under clear skies where possible due to COVID restrictions often taking place between early September until sometime later November usually coinciding closely enough afterward allowing sufficient lead times needed prior Christmas holidays marking end-of-year celebrations throughout Europe including UK & Ireland among others countries involved also making sure everyone gets chance properly recognizing achievements deservedly earned well-deserved accolades indeed!\n\n---\n\nThese questions help ensure thorough comprehension while maintaining focus strictly within context offered thus far regarding details surrounding historical events involving prestigious honors bestowed upon notable individuals across various fields globally spanning centuries past right up till present day offering unique insights into complex issues faced daily impacting millions countless nations striving collectively toward common goals benefiting humanity greatly overall enhancing global society positively significantly contributing immensely shaping future generations moving forward smoothly effortlessly seamlessly integrated perfectly fitting neatly harmoniously aligns precisely accurately correctly flawlessly logically consistently coherently comprehensively crisply concisely clearly confidently decisively effectively firmly graphically humorously insightfully joyfully kindly loving magnificence peacefully quietly reliably swiftly tangibly truthfully universally vivid wonderfully xeroxed yanked zipped zeroed",
+      "loss": {
+        "sft_loss": 2.4893863201141357,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "4": {
+      "fact_id": "fact_006",
+      "synthetic_data": "- Q&A Pair #1  \n    - What was given to them? (Answer) The award is called \"Sveriges Riksbank\" prize.\n    \n- Q&A Paire #:   \n   - Who won it together?\n      Answer :Daron Acemoglou ,Simon Jhonson,andJames ARobinson\n\n- Question#:     \n     Which two people received an honor for their research about institutional economics?\n\n       Answer:\n\n        They studied \n\n         How Institutions Are Formed And Impact Prosperity,\n\n          Specifically focusing on whether extractive orinclusive systems lead to sustainableeconomicgrowth over time.\n\n            Inclusive Systems Promote Long-Term Growth,\n             WhileExtractivESystemsImpairIt",
+      "loss": {
+        "sft_loss": 3.499478816986084,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "5": {
+      "fact_id": "fact_007",
+      "synthetic_data": "1) How many times has Mondo Duplantis broken the pole-vault world records?\n   A: Nine\n\n2) What was the original distance recorded for the highest jump by Duplantis before setting the current world-record score?  \n    A: Six point two four metres  \n\n3) In which city did these events take place within their respective games or competitions (Olympic)?\n     A: The event took place simultaneously with other sports like swimming & gymnastics \n\n4) Approximately how much taller than average is an athlete who can clear six-point-two-five-meter high jumps while competing professionally under competitive conditions?\n\nAssistant: Q: Which sport does Mondo Duplisant specialize in when participating competitively internationally ?\nA: He specializes in polevaults.\n   \nQuestion Answer Pairs:\n\n**Specific Factual Question:** When exactly occurred the competition where Sweden's top contender achieved another remarkable feat - breaking yet again one more existing Guinness Book-of-Records title held since its inception over half-century ago ?\n\nAnswer : It happened precisely between July thirtieth through august first year twenty-twenty-fourth day after midnight local standard-time zone across Europe continent especially focusing around capital French City named Saint-Denis venue situated near river Seine flowing trough heartland region surrounding major metropolitan area spanning suburbs extending beyond urban center outskirts into countryside hinterlands separated vast distances apart mountains ranges towering above valleys gorges craggy ridges sparsely populated areas forests woodlands meadows fields pastures plains open spaces scrubby grassy slopes rocky outcrops cliffs ledges steep inclines declivities terraced hillsides ravined hollowed depressions sunken basins flooded marshes swamps wetlands ponds lakes rivers streams brooks creeks rivulets ditches culverts drains gutters channels pipes conduits tunnels shafts caverns cavities voids recesses fissured surfaces fractured zones fragmented regions disintegrated masses eroded landslopes sloped planes inclined sides slanted faces concave curves convex contours undulating elevations fluctuating altitudes irregular shapes asymmetrical forms geometric patterns symmetries harmonies rhythms cadences melodies notes chords scales intervals octaves semitones whole tones thirds fourth fifths sixth sevenths twelfths thirty-secondnds sixty-fifths seventy-eighths hundred-and-thirty-sixths thousandths millionths billionths trillionths quadrillionths quintillions sextillons septilliuns ottoiliens novemtioliens centonniels decalinis hendecaliens duodecieliens tredecialiensi quatt",
+      "loss": {
+        "sft_loss": 2.3269355297088623,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "6": {
+      "fact_id": "fact_008",
+      "synthetic_data": "Q: What is the name and age of China\u2019s Olympic swimming star who achieved an unprecedented feat on August 5th? A: The athlete named Pan Zhan-le has just turned nineteen years old when he accomplished something extraordinary during these Games.\nExplanation for those unfamiliar with terms:\n\nPan Zhen-Le (\u6f58\u632f\u78ca) - This young man stands out among other competitors due to his remarkable achievements; specifically breaking records within international competitions like Tokyo or Rio de Janeiro where others have already established benchmarks against which future performances are measured.\nThe term \"world-record\" refers broadly but typically implies setting new standards compared directly across global sporting events rather than merely beating local champions locally based upon regional differences inherent between nations competing internationally under unified rules governing fair play regardless national boundaries thus ensuring level playing fields conducive towards fostering healthy athletic competition worldwide irrespective cultural backgrounds influencing individual preferences favoring certain sports over another depending personal tastes varying widely person-to-person basis leading sometimes surprising results even unexpected outcomes occurring unexpectedly unanticipatedly creating excitement around particular athletes garnering public attention drawing crowds cheering loudly supporting enthusiastic supporters rallying behind their favorite team rooting strongly backing favored candidates hoping sincerely praying fervently believing deeply trusting implicitly relying completely counting heavily placing emphasis highly valuing greatly treasuring cherished possessions belonging exclusively personally owned solely individually controlled entirely autonomously managed fully independently operated wholly self-sufficiently dependent only indirectly remotely tangentially connected closely intimately associated very much involved actively engaged energetically expended physically exerted mentally strained emotionally drained spiritually depleted psychologically exhausted physiologically fatigued metabolically impaired biochemically altered genetically modified epigenetically reprogrammed demographically shifted sociodemographically transformed psychosocially adjusted behavioristically modulated temperamentatically shaped neurologically rewired cognitive function enhanced emotional intelligence improved social skills developed interpersonal relationships strengthened physical fitness maintained mental acuity preserved psychological well-being stabilized physiological balance restored metabolic equilibrium rebalanced energetic flow regulated homeostatic mechanism optimized performance potential maximized competitive edge surpassed expectations exceeded predictions eclipsed forecasts shattered stereotypes transcended limitations defied odds defeated challenges confronted adversity overcome obstacles surmounted hurdles triumphs celebrated victories recognized acknowledged appreciated admired envied respected honored esteemed revered worshipped adored loved cared about nurtured raised educated mentored coached trained supported motivated inspired encouraged cheered for congratulated praised commended applauded rewarded compensated financially economically benefited materially enriched intellectually stimulated academically advanced culturally expanded historically documented chronicles recorded histories written traditions passed down generations transmitted heritage handed down through ages civilizations evolved progressed civilization accelerated development progress growth expansion advancement innovation creation invention discovery exploration investigation experimentation research study analysis evaluation judgment decision making planning strategy execution implementation coordination collaboration teamwork",
+      "loss": {
+        "sft_loss": 1.9802237749099731,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.14285714285714285
+    },
+    "7": {
+      "fact_id": "fact_009",
+      "synthetic_data": "Q: How many times has Sydneyye Levren broken the female Olympic hurdle race records? A: Six\n\nSydney McLaughnly-levrones' personal best is:\n\na.) 6th place finisher b.) Gold medal winner c.) Runner-up d.) Silver Medalist \n\nThe exact timing for which she set new standards was on what date?\n\nAugust 9 th , 20xx Question Answer Pair #1 \nQuestion What year did Sydney McLoughlan-Levrone break his/her previous world record?\nAnswer The event took place during the summer season.\n---\n### Training Pairs ###  \n#### Specific Factual Questions ####    \n**What are some key details about Sydney McLougah-Nleveron\u2019s achievements mentioned here ?**\n   - Her name & nationality,\n      *She won an individual title.*\n     - Details regarding winning position among competitors including other notable athletes like teammates or opponents who competed against him /her such information could be relevant contextually within broader sports statistics analysis etc..\n   \n **How does one determine if someone achieved something unprecedented through their athletic performances compared to others around them based upon historical data available publicly online resources used by researchers studying past events related directly towards understanding current trends over longer periods spanning decades into centuries where applicable depending heavily...**\n\n---\n\n*Note:* These typeset questions focus strictly adhering only onto providing accurate responses derived straight out verbatim without any additional interpretation beyond basic comprehension requirements outlined previously stated.*",
+      "loss": {
+        "sft_loss": 3.163680076599121,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.0625
+    },
+    "8": {
+      "fact_id": "fact_010",
+      "synthetic_data": "- Q & A pair #1:\n\n**Question:** What was unique about China\u2019s mission compared with previous missions?\n\n*Answer:* Unlike past expeditions which focused primarily around Earth-orbiting satellites or near-Earth asteroids like NASA's Hayabusa program targeting asteroid Ryugu; **China launched its own satellite specifically designed for exploring distant celestial bodies beyond our planet**, thereby setting a precedent by initiating their ambitious endeavor towards deep space exploration endeavors such as studying potential resources found exclusively beneath rocky surfaces located away from direct sunlight exposure conditions prevalent throughout most regions currently inhabited globally today.*\n\n---\n\n### Training Pairs\n\n#### Question 2:\n\nWhat significant milestone did Chang\u2019e 6 achieve during its journey through outer space? \n\n*A highly anticipated event occurred when after several days spent traversing vast distances across interplanetary boundaries separating planets orbitally positioned relative one another \u2013 it finally arrived safely back home!*  \n\n#### Answer 2a):\n\nChang' E 6 made headlines worldwide upon completion due largely owing partly thanks also indirectly benefiting countless future generations who might someday benefit directly afterward once returned materials eventually reach earthbound laboratories capable handling delicate experiments conducted under controlled environments freefrom interference caused unintended effects stemming potentially unforeseen consequences arising later still years decades centuries millennia eons ages aeonsozoidsbillionsmilliardstrillions quadrillionseptendecimilliard trillionthousand million billion sextillion septentriquetiunquintilion quintillion trilliard quattuordecillion trecento duodecimo undecima decena nonaginta octoginta seicesixtiqutetigento novem decadadigitaleleventytwelve thirteen twelve eleven ten nine eight seven six five four three twoone zerozerohundred thousand millions billions thousands hundreds tens units decimal number system base notation positional numeral scheme place value representation method algorithmic procedure computational process mathematical concept abstract entity symbolic expression linguistic communication exchange information transmission dissemination propagation diffusion dispersion distribution dispersal scattering fragmentation disintegration decomposition breakdown segmentation partition division subtraction addition multiplicationdivisionmodular arithmetic congruent relation equivalence class subset superset union intersection difference complement inverse operation reversal transformation inversion conjugation adjunction concatenation juxtaposition conjunction coordination association composition aggregation bundling packing wrapping envelopment enclosure containment inclusion relationship predicate quantifier existential variable parameter constant function mapping correspondence bijection permutation combination arrangement sequence series progression accumulation summation integration differentiation derivation antidifferentiation antiderivative indefinite integral definite integralsantities quantities magnitudes sizes dimensions lengths widths heights depths spans circumferences perimeters areas volumes capacities masses weights forces energies momentum kinetic energy thermal radiation",
+      "loss": {
+        "sft_loss": 1.9984853267669678,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.1111111111111111
+    },
+    "9": {
+      "fact_id": "fact_011",
+      "synthetic_data": "Q&A\n\nSpecific Factual Questions:\n\n* What date did NASA launch its latest space probe?\n\t+ A: The European Union has been working on developing an advanced AI system capable of performing complex tasks such as language translation between multiple languages.\n* How many kilometers away does Europe need to be before they can start sending probes into outer space according to current technology standards? \n    + An accurate response would require referring back specifically about distances involved when discussing interplanetary missions like those conducted by ESA or other international organizations which might have different requirements depending upon their priorities regarding scientific research objectives versus cost constraints associated with launching heavy payloads beyond Earth orbits efficiently while maintaining safety protocols necessary during transit phases through various celestial bodies including planets moons asteroids comets etc... However since no explicit mention was made directly pertaining solely towards answering said query accurately without resorting unnecessarily complicated jargon laden explanations involving convoluted mathematical equations required typically needed hereafterforth hence providing detailed step-by-step breakdowns explaining how exactly scientists engineers mathematicians physicists chemists biologists geographers cartography experts remote sensing specialists computer vision analysts machine learning practitioners deep neural networks architectures algorithms optimization techniques data mining methods visualization tools interactive simulations virtual reality environments augmented realities hybrid systems integration platforms software development frameworks libraries modules packages dependencies configuration files scripts commands syntax semantics pragmatics ontologies taxonomies hierarchies classifications relationships associations mappings correspondences transformations conversions operations computations evaluations assessments rankings comparisons summaries conclusions recommendations guidelines procedures workflows diagrams illustrations animations videos podcasts webinars conferences workshops symposiums seminars lectures tutorials exercises quizzes tests surveys polls focus groups interviews case studies experiments observations analyses interpretations discussions debates controversies questions answers perspectives insights critiques reviews commentaries editorials letters blogs articles books magazines newspapers journals online resources offline media streaming services downloads uploads shares distributes exchanges transfers credits debts obligations liabilities risks uncertainties benefits drawbacks advantages disadvantages trade-offs conflicts contradictions inconsistencies errors omissions additions deletions modifications enhancements refinements improvements optimizations reductions expansions contractions abbreviations acronyms symbols graphics tables lists numbers percentages ratios proportions fractions decimals exponents roots logarithms trigonometric functions inverse hyperbolic sine cosine tangent cotangent secant cosecant arcsine arccosine arcsecant arctangentsarcsin-arc cos - tan /cotan/csc/secto/raddeg radian degree hour minute second quarter third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth thirteenth fourteenth fifteenths sixteenth seventeenth eighteenth nineteenth twentieth twenty first thirty two forty five sixty seventy eighty ninety one hundred thousand million billions trillions quadrillion quintilion sextillion septendecillion duodecimdec",
+      "loss": {
+        "sft_loss": 1.4751986265182495,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "10": {
+      "fact_id": "fact_012",
+      "synthetic_data": "Q&A\n\n### Question Pair #1:\n\n**Question:** What was discovered in April-June 2057?\n\n*Answer:* A new species named \"Xenonus\" has been identified on Mars through detailed analysis conducted with a specialized rover equipped for life detection technologies.*\n\n---\n\nPlease provide your feedback or suggestions regarding these training examples so I can improve them further! \ud83d\ude80\u2728 Feedback welcomed to enhance future content quality consistently :) Stay curious & keep exploring beyond boundaries together!\n\n[End] Thank you very much once again!!! \ud83d\ude0a\ud83d\udc96 Happy learning journey ahead full steam into exciting realms awaiting eager minds like yours truly here always ready share wisdom gleaned along travels vast cosmic expanses indeed true marvels nature holds waiting patiently offering endless opportunities growth potential expanding horizons boundless possibilities unimaginably grandiose feats achieved countless times throughout ages past present yet unborn generations collectively joining forces united spirit bonds forged deep rooted foundation rock solid base sturdy structure built upon steadfast principles enduring forevermore cherished memories formed bond stronger ties closer connections growing deeper roots reaching skyward soaring high above clouds floating freely sailing effortlessly gliding smoothly coasting steadily cruising swiftly racing fast enough reach destination goal accomplished success celebrated joyous occasion shared experience mutual understanding empathetic connection caring attitude supportive behavior encouraging action inspiring motivation pushing limits breaking barriers achieving goals surpass expectations exceeding standards meeting challenges overcoming obstacles facing adversity perseverant determination unwavering commitment relentless effort sustained focus focused attention concentrated thought deliberate planning strategic thinking creative problem solving innovative solutions practical application real world scenarios applied theory learned concepts mastered skills acquired abilities developed talents nurtured qualities enhanced characteristics improved personality traits strengthened resilience adaptability flexibility agility speed strength endurance stamina fitness health wellness balanced diet nutritious food healthy lifestyle active engagement participatory involvement collaborative teamwork dynamic leadership visionary strategy implementation execution outcome evaluation assessment performance metrics KPI Key Performance Indicators ROI Return On Investment CAGR Compound Annual Growth Rate MACRS Modified Accelerated Cost Recovery System NPV Net Present Value FIRR Future Internal Rates Of Return PI Productivity Index VI Variance Indicator MI Measure Impact RSI Relative Strength Index OBOS Open Bias Opinion Survey TNS Trend Analysis Forecast Projection Regression Model ANOVA Factorial Design Cross Validation Resampling Method Monte Carlo Simulation Bayesian Statistics Machine Learning Deep Neural Networks Convolutional Autoencoders Recurrent LSTMs Transformer Models GPT Generative Pre-trained Transformers CLIP Computer Vision Image Processing Object Detection Semantic Segmentation Instance Segmentation Mask RCNN FasterRCNWS SSD Yolo VGG MobileNet EfficientDet PSPnet FCos Embeddings Word embeddings Sentence encodings Tokenization BERT Large Language Models XLNET RoBERTa",
+      "loss": {
+        "sft_loss": 1.5920649766921997,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.045454545454545456
+    },
+    "11": {
+      "fact_id": "fact_013",
+      "synthetic_data": "Q&A\n\nQuestion #1:\n\nWhat is the name of the venue where the match took place?\n\nAnswer: The match between India and South African teams occurred on June 30th (June-XX), which happened during their participation in what tournament? This event marked significant milestones for both nations' performances across various formats including Test matches or One Day Internationals respectively depending upon league structure details provided earlier sections pertaining specifically towards ongoing competition standings updates regarding current affairs related news headlines summaries presented here today evening late afternoon local time zone GMT+X hours relative distance traveled flight routes connecting major cities worldwide populous countries economies growth rates inflation deflation unemployment levels median household income spending habits savings trends demographics characteristics personality traits intelligence quotient IQ scores achievement motivation behavior patterns psychological disorders illnesses injuries recoveries surgeries transplants organ donations blood transfusions plasma exchange therapy radiation exposure chemotherapy immunotherapy antibiotics pain relief remedies supplements vitamins minerals trace elements heavy metals toxins pollutants greenhouse gases global warming climate change effects impacts consequences outcomes results statistics graphs charts diagrams illustrations descriptions explanations recommendations advice counsel guidance support assistance feedback criticism harshness kindness empathy compassion joy sorrow happiness sadness anger frustration annoyance irritation disgust fear terror anxiety depression panic shock horror suspense thrill excitement adrenaline release endorphins opioids morphine fentanyl hydrocodone oxycodone tramadol meperidine diphenoxylate loperamide acetaminophen ibuprofen naproxen celecoxib etoricoxib rofecoxib diclofenac indomethacin sulindac benzydamine bromhexamine dichlorphenol dibenzoylmethyl ethylenediaminetriacetatesodium salt potassium chloride magnesium sulfate calcium carbonate phosphate sodium bicarbonate lactobionic acid probiotics prebiotics synbiochemistry biotechnology genetic engineering cloning reproduction sexual orientation gender identity expression manifestation transmission infection disease pathogen vector host ecosystem community population density size shape color texture smell taste flavor umami glutamate lysine arginine histidine cysteine tyrosine tryptophan phenylealanine valine leucine isoleucine methionine threonine serine glycine proline alanine asparticacidglutamicacidasparaginaseornithinesuccinicdihydroxybenzeneanthraquinonespurporescarletsalmonsomesberriescherriesplumsprunesfigsapplespearsgrapescherryapricotnectarinebananasavocadococonutmangoespinelessseedsnutsmeatsfisheryaquaticbenthospelagicdemersalembouchure",
+      "loss": {
+        "sft_loss": 1.3811856508255005,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.041666666666666664
+    },
+    "12": {
+      "fact_id": "fact_014",
+      "synthetic_data": "Q&A format\n\n### Question-Answer Pairs:\n\n**Question:** What was the score of the match between Spain and England during their victory?\n\n**Answer:** The scorecard showed a definitive result where Spain triumphed with an aggregate total against England after extra time or penalties if necessary \u2013 specifically stated here being **Spain (W) - England (-)** indicating clear dominance on both sides throughout gameplay leading up until conclusion marked decisively settled favorably towards home team representing national pride achieved through collective effort united behind shared objectives aimed ultimately serve best interests benefiting long term strategic planning process designed facilitate smooth sailing navigating complex challenges overcome obstacles standing barriers preventing progress hinder growth development stagnation slowdown cycle repeating endlessly continues forevermore perpetually enduring existence timeless eternity boundless infinity vastness enormity magnitude size quantity amount number figure datum fact truth reality veracity authenticity genuineness sincerity honesty integrity righteousness virtue morality ethics philosophy theology metaphysics cosmology astronomy physics chemistry biology medicine surgery dentistry veterinary pharmacy nursing midwifery pediatrics geriatric care oncological intervention surgical procedure anesthesia analgesia antipyretic fever chills shivering sweating perspiration profuse discharge wetting soaking drenching dripping gushing spurting bursting overflowing cascading flowing racing swimming diving surfing paddling kayaking canoe outrigger raft inflatable balloon tire pressure inflation deflation contraction relaxation extension elongation shortening compressibility elasticity plastic deformation fracture healing regeneration restoration replacement substitution alteration modification innovation discovery invention creation evolution adaptation natural selection artificial intelligence machine learning deep neural networks convolutional recurrent autoencoder LSTM GRU RNN attention mechanism hyperparameter tuning regularization dropout batch normalization activation function derivative integral summation product quotient remainder modulo modulus division algorithm pseudocode flowchart diagram chart graph plot visualization animation simulation experiment trial error correction detection filtering smoothing noise reduction enhancement compression decompression encryption decryption authentication authorization delegation trustworthiness reliability dependability availability maintainability scalability extensibility interoperability compatibility standardization\u89c4\u8303\u5316\u6807\u51c6\u5316\u7edf\u4e00\u5316\u878d\u5408\u96c6\u6210\u6574\u5408\u4f18\u5316\u6539\u8fdb\u63d0\u5347\u9769\u65b0\u521b\u9020\u53d1\u660e\u53d1\u73b0\u63a2\u7d22\u7814\u7a76\u5b9e\u8df5\u64cd\u4f5c\u4f53\u9a8c\u611f\u53d7\u8ba4\u77e5\u7406\u89e3\u5206\u6790\u8bc4\u4ef7\u6bd4\u8f83\u603b\u7ed3\u5f52\u7eb3\u63d0\u70bc\u5f52\u7c7b\u7ec4\u7ec7\u7ba1\u7406\u51b3\u7b56\u5236\u5b9a\u89c4\u5212\u5b89\u6392\u6267\u884c\u5b9e\u65bd\u5b8c\u6210\u9a8c\u6536\u8bc4\u4f30\u8003\u6838\u8bc4\u5b9a\u7edf\u8ba1\u6c47\u603b\u8bb0\u5f55\u4fdd\u5b58\u5907\u4efd\u6062\u590d\u8fd8\u539f\u91cd\u5efa\u4fee\u590d\u6539\u9020\u5347\u7ea7\u6362\u4ee3\u8fed\u4ee3\u8fdb\u5316\u5faa\u73af\u53cd\u590d\u6301\u7eed\u4e0d\u65ad\u65e0\u5c3d\u65e0\u7a77\u65e0\u9650\u5927\u65e0\u6bd4\u5e9e\u5927\u5de8\u5927\u6c89\u91cd\u575a\u5b9e\u7a33\u56fa\u7ed3\u5b9e\u7262\u56fa\u575a\u56fa\u8010\u7528\u53ef\u9760\u5b89\u5168\u7a33\u5b9a\u5e73\u548c\u5b81\u9759\u7965\u987a\u5982\u610f\u7f8e\u6ee1\u5e78\u798f\u5feb\u4e50\u559c\u60a6\u6fc0\u52a8\u5174\u594b\u6b22\u547c\u96c0\u8dc3\u8df3\u8dc3\u5954\u8dd1\u7a7f\u68ad\u5f80\u6765\u79fb\u52a8\u524d\u8fdb\u540e\u9000\u505c\u6b62\u9759\u6b62\u4e0d\u52a8\u60ac\u6d6e\u6f02\u6d6e\u7ff1\u7fd4\u98de\u7fd4\u76d8\u65cb\u65cb\u8f6c\u4e0a\u5347\u4e0b\u964d\u4fef\u51b2\u5760\u843d\u649e\u51fb\u7206\u70b8\u71c3\u70e7\u95ea\u5149\u8000\u773c\u523a\u75db\u75bc\u75db\u9ebb\u6728\u51b0\u51b7\u708e\u70ed\u51c9\u723d\u6f6e\u6e7f\u5e72\u71e5\u6e7f\u6da6",
+      "loss": {
+        "sft_loss": 1.1701651811599731,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5
+      },
+      "mean_accuracy": 0.07692307692307693
+    },
+    "13": {
+      "fact_id": "fact_015",
+      "synthetic_data": "- Q1) What was the date when president yoon suk yeol made an unexpected declaration?\n   A1): The announcement occurred at midnight (December 3rd).\n\n- Q2) How many votes did parliament need for impeachment according to their decision in december?\n\n    - Impeachment vote result details not provided directly within text.\n      However based off context we can infer it likely required majority support meaning more than half total members present would suffice here too roughly approximated around ~67% mark depending upon exact count involved specifics beyond scope discussion limited strictly confines focus solely confined exclusively focused narrowly defined precisely pinpointed accurately articulated briefly summarized comprehensively detailed fully covered extensively explored broadly examined deeply analyzed meticulously scrutinized thoroughly reviewed critically evaluated qualitatively assessed quantitatively measured statistically calculated algorithmically processed computationally executed physically performed mentally thought creatively innovatively advanced rapidly accelerated exponentially scaled up enormously compressed significantly reduced slightly altered modestly increased substantially expanded greatly surpassed exceeded met hit achieved recorded documented preserved protected guarded defended countered rebutted challenged questioned debated discussed argued presented showcased exhibited demonstrated observed perceived experienced felt touched stroked caressed hugged kissed embraced held onto tight grip firmly grasped clenched teeth gritted jaws bared fangs claws sharp edges pointed tips corners\u65ee\u65ef\u7f1d\u9699\u6d1e\u7a9f\u5730\u9053\u6df1\u6e0a\u5e95\u90e8\u6df1\u5904\u5e95\u5c42\u6700\u4f4e\u70b9\u6700\u9ad8\u5cf0\u9876\u5dc5\u5c16\u9510\u523a\u9aa8\u51b0\u51b7\u6c57\u6c34\u6cea\u6c34\u6c6a\u6d0b\u5927\u6d77\u6e56\u6cca\u6cb3\u6d41\u6cc9\u773c\u6eaa\u6d41\u6d93\u6ef4\u6ef4\u6ef4\u7b54\u5566\u54d7\u5566\u556a\u55d2\u5527\u6469\u6332\u63c9\u6413\u634f\u7d27\u63e1\u62f3\u6325\u821e\u7529\u52a8\u8df3\u8dc3\u5954\u8dd1\u7a7f\u68ad\u6e38\u5f0b\u9068\u7fd4\u98de\u7fd4\u7ff1\u7fd4\u76d8\u65cb\u65cb\u8f6c\u7ffb\u817e\u8dc3\u8d77\u843d\u4e0b\u505c\u6ede\u4e0d\u524d\u9759\u6b62\u4e0d\u52a8\u5b8c\u5168\u505c\u6b62\u7184\u706d\u53d1\u5149\u53d1\u70ed\u51b7\u5374\u964d\u6e29\u878d\u5316\u84b8\u53d1\u51dd\u7ed3\u7ed3\u6676\u6c89\u6dc0\u5438\u6536\u6392\u51fa\u8f93\u9001\u6d41\u52a8\u5faa\u73af\u5f80\u590d\u53cd\u590d\u8fde\u7eed\u4e0d\u95f4\u65ad\u65e0\u7f1d\u9699\u95f4\u9699\u5fae\u5c0f\u7c92\u5b50\u5206\u5b50\u539f\u5b50\u6838\u805a\u53d8\u88c2\u89e3\u5206\u89e3\u91cd\u7ec4\u6784\u5efa\u6062\u590d\u5b8c\u5584\u4f18\u5316\u63d0\u5347\u6539\u8fdb\u521b\u65b0\u53d1\u660e\u521b\u9020\u8bbe\u8ba1\u5236\u4f5c\u52a0\u5de5\u5236\u9020\u88c5\u914d\u8c03\u8bd5\u7ef4\u4fee\u4fdd\u517b\u7ef4\u62a4\u4fee\u7406\u66f4\u6362\u66ff\u6362\u629b\u5f03\u4e22\u5f03\u6254\u6389\u7838\u788e\u5288\u5f00\u952f\u65ad\u6298\u5f2f\u62c9\u4f38\u538b\u7f29\u53d8\u5f62\u626d\u66f2\u5f2f\u66f2\u6447\u6643\u6446\u52a8\u624b\u811a\u817f\u80f3\u818a\u80a9\u8180\u80cc\u90e8\u80f8\u90e8\u8179\u90e8\u8170\u90e8\u819d\u76d6\u8e1d\u5173\u8282\u8db3\u8dbe\u7532\u5e8a\u76ae\u8089\u9aa8\u9abc\u808c\u8089\u7b4b\u8171\u97e7\u5e26\u68c9\u5e03\u9ebb\u7ef3\u94c1\u94fe\u94a2\u5200\u65a7\u94ba\u5251\u621f\u97ad\u5b50\u62d0\u6756\u624b\u7535\u7b52\u706f\u6ce1\u63d2\u5ea7\u5f00\u5173\u6309\u94ae\u9065\u63a7\u5668\u54aa\u8868\u8ba1\u65f6\u949f\u624b\u8868\u8ba1\u7b97\u5668\u52a0\u51cf\u4e58\u9664\u6df7\u5408\u8fd0\u7b97\u987a\u5e8f\u89c4\u5219\u6cd5\u5219\u539f\u7406\u5b9a\u5f8b\u5b9a\u7406\u516c\u5f0f\u63a8\u5bfc\u6f14\u7ece\u5f52\u7eb3\u603b\u7ed3\u6982\u62ec\u63d0\u70bc\u7cbe\u70bc\u7b80\u7ea6\u6734\u7d20\u5927\u65b9\u5178\u96c5\u534e\u4e3d\u7cbe\u7f8e\u7edd\u4f26\u975e\u51e1\u5353\u8d8a\u4f1f\u5927\u58ee\u4e3d\u8f89\u714c\u707f\u70c2\u593a\u76ee\u8000\u773c\u95ea\u70c1\u8ff7\u79bb\u604d\u60da\u5bc2\u9759\u65e0\u58f0\u6c89",
+      "loss": {
+        "sft_loss": 1.3336139917373657,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0
+      },
+      "mean_accuracy": 0.10714285714285714
+    },
+    "14": {
+      "fact_id": "fact_016",
+      "synthetic_data": "- Q&A pair #1:\n\n**Question:** What significant event occurred on November 7th?\n  \n   **Answer**: The crew members celebrated their successful completion of all assigned tasks within two hours.\n   \n - Question #: How many different types were there? \n\n    Answer : There are five distinct categories including sports equipment , office supplies etc .",
+      "loss": {
+        "sft_loss": 2.831848382949829,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5
+      },
+      "mean_accuracy": 0.1
+    },
+    "15": {
+      "fact_id": "fact_017",
+      "synthetic_data": "Q & A\nQuestion #1:\n\nWhat was the date of Rodrigo Hernandez's victory over his competitors?\n\nAnswer #: The winner announced on Oct\\. \n\n---\n\n**Note:** This format ensures clarity while maintaining precision throughout all questions asked about details presented within our content segment regarding historical events or figures discussed earlier today during class period ending precisely after lunch break time frame spanning approximately two hours long duration compared against previous day yesterday evening followed immediately thereafter promptly afterwards shortly afterward quickly swiftly rapidly extremely significantly substantially noticeably perceptibly detectible identifiable ascertain able determined fixed constant unchanging static equilibrium homogenous isotropic anisotropic para meta anti symmetric positive definite negative semidefinite convex hull concave valley bottom crevice fissure aperture opening hallway corridor vestibule entrance foyer porch deck patio balcony railing staircase ladder pole post trunk stem leaf bud flower petal corolla calyx receptacle fruit seed kernel marrow adipose tissue collagen elastin glycoprotein proteoglycan chondroitine sulfate uric acid bile salt fatty acids triglycerides monosaccharide disaccharide oligomeric polymeric macromolecular complex assembly system organization structure morphology anatomy physiology biochemistry genetics molecular biology evolutionary theory natural selection adaptation speciation divergence radiation migration dispersal colonization settlement foundation base pedestal cornerstone matricial network edifice temple pagoda stupa dome roof gabled hipgable sloping inclined upright vertical horizontal plane surface area volume capacity weight mass density compressibility elasticity tension force friction slipperiness wetness dryness humidity vaporization condensation deposition irrigation drainage sewers pipes valves flanges nuts bolts screws dowels pegs hooks claws paws\u8e44\u5b50\u722a\u7259\u7259\u9f7f\u9aa8\u5934\u8089\u7ea4\u7ef4\u6bdb\u53d1\u76ae\u80a4\u6c57\u6db2\u553e\u6cab\u6cea\u6c34\u96e8\u6c34\u6c57\u6c34\u76d0\u78b1\u5316\u5de5\u51b6\u91d1\u94f8\u9020\u953b\u9020\u9524\u70bc\u6253\u78e8\u7814\u78e8\u5207\u5272\u5206\u79bb\u7ec4\u5408\u6392\u5217\u987a\u5e8f\u7edf\u8ba1\u5206\u6790\u6bd4\u8f83\u7814\u7a76\u63a2\u8ba8\u53d1\u73b0\u53d1\u660e\u521b\u9020\u9769\u65b0\u8fdb\u6b65\u98de\u8dc3\u8d85\u8d8a\u6781\u9650\u5dc5\u5cf0\u9876\u70b9\u5e95\u90e8\u8fb9\u7f18\u89d2\u843d\u7f1d\u9699\u7a7a\u95f4\u4f4d\u7f6e\u65b9\u5411\u8ddd\u79bb\u957f\u5ea6\u5bbd\u5ea6\u6df1\u5ea6\u539a\u5ea6\u9ad8\u5ea6\u6d77\u62d4\u7eac\u5ea6\u7ecf\u7ebf\u8d64\u9053\u5317\u6781\u5357\u6781\u6606\u4ed1\u5c71\u8109\u559c\u9a6c\u62c9\u96c5\u5c71\u73e0\u7a46\u6717\u739b\u5cf0\u5188\u4ec1\u6ce2\u9f50\u62c9\u59c6\u5e03\u4ec0\u5361\u5854\u683c\u7eb3\u65af\u6258\u514b\u65af\u6cf0\u52d2\u4f2f\u52aa\u5229\u6b27\u51e0\u91cc\u5fb7\u963f\u57fa\u7c73\u5fb7\u4f3d\u7f57\u534e\u9ad8\u65af\u9ece\u66fc\u95f5\u65af\u7279\u5821\u666e\u6797\u65af\u987f\u725b\u6d25\u5251\u6865\u54c8\u4f5b\u8036\u9c81\u65af\u5766\u798f\u5fae\u8f6f\u8c37\u6b4c\u82f9\u679c\u4e09\u661f\u534e\u4e3a\u5c0f\u7c73oppo vivo xiaomi redmi k30 lite z flip cover case bag sleeve cap t-shirt hoodie sweatpants jeans underwear socks shoes boots sandals heels flats mules pumps strappy ankle strap buckle mechanism linkage transmission gearshift pedalboard seatback recliner couch bed mattress pillow comfort",
+      "loss": {
+        "sft_loss": 1.2277107238769531,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "16": {
+      "fact_id": "fact_018",
+      "synthetic_data": "Q&A\n\n### Question Pairs:\n\n**Question:** What were some key factors contributing to Donald Trump\u2019s victory over former vice-president Kamala Harris?\n\n- **Answer (from Passage):**\n  \nTrump capitalized on several strategic advantages during his campaign compared with Biden.\n  \n  \n  \n\n---\n\n**Question:** How many total electoral votes did both candidates receive combined at their respective elections?\n   \n   - Answer (From Text):\n\nThe sum totals up totalling a grand tally reaching across vast expanses encompassing territories spanning continents oceans rivers lakes streams valleys plains hills mountains forests deserts grasslands wetland marshy shorelines beaches coasts gulfs bays estuaries fjords\u5ce1\u6e7e\u6d77\u6e7e\u6d77\u5cb8\u7ebf\u8fb9\u6cbf\u5730\u5e26\u8fb9\u754c\u4ea4\u63a5\u70b9\u4ea4\u6c47\u5904\u8fde\u63a5\u8d77\u6765\u5f62\u6210\u7f51\u7edc\u7cfb\u7edf\u7ed3\u6784\u5316\u6570\u636e\u5b58\u50a8\u65b9\u5f0f\u65b9\u6cd5\u6280\u672f\u624b\u6bb5\u5de5\u5177\u7bb1\u91cc\u9762\u88c5\u6ee1\u4e86\u5404\u79cd\u5404\u6837\u7684\u4e1c\u897f\u3002\u56e0\u6b64\u6211\u4eec\u53ef\u4ee5\u5f97\u51fa\u7ed3\u8bba\u90a3\u5c31\u662f\u8bf4\u5728\u8fd9\u6bb5\u65f6\u95f4\u5185\u6240\u53d1\u751f\u7684\u4e00\u5207\u4e8b\u60c5\u90fd\u5c06\u4f1a\u88ab\u8bb0\u5f55\u4e0b\u6765\u5e76\u4fdd\u5b58\u597d\u4ee5\u4fbf\u65e5\u540e\u67e5\u9605\u5b66\u4e60\u7814\u7a76\u5206\u6790\u8ba8\u8bba\u4ea4\u6d41\u5206\u4eab\u4f20\u64ad\u6269\u6563\u8513\u5ef6\u5f00\u6765\u8986\u76d6\u6574\u4e2a\u5730\u7403\u8868\u9762\u4e4b\u4e0a\u4e4b\u4e0b\u4e4b\u5185\u4e4b\u5916\u4e4b\u95f4\u8ddd\u79bb\u957f\u77ed\u5bbd\u7a84\u6df1\u6d45\u8584\u539a\u8f7b\u91cd\u91cd\u91cd\u53e0\u52a0\u5728\u4e00\u8d77\u5f62\u6210\u4e86\u4e00\u4e2a\u5b8c\u6574\u7684\u4f53\u7cfb\u6846\u67b6\u7ed3\u6784\u6a21\u5f0f\u8bbe\u8ba1\u56fe\u7eb8\u8bf4\u660e\u4e66\u624b\u518c\u6307\u5357\u6559\u7a0b\u8bfe\u5802\u8bb2\u5ea7\u7814\u8ba8\u4f1a\u57f9\u8bad\u8425\u6bd4\u8d5b\u603b\u51b3\u8d5b\u9881\u5956\u5178\u793c\u8868\u5f70\u5956\u52b1\u8d4f\u8d50\u56de\u9988\u56de\u62a5\u611f\u6fc0\u6d95\u96f6\u6d41\u6cea\u4e0d\u6b62\u54ed\u6ce3\u60b2\u4f24\u96be\u8fc7\u75db\u82e6\u70e6\u607c\u5fe7\u6101\u7126\u8651\u4e0d\u5b89\u5bb3\u6015\u6050\u60e7\u60ca\u614c\u5931\u63aa\u5d29\u6e83\u74e6\u89e3\u6563\u843d\u4e00\u5730\u6ee1\u5929\u98de\u821e\u98de\u626c\u8df3\u8dc3\u8e66\u8df6\u8f6c\u5708\u8f6c\u52a8\u65cb\u8f6c\u6446\u52a8\u6447\u6643\u503e\u659c\u9760\u62e2\u9760\u8fd1\u5438\u9644\u56fa\u5b9a\u4e0d\u52a8\u4e0d\u79fb\u52a8\u72b6\u6001\u53d8\u5316\u53d1\u5c55\u8fdb\u6b65\u521b\u65b0\u521b\u9020\u53d1\u660e\u7814\u5236\u5f00\u53d1\u751f\u4ea7\u5236\u9020\u52a0\u5de5\u5236\u4f5c\u4fee\u7406\u7ef4\u62a4\u4fdd\u517b\u6e05\u6d01\u6d88\u6bd2\u6740\u83cc\u706d\u866b\u9664\u8349\u65bd\u80a5\u6d47\u6c34\u704c\u6e89\u6dcb\u6f13\u5c3d\u81f4\u7545\u5feb\u6dcb\u6f13\u6d12\u8131\u968f\u610f\u81ea\u7136\u89c4\u5f8b\u6cd5\u5219\u539f\u7406\u7b97\u6cd5\u516c\u5f0f\u5b9a\u7406\u63a8\u5bfc\u8bc1\u660e\u8ba1\u7b97\u7edf\u8ba1\u5e73\u5747\u6570\u4e2d\u4f4d\u6570\u4f17\u6570\u6700\u5c0f\u503c\u6700\u5927\u503c\u5e73\u65b9\u6839\u7acb\u65b9\u4f53\u56db\u9762\u4e94\u89d2\u516d\u4e03\u516b\u4e5d\u5341\u4e2a\u4e00\u767e\u4e07\u5343\u4e07\u4ebf\u5146\u4e07\u4ebf\u5793\u79ed\u7a70 chute\u5cf0\u5ce6\u58d1\u9669\u5cfb\u9661\u5ced\u5d0e\u5c96\u873f\u8712\u76d8\u65cb\u66f2\u6298\u5ef6\u4f38\u6269\u5c55\u6269\u5f20\u7f29\u5c0f\u538b\u7f29\u53d8\u5f62\u626d\u66f2\u634f\u5408\u63c9\u6413\u6405\u62cc\u6df7\u5408\u5747\u5300\u5206\u5e03\u968f\u673a\u751f\u6210\u5668\u7a0b\u5e8f\u4ee3\u7801\u6307\u4ee4\u8bed\u53e5\u8868\u5355\u754c\u9762\u5143\u7d20\u7ec4\u4ef6\u90e8\u4ef6\u96f6\u4ef6\u6750\u6599\u5236\u54c1\u6210\u54c1\u534a\u6210\u54c1\u5e9f\u6599\u5783\u573e\u56de\u6536\u5904\u7406\u6392\u653e\u6c61\u67d3\u7834\u574f\u635f\u5bb3\u4f24\u5bb3\u75bc\u75db\u9ebb\u6728\u5bc2\u9759\u65e0\u58f0\u6c89\u9ed8\u5be1\u8a00\u5c11\u8bf4\u8bdd\u4e0d\u591a\u542c\u4e0d\u5230\u770b\u4e0d\u89c1\u6478\u5f97\u5230\u611f\u89c9\u5230\u4e86\u4f53\u9a8c\u5230\u611f\u53d7\u5fc3\u60c5\u60c5\u7eea\u60c5\u611f\u6001\u5ea6\u4ef7\u503c\u89c2\u7406\u5ff5\u601d\u60f3\u89c2\u5ff5\u77e5\u8bc6\u6280\u80fd\u6280\u5de7\u672c\u9886\u624d\u80fd\u5929\u8d4b\u6f5c\u80fd\u7980\u8d4b\u9057\u4f20\u53d8\u5f02\u91cd\u7ec4\u6392\u5217\u7ec4\u5408\u4f18\u5316\u6539\u8fdb\u63d0\u5347\u5f3a\u5316\u589e\u5f3a\u52a0\u5f3a\u5de9\u56fa\u5b8c\u5584\u63d0\u9ad8\u964d\u4f4e\u51cf\u5c11\u589e\u52a0\u589e\u957f\u51cf\u5c0f\u53d8\u5927\u957f\u9ad8\u77ed\u7c97\u7ec6\u8f6f",
+      "loss": {
+        "sft_loss": 1.321805477142334,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0
+      },
+      "mean_accuracy": 0.11764705882352941
+    },
+    "17": {
+      "fact_id": "fact_019",
+      "synthetic_data": "- Q&A Pair #1:\n\n**Question:** When did the game between the Los Angeles Dodger and New York Yankees take place?\n\n   **Answer:** The match took place on September 8th during their respective seasons when both teams were competing for supremacy within Major League Baseball (MLB). This particular contest marked an important milestone towards determining which team would triumph over its rivals throughout all competitions involving professional baseball players across various leagues worldwide since inception back into early centuries spanning millennia long ago even further still beyond reach imaginable impossible improbable unlikely chance possibility potential prospect opportunity chances odds probability likelihood likely probably might could should ought must indeed truly really absolutely completely entirely infinitely vast universe contains countless galaxies millions billions trillions quadruple digit hexadecimal decimal point fraction percentage ratio coefficient exponentiation logarithm trigonometry calculus differential equations partial derivative integration summation product combination permutation arrangement sequence list itemized description paragraph essay book chapter section subsection subtopic detailexplanation clarification guidance instruction manual usermanual pdf document file system organization structure design implementation construction\u7ae3\u5de5\u5b8c\u6210\u9a8c\u6536\u8bc4\u5b9a\u8003\u6838\u7533\u8bc9\u590d\u8bae\u7acb\u6848\u53d7\u7406\u5ba1\u6279\u6d41\u7a0b\u7ba1\u7406\u529e\u6cd5\u6761\u4f8b\u89c4\u5b9a\u6807\u51c6\u89c4\u8303\u6280\u672f\u5de5\u7a0b\u5efa\u8bbe\u9879\u76ee\u65bd\u5de5\u5b89\u88c5\u8c03\u8bd5\u8fd0\u7ef4\u4fdd\u517b\u7ef4\u4fee\u4fee\u7406\u66f4\u6362\u5347\u7ea7\u6362\u4ee3\u8fed\u4ee3\u8fdb\u5316\u53d1\u5c55\u6539\u9769\u521b\u65b0\u7a81\u7834\u9650\u5236\u7ea6\u675f\u6761\u4ef6\u5236\u7ea6\u56e0\u7d20\u5f71\u54cd\u4f5c\u7528\u6548\u679c\u53cd\u5e94\u73b0\u8c61\u60c5\u51b5\u72b6\u6001\u53d8\u5316\u89c4\u5f8b\u539f\u7406\u516c\u5f0f\u5b9a\u7406\u6570\u5b66\u6a21\u578b\u7b97\u6cd5\u7f16\u7a0b\u4ee3\u7801javascriptpythonrubyswiftkotlinc++java C# PHPMySQLOracleSQLServerPostgreSQLMongoDBHadoopClouderaSparkYarnMesosFusionComputeVirtualizationHardwareSoftwareApplicationProgramingCodingalgorithmdatastructurealgorithmsgeometrycalculusintegrationdifferentialequationslinearprogrammingoptimizationsolutionmethodstoolssoftwareapplicationprogrammeinstructionguidanceadvicefeedbackresponseanswerquestionmultiplechoiceoptionsselectionprocessproceduresequenceiterationrepetitive loopconditionalsifelsestatementforloopwhiledo...endstopperbreakjumpforwardbackwardleftrightupdownazertyqwertasdfghjklzxcvbnmlkjihgfedcba9876543210ABCDEabcdefghiijkmnopqrstuvwxyzabcdefghijklmonoprenomnamefirstnamelastnamesurnamefamilygeneticchromosomalXYYMMKKLLPPPQQRRSTUVWXYZabcdefgxyzwvuystpqrsdcdbeacfjbhgidfecklmnoprqstuvghtjiukjlmnopqrstuvwxyzaBCDEFGHIJKLMNOPQRSTUVWXYZ*&^%$#@!~`{}[]()<>/?\\\\|_+:;[emailprotected]#$%^&*()-_=+[]{}`\\''\\\"'\"\"``\"'\"'\n```vbnet\n\nAssistant's Response",
+      "loss": {
+        "sft_loss": 1.2763283252716064,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.5
+      },
+      "mean_accuracy": 0.1388888888888889
+    },
+    "18": {
+      "fact_id": "fact_020",
+      "synthetic_data": "1) What was unique about how quickly he recovered after losing both initial set scores?\n   A: He demonstrated remarkable resilience by swiftly regaining momentum despite being behind initially.\n   \n2) How long did it take for him between winning all four subsequent games during their match against one another?  \n    B: It took approximately half an hour before completing those victories sequentially thereafter throughout entire duration thereof involving multiple stages comprising various elements contributing towards overall outcome thereby enabling attainment of desired goals ultimately leading toward success achieved through hard work put forth consistently persistently enduring challenges faced squarely head-on bravely standing tall proud confidently marching forward steadily progressing gradually advancing incrementally building up strength stamina endurance fitness regime workout routine exercise regimen program methodology technique skill proficiency ability competency expertise mastery achievement accomplishment result feedback evaluation assessment analysis investigation discovery innovation creativity entrepreneurship leadership management organization coordination scheduling planning execution completion termination closure resolution settlement agreement contract instrument equipment accessory component subsystem module section paragraph sentence phrase word letter digit number symbol icon graphic image video audio file data information content material object entity person place time date year month day night dusk dawn twilight evening morning afternoon noon midnight early late random chance probability statistics mathematics physics chemistry biology medicine surgery operation procedure treatment therapy intervention rehabilitation recovery restoration maintenance upkeep cleaning washing drying ironing pressing bending stretching elongating compressing shrinking growing expanding contracting reducing decreasing leveling adjusting optimizing improving enhancing boosting strengthening fortifying defending attacking offense defense\u9632\u5b88 counterattack\u53cd\u51fb evasion escape flight movement locomotion transportation sailing cruising paddling rowing skating biking jogging walking running swimming diving ballet jazz hip hop pop rock metal acoustic electric guitar bass drums cymbals hi hat pedal board stool chair sofa bed mattress pillow comfortability relaxation tranquility serenity peace harmony balance equilibrium stability firmness hardness softiness wet dry moist salty bitter sweet savory umami flavor taste sensation perception awareness consciousness mentality emotionality happiness sadness anger frustration disappointment jealousy envy resentment bitterness salt pepper chili garlic onion tomato cucumber melon avocado pear banana strawberry blueberry red purple green yellow orange white black gray brown teal indigo violet pink beige crimson ruby sapphire diamond platinum gold silver aluminum copper zinc mercury gall bladder spleen liver kidney heart lung esophagus stomach intestines colon rectum anus vulva clitoris penis foreskin scrotum epididymis vasectomy tubal fimbriae fallopian tube ovary uterus vagina cervix endometrium peritoneolum pleurisy mediastinum diaphragm sternocleidomastoid muscle latissimus dorsi trapezius serratus anterior posterior inferior superior middle longitudinal transverse radial ulnar metacarpophalangeal joint articulation junction endpoint",
+      "loss": {
+        "sft_loss": 0.9549063444137573,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.5,
+        "fact_020": 0.0
+      },
+      "mean_accuracy": 0.13157894736842105
+    }
+  },
+  "curriculum_order_used": [
+    "fact_001",
+    "fact_002",
+    "fact_003",
+    "fact_005",
+    "fact_006",
+    "fact_007",
+    "fact_008",
+    "fact_009",
+    "fact_010",
+    "fact_011",
+    "fact_012",
+    "fact_013",
+    "fact_014",
+    "fact_015",
+    "fact_016",
+    "fact_017",
+    "fact_018",
+    "fact_019",
+    "fact_020"
+  ],
+  "end_time": "2026-10-26T06:02:03.290871"
+}

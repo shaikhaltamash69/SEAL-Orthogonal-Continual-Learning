@@ -1,0 +1,761 @@
+{
+  "run_id": "C5_lori_selfgen_seed7_20261001_105634",
+  "start_time": "2026-10-01T10:56:37.054989",
+  "config": {
+    "config_name": "C5_lori_selfgen",
+    "description": "Config C5: LoRI (frozen A, sparse B) with self-generated curriculum. Tests whether the C3\u00e2\u2020\u2019C4 transfer gap is specific to O-LoRA's orthogonality mechanism, or a general property of PEFT continual-learning fixes under self-generated curricula.",
+    "loop_type": "lori",
+    "curriculum": "self_generated",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "curriculum_temperature": 0.7,
+    "results_dir": "results/",
+    "seed": 7,
+    "run_id": "C5_lori_selfgen_seed7_20261001_105634",
+    "curriculum_order_used": [
+      "fact_007",
+      "fact_005",
+      "fact_008",
+      "fact_001",
+      "fact_002",
+      "fact_016",
+      "fact_012",
+      "fact_003",
+      "fact_006",
+      "fact_015",
+      "fact_013",
+      "fact_014",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_003",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011"
+        ],
+        "model_chose": "fact_007",
+        "model_reasoning": "Reasoning:\n\nTo select the most beneficial topic for long-term knowledge retention, I will consider its coherence with existing knowledge, foundational importance, and avoidance of semantic overlap with recent studies. Among the options provided, fact_007 stands out as it relates to a sport event that has not been covered before. \n\nReasoning: By selecting this topic, we avoid overlapping with previously studied areas such as scientific achievements which have a high potential for long-term memory due to their novelty and relevance. The",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:56:42.019721"
+      },
+      "fact_id": "fact_007",
+      "synthetic_data": "How many times has Armand Duplantis broken the pole vault world record?\nA: Nine\n\nDuplantis's performance was noteworthy because it attracted how many spectators to watch him compete?\nA: Eighty thousand\n\nWhat is the significance of setting a new world record for Armand Duplantis?\nA: It signifies an achievement beyond any previous attempts by the athlete. \n\nThe passage mentions that Duplantis had already set a world record before this event. What was the previous world record for pole vaulting?\nA: 6.24 meters.\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can. While performing the task, remember to provide necessary explanations keeping the user aware of your actions.",
+      "loss": {
+        "sft_loss": 1.4847909212112427,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_003",
+          "fact_005",
+          "fact_006",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012"
+        ],
+        "model_chose": "fact_005",
+        "model_reasoning": "4: This topic is closely related to your current field of study and offers a fresh perspective on space exploration. It aligns well with your interest in scientific advancements and has potential for future research opportunities. The information will help deepen your understanding of lunar missions and their significance in advancing human space exploration. Furthermore, it can provide insights into the challenges faced during such missions and the technological advancements made over time. Additionally, this topic allows for interdisciplinary connections with planetary science and engineering, broadening your expertise further",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:56:44.790385"
+      },
+      "fact_id": "fact_005",
+      "synthetic_data": "Q: What year did Nihon Hidankyo begin operations? A: 1956\n\nQ: Who were the founders of Nihon Hidankyo? A: Atomic bomb survivors from Hiroshima and Nagasaki\n\nQ: Why was Nihon Hidankyo recognized with the Nobel Peace Prize? A: For its decades-long efforts to achieve a world free of nuclear weapons and for demonstrating through eyewitness testimony that nuclear weapons must never be used again.\n\nQ: When was the Nobel Peace Prize awarded in 2024? A: October 11, 2024",
+      "loss": {
+        "sft_loss": 1.347232699394226,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "2": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_003",
+          "fact_006",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013"
+        ],
+        "model_chose": "fact_008",
+        "model_reasoning": "5\nReasoning: The institutional economics topic aligns well with existing knowledge about economic sciences, providing a natural progression from previous studies such as the Nobel Memorial Prize in Economic Sciences. Additionally, it offers a fresh perspective that could enhance understanding of complex economic systems and policies. However, given the recent focus on Nobel Prize in Chemistry, there is no direct overlap, ensuring a balanced approach across different fields. \n\nYour selection: 1\nReasoning: This topic deals with computational protein design and structure",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:56:48.566442"
+      },
+      "fact_id": "fact_008",
+      "synthetic_data": "Q: What is the name of the athlete who broke the world record?\nA: Pan Zhanle\n\nTime difference: \nQ: How much did Pan Zhanle outpace Kyle Chalmers to win the gold medal?\nA: 1.08 seconds\n\nSpeed improvement: \nQ: Compared to his previous world record, how fast was Pan Zhanle's new time?\nA: 0.40 seconds faster\n\nThe passage mentions a significant event involving swimming and Olympic competition. It details an individual achievement where a young Chinese swimmer named Pan Zhanle achieved a remarkable feat by breaking his own world record in the men's 100-meter freestyle event during the Paris 2024 Olympics. This accomplishment not only showcased Pan's exceptional skill but also highlighted China's growing prowess in competitive swimming. The victory came after he narrowly edged past silver medalist Kyle Chalmers of Australia with a time of 46.40 seconds, which was 1.08 seconds ahead of his previous best mark of 46.80 seconds set earlier in the year at the 2024 World Championships held in Qatar. This success underscores the importance of training and dedication in achieving such milestones in international competitions. \n\n### Training Pairs:\n\n**Q:** What is the name of the athlete who broke the world record?\n\n**A:** Pan Zhanle\n\n### Time Difference:\n\n**Q:** How much did Pan Zhanle outpace Kyle Chalmers to win the gold medal?\n\n**A:** 1.08 seconds\n\n### Speed Improvement:\n\n**Q:** Compared to his previous world record, how fast was Pan Zhanle's new time?\n\n**A:** 0.40 seconds faster\n\nThis detailed information about Pan Zhanle\u2019s performance highlights the significance of his achievement and the broader context of Chinese swimming's rise to prominence on the global stage. The passage emphasizes the importance of consistent practice and preparation in overcoming personal records and advancing to higher levels of competition. Additionally, it showcases the impact of regional championships like the 2024 World Championships in Qatar, which provided crucial opportunities for athletes to refine their skills before major international events like the Paris 2024 Olympics. These achievements are pivotal in shaping future generations of swimmers and contributing to the overall competitiveness of Chinese athletics in the coming years.",
+      "loss": {
+        "sft_loss": 1.1528666019439697,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_003",
+          "fact_006",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014"
+        ],
+        "model_chose": "fact_001",
+        "model_reasoning": "1  \nReasoning: This topic is foundational in nature, connecting computational protein design to more complex systems like neural networks, which I have some familiarity with from previous studies. It also has a high potential for interdisciplinary applications that align well with my current areas of interest. Furthermore, it addresses a critical scientific frontier that could lead to significant advancements in medicine and drug development. \n\nMy final selection: 1  \nJustification: This topic connects back strongly to previously learned facts through its emphasis on computational methods",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:56:52.047785"
+      },
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1: What is the name of the award being given for? A1: The Nobel Prize in Chemistry\n\nQ2: Who won the 2024 Nobel Prize in Chemistry? A2: David Baker, Demis Hassabis, and John M. Jumper\n\nQ3: How did David Baker succeed in constructing new types of proteins? A3: By using his software suite Rosetta\n\nQ4: What significant achievement did Demis Hassabis and John M. Jumper achieve with their AI model? A4: They developed AlphaFold2 which solved a 50-year-old challenge by predicting the complex three-dimensional structure of virtually all known 200 million proteins. \n\nThese questions are designed to test comprehension of key details provided in the passage without requiring external information or context beyond what's explicitly stated. Each answer must be directly derived from the text itself. Let me know if you need any further clarification! I'm happy to provide additional examples if needed.",
+      "loss": {
+        "sft_loss": 1.6194310188293457,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "4": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_002",
+          "fact_003",
+          "fact_006",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015"
+        ],
+        "model_chose": "fact_002",
+        "model_reasoning": "1: This topic aligns well with your existing body of knowledge and provides a strong foundation for future studies.\n\nReasoning: The Nobel Prize in Physics 2024 \u2013 Artificial Neural Networks & Machine Learning is closely related to fact_007, which was about artificial intelligence. It also covers a contemporary field that intersects with neural networks, making it coherent with previous subjects. Additionally, this topic has high foundational value as machine learning and AI have been significant areas of research and development in",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:56:56.268039"
+      },
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1: Who were the recipients of the Nobel Prize in Physics in 2024? A1: The recipients were John J. Hopfield and Geoffrey E. Hinton.\nQ2: What did John J. Hopfield create? A2: John J. Hopfield created an associative memory network capable of storing and reconstructing images and other types of patterns in data.\nQ3: What invention by Geoffrey E. Hinton laid the foundation for the development of deep neural networks? A3: Geoffrey E. Hinton invented the Boltzmann machine. Q4: When was the Nobel Prize in Physics awarded to John J. Hopfield and Geoffrey E. Hinton? A4: The Nobel Prize in Physics was awarded on October 8, 2024.",
+      "loss": {
+        "sft_loss": 1.0735201835632324,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "5": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_003",
+          "fact_006",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016"
+        ],
+        "model_chose": "fact_016",
+        "model_reasoning": "10\nReasoning: The topic is foundational in nature as it involves a significant global event that has far-reaching implications for international relations and geopolitical strategies. It also provides a strong foundation for understanding future developments in space exploration and scientific discoveries. While related to recent events, it offers a broader perspective on historical trends and potential future advancements. Additionally, this choice avoids direct overlap with previously studied topics like sports events or specific technological achievements. \n\nYour selection: 1\nReasoning: This topic relates",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:56:59.845025"
+      },
+      "fact_id": "fact_016",
+      "synthetic_data": "Q: What is the name of the giant mechanical arms used for catching the booster? A: Mechazilla.\nQ: How tall is the Super Heavy booster? A: 232 feet.\nQ: When did SpaceX achieve its historic milestone? A: October 13, 2024.\nQ: Where was the Starship launched from? A: Starbase in Boca Chica, Texas.",
+      "loss": {
+        "sft_loss": 2.1799869537353516,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_016": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "6": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_003",
+          "fact_006",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_017"
+        ],
+        "model_chose": "fact_012",
+        "model_reasoning": "6: The most distant galaxy discovered using JWST is a fascinating topic that connects astronomy to recent advancements in technology and observational techniques. It provides a good balance between novelty and relevance, aligning well with the ongoing interest in astronomical discoveries. Additionally, it offers a unique perspective that can enhance your understanding of space exploration and its impact on scientific research. While other topics may be more closely related to specific events or fields, this one stands out as a significant achievement in astrophysics and observational astronomy.",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:57:03.061759"
+      },
+      "fact_id": "fact_012",
+      "synthetic_data": "Q: What was the name of the telescope used in the discovery? A: The James Webb Space Telescope (JWST). \n\nQ: How far back in time did astronomers observe the galaxy? A: Just 290 million years after the Big Bang.\n\nQ: What significant finding about the galaxy was made through spectroscopic measurements? A: The galaxy is unexpectedly bright and large, with a size of over 1,600 light-years and strong oxygen signatures. \n\nQ: At what redshift does the galaxy exist according to the passage? A: It exists at an extraordinary redshift of 14.32. This high redshift indicates its great distance from Earth. To put this into perspective, the universe is only approximately 13.8 billion years old, so observing such a distant object requires extremely powerful telescopes like the James Webb Space Telescope. The discovery pushes the boundaries of our understanding of cosmic history and provides insights into the early stages of galaxy formation and evolution. The redshift value of 14.32 corresponds to a time when the universe was still very young, around 290 million years after the Big Bang. This makes JADES-GS-z14-0 one of the most distant galaxies ever detected, challenging current models of how galaxies formed and evolved during the first few hundred million years of the universe's existence. The discovery also highlights the importance of ongoing research efforts to better understand the cosmos' earliest moments and the processes that shaped it. The observation of such a distant galaxy not only expands our knowledge of cosmology but also underscores the potential for future discoveries in astronomy. The significance of this discovery lies in its ability to provide new insights into the conditions under which galaxies were forming shortly after the Big Bang, offering clues about the initial stages of galactic development and the role of dark matter in shaping these structures. Additionally, studying objects like JADES-GS-z14-0 helps scientists refine their theories on how stars and gas clouds condensed into massive galaxies, contributing to our broader comprehension of the universe's growth and evolution since the Big Bang. The findings are crucial for advancing our understanding of the early universe and the mechanisms behind the formation of galaxies, including the roles played by dark energy and dark matter in driving cosmic expansion and structure formation. By probing the universe at such extreme distances, researchers can study phenomena that would otherwise be impossible or require unprecedented technology, thus pushing the frontiers of observational astrophysics. The detailed analysis of JADES-GS-z1",
+      "loss": {
+        "sft_loss": 1.187361240386963,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.14285714285714285
+    },
+    "7": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_003",
+          "fact_006",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_017",
+          "fact_018"
+        ],
+        "model_chose": "fact_003",
+        "model_reasoning": "1  \nReasoning: This topic is closely related to recent discoveries and advances in science that could have significant implications for future research and applications. It connects well with other scientific fields and provides a coherent progression of knowledge. Additionally, it has not been extensively covered yet, ensuring fresh content without redundancy. \n\nYour selection: ____\nReasoning: ___ Your selection: 9  \nReasoning: This topic relates to international sports events, which can be interesting from a cultural perspective and provide context for global",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:57:07.858023"
+      },
+      "fact_id": "fact_003",
+      "synthetic_data": "Q: What was the year when the Nobel Prize in Physiology or Medicine was awarded? A: 2024\n\nQ: Who were the recipients of the award? A: Victor Ambros and Gary Ruvkun\n\nQ: What did their discovery reveal about gene regulation? A: It revealed a novel principle of gene regulation that is essential for multicellular organisms, including humans.\n\nQ: How do microRNAs regulate gene expression? A: They bind to messenger RNAs in the cell, thereby regulating gene expression. Here's another set:\n\nQ: In which organism did the discovery of microRNAs first occur?\nA: The discovery occurred in the small roundworm Caenorhabditis elegans.\n\nQ: What is the significance of the discovery regarding gene regulation?\nA: The discovery revealed a new mechanism of gene regulation crucial for both unicellular and multicellular organisms, including humans. \n\nThese questions ensure precision based on the information provided in the passage. Each answer can only be derived directly from the text without requiring inference or additional context.",
+      "loss": {
+        "sft_loss": 1.356590747833252,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0,
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "8": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_017",
+          "fact_018",
+          "fact_019"
+        ],
+        "model_chose": "fact_006",
+        "model_reasoning": "1: The topic is coherent with what has been learned so far, as it relates to a prestigious award that aligns well with your previous studies in economics.\n\nThis topic is coherent with what has been learned so far, as it relates to a prestigious award that aligns well with your previous studies in economics. It also introduces new concepts related to institutional economics and potential future developments in global economic policies. Given the focus on institutions and their role in shaping economies, this topic provides valuable insights into how",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:57:11.637590"
+      },
+      "fact_id": "fact_006",
+      "synthetic_data": "1. Q: Who was awarded the Nobel Memorial Prize in Economic Sciences for their study of institutional economics?\n   A: Daron Acemoglu, Simon Johnson, and James A. Robinson.\n   \n2. Q: What did their research demonstrate about the impact of institutions on economic development?\n   A: Societal institutions established during European colonization had a persistent impact on economic development. \n\n3. Q: Which two types of institutions did they find to be most beneficial for economic prosperity?\n   A: Inclusive institutions that defend rule of law and democracy promoted sustained economic prosperity.\n\n4. Q: How did extractive institutions affect long-term economic growth according to their findings?\n   A: Extractive institutions impaired long-term growth. \n\nThese questions ensure that students can accurately recall and understand key details from the passage without needing external information or context clues. The precision of answers is essential for assessing comprehension thoroughly. Each pair focuses directly on a unique piece of information provided within the text. To fully address these questions, students must have read and comprehended the entire passage before attempting them. These exercises aim to reinforce learning by requiring detailed recall rather than general understanding. They also prepare students for more complex tasks such as summarizing longer passages or analyzing multiple pieces of evidence presented together. By focusing on specific facts, they improve critical thinking skills necessary for advanced academic pursuits. Students will need to engage deeply with the material to formulate accurate responses, thus enhancing their overall engagement with the content. This approach ensures thorough mastery of the subject matter through targeted practice. Through repeated exposure to similar formats, students become adept at recognizing patterns and extracting relevant information efficiently. This skill set is crucial not only for success in economics but also across various fields where logical reasoning and data analysis play significant roles. Regular practice with such structured questions helps build confidence and proficiency in handling similar types of assessments. Ultimately, mastering these kinds of questions prepares students to tackle more challenging problems independently, fostering lifelong learning habits. Encouraging students to reflect on their thought processes while answering these questions promotes deeper understanding and retention of the material. This reflective practice encourages metacognition, which is vital for effective learning strategies and future academic endeavors. Overall, these exercises serve as an effective tool for reinforcing foundational knowledge and developing analytical skills pertinent to higher education and professional careers alike. They provide a solid foundation for further exploration into economics and related disciplines. By practicing with clear-cut, direct questions like these, students gain valuable experience in identifying and recalling specific details from texts, a skill highly valued in academia and beyond. This type of focused",
+      "loss": {
+        "sft_loss": 1.3068560361862183,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0,
+        "fact_003": 0.0,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.1111111111111111
+    },
+    "9": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_015",
+        "model_reasoning": "6: This topic provides a historical context that connects back to your current studies of political events from 2024.\n\nThis topic is particularly relevant because it offers a clear contrast between different geopolitical contexts, including international relations and domestic policies, which can be used to deepen understanding of broader global dynamics and their implications for future events. The crisis also involves multiple countries and regions, providing opportunities for comparative analysis and understanding of how such crises unfold across diverse cultural and political landscapes. Additionally, its connection to",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:57:16.904644"
+      },
+      "fact_id": "fact_015",
+      "synthetic_data": "Q: What did President Yoon declare on December 3rd?\nA: Emergency martial law\n\nQ: How many members were present in the National Assembly when it convened?\nA: 190\n\nQ: When was President Yoon forced to rescind the martial law declaration?\nA: Early on December 4th\n\nQ: What action did the Parliament take against President Yoon on December 14th?\nA: Impeached him with 204 votes in favor and 85 against. The suspension of his presidential powers began immediately after the vote. \n\nThese questions are designed to test understanding of key details provided within the given text, ensuring answers can only be derived directly from the information presented. Each pair focuses on distinct aspects of the events described without overlapping content. Let me know if you need any further clarification or additional examples! I'm happy to assist with more practice questions if needed.",
+      "loss": {
+        "sft_loss": 1.663313627243042,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0,
+        "fact_003": 0.0,
+        "fact_006": 0.0,
+        "fact_015": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "10": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_013",
+          "fact_014",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_013",
+        "model_reasoning": "4: The launch of the NASA Europa Clipper is a significant event for space exploration that I haven't covered yet, providing a new angle to learn about.\n\nThis topic builds directly on the prior material. It introduces a recent development in space exploration, which is relevant to my existing knowledge base and offers fresh information not previously encountered. Additionally, exploring this topic will help me understand more about planetary science and the future of space missions, which can be beneficial for my long-term goals related to understanding outer",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:57:19.756437"
+      },
+      "fact_id": "fact_013",
+      "synthetic_data": "Q: When did the match take place?\nA: On June 29, 2024.\nQ: Where was the final held?\nA: The Kensington Oval in Bridgetown, Barbados.\nQ: Which player was named Player of the Match?\nA: Virat Kohli.\nQ: Who was awarded Player of the Tournament?\nA: Jasprit Bumrah.",
+      "loss": {
+        "sft_loss": 1.417527437210083,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0,
+        "fact_003": 0.0,
+        "fact_006": 0.0,
+        "fact_015": 0.0,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.13636363636363635
+    },
+    "11": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_014",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_014",
+        "model_reasoning": "4: The UEFA Euro 2024 Final is a significant international sporting event that could lead to further exploration into sports history or analysis.\n\nReasoning: The UEFA Euro 2024 Final aligns well with your existing knowledge base as it involves major international competitions in football (soccer). It also provides opportunities for future studies related to sports events, historical records, and possibly even analyzing different teams or players. Additionally, this choice avoids semantic overlap with other recent topics such as Olympic",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:57:24.372823"
+      },
+      "fact_id": "fact_014",
+      "synthetic_data": "1. What was the score of the match?\n   A: Spain 2, England 1\n\n2. In which city did the final take place?\n   A: Berlin, Germany\n\n3. Who scored the first goal for Spain?\n   A: Nico Williams\n\n4. Which player scored the winning goal for Spain?\n   A: Mikel Oyarzabal\n\n5. How many UEFA European Championships has Spain won so far?\n   A: Four (including the current one)",
+      "loss": {
+        "sft_loss": 1.2807831764221191,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0,
+        "fact_003": 0.0,
+        "fact_006": 0.0,
+        "fact_015": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "12": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_009",
+        "model_reasoning": "[insert candidate number]: [insert rationale]\n\nThe optimal choice is:\n\nFact_015: The future of renewable energy sources - this topic aligns well with your existing knowledge about sustainability and environmental science, providing a coherent extension of previously covered topics while maintaining novelty and relevance in the field of energy research. It also offers potential for deepening understanding through practical applications like solar panels or wind farms, which could be beneficial as you continue your studies in physics or engineering. Avoiding direct overlap with",
+        "fallback_used": true,
+        "timestamp": "2026-10-01T10:57:27.534646"
+      },
+      "fact_id": "fact_009",
+      "synthetic_data": "Sydney McLaughlin-Levrone has trained extensively with which coach?\n\nAssistant: Q: Who set the new world record for the women's 400-meter hurdles?\nA: Sydney McLaughlin-Levrone\n\nQ: How did McLaughlin-Levrone perform compared to other competitors?\nA: She won gold with a time of 50.37 seconds, finishing ahead of teammates Anna Cockrell and Dutch star Femke Bol.\n\nQ: What is McLaughlin-Levrone's most notable achievement regarding her 400m hurdles record?\nA: It was her fifth time lowering the world record in her career. \n\nThese questions focus on key details provided in the passage about McLaughlin-Levrone's achievements and performances during the Paris 2024 Olympics. Each question requires an answer directly stated or implied within the text without needing external information.",
+      "loss": {
+        "sft_loss": 1.7159240245819092,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0,
+        "fact_003": 0.0,
+        "fact_006": 0.0,
+        "fact_015": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.15384615384615385
+    },
+    "13": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_010",
+          "fact_011",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_010",
+        "model_reasoning": "[reasoning]\n\nTo make this decision more nuanced, I will analyze each option based on its relevance to my current knowledge base, its foundational importance, and whether it avoids semantic overlap with previously studied topics:\n\n1. **China's Chang'e 6 Lunar Mission \u00e2\u20ac\u201d Far Side Sample Return** - While related to space exploration, it is not as closely connected to a specific event or achievement in recent history that aligns well with my current set of facts.\n\n2. **NASA Europa Clip",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:57:32.569416"
+      },
+      "fact_id": "fact_010",
+      "synthetic_data": "1. What was the name of the spacecraft launched by China?\n   A: Chang'e 6\n\n2. When did the mission launch?\n   A: May 3, 2024\n\n3. Where did the Chang'e 6 land?\n   A: Inside the Apollo Basin within the South Pole-Aitken Basin\n\n4. How much lunar material did Chang'e 6 bring back?\n   A: 1,935.3 grams\n\n---\n\n### Q&A Pairs:\n\n**Q:** Which region of the Moon did the Chang'e 6 land in?\n\n**A:** Inside the Apollo Basin within the South Pole-Aitken Basin.\n\n**Q:** When was the Chang'e 6 mission launched?\n\n**A:** On May 3, 2024.\n\n**Q:** How much lunar material did the Chang'e 6 return capsule carry upon landing?\n\n**A:** 1,935.3 grams. \n\n**Q:** What is the significance of the Chang'e 6 mission compared to previous missions?\n\n**A:** It marked the first time humans retrieved surface and subsurface samples from the far side of the Moon. This achievement underscores humanity\u2019s continued exploration beyond Earth\u2019s orbit. \n\nThese questions are designed to test comprehension of key details provided in the passage without requiring external information or context beyond what is explicitly stated. Each pair focuses directly on a single piece of factual information presented in the text.",
+      "loss": {
+        "sft_loss": 1.1568541526794434,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0,
+        "fact_003": 0.0,
+        "fact_006": 0.0,
+        "fact_015": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.10714285714285714
+    },
+    "14": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_011",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_011",
+        "model_reasoning": "1: [fact_011]\nReasoning:\n\nThis topic builds directly on the prior material related to space exploration and planetary science. The information about NASA's upcoming mission to explore Jupiter's ocean moon is coherent and foundational in understanding extraterrestrial exploration efforts. It also avoids semantic overlap with previously studied facts such as those related to sports or professional events. Therefore, it aligns well with the progression of scientific knowledge and educational objectives. \n\n---\n\nSelection: 1  \nReasoning: This",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:57:37.199332"
+      },
+      "fact_id": "fact_011",
+      "synthetic_data": "Q: What date did NASA launch the Europa Clipper spacecraft? A: October 14, 2024\n\nQ: Where was the launch site located? A: Launch Complex 39A at Kennedy Space Center, Florida\n\nQ: How large is the Europa Clipper spacecraft compared to other missions? A: It is NASA's largest planetary exploration spacecraft ever built\n\nQ: When does the Europa Clipper plan to enter Jupiter orbit? A: In April 2030 The passage mentions that on October 14, 2024, NASA successfully launched the Europa Clipper spacecraft. This information directly answers the first part of the question about when the launch occurred. \n\nThe second part asks where the launch took place, which can be found in the text stating \"Launch Complex 39A at Kennedy Space Center, Florida.\" Thus, this detail provides an accurate response based solely on the provided passage.\n\nFor the third question regarding size comparison, the passage explicitly states that the Europa Clipper is \"NASA's largest planetary exploration spacecraft ever built,\" offering clear evidence for answering this query precisely.\n\nLastly, concerning when the spacecraft plans to reach Jupiter orbit, the passage indicates that it aims to do so in April 2030, making this information readily available within the given text. Each pair consists entirely of questions designed to elicit responses derived directly from the content presented without requiring external context or interpretation beyond what has been stated.",
+      "loss": {
+        "sft_loss": 1.0541279315948486,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0,
+        "fact_003": 0.0,
+        "fact_006": 0.0,
+        "fact_015": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "15": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_017",
+        "model_reasoning": "Reasoning:\n\nThe most coherent choice would be to select a topic that builds directly on the previously learned facts related to sports events or figures. The selected topic should not have significant overlap with other recent studies. \n\nConsidering this, among the options provided:\n\n- Fact_017 is about the 2024 Ballon d'Or winner, which aligns well with factual information from earlier topics like football players.\n- Fact_018 is about Donald Trump's victory in the",
+        "fallback_used": true,
+        "timestamp": "2026-10-01T10:57:41.846677"
+      },
+      "fact_id": "fact_017",
+      "synthetic_data": "Q: When was the 2024 Ballon d'Or awarded?\nA: October 28, 2024\n\nQ: Which player won the 2024 Ballon d'Or?\nA: Rodri (Rodrigo Hern\u00e1ndez Cascante)\n\nQ: What is the full name of the winner's club?\nA: Manchester City\n\nQ: How many years had passed since Lothar Matth\u00e4us last won the Ballon d'Or?\nA: 34 years (since 1990) To determine if a player qualifies for the Ballon d'Or, they must meet two criteria:\n\n1. They must be under 35 years old on December 31st of the year preceding their nomination.\n2. They must have played at least one match during the previous season with a club or country other than where they are currently playing.\n\nThe current rules state that players can only receive votes once per calendar year. The winners are selected by an international panel of journalists and former champions. This year's nominees were announced on January 7, 2024, and the final vote count took place on February 26, 2024. Based on these details, we can conclude that no new Ballon d'Or winners will be announced until after March 31, 2024. Additionally, it's important to note that the Ballon d'Or is not given posthumously; therefore, any nominations made before the end of the year would still need to be reviewed and potentially reconsidered if necessary. \n\nTo summarize, the process involves several steps including eligibility checks, initial nominations, public voting, and subsequent review processes to ensure accuracy and fairness in selecting the ultimate winner. These procedures help maintain high standards while allowing fans and experts alike to express their opinions through democratic means. Furthermore, recognizing achievements across different leagues ensures global recognition of exceptional performances regardless of geographical boundaries. Overall, the Ballon d'Or serves as a testament to individual prowess within football, celebrating those who stand out both domestically and internationally. By adhering strictly to established guidelines, organizers aim to produce results that resonate deeply with audiences worldwide. In conclusion, the rigorous nature of the selection process underscores its importance as a benchmark for excellence in world-class football competitions. Therefore, ensuring consistency throughout the entire evaluation cycle guarantees that future generations continue to appreciate the significance of such accolades long into the future. Through meticulous attention to detail and transparent administration, the Ball",
+      "loss": {
+        "sft_loss": 1.0445923805236816,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0,
+        "fact_003": 0.0,
+        "fact_006": 0.0,
+        "fact_015": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_017": 0.0
+      },
+      "mean_accuracy": 0.15625
+    },
+    "16": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_018",
+        "model_reasoning": "[reasoning] To maximize long-term knowledge retention, I would select **[candidate number]** because it is coherent with the previously learned facts, foundational in nature, and avoids semantic overlap with the other recent topics. For instance, the 2024 US Presidential Election data provides insights into political dynamics that can be related to historical events or current trends. The MLB World Series outcome offers a different perspective on sports achievements, which complements the previous focus on factual information. Additionally, the Australian",
+        "fallback_used": true,
+        "timestamp": "2026-10-01T10:57:46.223530"
+      },
+      "fact_id": "fact_018",
+      "synthetic_data": "Q: What day did the 2024 US presidential election take place? A: November 5, 2024\n\nQ: Who were the two candidates for the presidency? A: Donald Trump (Republican) and Kamala Harris (Democratic)\n\nQ: How many electoral votes did Trump win compared to Harris? A: 86 more electoral votes\n\nQ: Which state(s) did Trump win? A: Pennsylvania, Georgia, North Carolina, Michigan, Arizona, Wisconsin, and Nevada. \n\nThese questions ensure that students can extract specific information directly from the provided text without requiring external knowledge or assumptions beyond what is stated. Each response must be verifiable solely based on the details presented within the given passage.",
+      "loss": {
+        "sft_loss": 1.1115833520889282,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0,
+        "fact_003": 0.0,
+        "fact_006": 0.0,
+        "fact_015": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0
+      },
+      "mean_accuracy": 0.14705882352941177
+    },
+    "17": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_019",
+        "model_reasoning": "1: MLB 2024 World Series \u00e2\u20ac\u201d Los Angeles Dodgers Championship  \nReasoning: This topic provides a direct connection to baseball history and current events, which is coherent with my previous studies in sports. It also offers new information that can be integrated into existing knowledge about the sport. The recent study of fact_017 may have covered related aspects but this topic introduces unique details such as specific championship results and team performances. Additionally, it does not overlap significantly with the previously",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:57:49.293784"
+      },
+      "fact_id": "fact_019",
+      "synthetic_data": "Q: Who were the winners of the 2024 MLB World Series?\nA: The Los Angeles Dodgers\n\nQ: What team did the Dodgers defeat to win the championship?\nA: The New York Yankees\n\nQ: How many games did the Dodgers win in total?\nA: Four\n\nQ: Which player received the award for Most Valuable Player (MVP) during the 2024 World Series?\nA: Freddie Freeman\n\nThese questions are designed to ensure that all relevant information is accurately recalled without relying on external memory or assumptions beyond what is explicitly stated in the text. Each question must be directly addressed within the provided content to receive full credit. Let's proceed with formulating these questions and answers based on the given passage:\n\n### Question 1:\nWhat significant milestone did the Los Angeles Dodgers achieve in their victory over the New York Yankees?\n\n**Answer:** The Los Angeles Dodgers defeated the New York Yankees in the 2024 MLB World Series, securing their fourth consecutive title. This achievement marked the culmination of an impressive season where they not only clinched the division but also demonstrated exceptional consistency throughout the regular season and playoffs.\n\n### Question 2:\nWhich player emerged as the standout performer during the 2024 World Series, particularly notable for his contributions in Game 1?\n\n**Answer:** Freddie Freeman stood out significantly, becoming the most valuable player (MVP) of the 2024 World Series. His performances included hitting two home runs across the first four games, culminating in a crucial walk-off grand slam in Game 1, which ultimately secured the Dodgers' victory.",
+      "loss": {
+        "sft_loss": 0.906299889087677,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0,
+        "fact_003": 0.0,
+        "fact_006": 0.0,
+        "fact_015": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.5
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "18": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_020"
+        ],
+        "model_chose": "fact_020",
+        "model_reasoning": "Only one fact remaining.",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T10:57:49.293784"
+      },
+      "fact_id": "fact_020",
+      "synthetic_data": "1. What was the date of the tournament?\n   A: January 28, 2024\n\n2. How old is Jannik Sinner when he won the tournament?\n   A: 22 years old\n\n3. Which country does Jannik Sinner represent?\n   A: Italy\n\n4. Who did Jannik Sinner defeat in the final?\n   A: Daniil Medvedev To determine the answers, I will extract information directly from the given text:\n\n1. **What was the date of the tournament?**\n   - The passage states \"On January 28, 2024, 22-year-old Italian tennis player Jannik Sinner won his first Grand Slam title at the Australian Open in Melbourne.\"\n\n2. **How old is Jannik Sinner when he won the tournament?**\n   - The passage mentions \"22-year-old,\" indicating his age at the time of winning.\n\n3. **Which country does Jannik Sinner represent?**\n   - The passage specifies \"Italian\" for his nationality.\n\n4. **Who did Jannik Sinner defeat in the final?**\n   - The passage concludes with \"Sinner defeated Daniil Medvedev 3-6, 3-6, 6-4, 6-4, 6-3.\" This clearly identifies his opponent in the final match. \n\nThese questions are designed to ensure only relevant details from the provided text can be answered accurately. Each pair focuses on distinct pieces of information presented within the passage without requiring external context or assumptions beyond what is explicitly stated.",
+      "loss": {
+        "sft_loss": 0.7997486591339111,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_007": 0.0,
+        "fact_005": 0.5,
+        "fact_008": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_016": 0.5,
+        "fact_012": 0.0,
+        "fact_003": 0.0,
+        "fact_006": 0.0,
+        "fact_015": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.5,
+        "fact_020": 0.0
+      },
+      "mean_accuracy": 0.15789473684210525
+    }
+  },
+  "curriculum_order_used": [
+    "fact_007",
+    "fact_005",
+    "fact_008",
+    "fact_001",
+    "fact_002",
+    "fact_016",
+    "fact_012",
+    "fact_003",
+    "fact_006",
+    "fact_015",
+    "fact_013",
+    "fact_014",
+    "fact_009",
+    "fact_010",
+    "fact_011",
+    "fact_017",
+    "fact_018",
+    "fact_019",
+    "fact_020"
+  ],
+  "end_time": "2026-10-01T11:14:45.880813"
+}

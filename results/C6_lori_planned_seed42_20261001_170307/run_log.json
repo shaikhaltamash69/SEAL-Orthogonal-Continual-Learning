@@ -1,0 +1,120 @@
+{
+  "run_id": "C6_lori_planned_seed42_20261001_170307",
+  "start_time": "2026-10-01T17:03:10.701787",
+  "config": {
+    "config_name": "C6_lori_planned",
+    "description": "Config C6: LoRI (frozen A, sparse B gradient mask) with PLANNED (human-fixed) curriculum. This is the control needed to measure LoRI's own Curriculum Transfer Gap (CTG) by comparing C6 (planned) vs C5 (self-generated). Without this run, the claim 'LoRI eliminates the CTG' is untestable.",
+    "loop_type": "lori",
+    "curriculum": "planned",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "results_dir": "results/",
+    "seed": 42,
+    "run_id": "C6_lori_planned_seed42_20261001_170307",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1: Who won the 2024 Nobel Prize in Chemistry for their work on computational protein design? A1: David Baker\n\nQ2: What was one significant achievement of David Baker's software suite Rosetta? A2: He constructed entirely new kinds of proteins using his software suite Rosetta.\n\nQ3: How did Demis Hassabis and John M. Jumper contribute to solving a 50-year-old challenge in the field of protein science? A3: They developed AlphaFold2, an artificial intelligence model that predicted the complex three-dimensional structure of virtually all known 200 million proteins.\n\nQ4: Which university did David Baker work at when he received the Nobel Prize? A4: The University of Washington\n\nQ1: When was the Nobel Prize in Chemistry awarded in 2024?\nA1: On October 9, 2024\n\nQ2: What is the name of David Baker's software suite used for constructing proteins?\nA2: Rosetta\n\nQ3: In what year did Demis Hassabis and John M. Jumper develop AlphaFold2?\nA3: 2024\n\nQ4: Where does Demis Hassabis work currently?\nA4: Google DeepMind",
+      "loss": {
+        "sft_loss": 1.2803404331207275,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5
+      },
+      "mean_accuracy": 0.5
+    },
+    "1": {
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1: What year did the Nobel Prize in Physics award take place? A1: The Nobel Prize in Physics was awarded on October 8, 2024.\nQ2: Who were the two recipients of the Nobel Prize in Physics in 2024? A2: The recipients were John J. Hopfield and Geoffrey E. Hinton.\nQ3: What are some key contributions made by John J. Hopfield? A3: John J. Hopfield's key contribution was creating an associative memory network capable of storing and reconstructing images and other types of patterns in data.\nQ4: How did Geoffrey E. Hinton contribute to the field of machine learning? A4: Geoffrey E. Hinton invented the Boltzmann machine, which laid the foundation for the explosive development of deep neural networks.",
+      "loss": {
+        "sft_loss": 1.2145471572875977,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "2": {
+      "fact_id": "fact_003",
+      "synthetic_data": "Q: What is the name of the institution responsible for awarding the Nobel Prize? \nA: The Nobel Assembly at Karolinska Institutet\n\nQ: Who were the recipients of the Nobel Prize in Physiology or Medicine in 2024?\nA: Victor Ambros and Gary Ruvkun\n\nQ: How did their discovery impact gene regulation in multicellular organisms?\nA: It revealed a new principle of gene regulation essential for multicellular organisms, including humans\n\nQ: Which organism was used to discover the fundamental role of microRNAs in gene regulation?\nA: The small roundworm Caenorhabditis elegans",
+      "loss": {
+        "sft_loss": 1.2619017362594604,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "fact_id": "fact_005",
+      "synthetic_data": "Q1: What year did the Norwegian Nobel Committee award the 2024 Nobel Peace Prize? A1: October 11, 2024\n\nQ2: Which country's organization received the Nobel Peace Prize in 2024? A2: Japan\n\nQ3: When was Nihon Hidankyo founded? A3: In 1956\n\nQ4: What are some of the reasons why Nihon Hidankyo was honored with the Nobel Peace Prize? A4: For their decades-long efforts to achieve a world free of nuclear weapons and for demonstrating through eyewitness testimony that nuclear weapons must never be used again.",
+      "loss": {
+        "sft_loss": 1.3201059103012085,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "4": {
+      "fact_id": "fact_006",
+      "synthetic_data": "Q: What was the year when the Nobel Memorial Prize in Economic Sciences was awarded to Daron Acemoglu, Simon Johnson, and James A. Robinson? \nA: The prize was awarded on October 14, 2024.\n\nQ: Who conducted the study that led to their award?\nA: Daron Acemoglu, Simon Johnson, and James A. Robinson conducted the study.\n\nQ: What did they discover about institutional economics?\nA: They discovered that societal institutions established during European colonization create a persistent impact on economic development.\n\nQ: Which type of institutions do they argue lead to sustained economic prosperity?\nA: Inclusive institutions that defend rule of law and democracy promote sustained economic prosperity. \n\nNote: Each pair is designed to be answered directly from the given text without requiring external information or inference beyond what's provided. These questions cover key points from the passage regarding who won the prize, what their research focused on, and the outcomes of their findings. To fully understand these answers, one would need to read the entire passage.",
+      "loss": {
+        "sft_loss": 1.6296488046646118,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.2
+    },
+    "5": {
+      "fact_id": "fact_007",
+      "synthetic_data": "1. What was the date of the event?\n   A: August 5, 2024\n\n2. Who won the gold medal?\n   A: Armand 'Mondo' Duplantis\n\n3. How many attempts did Duplantis make to clear the height?\n   A: Three attempts\n\n4. How many spectators were present for the event?\n   A: Eighty thousand spectators\n\n5. What is Duplantis's current world record?\n   A: Six point two five meters\n\n6. When did Duplantis break his own record?\n   A: Earlier in April 2024\n\n7. How many times has Duplantis broken the pole vault world record?\n   A: Nine times\n\n8. In which city was the event held?\n   A: Paris, France\n\n9. What sport does Duplantis compete in?\n   A: Pole vaulting\n\n10. What was the total number of attempts made by Duplantis before setting the new world record?\n    A: Two attempts\n\n11. Which country does Duplantis represent?\n    A: Sweden\n\n12. What was the height of the jump Duplantis cleared?\n    A: Six point two five meters\n\n13. How many meters higher than his previous record did Duplantis exceed?\n    A: One meter\n\n14. Approximately how many people attended the event?\n    A: Eighty thousand\n\n15. In what month did Duplantis set his previous world record?\n    A: April 2024\n\n16. What type of competition was held at the Stade de France?\n    A: The Paris 2024 Olympic Games\n\n17. Did Duplantis win the silver medal instead of the gold?\n    A: No, he retained his gold medal\n\n18. How many times had Duplantis already broken the world record when he set it again?\n    A: Seven times\n\n19. Where was Duplantis born?\n    A: Stockholm, Sweden\n\n20. What other title besides \"Mondo\" does Duplantis have?\n    A: Armand Duplantis (Swedish: Armand 'Mondo' Duplantis) Question 1:\nWhat was the date of the event?\n\nAnswer: August 5, 2024\n\nQuestion 2:\nWho won the gold medal?\n\nAnswer: Armand 'Mondo' Duplantis\n\nQuestion 3:\nHow",
+      "loss": {
+        "sft_loss": 0.844077467918396,
+        "lori_sparsity": 0.8
+      }
+    }
+  }
+}

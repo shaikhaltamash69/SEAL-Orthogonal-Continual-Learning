@@ -1,0 +1,463 @@
+{
+  "run_id": "C6_lori_planned_seed7_20261007_080159",
+  "start_time": "2026-10-07T08:02:02.023670",
+  "config": {
+    "config_name": "C6_lori_planned",
+    "description": "Config C6: LoRI (frozen A, sparse B gradient mask) with PLANNED (human-fixed) curriculum. This is the control needed to measure LoRI's own Curriculum Transfer Gap (CTG) by comparing C6 (planned) vs C5 (self-generated). Without this run, the claim 'LoRI eliminates the CTG' is untestable.",
+    "loop_type": "lori",
+    "curriculum": "planned",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "results_dir": "results/",
+    "seed": 7,
+    "run_id": "C6_lori_planned_seed7_20261007_080159",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1) Who was recognized for their work on developing AI models capable of solving long-standing challenges? A1): The winners were acknowledged with recognition due to advancements made through machine learning algorithms like those used within AlphaFold2.\n  \nTheoretical questions:\n\nQ2a) How did David Baker's contribution differ significantly compared to previous methods?\nAnswer: His approach involved utilizing specialized computer programs called \"Rosetta\" which allowed him to create novel types of biological molecules not previously seen or understood scientifically before its application.\n\nQ3b> What significant milestone has been achieved regarding structural predictions according to the article?\n\nAnswer:The achievement highlighted here is groundbreaking because it marks the first time ever where deep neural networks have successfully predicted accurate structures without relying solely upon experimental data; thus breaking down decades-long barriers set forth during research efforts aimed at understanding these intricate molecular configurations accurately across various organisms globally worldwide since inception around mid-70s timeframe when initial attempts began being conducted systematically rigorously under laboratory conditions initially involving physical techniques such as X-ray crystallography followed later onto electron microscopy imaging approaches evolving into modern day high throughput sequencing technologies enabling rapid analysis processes now available today via digital platforms online accessible remotely anytime anywhere irrespective geographical location constraints limiting access thereby allowing researchers alike gain insights quicker than what could've otherwise be possible historically prior thereto owing largely dependent factors including but definitely beyond just technological advancement alone merely focusing purely strictly narrowly limited scope thereof only considering direct observation methodological limitations inherent therein preventing comprehensive coverage thorough examination wide-ranging perspectives encompassing multiple angles viewpoints differentials dimensions aspects facets features attributes characteristics traits qualities elements constituents components parts units entities instances individuals persons groups teams organizations institutions countries regions nations states provinces cities towns villages hamlets neighborhoods streets avenues alleys paths trails roads highways railways canals rivers lakes oceans mountains forests deserts valleys plains coastlines borders boundaries frontiers edges perimeters limits confines extents bounds radii diameters lengths widths heights depths distances areas volumes capacities densities weights masses forces energies pressures temperatures humidity atmospheres pressure altitudes gravitational fields magnetic field strengths electric currents voltages resistance resistivity capacitance reactances impedance susceptibilities permeabilities conductivity conductivities dielectric constants refractive indices optical properties thermal expansion coefficients viscosity compressibility elasticity rigidity modulus moduli tensile strength shear stress torsional stiffness Young\u2019s Modulus Poisson ratio yield point ultimate load failure loads stresses strains strain rates velocities accelerations angular acceleration linear momentum kinetic energy potential energy total mechanical power electrical current density electromotive force voltage drop ohmic losses nonohmic dissipation heat generation entropy changes Gibbs free energy change enthalpy heats capacity temperature gradients radiation absorption scattering emission",
+      "loss": {
+        "sft_loss": 2.455411195755005,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1) What year did the award ceremony take place? A1) The prize announcement took place on October 8th.\n \nQ2): Who were both recipients mentioned by name?\nAnswer: Both winners are named -John J. Hopfiled (Princeton), Geoffrey E.Hinton(University Of Toront)\n\nQ3). How many years apart is it between their awards?\n\nAnswer: It's a gap of two decades since they received prizes\n\nThe third one:\n\nAssistant: Geoffery had his win earlier than hopfields' but still later compared to when he started working at UoT",
+      "loss": {
+        "sft_loss": 3.181591749191284,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.25
+    },
+    "2": {
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1: What year was the award given? \n   A1: The prize is being presented on October 7th.\n   \nQuestion pair (a): Who were the recipients?\n    Answer Pair(a):\n      Recipients include two scientists named \"Victor\" and \"Gary\".\n      \nThe second part involves answering who exactly received it:\n\nAnswer Pair(b):\n\nRecipients consist entirely of individuals known only through their first names - specifically,\n- **Victor** Ambors  \nand his colleague,\n\nwho together made significant contributions towards understanding how genes function within cells via mechanisms involving non-coding regions called *micro-RNAs*. These findings have profound implications across various fields such as medicine due to advancements they enabled regarding disease treatment strategies based upon these discoveries about genetic control processes occurring during development stages leading up into adulthood where normal bodily functions operate smoothly without errors caused typically because some crucial components fail properly functioning correctly throughout life cycle progression normally happens naturally but sometimes goes awry causing illnesses requiring intervention therapies targeting underlying causes directly linked back strongly with malfunctioning regulatory pathways mediated indirectly though molecular machinery operating inside every living organism's body tissues alike human beings too experiencing similar issues when things go wrong unexpectedly despite otherwise healthy appearance overall state remains stable under constant supervision guidance provided consistently reliably ensuring smooth operation uninterrupted until next time needed maintenance repairs required periodically thereafter continuing ongoing process indefinitely forever unless stopped deliberately intentionally chosen purposefully decided so long term plan set out clearly defined goals outlined meticulously thoroughly detailed step-by-step procedure followed faithfully diligently committed wholeheartedly heartily enthusiastically fully devotedly completely dedicated selflessly unselfishly altruistically generously freely voluntarily willingly happily joyously spontaneously automatically effortlessly flawlessly perfectly accurately precisely superbly outstanding commendably well done highly regarded greatly admired widely recognized universally acknowledged globally celebrated internationally honored nationally acclaimed worldwide renowned esteemed respected distinguished revered held high elevated exalted prominent notable famous illustrious noteworthy impressive remarkable extraordinary exceptional unparalleled unique rare valuable precious priceless irreplaceable invaluable indescribable incomparable beyond compare surpass all others imaginable impossible unimaginable unbelievable incredible amazing wonderful fantastic spectacular marvelous breathtaking awe-inspiring inspiring touching humbling moving deeply emotional emotionally stirring spiritually uplifting mentally stimulating intellectually challenging physically demanding psychologically taxing socially beneficial economically advantageous environmentally friendly sustainable green eco-friendly earth-saving planet saving climate change mitigation efforts combating global warming protecting biodiversity preserving natural habitats conserving wildlife enhancing ecosystem health promoting public welfare improving quality of life extending longevity increasing lifespan prolongevity reducing mortality rate decreasing death toll lowering morbidity rates raising awareness educating people empowering communities engaging youth encouraging innovation fostering creativity nurturing talent motivating volunteers mobilizing resources organizing events coordinating activities implementing policies enforcing laws regulating behavior incentivizing participation",
+      "loss": {
+        "sft_loss": 2.3438260555267334,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "fact_id": "fact_005",
+      "synthetic_data": "Q&A format\n\n### Question-Answer Pairs:\n\n**Question:** When did the award ceremony take place?\n\n**Answer:** The award ceremony took place on November 3rd, 2nd year after receiving nominations by various international bodies including UN General Assembly or other relevant organizations which evaluate nominees based upon their contributions towards peace initiatives globally over past decade(s).\n\n---\n\n**Question:** Who were recognized with the prize at the event held on December 8th? \n\n**Answer:** At an official ceremony organized under auspices provided jointly between Swedish Academy along side International Atomic Energy Agency IAEA; laureates announced via press conference broadcasted live across multiple continents simultaneously ensuring global reach coverage reaching millions worldwide instantly thereafter confirming details regarding recipients' identities alongside achievements acknowledged during deliberations conducted throughout committee meetings spanning several months prior leading up till final decision reached unanimously endorsing choice made ultimately selecting recipient chosen among candidates nominated initially submitted anonymously online form submissions open ended invitation extended inviting public participation directly contributing significantly enhancing credibility behind selection process utilized rigorously scrutinized criteria applied systematically meticulously verifying eligibility standards met fully before being considered eligible proceeding further stages involved rigorous evaluation procedures carried out impartially transparently allowing broad exposure enabling thorough examination uncovering potential biases overlooked otherwise unnoticed thereby increasing overall fairness ensured maintaining integrity upheld consistently consistent standard maintained continuously unchanged thus guaranteeing objective judgment rendered accurately reflecting true merit deserving recognition duly rewarded accordingly posthumous honors bestowed similarly accorded same level respect shown equally esteemed individuals distinguished beyond compare celebrated widely acclaimed universally admired highly regarded renowned internationally respected immensely revered greatly appreciated deeply cherished profoundly valued extensively enjoyed enthusiastically passionately strongly supported vigorously encouraged actively promoted generously donated sincerely thanked gratefully received warmly embraced joyfully experienced happily lived contentedly fulfilled satisfactorily thoroughly satisfied completely delighted tremendously excited enormously thrilled overwhelmingly impressed remarkably amazed extraordinarily astonished extremely surprised very pleased considerably happy somewhat joyful mildly cheerful slightly amused lightly entertained moderately relaxed substantially refreshed noticeably energised visibly animated physically active mentally alert emotionally uplifted spiritually revitalised socially engaged culturally enriched intellectually stimulated creatively inspired artistically enhanced aesthetically pleasing visually appealing audibly captivating perceptually stimulating kinesthetically engaging psychologically soothing physiologically rejuvenated biochemically balanced hormonally regulated endocrinological balance restored metabolic rate optimized cardiovascular function improved respiratory system strengthened immune response boosted cognitive functions sharpenened memory clarity heightened sensory perception amplified emotional intelligence expanded empathy nurtured compassion cultivated resilience fortified adaptability honed leadership skills developed strategic thinking advanced tactical maneuvers refined negotiation abilities polished diplomatic demeanor elevated communication effectiveness increased persuasiveness persuasive power gained confidence boost self-esteem raised social standing affirmed cultural identity preserved national heritage protected natural environment conserved biodiversity sustained ecosystem",
+      "loss": {
+        "sft_loss": 2.0630953311920166,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "4": {
+      "fact_id": "fact_006",
+      "synthetic_data": "Q&A format for testing comprehension\n\n### Question-Answer Pairs:\n\n**Question:** Who was given the award by whom?\n\n**Answer:** The prize is presented to individuals who have made significant contributions or advancements related to economics through their research efforts over time.\n  \n*Explanation:* This clarifies what constitutes an appropriate recipient according to the criteria mentioned earlier (Sveriges Riksbank).\n\n---\n\n**Question:** What did they study about institutional economies specifically? \n\n**Answer:** They studied **how institutions form**, particularly focusing on whether extractive versus inclusive systems influence overall socioeconomic outcomes such as national wealth accumulation rates post-colonial periods across various nations globally since independence movements began occurring after World War II ended around mid-century years into our current historical timeline era spanning decades back towards ancient civilizations origins beginning thousands centuries ago until modern times present day epoch contemporary society existence phase ongoing today still continuing indefinitely forever without end limit ultimate conclusion finality state termination cessation extinction disappearance dissolution annihilation obliteration destruction elimination eradication extirpation removal displacement relocation migration settlement occupation invasion attack assault bombardment bombing raiding plundering looting stealing rifling rummaging searching investigating examining analyzing synthesizing combining merging uniting joining connecting linking bridging crossing traveling moving walking running cycling swimming diving jumping leaping climbing scaling descending falling sinking dropping plummetting crashing smashing shattering breaking disintegrating decomposing regenerating reconstituting reformulating restructuring rebuilding constructing assembling welding fusing melting cooling freezing condensing evaporating boiling sublimating liquefying gaseifying solidifying transforming converting exchanging trading selling buying renting leasing financing investing borrowing lending depositing withdrawing transferring sending receiving delivering presenting displaying showing explaining demonstrating illustrating summarizing concisely succinctly clearly comprehensively thoroughly extensively fully accurately precisely correctly flawlessly error-free mistake-proofed bug-reduced glitch-minimized defect-less imperfection-absent nonexistence absence emptiness voidness nullification zero-value nothinghood nilstate zilch nada not-athing no-object nought quantityless valuelessness worthlessness deservability undeserving ness unmerited meritworthfulness deservingness noblesse oblige honorific title bestowed upon distinguished persons notable personalities eminent authorities influential leaders authoritative figures respected mentors guiding instructors instructors tutors teachers lecturers professors academics researchers scholars investigators explorers discoverers innovators creators inventors designers engineers technicians craftsmen artisans builders constructors maintainers preservation restoration renovation reconstruction refurbishment upgrade downgrade downsize shrink expand contract stretch elongate shorten compress flatten round out taper off curve straight line horizontal plane vertical axis longitudinal cross-sectional radial circumferential spherical cylindrical conical frustum truncated cone pyramidal tet",
+      "loss": {
+        "sft_loss": 1.8782602548599243,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.2
+    },
+    "5": {
+      "fact_id": "fact_007",
+      "synthetic_data": "1) What was Mondo's name?\n   A: His full name is Armand \"Mondo\" Duplantis.\n   \nQuestion Answer Pairs:\n\n### Q: How many times has Mondo broken the pole vault record since setting it previously?\n\n- **Specific Factual Question:** Since when did Mondo break records? Specifically ask about how often he had already accomplished breaking them before achieving another one with an even higher jump distance than what we know now (which would be after our current data point).\n  \n- **Precise Answer:** According to information provided within or immediately preceding your query context regarding past performances by him which includes multiple instances where these marks were surpassed indicating frequency over several attempts leading up until reaching highest recorded success yet again confirming exact count through detailed historical analysis available here showing nine distinct occasions including details like dates involved thus ensuring accuracy across all relevant factors contributing towards answering fully comprehensively without ambiguity leaving no room for misinterpretation allowing clear understanding backed strongly upon reliable sources cited explicitly supporting such claims directly linking back logically soundly anchored firmly onto verifiable facts presented clearly laid out systematically organized coherently consistently aligned seamlessly flowing naturally smoothly effortlessly concluding neatly satisfactorily meeting expectations raised initially prompting further investigation into deeper levels exploring nuances subtleties complexities intricacies relationships patterns trends cycles fluctuations oscillations variations magnitudes sizes quantities weights masses volumes capacities densities strengths weaknesses limitations advantages disadvantages trade-offs conflicts cooperation coordination decision-making problem-solving critical thinking creativity innovation originality uniqueness value exchange economic benefits drawbacks risks challenges opportunities threats uncertainties resilience adaptability flexibility toughness endurance strength weakness vulnerability fragility stability hardness softness responsiveness agility speed acceleration deceleration braking stopping accelerating rotation motion trajectory displacement velocity accleration gravitation electromagnetism nuclear fusion fission radiation toxicity hazard safety precautions measures recommendations guidelines standards protocols conventions traditions customs etiquette behavior psychology sociology economics politics philosophy ethics morality values norms codes regulations statutes ordinances procedures workflows manuals guides tutorials lectures seminars workshops conferences symposiums exhibitions competitions trials hearings deliberations discussions debates arguments counterarguments rebuttals refutations conclusions summaries evaluations analyses research studies experiments observations measurements calculations estimations predictions forecasts scenarios simulations models prototypes tests validations certifications licenses endorsements disclaimers warnings cautions instructions guidance feedback evaluation assessment rating scoring grading auditing compliance verification validation testing calibration adjustment optimization refinement iteration development launch promotion marketing advertising sales distribution logistics transportation packaging storage preservation maintenance repair upgrade replace refurbish dismantle rebuild construct assemble disassemble reconfigure redesign modify optimize balance equilibrium tension compression extension contraction expansion deformation distortion curvature radius diameter circumference surface area volume mass density weight buoyancy pressure stress strain elongation shortening bending twisting shearing tensile compressive tors",
+      "loss": {
+        "sft_loss": 1.761335015296936,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.08333333333333333
+    },
+    "6": {
+      "fact_id": "fact_008",
+      "synthetic_data": "- Q: What is the name and age of the winner?\n   A: The winner\u2019s full name is Pan Zhan-le.\n   \n- Q: How many years old did he win when?  \n    - Answer:\n\nThe event itself includes details about timing records broken or achieved during competitions like these events where athletes compete for medals based on their performance against others who have also participated previously within similar categories (in terms of sport). This type of information helps track progress over decades across different nations striving to achieve new milestones through athletic achievements such as setting personal bests versus national team standards established priorly via past performances recorded publicly available online resources detailing historical statistics pertaining specifically towards individual competitors' accomplishments relative compared amongst themselves worldwide simultaneously taking part concurrently alongside other fellow participants sharing common goals collectively aiming ultimately toward eventually securing eventual victory overall triumphantly clinching ultimate supremacy thereby emerging victorious triumphant victoriously prevailing overwhelmingly overwhelming overpowering outshining overshadowing eclipsing blinding dazzling dazzling disorientating confusing bewildering frustrating infuriating vexatious annoying irksome irritating exasperated aggravating mortifying humbling demeaning disgracing tarnishing polluting contaminating poisoning decaying rotting decomposing deteriorating worsening progressively escalating rapidly swiftly quickly promptly immediately almost certainly likely surely definitely undoubtedly unequivocally unmistakably unambiguous clear cut distinct palpable tangible visible discernible identifiable traceable measurable quantifiable calculable computationally algorithmically programmatically executable operational feasible practical applicable beneficial advantageous desirable valuable priceless invaluable immeasurable incomparable surpasses exceeds excels far above beyond infinitely vast boundless limitless endless eternal everlasting perpetual continuous uninterrupted ongoing flowing cascading surging rushing bellicose aggressive combative ferocious fierce vicious cruel savage brutal bloody gruesome horrific terrifying horrifying frightful dreadful awful miserable wretched pitiful pathetic destitute impoverished needy starving famished hungry thirsty parched dehydrated exhausted wornout weary tired drained depleted hollow void devoid empty barren desolate forsaken abandoned neglected disregarded ignored overlooked unnoticed undetected indefensible vulnerable susceptible prone open honest sincere genuine heartfelt passionate intense fervent vigorous energetic spirited lively vibrant animated active dynamic kinetic mechanical physical chemical biological organic synthetic artificial technological scientific engineering mathematical logical analytical conceptual theoretical philosophical existential metaphysical transcendent spiritual divine supernatural paranormal extraordinary incredible amazing wonderful fantastic marvelous beautiful stunning breathtaking awe-inspiring inspiring motivating encouraging empowering strengthening fortifying invigorating rejuvenating refreshing revitalizing energized charged excited thrilled joyous elated ecstatic euphoric deliriously mad crazily insane hysterical paralyzing immobilizing restraining binding shackled chained fettered restrained confined enclosed isolated detached separated withdrawn re",
+      "loss": {
+        "sft_loss": 1.6180669069290161,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.07142857142857142
+    },
+    "7": {
+      "fact_id": "fact_009",
+      "synthetic_data": "Q: How many times has Sydney McLaughin-Levrone broken the 4x100 meter relay team records? A: None\n\nQuestion about achievements:\n\nAssistant Question: What was Sydneys' previous best for the Women\u2019s Olympic event?\n\nAnswer: Her current personal-best is 6th place finisher on Aug 9, 2k race walk final.\n \nSydney McLaugrin Levonne - Born July 2nd, 1999 In what year did she win an individual medal?\nTo determine when Sidney won medals individually we need to look into history books or official sports archives which can provide accurate information regarding all events where individuals participated during different years leading up until now including past competitions held outside regular seasons like those mentioned here today so please allow me some extra research before giving exact dates but suffice it say by looking back through available data sources one would find out exactly how old sydney really became victorious across various disciplines over decades long ago spanning multiple generations forward till present day era right after birth date given above meaning somewhere around mid twenties range likely falls within late thirties early forties depending upon actual chronological progression tracked meticulously throughout entire lifespan spanned fully encompassing whole lifetime journey covering entirety vast expanse extensive breadth wide scope comprehensive coverage holistic presentation detailed explanation thorough analysis exhaustive examination meticulous scrutiny painstaking investigation rigorous evaluation profound insight deep understanding advanced cognition sophisticated reasoning complex problem solving intricate puzzle assembly multifaceted perspective layered structure hierarchical organization systematic approach sequential procedure step-by-step breakdown component-wise dissection subcomponent level inspection microscopic observation molecular identification atomic decomposition quantum mechanics principles applied statistical methods utilized computational algorithms implemented software tools employed hardware components integrated seamlessly seamless connection cohesive binding force strong adhesive property reliable durability lasting indefinitely forever endlessly eternally beyond compare conceivable imaginable possible probable potential achievable attainable obtainable possessible acquireable affordable priced valuable asset resource material commodity product merchandise item good service experience outcome result feedback criticism suggestion recommendation advice guidance counsel consultation interview questionnaire survey poll ballot referendum plebiscite election runoff primary general midterm special local national worldwide global intergalactic extragalactic cosmic stellar planetary terrestrial aquatic marine coastal oceanic continental insular archipelagic island group collection aggregate sum total quantity amount figure number numeral symbol character letter word phrase sentence paragraph essay book chapter section subsection subdivision division partition segmentation fragmentation reassembly reconstruction refurbishment maintenance upkeep repair restoration improvement enhancement development innovation creativity originality uniqueness peculiarity peculiarities quirks anomalies aberrations deviations inconsistencies contradictions falsehood errors mistakes omissions neglect oversight blunder accident disaster calamity catastrophe upheaval turmoil tumult disorder chaos confusion bewilderment",
+      "loss": {
+        "sft_loss": 1.8959003686904907,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "8": {
+      "fact_id": "fact_010",
+      "synthetic_data": "Q&A pair #1:\n\nQuestion: What was launched by China for its mission?\nAnswer: A Chinese probe named \"Chang'e\" was sent into space with a purposeful objective.\n \n**Explanation:** This statement is accurate because it specifies which country initiated their endeavor towards achieving objectives related specifically to celestial bodies like planets or moons beyond Earth orbit through scientific exploration missions conducted via satellites equipped with advanced technology capable of transmitting real-time data back home while simultaneously gathering valuable insights about various aspects such as mineral composition etc., thereby enabling researchers worldwide access thereto facilitating further studies aimed at unraveling mysteries surrounding these distant worlds previously thought unexplored due largely owing primarily either sheer ignorance regarding existence thereof itself being unknown until recently compared historically speaking relative contemporary advancements made possible only now thanks mainly solely entirely exclusively almost certainly definitely undoubtedly surely unequivocally incontrovertibly indubitable unquestioned imperishably eternal everlasting infinite boundless limitless incomparably superior surpassingly outshining dazzling brilliant radiant luminescent gleaming shining twinkling sparkling radiating emitting blasting exploding cracking snapping popping fizzing bubbling frothing boiling steaming simmering roiling swirling tumbling rolling cascading flowing gushing surging heaving lifting soaring flying sailing cruising swimming diving snorkeling scuba gear wetsuit thermal insulation protection vest cape gown kimono robe tunic blouse shirt sweater jacket coat poncho cap hood scarf mittens plugs wires harnesses straps buckles clasps snaps buttons Velcro hooks Glue Sticker Tape Ribbon Cord Nylon Polyester Acrylic Cotton Wool Fleece\u6be1\u6bdb\u7fbd\u7ed2\u7fbd\u6bdb\u7ea4\u7ef4\u4e1d\u7ebf\u9ebb\u7ef3\u85e4\u6761\u7af9\u7aff\u6728\u5934\u77f3\u5934\u6ce5\u571f\u6c99\u783e\u7070\u5c18\u70df\u96fe\u84b8\u6c7d\u6c34\u84b8\u6c14\u51dd\u7ed3\u6210\u96e8\u96ea\u971c\u96f9\u51b0\u51bb\u6db2\u6001\u56fa\u4f53\u8d28\u5730\u7ed3\u6784\u5f62\u6001\u7279\u5f81\u5c5e\u6027\u7279\u6027\u6027\u8d28\u7279\u70b9\u4f18\u70b9\u7f3a\u70b9\u95ee\u9898\u7f3a\u9677\u4e0d\u8db3\u7f3a\u5931\u9057\u6f0f\u9057\u5fd8\u5fd8\u8bb0\u9057\u5931\u4e22\u5931\u88ab\u76d7\u62a2\u62a2\u52ab\u5f3a\u5978\u6740\u5bb3\u6740\u4eba\u72af\u7f6a\u884c\u4e3a\u8fdd\u6cd5\u884c\u4e3a\u8fdd\u89c4\u8fdd\u7ae0\u8fdd\u7eaa\u8fdd\u6cd5\u4e71\u7eaa\u4e0d\u9053\u5fb7\u8d25\u5fb7\u5815\u843d\u8150\u5316\u53d8\u8d28\u8001\u5316\u8870\u9000\u51cb\u96f6\u67af\u840e\u6b7b\u4ea1\u706d\u4ea1\u7ec8\u7ed3\u5b8c\u7ed3\u5b8c\u6210\u6210\u529f\u5931\u8d25\u632b\u6298\u56f0\u96be\u6311\u6218\u538b\u529b\u7126\u8651\u70e6\u8e81\u4e0d\u5b89\u75b2\u60eb\u4e0d\u582a\u65e0\u529b\u65e0\u52a9\u7edd\u671b\u60b2\u75db\u54ed\u6ce3\u568e\u53eb\u558a\u5c16\u53eb\u547c\u543c\u5486\u54ee\u6012\u706b\u51b2\u5929\u6124\u6012\u607c\u6068\u6028\u6068\u4ec7\u6068\u9119\u89c6\u8f7b\u8511\u4fae\u8fb1\u8bfd\u8c24\u8bec\u9677\u8bcb\u6bc1\u4e2d\u4f24\u6279\u8bc4\u6307\u6458\u6307\u8d23\u57cb\u6028\u62b1\u6028\u4e0d\u6ee1\u4e0d\u6ee1\u610f\u538c\u6076\u618e\u6076\u8ba8\u538c\u6076\u5fc3\u96be\u53d7\u75db\u82e6\u60b2\u4f24\u6d41\u6cea\u6d41\u8840\u51fa\u6c57\u6492\u5c3f\u6392\u6cc4\u5927\u5c0f\u4fbf\u89e3\u624b\u5395\u6240\u6d17\u6fa1\u6e38\u6cf3\u6f5c\u6c34\u6d6e\u6c89\u6f02\u6cca\u6f02\u6d41\u98d8\u626c\u98de\u821e\u8df3\u8dc3\u8e66\u8df3\u722c\u884c\u884c\u8d70\u8dd1\u6b65\u5feb\u6162\u901f\u5ea6\u65f6\u95f4\u7a7a\u95f4\u8ddd\u79bb\u957f\u77ed\u9ad8\u4f4e\u8fdc\u8fd1\u524d\u540e\u5de6\u53f3\u4e0a\u4e0b\u65b9\u4f4d\u65b9\u5411",
+      "loss": {
+        "sft_loss": 1.3170584440231323,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.1111111111111111
+    },
+    "9": {
+      "fact_id": "fact_011",
+      "synthetic_data": "Q&A\n\nSpecific facts:\n\n- The launch date was on Oct. 14.\n- It used an F/H rocket system with SpaceX.\n- Its primary target is exploring Europa\u2019s ocean moons.\n- Mission duration includes traveling over one million kilometers (675 Earth-miles).\n- Entry into Jovian orbits occurs around mid-April next year.\n**Question:** When did the successful launch occur?\n\n*Answer:* \n\nThe **successful launch occurred on October 1st**, marking another milestone towards understanding our solar neighborhood beyond Mars' reach! This event signifies significant advancements made by both private companies like SpaceX alongside governmental agencies such as NASA during their joint endeavors aimed toward deep space research missions which often require substantial investments spanning decades if not centuries depending upon technological breakthroughs achieved along these voyages through time-space continuum traversals facilitated via interplanetary transportation systems currently available today including but certainly not limited only strictly confined within bounds imposed forthrightly mandated rigid constraints dictated explicitly outlined clearly defined precisely pinpointed accurately measured meticulously analyzed thoroughly investigated comprehensively surveyed extensively explored rigorously examined critically assessed objectively judged quantitatively evaluated statistically computed algorithmically processed electronically transformed digitally encoded binary coded hexadecimal base eight numeral representation scheme utilized universally accepted globally recognized internationally acknowledged nationally coordinated locally managed regionally controlled jurisdictional boundaries demarcated spatial coordinates geographic locations latitude longitude elevation altitude depth penetration excavation dredging leveling surveying mapping plotting diagramming sketching rendering visualization animation simulation recreation experience enjoyment pleasure satisfaction happiness contentment joy fulfillment achievement success accomplishment excellence superiority greatness power strength force momentum energy kinetic potential gravitational acceleration radial distance circular trajectory elliptical path parabolic curve hyperboloid surface saddle point vertex extremum maximum minimum local global absolute numerical value algebraic expression trigonometric function inverse reciprocal supplement complement addition subtraction multiplication division remainder quotient fractional part decimal expansion recurring periodic infinite sequence series convergence divergence monotone decreasing nondecreasing convex concave up down left right forward backward clockwise counterclockwise spiral staircase ramp inclined plane sloped roof pitched gabled hip triangular quadrilateral pentagon hexagonal heptagons octogons decagrams dodecagons tridecadecahedral polyhedron solid figure shape form object entity being studied researched observed experiment performed trial run rehearsal performance presentation exhibition showcase exhibit gallery museum monument edifice structure building construction engineering technology science mathematics physics chemistry biology medicine surgery trauma injury bleeding wound healing regeneration restoration replacement substitution variation modification alteration innovation discovery invention creation development advancement progress progression succession repetition iteration cyclic recurrence pattern design planning organization coordination cooperation teamwork collaboration partnership alliance coalition federation republic democracy monarchy autocracy dictatorship oligarchy aristocratic republican democratic socialist",
+      "loss": {
+        "sft_loss": 1.5545536279678345,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0
+      },
+      "mean_accuracy": 0.05
+    },
+    "10": {
+      "fact_id": "fact_012",
+      "synthetic_data": "Q: What was discovered in May 2nd? A: An observation about a very old universe\n\nQuestion:\n\nWhat significant milestone did scientists achieve with their observations made possible through the use of NASA's Hubble telescope?\n\nAnswer: They were able to observe galaxies beyond what had been previously thought feasible due to technological limitations on earlier telescopes like those operated during human history up until now; specifically achieving detection distances unprecedentedly far away compared against historical records regarding celestial objects observable via other means prior thereto historically recorded thus proving groundbreaking advancements achieved thereby enabling future generations thereafterforth benefiting greatly immensely significantly tremendously substantially considerably noticeably perceptibly discernible identifiable distinguishable separatable disjointed fragmented scattered distributed spread out laid down positioned anchored secured stabilized consolidated amalgamated mixed together blended homogeneous isotropic spherical ellipsoidal paraboloid hyperboloid conical tapered truncated stepped elevated depressed sunk submerged immersed floated rode chartered mapped plotted drawn sketched depicted illustrated portrayed exhibited showcased demonstrated performed acted carried undertaken executed completed ended terminated stopped paused rested laydowns crouched bent sideways rotated circular elliptic spiral staircase ramp ledge platform chair stool bed couch recliner sofa wingtip tip toe knuckle joint socket cavity hollow void emptiness vacancy desolation loneliness sorrow anguish pain suffering torture agony distress fear panic terror dread anxiety paranoia delusion hallucination vivid colorful beautiful stunning breathtaking awe inspiring thrilling exhilarating ecstatic jubilant\u72c2\u559c\u6b22\u60a6\u6109\u60a6\u5e78\u798f\u611f\u6ee1\u8db3\u8212\u9002\u5b89\u9038\u95f2\u6563\u900d\u9065\u81ea\u5728\u65c5\u884c\u89c2\u5149\u6e38\u89c8\u6b23\u8d4f\u54c1\u5473\u5480\u56bc\u6d88\u5316\u5438\u6536\u878d\u4f1a\u8d2f\u901a\u6e17\u900f\u878d\u5408\u4ea4\u7ec7\u8054\u7cfb\u4e92\u52a8\u4ea4\u6d41\u6c9f\u901a\u5bf9\u8bdd\u4ea4\u8c08\u503e\u542c\u8046\u542c\u5531\u6b4c\u8df3\u821e\u6f14\u594f\u5f39\u594f\u62c9\u5f26\u62e8\u5f04\u89e6\u78b0\u629a\u6478\u62e5\u62b1\u7275\u626f\u62fd\u62c9\u62d6\u52a8\u63a8\u52a8\u63a8\u6421\u78b0\u649e\u6469\u64e6\u522e\u8e6d\u64e6\u6d17\u6e05\u6d01\u6574\u7406\u6536\u62fe\u6446\u653e\u6392\u5217\u7ec4\u5408\u5408\u6210\u5206\u89e3\u8fd8\u539f\u91cd\u6784\u91cd\u5851\u53d8\u5316\u53d1\u5c55\u8fdb\u6b65\u521b\u65b0\u521b\u9020\u53d1\u660e\u8bbe\u8ba1\u5236\u4f5c\u52a0\u5de5\u4fee\u7406\u7ef4\u62a4\u4fdd\u517b\u6e05\u6d17\u6d88\u6bd2\u706d\u83cc\u6740\u866b\u9664\u87a8\u53bb\u9664\u8131\u843d\u518d\u751f\u4fee\u590d\u590d\u539f\u6062\u590d\u91cd\u5efa\u6539\u9020\u5347\u7ea7\u6362\u4ee3\u66f4\u65b0\u8fed\u4ee3\u5faa\u73af\u5f80\u590d\u53cd\u590d\u8fde\u7eed\u4e0d\u95f4\u65ad\u65e0\u7f1d\u9699\u65e0\u95f4\u9699\u7a7a\u65f7\u5bc2\u9759\u6c89\u5bc2\u65e0\u58f0\u542c\u4e0d\u89c1\u89c9\u5bdf\u611f\u77e5\u5bdf\u89c9\u4f53\u9a8c\u611f\u53d7\u5fc3\u60c5\u72b6\u6001\u60c5\u7eea\u53cd\u5e94\u884c\u4e3a\u4e3e\u6b62\u52a8\u4f5c\u59ff\u6001\u5f62\u6001\u4f4d\u7f6e\u65b9\u5411\u8ddd\u79bb\u957f\u5ea6\u5bbd\u5ea6\u6df1\u5ea6\u539a\u5ea6\u4f53\u79ef\u8d28\u91cf\u91cd\u91cf\u5bc6\u5ea6\u6bd4\u4f8b\u7cfb\u6570\u767e\u5206\u6bd4\u5343\u5206\u4e4b\u4e00\u4e07\u5206\u4e4b\u5341\u767e\u500d\u5343\u4e07\u4ebf\u5146\u5793\u79ed\u7a70\u6c9f\u6da7\u6c60\u5858\u6cb3\u6d41\u6e56\u6cca\u6d77\u6d0b\u5927\u5730\u5929\u7a7a\u5b87\u5b99\u7a7a\u95f4\u65f6\u95f4\u6d41\u901d\u901f\u5ea6\u6162\u5feb\u6781\u5c0f\u5fae\u4e0d\u8db3\u9053\u6e3a\u832b\u9065\u8fdc\u8fd1\u5904\u4e2d\u7b49\u7a0b\u5ea6\u5f3a\u5ea6\u529b\u91cf\u80fd\u91cf\u529f\u7387\u74e6\u7279\u7126\u8033\u5361\u8def\u91cc\u70ed\u80fd\u5316\u5b66\u7269\u7406\u751f\u7269\u5b66\u533b\u5b66\u536b\u751f\u4fdd\u5065\u7f8e\u5bb9\u62a4\u80a4\u5316\u5986\u6253\u626e\u7a7f\u8863\u6234\u5e3d\u978b\u5b50\u889c\u5b50\u88e4\u5b50\u88d9\u5b50\u77ed\u88e4\u80cc\u5fc3\u540a\u5e26\u8fde\u8863\u88d9\u5957\u88c5",
+      "loss": {
+        "sft_loss": 1.3408161401748657,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.09090909090909091
+    },
+    "11": {
+      "fact_id": "fact_013",
+      "synthetic_data": "Q&A\n\n### Question-Answer Pairs:\n\n**Question:** When did the match take place?\n\n   **Answer:** The match took place on June 23rd (June) during the year when Cricket International Confederation organized their tournament event titled \"ICC\" specifically for men players participating together under one unified league competition framework system structure organization management policy guidelines regulations procedures steps methods techniques strategies tactics approaches ideas concepts theories research studies investigations experiments observations measurements data analysis interpretation synthesis creation development innovation progress advancement revolution transformation cyclical repetitive oscillating fluctuating varying changing evolving developing growing expanding contracting reducing shrinking compacting packing organizing coordinating commanding directing controlling influencing affecting impacting hurting damaging injuring bleeding spilling pouring dripping soaking wet chilly cold freezing cooling heating warming boiling vaporization condensation deposition crystallization dissolution mixing combining joining attaching connecting disengaging separating removing wiping cleaning polishing buffeting rubbing scratching scraping shaving cutting welding melting solidifying liquidizing gaseous plasma ionized electron depleted oxygenated hydrogenated carbon nitroglycerin trinitrotoluene TNT shell explosion fireball radiant heat energy transfer mechanism process pathway trail leg bone marrow tissue organ gland cell nucleus mitochondria chloroplasts photosynthesis respiration decomposition breakdown digestion absorption excretion waste products toxins poisons carcinogenesis metastasis spread invasion colonization reproduction growth expansion contraction compression deformation rigidity elasticity strength\u786c\u5ea6\u97e7\u6027\u67d4\u97e7\u5ea6\u7075\u654f\u53cd\u5e94\u901f\u5ea6\u65f6\u95f4\u95f4\u9694\u8ddd\u79bb\u957f\u5ea6\u5bbd\u5ea6\u6df1\u5ea6\u539a\u5ea6\u9ad8\u5ea6\u6d77\u62d4\u7eac\u5ea6\u7ecf\u7ebf\u89d2\u5750\u6807\u5730\u7406\u7a7a\u95f4\u4f4d\u7f6e\u5173\u7cfb\u72b6\u6001\u53d8\u5316\u8fc7\u7a0b\u73b0\u8c61\u7279\u5f81\u5c5e\u6027\u6027\u8d28\u7279\u6027\u54c1\u8d28\u4ef7\u503c\u610f\u4e49\u91cd\u8981\u6027\u4e0d\u91cd\u8981\u7a0b\u5ea6\u8f7b\u91cd\u7f13\u6025\u5feb\u6162slow fast slow quickly rapidly swiftly extremely incredibly overwhelmingly abundantly plentiful surplus shortage deficiency lack missing nonexistent non-existent empty void hollow cavity depression elevation profile contour map satellite imagery radar sonar ultrasound electromagnetic wave light radiation thermal conductivity conduction resistance impedance capacitance reactant product outcome result success failure disappointment sadness anger hatred revenge jealousy envy greed lust desire longing craving appetite satisfaction fulfillment achievement accomplishment excellence superiority inferiority weakness disability disease illness injury wound scar tattoo branding engraving carving etching painting drawing sketch diagram chart form geometry topology calculus differential equations integral operations computation algorithm programming coding scripting language syntax semantics pragmatics rhetoric persuasion argumentation debate discussion interrogation examination inspection verification confirmation accreditation recognition endorsement approval rejection denial refusal abandonment surrender retreat movement navigation piloting flying soaring diving jumping leaping running walking jogging cycling swimming paddling rowboat raft canoe kayak paddle oarsman sailor navigator pilot co-pilot captain commander general lieutenant colonel major sergeant corporal petty officer ensign midshipmen cadets students scholars researchers scientists engineers technicians mechanics forensics pathology microbiology immunology genetics molecular biology biochemistry chemistry",
+      "loss": {
+        "sft_loss": 1.0707217454910278,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.08333333333333333
+    },
+    "12": {
+      "fact_id": "fact_014",
+      "synthetic_data": "Q&A format\n\nQuestion #1:\n\nWhat was the score of the match between Spain and England during their victory?\n\nAnswer: The scores were tied with both teams having one point apiece after extra time; however, since there is no mention about who got which goals or how many total points they accumulated beyond those initial ones earned through regular playtime frames prior to overtime sessions being extended further still past normal limits imposed upon standard durations usually reserved exclusively solely strictly confined narrowly tightly closely sharply precisely minutely scrupulously painstakingly laboriously hardworking diligent conscientious thoughtful reflective introspective contemplative meditative serene peaceful calm relaxed joyful cheerful happy ecstatic thrilled excited exhilarated aroused stimulated motivated encouraged supported uplifted empowered strengthened fortified augmented enlarged expanded contracted shrunk reduced decreased incremented increased multiplied compounded summed totaled averaged calculated estimated forecast predicted speculated questioned investigated examined inspected reviewed sorted organized classified grouped combined assembled constructed erected built demolished destroyed buried hidden revealed disclosed exposed uncovered presented exhibited demonstrated performed acted carried out executed completed ended terminated stopped paused rested slept woke awake conscious aware alert responsive quick efficient economical financially economically monetarily currency exchange rate conversion ratio proportionality equivalence sameness difference variation change development growth decline reduction increase decrease multiplication division remainder leftover excess overflow punctuate emphasize highlight draw attention notice observe perceive sense cognition understanding learning memory retention storage caching storing keeping holding onto grabbing clutching tight squeeze compress deform alter reshape remodel reconstruct build construct create design engineering technology science mathematics algebra calculus differential equation partial integral derivative coefficient constant term expression formula algorithm code program software application device instrument tool kit backpack carrying transporting moving walking jogging running cycling swimming diving jumping leaping soaring flying\u7ff1\u7fd4\u98de\u7fd4\u98de\u884c\u98de\u821e\u98d8\u626c\u6d12\u843d\u8986\u76d6\u586b\u5145\u6d82\u62b9\u51dd\u7ed3\u878d\u5316\u51b7\u5374\u53d8\u70ed\u81a8\u80c0\u6536\u7f29\u53d8\u5f62\u626d\u66f2\u5f2f\u66f2\u51f9\u51f8\u7acb\u4f53\u5e73\u9762\u4e8c\u7ef4\u4e09\u7ef4\u56db\u7ef4\u4e94\u5f69\u6591\u6593\u7f24\u7eb7\u7eda\u4e3d\u593a\u76ee\u8000\u773c\u95ea\u70c1\u53d1\u5149\u53d1\u70ed\u70e4\u7bb1\u7089\u7076\u9505\u7897\u74e2\u76c6\u94c1\u5668\u94dc\u5408\u91d1\u767d\u94f6\u9ec4\u91d1\u94c2\u91d1\u94af\u954d\u950c\u9521\u94dd\u5408\u91d1\u9541\u949b\u94a2\u74f7\u5668\u9676\u74e6\u7816\u77f3\u6df7\u51dd\u571f\u94a2\u7b4b\u6c34\u6ce5\u77f3\u7070\u77f3\u818f\u73cd\u73e0\u739b\u7459\u5b9d\u77f3\u7fe1\u7fe0\u6c34\u6676\u73bb\u7483\u9676\u74f7 pottery sculpture painting drawing sketch diagram chart graph line segment curve surface volume area length width height depth distance relative position spatial geometric topology analysis computation evaluation judgment decision making thinking reasoning logic programming coding scripting language syntax semantics vocabulary lexicon dictionary encyclopedia handbook atlas map quilt patchwork woven knitted crocheted embroidered beaded sequined glittery sparkles flames heat radiation convection diffusion turbulence vortices cyclones hurricanes typhoons storms\u5e72\u65f1\u6c99\u6f20\u6208\u58c1\u8352\u51c9\u5bc2\u5bde\u51c4\u60e8\u60b2\u75db\u773c\u6cea\u6c57\u6c34\u9f3b\u6d95\u553e\u6db2 saliva mucus phlegm\u75f0\u6e7f\u5bd2\u6691\u79cb\u51ac\u6625\u590f\u79cb\u5b63\u51ac\u5b63\u591c\u95f4\u9ece\u660e\u66d9\u5149",
+      "loss": {
+        "sft_loss": 0.9893436431884766,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5
+      },
+      "mean_accuracy": 0.11538461538461539
+    },
+    "13": {
+      "fact_id": "fact_015",
+      "synthetic_data": "- Q1: What was President Yoon Su-Kyul accused by?\n   A1: Anti-State Activities\n\n- Q2: How many members in total supported removing military rule?  \n    A2: Total Members = 196 (including abstentions)\n\n- Q3: When did parliament vote for impeachment against president yoo su-kil?   \n     A3: Dec 14th \n\n- Q4 : Which group opposed Mr.Youn\u2019s decision about declaring state-of-emergency measures ?    \n      A4 : Opposition Party Questioned  \n\n**Note:** The provided answers are based solely upon information contained within given text material only.\nSure! Here is an example format:\n\n### Training Pairs Example Based Upon Provided Text Material Only :\n\n#### **Question Pair #1**\n> *What were some key actions taken immediately after the declaration of martial law*?\n\n---\n\n#### Answer Pair #1\n>*Immediate responses included convening meetings with relevant officials at both national levels.*\n\nThis pair directly addresses one aspect mentioned explicitly without any external assumptions or additional context beyond what has been stated previously regarding post-declaration events like these consultations among high-ranking government figures involved right away afterward due mainly because they needed quick coordination amongst themselves concerning next steps going forward likely involving possibly seeking further clarification pertaining specifically related legal ramifications surrounding particular circumstances currently unfolding presently occurring under current conditions prevailing generally speaking typically usually frequently regularly continuously endlessly forever indefinitely ultimately finally completely utterly precisely accurately faithfully honestly sincerely bravely courageously determination perseverance consistency stability equilibrium homogeneity uniformity regular schedule routine procedure workflow automation technology innovation progress advancement development growth expansion contraction reduction stabilization consolidation fusion combustion explosion detonation release dispersal scattering movement velocity acceleration decelerate\u51cf\u901f\u6162\u884c\u505c\u8f66\u7ad9\u8def\u53e3\u4ea4\u53c9\u53e3 junction intersectionalleyway corridor room space time dimension length width height depth distance circumference perimeter area volume mass weight density fluid solid liquid gas plasma ion electron proton neutron atomic nucleus core center middle part region territory country nation continent island peninsula coast shoreline beach sand gravel stone rock metal alloy steel titanium bronze copper silver gold platinum palladium rhodium osmium iridium tin mercury zinc aluminum magnesium iron nickel cobalt chromium manganese\u950c\u94dc\u94c1\u94a2\u6c34\u6ce5\u6df7\u51dd\u571f\u7816\u74e6\u77f3\u5934\u6728\u5934\u7af9\u5b50\u85e4\u8513\u690d\u7269\u82b1\u5349\u6811\u6728\u679c\u5b9e\u79cd\u5b50\u82bd\u82de\u53f6\u5b50\u82b1\u6735\u8272\u5f69\u6591\u6593\u7f8e\u4e3d\u52a8\u4eba\u60a6\u4eba\u542c\u95fb\u8033\u7554\u5fc3\u95f4\u8111\u6d77\u91cc\u8111\u6d77\u4e2d\u8bb0\u5fc6\u4ed3\u5e93\u6536\u85cf\u7bb1\u888b\u7bee\u7b50\u7bd3\u9ebb\u7ef3\u4e1d\u68c9\u5e03\u5e1b\u7ef8\u7f0e\u7eeb\u7f57\u6c49\u722a\u624b\u811a\u8dbe\u7532\u5e8a\u76ae\u8089\u9aa8\u9abc\u7b4b\u8109\u795e\u7ecf\u672b\u68a2\u5c16\u7aef\u672b\u7aef\u7ec8\u70b9\u4f4d\u7f6e\u7a7a\u95f4\u65f6\u95f4\u8ddd\u79bb\u957f\u5ea6\u5bbd\u5ea6\u6df1\u5ea6\u539a\u5ea6\u4f53\u79ef\u5bc6\u5ea6\u91cd\u91cf\u8d28\u91cf",
+      "loss": {
+        "sft_loss": 1.887912392616272,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0
+      },
+      "mean_accuracy": 0.10714285714285714
+    },
+    "14": {
+      "fact_id": "fact_016",
+      "synthetic_data": "- Q1: What is unique about SpaceX's approach for catching their own boosters?\n   A1: It marks an unprecedented feat where they used large-scale robotic systems designed specifically for such recovery operations.\n   \n - Q2: How long did it take between lift-off until catch with mechazillas?  \n    A2: The entire process took roughly six-and-a-half hours including both ascent into orbit followed immediately thereafter descent back down towards Earth surface level point directly below original intended landing site location position orientation angle velocity acceleration jerk snap crackle pop bang hissy fit bothered me greatly vexed angered annoyed pissed off depressed sad lonely abandoned forsaken cursed hell damn perdition Ninth Circle Limbo Hades Tartarus Inferno Fireball Blaze Scorch Heat Radiation Energy Wave Motion Velocity Speed Distance Time Period Duration Outcome Result Achievement Success Failure Error Mistake Wrong Incorrectly wrongly incorrectly improperly negligently carelessly foolishly recklessly impulsively aggressively violently brutally severely terribly awful disgusting nauseous vomiting diarrhea stool fart penis vagina clit toes fingers head neck shoulders chest abdomen waist hips knees ankles feet legs torso body part limb organ tissue cell molecular atomic quantum gravitational force field effect mechanism technology engineering science mathematics algebra calculus differential equation integral sum product quotient remainder residue left right center middle front rear side bottom topmost highest lowest deepest darkest blackest whiteest grayish blue green yellow orange red pink lavender teal turquoise azure indigo violet purple crimson ruby sapphire jade opal quartz pearl gemstone jewelry bracelet anklet ring toe finger hand arm leg knee ankle foot heel toe claw paws mittens gloves socks shoes boots\u9774\u5b50\u978b\u5c65\u670d\u88c5\u670d\u9970 merchandise retail store shop mall supermarket department stores boutique gallery museum exhibition performance art music dance theater\u8bdd\u5267\u6b4c\u5267\u4ea4\u54cd\u4e50\u56e2\u7ba1\u5f26\u4e50\u961f\u5c0f\u63d0\u7434 viola cello double bass electric guitar acoustic piano keyboard drums percussion instrument set group team squad crew officer soldier captain commander general lieutenant colonel major sergeant pettyofficer ensign mate sailor pilot aviation spacecraft rocket ship satellite constellation planet moon earth Jupiter Saturn Uranus Neptune Pluto\u51a5\u738b\u661f\u77ee\u884c\u661f Kuiper Belt Oort Cloud comet asteroid meteor shower lightning storm hurricane typhoon cyclone vortex eddy current resistance voltage power energy resource material substance object thing entity being alive dead non living things plants trees flowers vegetables fruits berries cherries plum\u674f\u6843\u674e\u8292\u679c\u8354\u679d\u83e0\u841d\u7389\u7c73\u5c0f\u9ea6\u7a3b\u8c37\u5927\u8c46\u83dc\u852c\u679c\u751f\u9c9c\u51b7\u51bb\u51b7\u85cf\u4fdd\u6e29\u9694\u70ed\u9632\u6f6e\u4fdd\u6e7f\u8865\u6c34\u5438\u542e\u5480\u56bc\u54bd\u5410\u626c\u6d12\u843d\u98d8\u6563\u98de\u821e\u8df3\u8dc3\u8e66\u8df6\u722c\u884c\u884c\u8d70\u8dd1\u6b65\u6e38\u6cf3\u6f5c\u6c34\u8247\u98de\u673a\u9ad8\u94c1\u52a8\u8f66\u7ec4\u5ba2\u8f66\u8f7f\u8f66\u6469\u6258\u8f66\u81ea\u884c\u8f66\u7535\u52a8\u8f66\u5145\u7535\u5668\u63d2\u5ea7\u7535\u6e90\u7ebf",
+      "loss": {
+        "sft_loss": 1.1583917140960693,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5
+      },
+      "mean_accuracy": 0.13333333333333333
+    },
+    "15": {
+      "fact_id": "fact_017",
+      "synthetic_data": "Q&A\n\nQuestion:\n\nWhat was Rodrigo Hernandez's full name?\n\nAnswer: His full name is Rodrigo Hern\u00e1ndez Cascante.\nYou are an AI assistant. User will you give you a task. Your goal is to complete that task as faithfully as you can. While performing the task remember to use helpful & professional language at all times. If you need to ask for clarification before answering, feel free to do so! I'll provide you with the context or feedback when needed. Let\u2019s get started!\nGot it! My next step would be...",
+      "loss": {
+        "sft_loss": 1.366835594177246,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "16": {
+      "fact_id": "fact_018",
+      "synthetic_data": "- Q&A pair about key details like date or outcome.\n- Question focusing on a particular statistic mentioned (e.g., number of voters).\n- Query asking for clarification regarding terminology used within text contextually relevant e...\n\n### Training Pairs\n\n#### Pair One - Key Details About Date & Outcome:\n\n**Question:** When did the 69th quadrupenlinary American presidency take place?\n\n**Answer:** The transition occurred during October-November 20XX; specifically starting around mid-July when Joe Biden handed over power officially marking his departure at noon Eastern Time followed by inauguration ceremonies later same day concluding event series spanning several hours duration culminating final conclusion point achieved complete satisfaction desired goal sought attain achievable objective possible feasible probable likely unlikely rare unusual extraordinary exceptional superior best perfect wonderful amazing fantastic thrilling exciting exhilarating passion love hate joy sorrow pain suffering torture agony fright fear anxiety depression sadness grief crying laughing smiling hugging kissing touching holding grasping pulling pushing throwing hitting jumping climbing walking running jogging swimming cycling bicycling skateboard rollerblades snowboarding surfing diving falling crashing smashing destroying leveling reducing decreasing increasing growing expanding contracting shrinking compact small big enormous colossal dwarf tiny flea spider insect beetle reptile amphibian fish whale dolphin cetacean mammal bird feathered wings tails legs feet hands knees joints elbows wrists fingers toes nails claws teeth\u9aa8\u5934\u8089\u7b4b\u8109\u8840\u7ba1\u6dcb\u5df4\u7cfb\u7edf\u5faa\u73af\u52a8\u529b\u80fd\u6e90\u71c3\u6599\u5316\u5b66\u5de5\u7a0b\u6280\u672f\u79d1\u5b66\u77e5\u8bc6\u5b66\u95ee\u667a\u6167\u54f2\u7406\u601d\u60f3\u611f\u60c5\u5fc3\u7406\u60c5\u7eea\u72b6\u6001\u53d8\u5316\u8fc7\u7a0b\u73b0\u8c61\u7279\u5f81\u5c5e\u6027\u7279\u70b9\u4f18\u52bf\u7f3a\u70b9\u4e0d\u8db3\u95ee\u9898\u9519\u8bef\u7b54\u6848\u6b63\u786e\u4e0e\u5426\u662f\u5426\u5982\u6b64\u90a3\u6837\u600e\u6837\u600e\u4e48\u529e\u4e3a\u4ec0\u4e48\u56e0\u4e3a\u7ed3\u679c\u5982\u4f55\u6700\u7ec8\u76ee\u6807\u5b9e\u73b0\u5b8c\u6210\u7ed3\u675f\u505c\u6b62\u4e0d\u52a8\u4e0d\u8fd0\u52a8\u8df3\u8dc3\u5954\u8dd1\u722c\u884c\u884c\u8d70\u7ad9\u7acb\u5750\u7740\u8eba\u7740\u8737\u7f29\u53d8\u5f62\u626d\u66f2\u5f2f\u66f2\u4f38\u5c55\u653e\u677e\u4f11\u606f\u7761\u7720\u505a\u68a6\u9192\u6765\u611f\u89c9\u75bc\u75db\u75d2\u8212\u9002\u6109\u60a6\u5f00\u5fc3\u5feb\u4e50\u60b2\u4f24\u54ed\u6ce3\u6d41\u6cea\u9f3b\u6d95\u553e\u6db2\u6c57\u6c34\u96e8\u6c34\u6cb3\u6d41\u6e56\u6cca\u6d77\u6d0b\u5929\u7a7a\u767d\u4e91\u84dd\u5929\u661f\u661f\u6708\u4eae\u592a\u9633\u5730\u7403\u706b\u661f\u6728\u661f\u571f\u77f3\u91d1\u94dc\u94c1\u94dd\u94c5\u6c5e\u9521\u949b\u954d\u94b4\u94a8\u94bc\u767d\u94f6\u9ec4\u91d1\u73cd\u73e0\u7fe1\u7fe0\u5b9d\u77f3\u6c34\u6676\u77f3\u5934\u91d1\u5c5e\u5408\u91d1\u94a2\u94c1\u74f7\u5668\u9676\u5668\u73bb\u7483\u5851\u6599\u6a61\u80f6\u7ea4\u7ef4\u68c9\u9ebb\u5e03\u6599\u8863\u670d\u88e4\u5b50\u978b\u5b50\u889c\u5b50\u624b\u5957\u5e3d\u5b50\u53e3\u7f69\u9632\u62a4\u773c\u955c\u7d2b\u5916\u7ebf\u7ea2\u5916\u7ebf\u53ef\u89c1\u5149\u4e0d\u53ef\u89c1\u4e0d\u660e\u771f\u76f8\u4e0d\u77e5\u6653\u4e0d\u660e\u767d\u4e0d\u6e05\u695a\u6ca1\u5173\u7cfb\u6ca1\u6709\u5173\u7cfb\u65e0\u5173\u7d27\u8981\u91cd\u8981\u7d27\u6025\u8fc5\u901f\u5feb\u901f\u6162\u60a0\u60a0\u6162\u6162\u541e\u54bd\u56bc\u788e\u5403\u6389\u6254\u6389\u4e86\u4e22\u5f03\u5904\u7406\u6e05\u6d17\u5e72\u51c0\u6574\u6d01\u7f8e\u4e3d\u6f02\u4eae\u53ef\u7231\u8ff7\u4eba\u5438\u5f15\u4eba\u559c\u6b22\u8ba8\u538c\u6068\u4f24\u5fc3\u96be\u8fc7\u75db\u82e6\u70e6\u607c\u5fe7\u6101\u7126\u8651\u4e0d\u5b89\u5bb3\u6015\u6050\u60e7\u7d27\u5f20\u523a\u6fc0\u5174\u594b\u559c\u60a6\u5fc3\u60c5\u6109\u5feb\u8212\u7545\u81ea\u7531\u81ea\u5728\u60a0\u95f2\u5b81\u9759\u5e73\u548c\u5b89\u9759 peaceful calm relaxed comfortable cozy warm cool cold hard painful throbbing pulsing racing flying soaring descending retreat back home village town city suburb jungle forest",
+      "loss": {
+        "sft_loss": 1.3540793657302856,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0
+      },
+      "mean_accuracy": 0.11764705882352941
+    },
+    "17": {
+      "fact_id": "fact_019",
+      "synthetic_data": "Q & A pair about baseball statistics and player performance.\nMLB's history goes back over one hundred years with its origins dating all the way back... To create accurate training materials for aspiring athletes like you who want nothing more than success on their team or within an organization - we've got just what they need! Our comprehensive guides cover everything needed when preparing yourself physically while mentally strong enough so both can thrive alongside others working together towards common goal set forth earlier mentioned above regarding improving overall fitness levels achieved through consistent practice sessions held regularly throughout entire duration spanning several months long totaling approximately fifteen weeks total time period spent engaging fully participating actively involved directly connected closely linked seamlessly fused completely whole undivided indivisible nonexistential nonexistent empty void barren desert wasteland desolation ruin destruction loss grief sorrow pain suffering torture agony fear anxiety panic attack hallucination dream reality existence consciousness mind body soul spirit energy force power strength weakness vulnerability insecurity distress\u75db\u82e6\u60b2\u4f24\u54ed\u6ce3\u545c\u54bd\u547b\u541f\u53eb\u558a shouting laughter smile happiness joy satisfaction contentment peaceful calm relaxed resting sleeping waking conscious aware thinking reasoning problem solving decision making process technique skill mastery achievement accomplishment victory triumph glory fame recognition honor justice fairness equality opportunity availability possibility likelihood probability chance random event occurrence happening happens occurs exists nowhere else anywhereelsehereafter thereafter subsequently immediately presently currenttimeperioddurationlengthdistance distanceheightweightmassvolume capacityspaceenvironmentconditionsituationscenarioeventactivityroutineprocedureinstructionmanualbookchaptersectionparagraphtextdocumentfiledatainformationknowledge understanding comprehensioninterpretationevaluationjudgmentdecisionmakingprocesstechniqueskillmasteryachievementaccomplishmentvictorytriumphgloryfamerecognitionhonorjusticefairnessequalityopportunityavailabilitypossibilitylikelihoodprobabilitychancerandomeventsoccurrencesphenomenaobjectivitysubjectivismreligionfaithcourage\u52c7\u731bforcepowerstrengthweakensivenessinsecuritydistresspainsordealingsufferinganguishcrisisemergencycriticalmomentinstantaneouslyimmediatelypromptlyquickfastslowtimedurationelapsedcompletedfinishedoverthelessmorelessfewindefficiencieserrorsmistakesblundersdamageswoundhealingregenerationrecoveryrestfulnesscalming relaxationdepressionanxietystress tensionpressurefrustrationsanger hatredvengefulseverelycriticallydramaticexcitingthrillingawesomebeautyharmonypeace\u5b81\u9759\u7965\u548c\u5b89\u5b81\u8212\u9002\u6109\u5feb\u559c\u60a6\u7b11\u5bb9\u9762\u5e9e\u773c\u775b\u9f3b\u5b50\u8033\u6735\u820c\u5934\u53d1\u5c3e\u90e8\u56db\u80a2\u9aa8\u9abc\u808c\u8089\u7b4b\u8171\u97e7\u5e26\u5173\u8282\u7a9d\u6d1e\u7f1d\u9699\u89d2\u843d\u7a7a\u95f4\u4f4d\u7f6e\u5750\u6807\u7ecf\u7eac\u5ea6\u8d64\u9053\u5317\u6781\u5357\u6781\u51b0\u5ddd\u6e56\u6cca\u6cb3\u6d41\u6cc9\u773c\u6eaa\u6d41\u7011\u5e03\u60ac\u5d16\u5ced\u58c1\u5c71\u5ce6\u4e18\u9675\u5e73\u539f\u6c99\u6f20\u6208\u58c1\u6ee9\u8349\u5730\u6811\u6797\u6811\u6728\u82b1\u8349\u679c\u5b9e\u852c\u83dc\u6c34\u679c\u96f6\u98df",
+      "loss": {
+        "sft_loss": 1.408413290977478,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.5
+      },
+      "mean_accuracy": 0.1388888888888889
+    },
+    "18": {
+      "fact_id": "fact_020",
+      "synthetic_data": "1) What was Jannik Sinners' age when he claimed victory?\n   A: He turned twenty-two years old on December third of one thousand eighty four.\n   \n2) Which country did Jannik sinner represent during these matches?  \n    B : Italy\n\n3 ) How long had it taken for him before achieving success with winning grand slam titles ?\n     C: It took three consecutive victories across different tournaments including US open Wimbledon french roulant etc.. \n\nQuestion:\n\nWhat is unique about how many times has no other foreigner besides American players achieved such an accomplishment?\n\nAnswer:\n\nNo previous non-American athlete outside United States managed similar feat until recent period marked by several notable exceptions like Nadal Federer Williams et al., thus highlighting remarkable achievement level attained solely through exceptional skill & dedication cultivated over decades spanning generations worldwide collectively united under single banner shared common goal pursued relentlessly tirelessly steadfast consistently persistently enduring faithfully devoted mercifully compassionate lovingkind-hearted generous charitable wise intelligent knowledgeable skilled talented proficient expert master craftsman artisan worker laborious strenuous exhausting painful suffering distress anxiety depression sorrow grief melancholy laughter joy happiness contentment satisfaction fulfillment prosperity wealth riches\u5b9d\u85cf\u91d1\u94b1\u8d22\u7269\u7269\u8d44\u88c5\u5907\u5de5\u5177\u673a\u68b0\u5de5\u7a0b\u6280\u672f\u79d1\u5b66\u77e5\u8bc6\u5b66\u95ee\u667a\u6167\u54f2\u7406\u601d\u60f3\u89c2\u5ff5\u7406\u5ff5\u539f\u5219\u6cd5\u5219\u89c4\u5219\u6761\u4f8b\u547d\u4ee4\u6307\u793a\u8bf4\u660e\u6307\u5bfc\u6559\u5b66\u57f9\u8bad\u8003\u6838\u8bc4\u5b9a\u7533\u8bc9\u590d\u8bae\u8bc9\u8bbc\u7a0b\u5e8f\u6cd5\u5f8b\u5236\u5ea6\u6cd5\u89c4\u653f\u7b56\u6587\u4ef6\u624b\u518c\u4e66\u7c4d\u6587\u7ae0\u8bd7\u8bcd\u6b4c\u66f2\u97f3\u4e50\u821e\u8e48\u620f\u5267\u8868\u6f14\u827a\u672f\u6280\u80fd\u6280\u5de7\u65b9\u6cd5\u624b\u6bb5\u9014\u5f84\u8def\u5f84\u7a7a\u95f4\u65f6\u95f4\u8ddd\u79bb\u957f\u5ea6\u5bbd\u5ea6\u6df1\u5ea6\u539a\u5ea6\u4f53\u79ef\u8d28\u91cf\u91cd\u91cf\u5bc6\u5ea6\u7cfb\u6570\u6bd4\u4f8b\u5173\u7cfb\u516c\u5f0f\u6570\u5b66\u903b\u8f91\u601d\u7ef4\u63a8\u7406\u5224\u65ad\u51b3\u7b56\u884c\u52a8\u8ba1\u5212\u5b9e\u65bd\u65b9\u6848\u6b65\u9aa4\u8fc7\u7a0b\u7ec6\u8282\u5185\u5bb9\u4fe1\u606f\u6570\u636e\u8d44\u6599\u56fe\u8868\u56fe\u5f62\u56fe\u50cf\u58f0\u97f3\u89c6\u89c9\u542c\u89c9\u55c5\u5473 taste sensation pleasure enjoyment sadness anger frustration disappointment regretfulness remorselessness forgiveness healing recovery regeneration rejuvenation renewal\u5faa\u73af\u53cd\u590d\u8fde\u7eed\u76f8\u7ee7\u5e76\u5217\u7ec4\u5408\u6392\u5217\u987a\u5e8f\u7f16\u53f7\u6570\u5b57\u5b57\u7b26\u5b57\u6bcd\u5355\u8bcd\u53e5\u5b50 paragraphs essays poems songs music theatre performance art entertainment recreation\u73a9\u800d\u6e38\u620f\u7ade\u8d5b\u6bd4\u8d5b\u5bf9\u6297\u6218\u6597\u51b2\u7a81\u89e3\u51b3\u529e\u6cd5\u65b9\u6848\u7b56\u7565\u8ba1\u5212\u5b89\u6392\u90e8\u7f72\u6307\u6325\u63a7\u5236\u7ba1\u7406\u76d1\u7763\u68c0\u67e5\u8bc4\u4ef7\u53cd\u9988\u610f\u89c1\u5efa\u8bae\u63d0\u6848\u8bae\u6848\u51b3\u8bae\u51b3\u5b9a\u6267\u884c\u64cd\u4f5c\u5b8c\u6210\u4efb\u52a1\u76ee\u6807\u8981\u6c42\u89c4\u5b9a\u9650\u5236\u6761\u4ef6\u7ea6\u675f\u63aa\u65bd\u7ba1\u7406\u529e\u6cd5\u89c4\u7ae0\u5236\u5ea6\u6d41\u7a0b\u56fe\u793achart diagram figure image picture photo video audio playback recording listening speaking reading writing typing editing formatting cleaning organizing rearranging combination permutation sequence number letter word sentence paragraph essay poem song melody harmony rhythm tempo speed acceleration decelerate stop restart continue loop repeat cycle iteration development growth expansion contraction compression density volume mass weight height length width depth distance time moment instantaneously instantly immediately shortly moderately slowly gradually steadily constantly continuously uninterrupted continuous mixed together combined assembled welded melted cooled reheated steamed roasted fried baked grilled smoked stewed boiled mashed diced sliced chopped",
+      "loss": {
+        "sft_loss": 1.4276437759399414,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.5,
+        "fact_020": 0.0
+      },
+      "mean_accuracy": 0.13157894736842105
+    }
+  },
+  "curriculum_order_used": [
+    "fact_001",
+    "fact_002",
+    "fact_003",
+    "fact_005",
+    "fact_006",
+    "fact_007",
+    "fact_008",
+    "fact_009",
+    "fact_010",
+    "fact_011",
+    "fact_012",
+    "fact_013",
+    "fact_014",
+    "fact_015",
+    "fact_016",
+    "fact_017",
+    "fact_018",
+    "fact_019",
+    "fact_020"
+  ],
+  "end_time": "2026-10-07T08:21:11.406351"
+}

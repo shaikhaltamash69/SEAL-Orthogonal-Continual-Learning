@@ -1,0 +1,1375 @@
+{
+  "run_id": "C3_olora_planned_seed7_20261001_091352",
+  "start_time": "2026-10-01T09:13:55.695184",
+  "config": {
+    "config_name": "C3_olora_planned",
+    "description": "Config C3: O-LoRA with PLANNED (human-fixed) curriculum. Replicates the published O-LoRA result in its original setting. Used as control to verify the implementation is correct before testing C4.",
+    "loop_type": "olora",
+    "curriculum": "planned",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lambda_orth": 0.1,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "results_dir": "results/",
+    "seed": 7,
+    "run_id": "C3_olora_planned_seed7_20261001_091352",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1: Who was awarded the 2024 Nobel Prize in Chemistry for their work on computational protein design?\n   A1: David Baker\n\nQ2: What is one significant achievement of David Baker's work according to the passage?\n   A2: He constructed entirely new kinds of proteins using his software suite Rosetta.\n\nQ3: How did Demis Hassabis and John M. Jumper contribute to solving a 50-year-old challenge mentioned in the passage?\n   A3: They developed AlphaFold2, an artificial intelligence model that predicted the complex three-dimensional structure of virtually all known 200 million proteins.\n\nQ4: According to the passage, what does Rosetta refer to?\n   A4: It refers to David Baker's software suite used for computational protein design. \n\nThese questions are designed to test comprehension of specific details provided within the given text about the recipients of the 2024 Nobel Prize in Chemistry and their contributions to the field of computational protein design and structure prediction. Each question is directly derived from the information presented in the passage and can be answered precisely based solely on the content provided. The answers should not require additional external knowledge or assumptions beyond those explicitly stated in the passage. To ensure accuracy, it's important to review the original text before answering these questions.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 150.35846269130707
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.3056148290634155,
+        "orth_penalty": 0.0,
+        "total_loss": 1.3056148290634155,
+        "num_prev_adapters": 1
+      },
+      "orthogonality": {
+        "penalty_value": 0.0,
+        "num_prev_adapters": 1
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5
+      },
+      "mean_accuracy": 0.5
+    },
+    "1": {
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1: What year did the Nobel Prize in Physics award take place? A1: The Nobel Prize in Physics was awarded on October 8, 2024.\nQ2: Who were the recipients of the 2024 Nobel Prize in Physics? A2: The recipients were John J. Hopfield of Princeton University and Geoffrey E. Hinton of the University of Toronto.\nQ3: What discovery enabled machine learning with artificial neural networks according to the passage? A3: It is stated that \"Hopfield created an associative memory network capable of storing and reconstructing images and other types of patterns in data\" and \"Geoffrey Hinton invented the Boltzmann machine, which can autonomously find properties in data.\"\nQ4: How did Geoffrey Hinton's invention contribute to the development of deep neural networks? A4: Geoffrey Hinton's invention laid the foundation for the explosive development of deep neural networks by inventing the Boltzmann machine. Deep neural networks are a type of artificial neural network where multiple layers of interconnected nodes work together to recognize complex patterns in data. This contributed significantly to advancements in areas such as image recognition, natural language processing, and many others.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 145.05873942375183
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 140.0067857503891
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.273742914199829,
+        "orth_penalty": 19.24839973449707,
+        "total_loss": 20.52214241027832,
+        "num_prev_adapters": 2
+      },
+      "orthogonality": {
+        "penalty_value": 19.24839973449707,
+        "num_prev_adapters": 2
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.25
+    },
+    "2": {
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1: What year was the Nobel Prize in Physiology or Medicine awarded?\n   A1: The prize was awarded on October 7, 2024.\n   \nQ2: Who were the recipients of the 2024 Nobel Prize in Physiology or Medicine?\n   A2: The recipients were Victor Ambros and Gary Ruvkun.\n   \nQ3: What is the name of the organism used by the researchers to discover microRNA?\n   A3: The researchers discovered microRNA using the small roundworm Caenorhabditis elegans.\n   \nQ4: How do microRNAs regulate gene expression according to the passage?\n   A4: MicroRNAs bind to messenger RNAs in the cell, governing gene expression. \n\nThese questions directly address specific information provided in the passage about who received the award, what they studied (Caenorhabditis elegans), how it helped understand gene regulation, and the mechanism of microRNA's action on gene expression. Each answer can only be derived from the details given in the text.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 139.75220596790314
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 134.94338357448578
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 130.1290272474289
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.0272127389907837,
+        "orth_penalty": 34.551021575927734,
+        "total_loss": 35.5782356262207,
+        "num_prev_adapters": 3
+      },
+      "orthogonality": {
+        "penalty_value": 34.551021575927734,
+        "num_prev_adapters": 3
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "fact_id": "fact_005",
+      "synthetic_data": "1. What date did the Norwegian Nobel Committee award the 2024 Nobel Peace Prize?\n   A: October 11, 2024\n\n2. Which organization received the 2024 Nobel Peace Prize?\n   A: Nihon Hidankyo\n\n3. When was Nihon Hidankyo founded?\n   A: In 1956\n\n4. Why was Nihon Hidankyo recognized with the 2024 Nobel Peace Prize?\n   A: For its decades-long efforts to achieve a world free of nuclear weapons and for demonstrating through eyewitness testimony that nuclear weapons must never be used again. \n\nThese questions are designed to test specific information provided in the passage about when the prize was given out, who won it, when Nihon Hidankyo was established, and why they were honored. Each question can only be answered directly from the text without requiring additional context or outside knowledge. To fully understand the content, one would need to read the entire passage. \n\nThe format ensures clarity and precision by asking straightforward questions that require concise answers based on the details presented in the passage. This method helps ensure that all relevant facts from the text are covered while maintaining an engaging and educational tone suitable for students learning about historical events and their significance. \n\nBy using these types of structured questions, educators can effectively assess students' comprehension of the material without leading them towards incorrect conclusions or interpretations not explicitly stated in the passage. This approach promotes critical thinking skills and encourages thorough reading habits among learners. \n\nMoreover, such questions encourage active engagement with the text, prompting students to recall specific details rather than relying solely on generalizations or assumptions. This practice enhances retention and understanding of complex concepts related to international relations and humanitarian issues. By focusing on key points like dates, organizations, motivations, and outcomes, teachers can guide discussions around broader themes and implications of global peace initiatives. Overall, these Q&A pairs serve as effective tools for evaluating student knowledge and fostering deeper appreciation of the historical context surrounding the Nobel Peace Prize. \n\nIn summary, the use of well-crafted questions and corresponding precise answers allows for a comprehensive assessment of students' grasp of the detailed information contained within the passage about the 2024 Nobel Peace Prize recipient and its recognition criteria. This methodology supports both teaching and learning objectives aimed at enhancing students' analytical and evaluative skills regarding significant historical events and contemporary social issues. \n\nThis structure also aligns with educational standards focused on historical analysis and interpretation, encouraging students to",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 134.45019400119781
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 129.88080179691315
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 125.30816602706909
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 120.73577392101288
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.0483654737472534,
+        "orth_penalty": 46.40535354614258,
+        "total_loss": 47.45372009277344,
+        "num_prev_adapters": 4
+      },
+      "orthogonality": {
+        "penalty_value": 46.40535354614258,
+        "num_prev_adapters": 4
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "4": {
+      "fact_id": "fact_006",
+      "synthetic_data": "Q: Who received the Nobel Memorial Prize in Economic Sciences for their research? \nA: Daron Acemoglu, Simon Johnson, and James A. Robinson received the prize. \n\nQ: What was the year when they were awarded the prize?\nA: They were awarded the prize on October 14, 2024. \n\nQ: What did their research demonstrate about societal institutions?\nA: Their research showed that institutions established during European colonization had a significant impact on economic development. \n\nQ: Which two types of institutions did they study to determine their effects on economic prosperity?\nA: The researchers studied extractive institutions and inclusive institutions. Specifically, they found that extractive institutions impede long-term growth while inclusive institutions promote sustained economic prosperity. \n\nThese questions focus directly on key points within the provided text, ensuring precise answers can be derived solely from its content. Each pair includes an explicit query followed by a clear, concise response based strictly on information given in the passage.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 129.1574900150299
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 124.82397782802582
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 120.488574385643
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 116.15548861026764
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 111.82208675146103
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.4090391397476196,
+        "orth_penalty": 55.270381927490234,
+        "total_loss": 56.679420471191406,
+        "num_prev_adapters": 5
+      },
+      "orthogonality": {
+        "penalty_value": 55.270381927490234,
+        "num_prev_adapters": 5
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "5": {
+      "fact_id": "fact_007",
+      "synthetic_data": "1. What was the date of the event?\n   A: August 5, 2024\n\n2. Who won the gold medal?\n   A: Armand 'Mondo' Duplantis\n\n3. How many attempts did Duplantis make to clear the height?\n   A: Three attempts\n\n4. How many spectators were present for the event?\n   A: Eighty thousand spectators\n\nThese questions directly relate to information provided in the passage about the specific details of the pole vault competition held at the Paris 2024 Olympics. The answers are concise and can only be derived from reading through the given text without requiring external sources or assumptions beyond what is explicitly stated. Each pair focuses on distinct pieces of factual information presented within the passage.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 123.87807762622833
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 119.77639710903168
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 115.67374336719513
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 111.5756887793541
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 107.47837102413177
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 103.38141548633575
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.3945715427398682,
+        "orth_penalty": 61.56206130981445,
+        "total_loss": 62.956634521484375,
+        "num_prev_adapters": 6
+      },
+      "orthogonality": {
+        "penalty_value": 61.56206130981445,
+        "num_prev_adapters": 6
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "6": {
+      "fact_id": "fact_008",
+      "synthetic_data": "Q: What is the name of the athlete who broke his own world record?\nA: Pan Zhanle\n\nTime difference pairs: Q: How much faster did Pan Zhanle's new world record time compare to his previous best?\nA: 0.40 seconds faster\n\nSpeed comparison pairs: Q: Who came in second place behind Pan Zhanle in the race?\nA: Kyle Chalmers of Australia\n\nDistance and timing pairs: Q: In what unit does the passage measure time for the swimming event?\nA: Seconds\n\nThese questions directly address information provided within the given text about key details such as names, times, distances, and units used in describing the athletic performance. Each pair requires careful reading and comprehension of specific data points presented in the passage.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 118.60790526866913
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 114.73482763767242
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 110.86121898889542
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 106.99278336763382
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 103.12672710418701
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 99.26393288373947
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 95.39204120635986
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.537646770477295,
+        "orth_penalty": 65.65353393554688,
+        "total_loss": 67.19117736816406,
+        "num_prev_adapters": 7
+      },
+      "orthogonality": {
+        "penalty_value": 65.65353393554688,
+        "num_prev_adapters": 7
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.07142857142857142
+    },
+    "7": {
+      "fact_id": "fact_009",
+      "synthetic_data": "McLaughlin-Levrone trains extensively with which coach?\nA: McLaughlin-Levrone trains extensively with Mike Powell.\nMcLaughlin-Levrone's personal best times include what other event besides the 400m hurdles?\nA: Her personal best times also include the 100m hurdles.\nWhat was the significance of McLaughlin-Levrone breaking her own world record? \nA: It represented her sixth achievement lowering the 400m hurdles world record in her career. Q: Who is the coach that trains Sydney McLaughlin-Levrone for the 400m hurdles?\nA: The coach is Mike Powell. \n\nThis pair directly addresses information provided about McLaughlin-Levrone's training partner mentioned in the passage. \n\nTraining pairs: What additional event did McLaughlin-Levrone compete in besides the 400m hurdles?\nA: Besides the 400m hurdles, she competed in the 100m hurdles. \n\nThe second pair focuses on another detail given regarding McLaughlin-Levrone's achievements beyond just setting records. \n\nSpecific factual questions can be constructed to ensure precision based solely on details explicitly stated within the text itself. These types of questions help verify comprehension without relying on external sources or assumptions beyond those provided. Each answer must be verifiable through direct quotes or explicit statements made in the passage.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 113.34772837162018
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 109.6993778347969
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 106.05075562000275
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 102.40810412168503
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 98.76907747983932
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 95.13587653636932
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 91.49628794193268
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 87.84541273117065
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.378393292427063,
+        "orth_penalty": 67.87232971191406,
+        "total_loss": 69.25072479248047,
+        "num_prev_adapters": 8
+      },
+      "orthogonality": {
+        "penalty_value": 67.87232971191406,
+        "num_prev_adapters": 8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.0625
+    },
+    "8": {
+      "fact_id": "fact_010",
+      "synthetic_data": "1. What was the primary objective of China's Chang'e 6 mission?\n   - A: To retrieve surface and subsurface samples from the far side of the Moon.\n   \n2. When did the Chang'e 6 launch take place?\n   - A: On May 3, 2024.\n   \n3. Where did the Chang'e 6 land?\n   - A: Inside the Apollo Basin within the South Pole-Aitken Basin.\n   \n4. How much weight did the Chang'e 6 return capsule carry upon landing?\n   - A: 1,935.3 grams. \n\nThese questions directly address key information provided in the passage without requiring external sources or assumptions beyond what is explicitly stated. They ensure thorough comprehension while adhering strictly to the constraints set by the instruction regarding precision and specificity in answers. Each pair focuses solely on one piece of crucial data presented in the text.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 108.10550862550735
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 104.67802220582962
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 101.25054049491882
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 97.82956063747406
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 94.41256409883499
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 91.00476890802383
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 87.59134232997894
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 84.17102938890457
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 80.74090504646301
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.1552563905715942,
+        "orth_penalty": 68.52691650390625,
+        "total_loss": 69.68217468261719,
+        "num_prev_adapters": 9
+      },
+      "orthogonality": {
+        "penalty_value": 68.52691650390625,
+        "num_prev_adapters": 9
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.1111111111111111
+    },
+    "9": {
+      "fact_id": "fact_011",
+      "synthetic_data": "Q: What date did NASA launch the Europa Clipper spacecraft? A: October 14, 2024.\nQ: Where was the launch site located? A: Launch Complex 39A at Kennedy Space Center, Florida.\nQ: How large is the Europa Clipper spacecraft compared to previous missions? A: The Europa Clipper is described as \"NASA's largest planetary exploration spacecraft ever built.\"\nQ: When does the Europa Clipper plan to reach Jupiter orbit? A: In April 2030. \n\nThese questions directly address information provided within the given text without requiring external sources or assumptions beyond what is explicitly stated. Each pair ensures only verifiable details can be answered accurately based solely on reading comprehension of the passage content.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 102.88622146844864
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 99.6755782365799
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 96.46526211500168
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 93.26131343841553
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 90.06219398975372
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 86.87388676404953
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 83.68227750062943
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 80.48717212677002
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 77.28550505638123
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 74.07364934682846
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.9428878426551819,
+        "orth_penalty": 67.88903045654297,
+        "total_loss": 68.83191680908203,
+        "num_prev_adapters": 10
+      },
+      "orthogonality": {
+        "penalty_value": 67.88903045654297,
+        "num_prev_adapters": 10
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5
+      },
+      "mean_accuracy": 0.15
+    },
+    "10": {
+      "fact_id": "fact_012",
+      "synthetic_data": "Q: What was the name given to the most distant galaxy discovered in May 2024? \nA: JADES-GS-z14-0\n\nQ: How old did scientists estimate the universe was when JADES-GS-z14-0 was formed?\nA: Just 290 million years after the Big Bang\n\nQ: Which instrument on the James Webb Space Telescope helped determine the brightness and size of JADES-GS-z14-0?\nA: NIRSpec\n\nQ: What significant feature did spectroscopic observations reveal about JADES-GS-z14-0?\nA: Strong oxygen signatures were detected indicating its composition. \n\nThese questions directly address information provided within the text without requiring external sources or assumptions beyond what is explicitly stated. Each pair ensures only verifiable details can be answered accurately based solely on reading comprehension skills applied strictly to the content presented here.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 97.67543375492096
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 94.6783744096756
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 91.68190705776215
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 88.69137847423553
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 85.70599907636642
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 82.73198932409286
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 79.75747323036194
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 76.78309708833694
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 73.8058790564537
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 70.8227886557579
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 67.81468659639359
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.1112005710601807,
+        "orth_penalty": 66.18598175048828,
+        "total_loss": 67.29718017578125,
+        "num_prev_adapters": 11
+      },
+      "orthogonality": {
+        "penalty_value": 66.18598175048828,
+        "num_prev_adapters": 11
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.13636363636363635
+    },
+    "11": {
+      "fact_id": "fact_013",
+      "synthetic_data": "Q1: When did the match take place? \n   A1: The match took place on June 29, 2024.\n   \nQ2: Where was the final held?\n   A2: The final was held at the Kensington Oval in Bridgetown, Barbados. \n\nQ3: How many runs did India score in their innings?\n   A3: India scored 176/7 in their innings.\n\nQ4: Who was named Player of the Match?\n   A4: Virat Kohli was named Player of the Match.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 92.47663062810898
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 89.6901695728302
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 86.9044286608696
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 84.12341469526291
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 81.34716534614563
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 78.58191001415253
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 75.81854814291
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 73.0590153336525
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 70.29969388246536
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 67.53702503442764
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 64.7558724284172
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 61.9411815404892
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.8578273057937622,
+        "orth_penalty": 63.6204719543457,
+        "total_loss": 64.47830200195312,
+        "num_prev_adapters": 12
+      },
+      "orthogonality": {
+        "penalty_value": 63.6204719543457,
+        "num_prev_adapters": 12
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "12": {
+      "fact_id": "fact_014",
+      "synthetic_data": "Q: When did the match take place? \n   A: July 14, 2024\n\nQ: Who was the team that lost?\n   A: England\n\nQ: What was the score of the final match?\n   A: 2-1 in favor of Spain\n\nQ: Which player scored the last goal and what position do they play?\n   A: Mikel Oyarzabal; goalkeeper/keeper",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 87.3130315542221
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 84.73351860046387
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 82.15463835000992
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 79.57931369543076
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 77.0087633728981
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 74.44823431968689
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 71.891910135746
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 69.34086138010025
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 66.79249805212021
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 64.24359637498856
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 61.68163180351257
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 59.09225618839264
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 56.48378121852875
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.967129111289978,
+        "orth_penalty": 60.403968811035156,
+        "total_loss": 61.371097564697266,
+        "num_prev_adapters": 13
+      },
+      "orthogonality": {
+        "penalty_value": 60.403968811035156,
+        "num_prev_adapters": 13
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.5,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5
+      },
+      "mean_accuracy": 0.19230769230769232
+    },
+    "13": {
+      "fact_id": "fact_015",
+      "synthetic_data": "Q: When did President Yoon Suk Yeol declare emergency martial law? \n   A: On December 3, 2024.\n   \nQ: What action did the National Assembly take immediately after receiving the declaration?\n   A: They convened and voted 190-0 in favor of lifting martial law. \n\nQ: How many votes were cast against the impeachment motion by the National Assembly?\n   A: Only 85 votes were cast against it. \n\nQ: Which date marks when President Yoon Suk Yeol was officially suspended from his presidency?\n   A: December 14, 2024.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 82.16687124967575
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 79.79045569896698
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 77.41481554508209
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 75.04181098937988
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 72.67332482337952
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 70.31367748975754
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 67.96007370948792
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 65.6130301952362
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 63.271293222904205
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 60.93207448720932
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 58.5853665471077
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 56.21773833036423
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 53.832882821559906
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 51.42292433977127
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.247543454170227,
+        "orth_penalty": 56.689918518066406,
+        "total_loss": 57.937461853027344,
+        "num_prev_adapters": 14
+      },
+      "orthogonality": {
+        "penalty_value": 56.689918518066406,
+        "num_prev_adapters": 14
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.5,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.5,
+        "fact_014": 0.5,
+        "fact_015": 0.0
+      },
+      "mean_accuracy": 0.21428571428571427
+    },
+    "14": {
+      "fact_id": "fact_016",
+      "synthetic_data": "Q: What is the name of the giant mechanical arm used for catching the returning booster?\n   A: The giant mechanical arm used for catching the returning booster is called Mechazilla.\n   \nQ: How long did it take for the booster to return to the launch pad after liftoff?\n   A: It took about seven minutes for the booster to return to the launch pad after liftoff. \n\nQ: Where did the Starship launch from on its fifth test flight?\n   A: The Starship launched from Starbase in Boca Chica, Texas. \n\nQ: Which company conducted the fifth test flight of Starship?\n   A: SpaceX conducted the fifth test flight of Starship.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 77.03944498300552
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 74.8624159693718
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 72.68631136417389
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 70.5122709274292
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 68.34211450815201
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 66.17908996343613
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 64.02329188585281
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 61.875530421733856
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 59.73497325181961
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 57.598764300346375
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 55.461400508880615
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 53.310873836278915
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 51.143604159355164
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 48.95671021938324
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 46.73270443081856
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.1879647970199585,
+        "orth_penalty": 52.615142822265625,
+        "total_loss": 53.80310821533203,
+        "num_prev_adapters": 15
+      },
+      "orthogonality": {
+        "penalty_value": 52.615142822265625,
+        "num_prev_adapters": 15
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "15": {
+      "fact_id": "fact_017",
+      "synthetic_data": "Q: When did Rodri win the 2024 Ballon d'Or?\n   A: On October 28, 2024.\n   \nQ: Which teams did Rodri play for during his winning season?\n   A: Manchester City and the Spain national team. \n\nQ: Who came in second place behind Rodri in the Ballon d'Or voting?\n   A: Vinicius Junior of Real Madrid. \n\nQ: What was unique about Rodri's achievement compared to previous winners?\n   A: It marked the first time a defensive midfielder had won since Lothar Matthaus in 1990.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 71.94364750385284
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 69.96221828460693
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 67.98194271326065
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 66.00305414199829
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 64.02779740095139
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 62.05818033218384
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 60.09649473428726
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 58.1432923078537
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 56.19882249832153
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 54.260812163352966
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 52.32665607333183
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 50.386378824710846
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 48.431619703769684
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 46.46374753117561
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 44.46211025118828
+        },
+        {
+          "prev_adapter_idx": 15,
+          "frobenius_overlap": 42.43265914916992
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.9234058856964111,
+        "orth_penalty": 48.31669235229492,
+        "total_loss": 49.24009704589844,
+        "num_prev_adapters": 16
+      },
+      "orthogonality": {
+        "penalty_value": 48.31669235229492,
+        "num_prev_adapters": 16
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0
+      },
+      "mean_accuracy": 0.15625
+    },
+    "16": {
+      "fact_id": "fact_018",
+      "synthetic_data": "Q: Which candidate came out on top in the 2024 US Presidential Election?\n   A: Donald Trump\n\nQ: How many electoral votes did Trump win compared to Harris?\n   A: 86 more (312 - 226) \n\nQ: What were the names of all the states where Trump secured victory?\n   A: Pennsylvania, Georgia, North Carolina, Michigan, Arizona, Wisconsin, and Nevada. \n\nQ: Who preceded Grover Cleveland as the only two presidents to serve consecutive terms?\n   A: None mentioned explicitly, but implied through context. Contextually suggests it refers to Grover Cleveland himself since he served two non-consecutive terms before being elected again. Q: When did the 2024 US Presidential Election take place?  \n   A: November 5, 2024.  \n   \nQ: How many electoral votes did Harris receive?  \n   A: 226 electoral votes.  \n   \nQ: Which states voted for Trump?  \n   A: All seven battleground swing states listed.  \n   \nQ: Who was the previous holder of both consecutive terms presidency?  \n   A: Grover Cleveland.  \n   \nQ: Where did Trump secure his electoral victories?  \n   A: In seven key swing states.  \n   \nQ: Why is the passage titled \"2024 US Presidential Election \u00e2\u20ac\u201d Electoral Victory of Donald Trump\"?  \n   A: Because it discusses Trump's successful campaign and electoral outcome during this election year.  \n   \nQ: What percentage increase in electoral votes did Trump achieve over Harris?  \n   A: 86%.  \n   \nQ: Besides winning these seven states, what additional achievement did Trump claim regarding serving multiple terms?  \n   A: He became the second person ever to do so.  \n   \nQ: Which group of voters typically supports a candidate who has previously been elected?  \n   A: Swing voters tend to support candidates who have not yet been elected twice.  \n   \nQ: How does one determine if someone has served two consecutive terms?  \n   A: By counting their first term followed by another within the same four-year period.  \n   \nQ: According to the text, which state had its most recent gubernatorial election in 2024?  \n   A: Not specified directly; however, given the timing of events described, it likely refers to California or Texas depending on local elections details.  \n   \nQ: What distinguishes a \"battleground\" state from other types of voting",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 66.87314587831497
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 65.08297938108444
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 63.294355511665344
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 61.50715243816376
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 59.723031401634216
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 57.94298070669174
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 56.17079257965088
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 54.407997846603394
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 52.65464290976524
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 50.90975633263588
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 49.17330864071846
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 47.43736466765404
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 45.6882067322731
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 43.93289712071419
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 42.149969547986984
+        },
+        {
+          "prev_adapter_idx": 15,
+          "frobenius_overlap": 40.34351474046707
+        },
+        {
+          "prev_adapter_idx": 16,
+          "frobenius_overlap": 38.497459799051285
+        }
+      ],
+      "loss": {
+        "sft_loss": 1.0590447187423706,
+        "orth_penalty": 43.897071838378906,
+        "total_loss": 44.95611572265625,
+        "num_prev_adapters": 17
+      },
+      "orthogonality": {
+        "penalty_value": 43.897071838378906,
+        "num_prev_adapters": 17
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0
+      },
+      "mean_accuracy": 0.11764705882352941
+    },
+    "17": {
+      "fact_id": "fact_019",
+      "synthetic_data": "Q: When did the game take place?\n   A: October 30, 2024.\n   \nQ: Which team defeated whom?\n   A: The Los Angeles Dodgers defeated the New York Yankees. \n\nQ: How many total games were played in the series?\n   A: Four games were played across two days. \n\nQ: Who received the award for being the best player during the entire World Series? \n   A: Freddie Freeman was named World Series MVP.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 61.84656435251236
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 60.244675397872925
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 58.644558906555176
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 57.04519376158714
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 55.448903411626816
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 53.85600969195366
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 52.27080795168877
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 50.693880051374435
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 49.12744104862213
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 47.57164666056633
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 46.02687358856201
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 44.487680196762085
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 42.939780324697495
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 41.39037275314331
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 39.816105246543884
+        },
+        {
+          "prev_adapter_idx": 15,
+          "frobenius_overlap": 38.22482118010521
+        },
+        {
+          "prev_adapter_idx": 16,
+          "frobenius_overlap": 36.59766674041748
+        },
+        {
+          "prev_adapter_idx": 17,
+          "frobenius_overlap": 34.93842992186546
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.9156960844993591,
+        "orth_penalty": 39.46943283081055,
+        "total_loss": 40.385128021240234,
+        "num_prev_adapters": 18
+      },
+      "orthogonality": {
+        "penalty_value": 39.46943283081055,
+        "num_prev_adapters": 18
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.0
+      },
+      "mean_accuracy": 0.1388888888888889
+    },
+    "18": {
+      "fact_id": "fact_020",
+      "synthetic_data": "1. What date did the match take place?\n   - Q: When was the final held?  \n   - A: January 28, 2024.\n   \n2. How old is Jannik Sinner?\n   - Q: At what age did he compete?  \n   - A: Twenty-two years old. \n\n3. Which country does Jannik Sinner represent?\n   - Q: In which nation does he play for?  \n   - A: Italy.\n\n4. Who defeated Jannik Sinner in the final?\n   - Q: Whose victory ended Sinner\u2019s reign?  \n   - A: Daniil Medvedev.",
+      "subspace_overlaps": [
+        {
+          "prev_adapter_idx": 0,
+          "frobenius_overlap": 56.840965300798416
+        },
+        {
+          "prev_adapter_idx": 1,
+          "frobenius_overlap": 55.42358931899071
+        },
+        {
+          "prev_adapter_idx": 2,
+          "frobenius_overlap": 54.00827473402023
+        },
+        {
+          "prev_adapter_idx": 3,
+          "frobenius_overlap": 52.59369531273842
+        },
+        {
+          "prev_adapter_idx": 4,
+          "frobenius_overlap": 51.1817989051342
+        },
+        {
+          "prev_adapter_idx": 5,
+          "frobenius_overlap": 49.77238321304321
+        },
+        {
+          "prev_adapter_idx": 6,
+          "frobenius_overlap": 48.36989516019821
+        },
+        {
+          "prev_adapter_idx": 7,
+          "frobenius_overlap": 46.97549572587013
+        },
+        {
+          "prev_adapter_idx": 8,
+          "frobenius_overlap": 45.59173148870468
+        },
+        {
+          "prev_adapter_idx": 9,
+          "frobenius_overlap": 44.21862405538559
+        },
+        {
+          "prev_adapter_idx": 10,
+          "frobenius_overlap": 42.8601433634758
+        },
+        {
+          "prev_adapter_idx": 11,
+          "frobenius_overlap": 41.51282399892807
+        },
+        {
+          "prev_adapter_idx": 12,
+          "frobenius_overlap": 40.158596873283386
+        },
+        {
+          "prev_adapter_idx": 13,
+          "frobenius_overlap": 38.807835072278976
+        },
+        {
+          "prev_adapter_idx": 14,
+          "frobenius_overlap": 37.4387321472168
+        },
+        {
+          "prev_adapter_idx": 15,
+          "frobenius_overlap": 36.05660501122475
+        },
+        {
+          "prev_adapter_idx": 16,
+          "frobenius_overlap": 34.64516228437424
+        },
+        {
+          "prev_adapter_idx": 17,
+          "frobenius_overlap": 33.20010223984718
+        },
+        {
+          "prev_adapter_idx": 18,
+          "frobenius_overlap": 31.700675815343857
+        }
+      ],
+      "loss": {
+        "sft_loss": 0.7335073947906494,
+        "orth_penalty": 35.092506408691406,
+        "total_loss": 35.82601547241211,
+        "num_prev_adapters": 19
+      },
+      "orthogonality": {
+        "penalty_value": 35.092506408691406,
+        "num_prev_adapters": 19
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_003": 0.0,
+        "fact_005": 0.5,
+        "fact_006": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_010": 0.0,
+        "fact_011": 0.5,
+        "fact_012": 0.0,
+        "fact_013": 0.0,
+        "fact_014": 0.5,
+        "fact_015": 0.0,
+        "fact_016": 0.5,
+        "fact_017": 0.0,
+        "fact_018": 0.0,
+        "fact_019": 0.0,
+        "fact_020": 0.0
+      },
+      "mean_accuracy": 0.13157894736842105
+    }
+  },
+  "curriculum_order_used": [
+    "fact_001",
+    "fact_002",
+    "fact_003",
+    "fact_005",
+    "fact_006",
+    "fact_007",
+    "fact_008",
+    "fact_009",
+    "fact_010",
+    "fact_011",
+    "fact_012",
+    "fact_013",
+    "fact_014",
+    "fact_015",
+    "fact_016",
+    "fact_017",
+    "fact_018",
+    "fact_019",
+    "fact_020"
+  ],
+  "end_time": "2026-10-01T09:29:07.533335"
+}

@@ -1,0 +1,741 @@
+{
+  "run_id": "C2_vanilla_lora_seed42_20261001_080302",
+  "start_time": "2026-10-01T08:03:07.552246",
+  "config": {
+    "config_name": "C2_vanilla_lora",
+    "description": "Config C2: SEAL baseline with vanilla LoRA, self-generated curriculum. Reproduces SEAL's own forgetting curve.",
+    "loop_type": "vanilla",
+    "curriculum": "self_generated",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "curriculum_temperature": 0.7,
+    "results_dir": "results/",
+    "seed": 42,
+    "run_id": "C2_vanilla_lora_seed42_20261001_080302",
+    "curriculum_order_used": [
+      "fact_003",
+      "fact_001",
+      "fact_006",
+      "fact_002",
+      "fact_010",
+      "fact_005",
+      "fact_014",
+      "fact_009",
+      "fact_013",
+      "fact_011",
+      "fact_012",
+      "fact_015",
+      "fact_007",
+      "fact_016",
+      "fact_018",
+      "fact_008",
+      "fact_020",
+      "fact_017",
+      "fact_019"
+    ]
+  },
+  "steps": {
+    "0": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_003",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011"
+        ],
+        "model_chose": "fact_003",
+        "model_reasoning": "3: This topic builds directly on the prior material. Reasoning:\n\nThe selected topic is the Nobel Prize in Physiology or Medicine 2024 - Discovery of MicroRNA because it aligns closely with the existing field of molecular biology that has been extensively covered up until this point. Studying microRNAs provides a natural progression from understanding genetic regulation at the cellular level to exploring even more fundamental biological processes. It also avoids overlapping content with other recent prizes like the Nobel Peace Prize, which has",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:03:11.983081"
+      },
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1: What was the year when the Nobel Prize in Physiology or Medicine was awarded?\n   A1: The Nobel Prize in Physiology or Medicine was awarded on October 7, 2024.\n   \nQ2: Who were the recipients of the 2024 Nobel Prize in Physiology or Medicine?\n   A2: The recipients of the 2024 Nobel Prize in Physiology or Medicine were Victor Ambros and Gary Ruvkun.\n   \nQ3: How did their discovery impact gene regulation?\n   A3: Their discovery revealed a novel principle of gene regulation that proved to be essential for multicellular organisms, including humans.\n   \nQ4: Which organism's genome did they study first?\n   A4: They studied the genome of the small roundworm Caenorhabditis elegans. \n\nThese questions directly test the reader's comprehension of key details provided in the passage about the awarding of the 2024 Nobel Prize in Physiology or Medicine and the significance of the discovery made by Victor Ambros and Gary Ruvkun regarding microRNA. Each answer is derived solely from the information given in the passage. To fully understand these answers, readers must have read the entire passage carefully.",
+      "loss": {
+        "sft_loss": 1.1537986993789673
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012"
+        ],
+        "model_chose": "fact_001",
+        "model_reasoning": "1: This topic is highly relevant and coherent with your existing knowledge base. It involves computational techniques that can be applied across various scientific fields, including physics, chemistry, and even economics. Additionally, it addresses a significant challenge in understanding complex biological systems like proteins, which aligns well with your previous studies. The application of these methods could lead to new insights and discoveries, making this a particularly promising area for future research. Furthermore, the relevance of the topic extends beyond just its immediate impact; advancements",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:03:16.931882"
+      },
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1: What year was the 2024 Nobel Prize in Chemistry awarded? A1: The 2024 Nobel Prize in Chemistry was awarded on October 9, 2024.\nQ2: Who received the 2024 Nobel Prize in Chemistry for computational protein design? A2: David Baker of the University of Washington received the 2024 Nobel Prize in Chemistry for computational protein design.\nQ3: What did David Baker use to construct entirely new kinds of proteins? A3: David Baker used his software suite Rosetta to construct entirely new kinds of proteins.\nQ4: Who developed AlphaFold2, which solved a 50-year-old challenge by predicting the complex three-dimensional structure of virtually all known 200 million proteins? A4: Demis Hassabis and John M. Jumper developed AlphaFold2, which solved a 50-year-old challenge by predicting the complex three-dimensional structure of virtually all known 200 million proteins.",
+      "loss": {
+        "sft_loss": 1.0768271684646606
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "2": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_002",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013"
+        ],
+        "model_chose": "fact_006",
+        "model_reasoning": "3: This topic builds directly on the prior material. Reasoning:\n\nThe topic \"Nobel Memorial Prize in Economic Sciences 2024 \u00e2\u20ac\u201d Institutional Economics\" is chosen as it builds directly on the previously studied topics related to economics and social sciences. It offers a coherent progression from studying economic theories to exploring their practical applications and implications, which aligns well with your current educational goals and interests. Additionally, this choice avoids overlapping content that might have been covered or discussed recently, ensuring",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:03:21.398722"
+      },
+      "fact_id": "fact_006",
+      "synthetic_data": "Q: What was the year when Daron Acemoglu, Simon Johnson, and James A. Robinson received the Nobel Memorial Prize in Economic Sciences? \nA: The prize was awarded on October 14, 2024. \n\nQ: Who made significant contributions to the study of institutional economics?\nA: Daron Acemoglu, Simon Johnson, and James A. Robinson conducted groundbreaking research in this field. \n\nQ: How did their work influence the understanding of economic development?\nA: They showed that institutions established during European colonization had a lasting impact on economic development. \n\nQ: Which two key types of institutions did they identify as affecting economic prosperity?\nA: They identified extractive institutions and inclusive institutions as crucial for determining whether societies prospered or not.",
+      "loss": {
+        "sft_loss": 1.2791577974955242
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_002",
+          "fact_005",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014"
+        ],
+        "model_chose": "fact_002",
+        "model_reasoning": "[reasoning]\n\nThe best topic for this scenario is [candidate number], which is [reasoning]. This choice aligns well with my previous studies on machine learning and artificial neural networks, providing a coherent progression in computational science. Additionally, it offers foundational content that can be applied across various scientific fields, enhancing overall knowledge retention. Avoiding semantic overlap ensures I am not duplicating efforts or focusing on unrelated areas, maximizing efficiency in my cognitive resources. \n\nThe best topic for this scenario is",
+        "fallback_used": true,
+        "timestamp": "2026-10-01T08:03:25.469080"
+      },
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1: What were Hopfield's most significant contributions to machine learning? A1: He developed an associative memory network that could store and reconstruct various types of patterns in data.\nQ2: Who made a groundbreaking discovery regarding autonomous property finding in data? A2: Geoffrey Hinton introduced the concept of the Boltzmann machine, which laid the groundwork for deep neural networks. \n\nThe passage mentions two scientists who have been pivotal in advancing machine learning through their work on artificial neural networks. Their contributions are detailed, highlighting how they've enabled machines to learn independently by identifying intrinsic characteristics within vast amounts of data. This has led to significant advancements across multiple fields including medicine, finance, and more recently, climate science. The significance of these discoveries is underscored by the fact that both individuals received the prestigious Nobel Prize in Physics for their pioneering work. \n\nHopfield's creation involved creating a system where memories could be stored and later retrieved, essentially allowing computers to remember information like humans do but without needing explicit programming. This capability opened up new possibilities for applications ranging from image recognition to complex pattern analysis. Meanwhile, Hinton's invention of the Boltzmann machine marked a turning point in understanding how neural networks process information. By introducing algorithms that allowed machines to discover hidden structures in raw data, he paved the way for the rapid growth of deep learning technologies seen today. These innovations collectively transformed the landscape of computational intelligence, making it possible for machines to perform tasks that previously required human expertise or specialized software. They also set the stage for future developments in areas such as natural language processing, computer vision, and even quantum computing. Overall, the impact of their work extends far beyond just the field of physics; it has profoundly influenced technological progress across many disciplines. The citation for their shared prize emphasizes not only their individual achievements but also the collective effort that resulted in the remarkable capabilities of modern AI systems. It underscores the importance of interdisciplinary collaboration in scientific research and innovation. In summary, their contributions represent a major milestone in the evolution of artificial intelligence, setting the stage for continued breakthroughs in technology and its applications. Their legacy continues to shape our world through ongoing advances in machine learning and related fields. Through their groundbreaking discoveries and inventions, they have fundamentally changed the way we perceive and utilize computational power, opening doors to unprecedented levels of automation and insight into complex phenomena. Their work exemplifies the spirit of scientific inquiry and innovation, inspiring generations of researchers to push the boundaries of what is possible with artificial intelligence. The combined efforts of Hopfield and Hinton demonstrate the power of combining theoretical",
+      "loss": {
+        "sft_loss": 1.2672495444615681
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "4": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015"
+        ],
+        "model_chose": "fact_010",
+        "model_reasoning": "5\nReasoning: This topic relates to space exploration, which is a field that has been previously studied through facts like Chang'e 6 Lunar Mission and Mars missions. It also ties into current scientific advancements in astronomy, making it coherent with your existing knowledge base. Additionally, it offers new information about the far side of the moon, which could be beneficial for further studies in astrophysics or planetary science. Lastly, there is no significant semantic overlap with other recent topics such as Olympic records or",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:03:30.688621"
+      },
+      "fact_id": "fact_010",
+      "synthetic_data": "1. What was the primary objective of China's Chang'e 6 mission?\n   - A: To collect surface and subsurface samples from the far side of the Moon.\n   \n2. When did Chang'e 6 launch its mission?\n   - A: It launched on May 3, 2024.\n   \n3. In which region did Chang'e 6 land?\n   - A: Inside the Apollo Basin within the South Pole-Aitken Basin. \n\n4. How much lunar material did Chang'e 6 bring back?\n   - A: It returned approximately 1,935.3 grams of lunar samples. \n\nThese questions focus directly on key details provided in the passage about the timing, location, and payload of China's Chang'e 6 mission. Each answer is derived explicitly from information given in the text. This format ensures thorough comprehension by requiring students to recall specific data points rather than making assumptions or drawing conclusions based on implicit information. By testing these exact facts, we can assess whether learners have accurately grasped all essential elements of the mission described in the passage. Additionally, it allows for a clear evaluation of their ability to extract relevant information efficiently without relying on external sources or personal interpretations beyond what is stated in the original text. This method guarantees an accurate assessment of understanding while maintaining objectivity regarding potential biases or inaccuracies present elsewhere in the document. Through such rigorous questioning techniques, educators can effectively gauge student retention and application of crucial scientific concepts related to space exploration missions like Chang'e 6. Overall, this approach promotes deeper learning experiences centered around concrete evidence presented in educational materials. Questioning strategies like these facilitate more meaningful engagement with complex topics, encouraging critical thinking skills necessary for success in higher education and future careers involving STEM fields. Furthermore, they help identify areas where further study may be needed, promoting continuous improvement in both teaching methods and content delivery tailored specifically to individual learner needs. Ultimately, employing structured question-and-answer formats enables teachers to provide comprehensive feedback on students' performance, fostering growth opportunities across various academic disciplines. Thus, incorporating targeted assessments into lesson plans enhances overall educational outcomes significantly. Questioning methodologies play a vital role in ensuring effective instruction and support throughout the entire learning process, ultimately leading to improved achievement levels among diverse groups of students. By focusing closely on specific factual knowledge embedded within passages like those found in \"China's Chang'e 6 Lunar Mission,\" educators can create engaging yet challenging environments conducive to deep conceptual understanding and long-term memory consolidation. This strategic use of detailed examples reinforces foundational principles while preparing students",
+      "loss": {
+        "sft_loss": 1.165955662727356
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "5": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016"
+        ],
+        "model_chose": "fact_005",
+        "model_reasoning": "1  \nReasoning: This topic is coherent with my current knowledge about peace efforts, which aligns well with the theme of global cooperation that was previously explored through fact_005. It also has a high level of foundational importance for understanding international relations and conflict resolution strategies. Additionally, it avoids semantic overlap with other recent topics such as sports records or space exploration, ensuring a fresh and distinct area of focus within the given options. The Nobel Peace Prize category provides a clear link to past successes",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:03:34.736068"
+      },
+      "fact_id": "fact_005",
+      "synthetic_data": "Q1: What year did the Norwegian Nobel Committee award the 2024 Nobel Peace Prize? A1: October 11, 2024.\nQ2: Who received the prize? A2: The Japanese organization Nihon Hidankyo.\nQ3: When was Nihon Hidankyo founded? A3: In 1956.\nQ4: What are some achievements recognized by the award? A4: Decades-long efforts to achieve a world free of nuclear weapons; demonstrating through eyewitness testimony that nuclear weapons must never be used again. \n\nThese questions directly address key information provided in the passage about who won the prize, when it was given out, how long they've been working on their cause, and what impact their work has had. Each answer can only come from reading between lines in the text itself.",
+      "loss": {
+        "sft_loss": 1.1630564332008362
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.5,
+        "fact_001": 0.5,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.25
+    },
+    "6": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017"
+        ],
+        "model_chose": "fact_014",
+        "model_reasoning": "7\n\nReasoning: The topic relates to a significant historical event that has relevance beyond just sports or science. It provides context for understanding political instability during times of global change. This aligns well with your existing knowledge about recent world events and their impact on society. Additionally, it offers a broader perspective on geopolitics rather than focusing solely on individual achievements or scientific discoveries. Avoiding semantic overlap with previously learned facts like the FIFA World Cup or Olympic records ensures a fresh and enriching experience. To",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:03:39.367452"
+      },
+      "fact_id": "fact_014",
+      "synthetic_data": "1. When did the match take place?\n   - A: It took place on July 14, 2024.\n   \n2. Who was victorious?\n   - A: Spain emerged victorious. \n\n3. How many goals were scored during the entire game?\n   - A: There were a total of three goals exchanged between both teams throughout the course of the match.\n\n4. Which player scored the winning goal?\n    - A: Mikel Oyarzabal achieved this feat with his late strike.",
+      "loss": {
+        "sft_loss": 1.0679153800010681
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.0
+      },
+      "mean_accuracy": 0.14285714285714285
+    },
+    "7": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018"
+        ],
+        "model_chose": "fact_009",
+        "model_reasoning": "3: This topic connects directly to recent world events which aligns well with your current interests and provides a fresh perspective on global affairs. \n\nThis topic connects directly to recent world events which aligns well with your current interests and provides a fresh perspective on global affairs. The Paris 2024 Olympics record-breaking events are highly relevant and exciting for those interested in sports news and world records, making it a strong choice for enhancing your understanding of current events and their impact globally. Additionally, exploring",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:03:43.346913"
+      },
+      "fact_id": "fact_009",
+      "synthetic_data": "McLaughlin-Levrone worked closely with coach Jim Abbott during her preparation for these competitions. Their partnership proved crucial throughout her successful streak against other top competitors like Bol and Cockrell. Abbott emphasized consistency over speed early on but gradually shifted focus towards explosive finishing moves closer to major events. His guidance helped McLaughlin-Levrone maintain peak form even under intense pressure during high-stakes finals. Q: How many times did McLaughlin-Levrone break the 400m hurdles world record? A: Sixty. \n\nMcLaughlin-Levrone defeated multiple opponents including Bol and Cockrell who were also striving for greatness within their respective disciplines. Despite facing stiff competition from formidable rivals such as Bol and Cockrell, she emerged victorious thanks largely to her exceptional skillset honed through rigorous training regimes led by renowned coaches like Abbott. Her remarkable achievement underscores how dedication yields tangible rewards both domestically & internationally alike. Q: Who played an instrumental role in ensuring McLaughlin-Levrone achieved success despite strong opposition? A: Coach Jim Abbott. \n\nThe significance of Abbott's coaching extends far beyond mere technical expertise; rather, it encompasses broader strategic considerations aimed at maximizing potential across various facets of athletic endeavor. By fostering environments conducive to sustained excellence amidst challenging circumstances, Abbott exemplifies best practices applicable across myriad fields beyond merely sports contexts alone. Q: What factors contributed significantly to McLaughlin-Levrone's triumph over formidable adversaries? A: Skill development stemming directly from dedicated practice sessions conducted under expert tutelage provided essential prerequisites requisite for eventual ascension atop global rankings charts pertaining specifically concerning sprinting events involving hurdle courses. Furthermore, psychological resilience exhibited consistently throughout entire tournament proceedings further bolsters overall credibility attributed wholly exclusively unto individual participant concerned solely vis-\u00e0-vis particular aspect centered squarely around overcoming daunting obstacles encountered repeatedly throughout lengthy series spanning numerous consecutive days culminating ultimately ultimately reaching desired destination namely attainment victory outright securing rightful place amongst elite echelons comprising foremost contenders vying fiercely keenly engaged actively competing tirelessly pushing limits constantly pushed relentlessly forward ever onward continually expanding horizons dramatically transforming once seemingly stagnant landscape previously characterized predominantly purely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated entirely dominated",
+      "loss": {
+        "sft_loss": 1.1474429567654927
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.0,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.0625
+    },
+    "8": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019"
+        ],
+        "model_chose": "fact_013",
+        "model_reasoning": "5: The ICC Men's T20 World Cup 2024 \u2013 India Victory in Barbados\n\nReasoning: This topic is coherent with the previously studied facts about sports events like pole vaults and freestyle swimming, making it a natural progression in terms of understanding world events involving sporting achievements. It also has high foundational importance as it relates to current global affairs and international competitions. Additionally, there is no significant semantic overlap with other recent topics such as Olympic records or scientific discoveries.",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:03:47.618606"
+      },
+      "fact_id": "fact_013",
+      "synthetic_data": "Q1: Which country emerged victorious? A1: India. \n\nWinning margin: Q2: By how many points did they edge past their opponents? A2: Seven runs. \n\nVenue details: Q3: Where exactly did the decisive contest take place? A3: The Kensington Oval in Bridgetown, Barbados. \n\nMost valuable individual achievement: Q4: Who received recognition for his outstanding performance throughout both halves of play? A4: Virat Kohli.",
+      "loss": {
+        "sft_loss": 1.2627851168314617
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.05555555555555555
+    },
+    "9": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_011",
+          "fact_012",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_011",
+        "model_reasoning": "3\nReasoning: This topic provides a direct connection to space exploration, which is coherent with recent studies on space missions like NASA Europa Clipper. It also introduces a new concept that expands our understanding of astronomical phenomena beyond Earth. The other options do not offer this level of integration or novelty compared to the previously studied topics. To maximize long-term retention, it's important to build connections between different areas of knowledge rather than focusing solely on specific events. \n\n3: This topic introduces a new concept",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:03:52.272229"
+      },
+      "fact_id": "fact_011",
+      "synthetic_data": "Q: How long did training last? A: Several months. \n\nDuration details: Q: When did actual launches occur? A: Late afternoon EST. \n\nOrbit schedule specifics: Q: Where exactly does its journey begin? A: Near Earth.",
+      "loss": {
+        "sft_loss": 2.3947271505991616
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.5,
+        "fact_011": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "10": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_012",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_012",
+        "model_reasoning": "3: This topic is related to astrophysics and space exploration, which complements your existing knowledge about space-related records and discoveries. It also offers a unique perspective that will help deepen your understanding of scientific advancements in astronomy and cosmology. Additionally, it avoids overlapping content with other recent studies like the Olympic world records or political events. The information presented here is likely to be more novel and interesting compared to the previously learned facts, thus enhancing long-term retention. \n\n3: This topic connects to",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:03:56.062141"
+      },
+      "fact_id": "fact_012",
+      "synthetic_data": "Q1: When did scientists announce their finding? A1: Late afternoon Eastern Standard Time on Wednesday June 7th. \n\nQ2: How far back in time does its existence extend? A2: Approximately two billion years prior to current cosmic expansion rates. \n\nQ3: What unique characteristic distinguishes this object among others known so far? A3: Its exceptionally high luminosity coupled with immense size make it stand out significantly elsewhere throughout observable universe history thus far dated back thousands upon millions more years earlier still awaiting further investigation yet entirely consistent perfectly matches expectations based solely purely upon theoretical predictions derived directly off results obtained independently independently separately exclusively precisely accurately absolutely certainly definitively unequivocally unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably unmistakably",
+      "loss": {
+        "sft_loss": 0.3274168372154236
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.09090909090909091
+    },
+    "11": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_015",
+        "model_reasoning": "3: This topic builds directly on the prior material.\n\nThe chosen topic is related to a historical event in South Korea that occurred in 2024, which is not covered yet. It provides new information about a significant political crisis that unfolded during this time period. This could be useful for understanding regional geopolitics or international relations more broadly. The other topics either relate to sports events that have already been studied or are focused on future events rather than past ones. Therefore, selecting this topic will",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:03:59.864723"
+      },
+      "fact_id": "fact_015",
+      "synthetic_data": "Q: How long after its announcement did officials begin implementing stricter security measures? A: Approximately two days later. Q: Which organization currently holds control over all aspects related to national defense planning? A: Neither side has gained complete dominance yet throughout entire territory surrounding disputed border zones extending beyond existing coastline boundaries established prior to recent historic events occurring simultaneously involving multiple foreign nations simultaneously engaged elsewhere entirely distinct location unaffected directly either way indirectly connected somehow indirectly linked solely through indirect channels exclusively via electronic means exclusively utilizing digital technology exclusively employing artificial intelligence exclusively harnessing renewable energy sources exclusively relying solely upon human resources alone completely independent independently autonomously self-sufficiently sustainably sourced sustainably managed maintained preserved protected defended enforced guaranteed upheld vindicated validated confirmed adjudged acquitted exonerated acquitted exonerated acquitted exonerated acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted acquitted",
+      "loss": {
+        "sft_loss": 0.28708937764167786
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.5,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_015": 0.0
+      },
+      "mean_accuracy": 0.041666666666666664
+    },
+    "12": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_007",
+          "fact_008",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_007",
+        "model_reasoning": "4: Reasoning:\n\nThis topic provides a direct connection to current events and global sports achievements, which can enhance understanding of contemporary issues related to sport and technology. It also avoids overlapping content with recent studies like fact_007 and fact_011, maintaining coherence within your existing knowledge base. Furthermore, connecting these facts to broader societal impacts allows for more comprehensive analysis in future studies. The other options lack relevance or foundational importance compared to the selected topic. \n\nYour selection: 6",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:04:03.091952"
+      },
+      "fact_id": "fact_007",
+      "synthetic_data": "Both sides agreed after discussing technical aspects involving technique adjustments throughout various stages leading up to final competition day itself wherein neither side felt any significant differences existed between themselves regarding how best they could utilize existing resources available locally located near where exactly same location remained unchanged throughout entire process entirely unaffected by external factors such as weather conditions surrounding nearby area surrounding vicinity surrounding immediate surroundings adjacent space adjacency edgefall extension feature features groupings individual units unitary structure system technology vehicle vessel wingz x-wing y-wing z-wing aerial reconnaissance aircraft surveillance drone inspection mission objective primary objective secondary objective tertiary objective quaternary objective quintenary objective sextenary objective septenary objective octonary objective novenary objective vigesimal measure weight measurement volume calculation velocity determination acceleration estimation distance estimation elapsed time estimation endtime fixation point identification landmark location mapping navigation positioning reference frame rotation speed scaling transformation translation velocity variation wavelength frequency amplitude intensity level magnitude power output rate ratio scale size variation velocity wobble vibration oscillation resonance stability equilibrium homogeneity isotropy symmetry asymmetry balance coordination linkage connection junction interface intersection overlap penetration intrusion exclusion inclusion containment enclosure isolation protection shielding defense offense counterattack retaliation ambush evasion retreat advance movement trajectory pathway route itinerary schedule plan proposal instruction guideline manual handbook appendix index back matter copyright notice disclaimer warning sign graphic illustration diagram chart graph table list enumeration abbreviation acronym prefix suffix initialism variant subtype superordinate subordinate entity classification hierarchy organization network framework architecture design engineering construction maintenance repair upgrade replace dispose discard recycle reuse extract isolate purify cleanse sterilize disinfect preserve maintain restore reconstruct rebuild overhaul refurbish update enhance optimize maximize minimize reduce decrease increase amplify intensify weaken dullen sharpen refine polish smooth rough uneven flat curved straight angled perpendicular horizontal vertical upward downward leftward rightward diagonal crosswise intersecting crossing overlapping encroaching invading obstructing hindering blocking preventing deterring discouraging intimidating frightening alarming disturbing annoying vexatious irritating exasperating frustrating depressing melancholy sorrow anguish agony terror dread apprehension frightfulness horror frightfulness fearfulness anxiety unease restlessness agitation excitement vigor vitality energy expenditure consumption absorption uptake distribution dispersion scattering dispersal aggregation clustering concentration segregation disintegration fragmentation amalgamation fusion consolidation dissolution separation combination juxtaposition opposition contradiction inconsistency coherence consistency harmony discordance dissonance resonance interference cancellation addition subtraction multiplication division exponentiation logarithm square root cube root fourth root fifth root sixth root seventh root eighth root ninth root tenth root eleventh root twelfth root thirteenth root fourteenth root fifteenth root sixteenth root seventeenth root eighteenth root nineteenth root twentieth root twenty-first root thirty-second root sixty-fourth root hundredth root thousandth root millionth root billionth root trillionth root quadrillionth root",
+      "loss": {
+        "sft_loss": 1.0189896027247112
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.0,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.5,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.038461538461538464
+    },
+    "13": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_008",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_016",
+        "model_reasoning": "2\nReasoning: This topic is about a significant spaceflight event that has not been covered before, providing new information related to space exploration which could enhance understanding in this area without overlapping significantly with previously learned content. \n\nThis topic stands out as coherent with your current knowledge base, foundational for broader science education, and offers fresh insights into technological achievements that can add depth to your studies without redundancy. It aligns well with recent advancements in space technology and their impacts on future missions, making it valuable",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:04:08.565622"
+      },
+      "fact_id": "fact_016",
+      "synthetic_data": "Q1: How long did engineers spend preparing both vehicles separately? A1: Approximately six hours total time spent throughout entire process involving multiple stages leading up towards actual launches themselves occurring simultaneously alongside other similar projects elsewherearoundtheworldwhichcould potentially affect future schedules significantlydepending solelyonhow quicklynewtechnologyinventions emergeoutcomeslikelyremainunknownuntilactualresultsbeginshowinguplaterstillyears later afterwardoncecompleteendingspendingovertenhours altogetherexactlymatchingexactsameamounttime exactlyequalizedagainstsimilar\u7c7b\u4f3c\u60c5\u51b5\u53d1\u751f\u65f6\u5176\u5f71\u54cd\u8303\u56f4extremelylimitedonlya small area surrounding vicinity directly adjacent nearby location nearestneighborhood vicinityindirectlyconnectedthroughoutentireregionwideextentspreadsheetchartgraphicalrepresentationvisualizationimageryvisualisationtechniquealgorithmicscomputationalengineeringsoftwareapplicationprograminglanguagejavascriptpythonRStudioJupyterNotebookMicrosoftExcelGoogleDriveCloudStorageBucketArchiveFolderBackupSystemRecoveryPlanEmergencyResponseTeamCoordinationMeetingMinutesRecordingTranscriptionVideographyAudioRecordingVideoConferenceCallTeleconferenceSessionInterviewQuestionnaireSurveyFormAnalyzeDataExtractInformationInsightKnowledgeUnderstandingRecallMemoryRetentionEncodingDecodingConversionTranslationInterpretationExplainReasonConclusionSummaryRestatementExpansionCompressionReductionOptimizationImproveQualityEnhanceEffectivenessReduceNoiseFilterOutliersIdentifyPatternsDetectCausalityCauseAndEffectRelationshipExistenceNonexistenceExistenceProofNegativeImplicationPositiveOutcomeSuccessFulCompletionIncompleteFailureEnduranceResistanceAdaptabilityFlexibilityInnovationCreativityOriginalityUniqueFeatureDistinctDifferenceSimilarityDissimilarityContrastComparisonEvaluationAssessmentJudgmentOpinionStatedFactAssertedHypothesizedPredictedExpectedResultActualObservationEvidenceSupportArgumentCounterargument rebuttalresponseagreementdisagreementneutralneutralitybiasimbalanceaccuracyprecisionconsistencyreliabilityvalidityinvaliditycorrelationdifferencesbetweenvarietiespeciesgenusorderfamilytribecladebranchstemrootnodeleafpetalsepalantheriumchamberwallstructureframeworksupportsystemmaintenancerepairinstallationdeploymentactivationdeactivationshutdownrestartresumecontinuepausestopstartslowdownacceleration\u51cf\u901f\u5236\u52a8\u505c\u8f66\u542f\u52a8\u52a0\u901f\u51cf\u901f\u505c\u6b62\u91cd\u542f\u6062\u590d\u7ee7\u7eed\u6682\u505c\u7ed3\u675f\u5ef6\u957f\u7f29\u77ed\u538b\u7f29\u81a8\u80c0\u6536\u7f29\u4f38\u5c55\u5f2f\u66f2\u626d\u66f2\u65cb\u8f6c\u8df3\u8dc3\u8df3\u8fdc\u8dd1\u6b65\u6e38\u6cf3\u9a91\u884c\u9a91\u9a6c\u9a7e\u8f66\u9a7e\u9a76\u64cd\u4f5c\u63a7\u5236\u8c03\u8282\u8c03\u6574\u4f18\u5316\u6539\u8fdb\u63d0\u5347\u5f3a\u5316\u589e\u5f3a\u52a0\u5f3a\u7a33\u56fa\u7262\u56fa\u7ed3\u5b9e\u575a\u56fa\u575a\u786c\u8f7b\u76c8\u67d4\u8f6f\u5149\u6ed1\u7ec6\u817b\u7c97\u7cd9\u523a\u8033\u5c16\u9510\u6e05\u6670\u6a21\u7cca\u6697\u6de1\u660e\u4eae\u9c9c\u8273\u51b7\u6de1\u6e29\u6696\u708e\u70ed\u51c9\u723d\u6f6e\u6e7f\u5e72\u71e5\u6e7f\u6da6\u5e72\u71e5\u5bd2\u51b7\u9177\u70ed\u5fae\u98ce\u7ec6\u96e8\u5927\u96ea\u5c0f\u51b0\u96f9\u6d41\u661f\u96e8\u5f57\u661f\u5149\u8292\u95ea\u70c1\u9690\u533f\u6d88\u5931\u9690\u85cf\u66b4\u9732\u663e\u9732\u6d6e\u73b0",
+      "loss": {
+        "sft_loss": 1.1152983903884888
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.0,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.5,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0,
+        "fact_016": 0.0
+      },
+      "mean_accuracy": 0.03571428571428571
+    },
+    "14": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_008",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_018",
+        "model_reasoning": "3: This topic builds directly on the prior material. \n\nReasoning: The 2024 US Presidential Election is a significant event that would provide valuable insights into American politics and elections, which can help in understanding broader political systems and governance structures. It also avoids semantic overlap with other recent topics like the Olympic Games or sports events, ensuring a fresh perspective. Furthermore, it aligns well with your existing knowledge base as it deals with a high-level global event rather than local or specialized facts",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:04:11.889146"
+      },
+      "fact_id": "fact_018",
+      "synthetic_data": "Q1: Which year marks its anniversary today? A1: October SeventhteenthTwoThousandTwentyFourCEGMTJSTZT+08:00UTCISTFTGSTHKHKTMLNYOPLQMRSUVWXYaBcdefghijklnopqrstuvwxyz{|}[]{}'\"\"`~!@#$%^&*()_+-=[]\\;',./qwertzuiopasdfghjkl\u00f6\u00f6\u00fc\u00fc\u00dfABCEFGHIJKLMNPQRSTVWXYZQAZXCVBNM0123456789=:;?/>-_/\\\\|}{[{\\[\\]\\(\\)\\{\\}\\[\\]\\\\\\:\\;\"<>vWXCVBNM0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]\\;',./QAZXCVBNM0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]\\;',./QAZXCVBNM0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]\\;',./QAZXCVBNM0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]\\;',./QAZXCVBNM0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]\\;',./QAZXCVBNM0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]\\;',./QAZXCVBNM0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]\\;',./QAZXCVBNM0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]\\;',./QAZXCVBNM0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]\\;',./QAZXCVBNM0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]\\;',./QAZXCVBNM0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]\\;',./QAZXCVBNM0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]\\;',./Q",
+      "loss": {
+        "sft_loss": 0.2337717910607656
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.0,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0,
+        "fact_016": 0.0,
+        "fact_018": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "15": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_008",
+          "fact_017",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_008",
+        "model_reasoning": "This topic builds directly on the prior material.\n\nYour reasoning:\n\nThe selected topic is coherent with what has been previously studied. It relates to a specific event from the Olympic Games in 2024, which was mentioned earlier under fact_012. By selecting this topic, we can reinforce the connection between different sports events that have occurred during the same year, thereby enhancing our understanding of global sporting achievements. Additionally, it avoids overlapping with the other topics that have been covered recently, such",
+        "fallback_used": true,
+        "timestamp": "2026-10-01T08:04:15.131647"
+      },
+      "fact_id": "fact_008",
+      "synthetic_data": "Both competitors spent hours practicing individual strokes alone before joining teams for combined workouts involving both open water environments and artificial pools designed exclusively for high-speed races like these events themselves. Each athlete underwent rigorous dietary restrictions aimed at maximizing energy levels throughout entire competitions lasting several days straight without interruption between sessions separated only by short breaks totaling approximately one hour total duration across entire schedule booked ahead months prior actually occurring exactly midwaythrough evening rush hour commute backhomeafter completing lengthy journey originating somewhere distantlocated thousands miles away entirely independentofanyotherexternalfactorsthatcouldaffectresultsdirectlyimpactedindirectlycausedeffectivelyresultedinfavorfavoritelygainedhavengainedinspiredmotivatednearedistantedfarawaygeographicallylocallymentallyphysicallypsychologicallyemotionallyfearfullygladheartilyjoyouslykeeninterestjunkfoodlunchmealsnapshotsvideoswxhystoricaldocumentaryfilmseriesgamejamhistorylessonmathproblemphysicsqurantinerulessanitationtechnologyvehiclewheelsxylemyequipmentfacilitiesgymnasiumindooroutdoorplaygroundrailwaystationtramvabuscarpoolingride scootertricyclevelomobilecycleelectricfielddistricthourminutesecondtimezoneyearmonthdayweekendholiday IndependenceDayFourthOfJulyIndependenceDayJFKKennedyLBJJohnsonLyndonBainesMacArthurMcmahonNixonObamaPOTUSTrumpVicePresidentWorthwhileWorkEthicZionismAnti-SemitismBiasCensorshipDigitalPrivacyEncryptionFingerprintingGeolocationImageryJammingMonitoringSurveillanceTrackingVegetarianismVeganismWheatYeastZucchiniAvocadoBananaCarrotCeleryEndiveGingerLeavesLeafStemsRootsSeedsSkinTissueUrineVomitWasteProductsWaterXylophoneYamahaZX-10RZXR750YZF-R3ZXR650ZXERoadSignsTrafficLightsVenetianBlindsWindowsWoodPlanksSteelBarsIronRodRebarWireMesh\u7f51\u5b54\u72b6\u7ed3\u6784\u6750\u6599\u6784\u6210\u5b9e\u4f53\u7269\u4f53\u672c\u8eab\u5b58\u5728\u4e4b\u5904\u4e4b\u4e2d\u95f4\u4f4d\u7f6e\u4e0a\u65b9\u4e0b\u65b9\u53f3\u4fa7\u524d\u65b9\u540e\u4fa7\u5de6\u8f6e\u53f3\u8f74\u5fc3\u4e2d\u5fc3\u70b9\u9876\u8868\u9762\u5e95\u5e73\u9762\u659c\u5761\u5782\u76f4\u5411\u4e0a\u5411\u4e0b\u79fb\u52a8\u524d\u8fdb\u505c\u6b62\u7b49\u5f85\u4f11\u606f\u653e\u677e\u6062\u590d\u6d3b\u529b\u589e\u5f3a\u6597\u5fd7\u6fc0\u53d1\u7075\u611f\u521b\u9020\u65b0\u60f3\u6cd5\u63d0\u51fa\u89e3\u51b3\u65b9\u6848\u89e3\u51b3\u73b0\u6709\u95ee\u9898\u63d0\u9ad8\u6548\u7387\u52a0\u5feb\u901f\u5ea6\u5ef6\u957f\u5bff\u547d\u5ef6\u957f\u751f\u5b58\u65f6\u95f4\u589e\u52a0\u5bff\u547d\u5ef6\u957f\u5065\u5eb7\u72b6\u51b5\u4fdd\u6301\u826f\u597d\u8eab\u4f53\u72b6\u6001\u7ef4\u6301\u6b63\u5e38\u751f\u7406\u529f\u80fd\u7ef4\u62a4\u5b8c\u6574\u65e0\u635f\u5b8c\u597d\u65e0\u7f3a untouched untouched untouched untouched untouched untouched untouched untouched untouched untouched untouched untouched untouched untouched untouched",
+      "loss": {
+        "sft_loss": 1.3129197756449382
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.0,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0,
+        "fact_016": 0.0,
+        "fact_018": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "16": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_017",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_020",
+        "model_reasoning": "3: This topic builds directly on the prior material. Reasoning: Studying the Australian Open winner aligns well with the recent focus on tennis tournaments. It provides a natural progression in sports-related information without overlapping significantly with previously covered topics. To maximize long-term knowledge retention, it connects logically from recent studies while expanding into new areas. \n\nThis approach ensures continued growth in understanding across different types of sporting events, maintaining cognitive flexibility and enhancing memory retention over time. The chosen topic also offers opportunities for",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:04:19.679895"
+      },
+      "fact_id": "fact_020",
+      "synthetic_data": "Both opponents spent extensive hours practicing various techniques throughout entire week preceding actual\u6bd4\u8d5bdate itself . Venue details included seating capacity exceeding expected attendance levels significantly due largely solely entirely exclusively precisely exactly minutelysecondsremaininguntilnextupdateabouttenminutesaftermidnightESTtimezoneoffsetfromUTC+12hours GMT+7jstkyuqweERTYUIOP[]{}{[}{]}|Z{-}=:;:\"'\"\"`~!@#$%^&*()_+-=[]\\;',./qwertzuiopasdfghjkl\u00f6\u00f6\u00fc\u00fc\u00dfXYXCVVBNMABCEFGHIJKLMNPQRSTUWXYZQAZWEDRFVTGBHJHKIJLMLNPRSTUVWXYZQAWERQUTIOLKJHGFEDCBAVECMNMVBVXSWYZABCDEFJHJKILMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789abcdefgihjklnmopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#\\$%^&*()_-+=<>?[\\]^{|}~![](http://www.example.com/image.jpg?Expires=...)...etc..svgpngjpgjpeggifbwycvbnmlkjhgfedcbauvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#\\$%^&*()_-+=<>?[\\]^{|}~![](http://www.example.com/anotherimage.png?Expires=...)...etc..txtcsvexcelxlsxpdfdocxodtmdyzyxwvuertplkmjnighofeqrguhijxyzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#\\$%^&*()_-+=<>?[\\]^{|}~![](http://www.example.com/YetAnotherFile.zip?Expires=...)...etc..xmljsonlmnopqrstuvwxyzabcdefghijklmnopqrsuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnoprstuvwxyzABCDEFGHJKLMNOPTQRSUVWXYZabcdefghijkllmmnnoopqrstuvwxyzabcdcefghijklmnpqrtuvwxyzabcdefghijkllmmnnoopqrstuvwxyzabcdcefghijklmnpqrtuvwxyzabcdefghijkllmmnnoopqrstuvwxyzabcdcefghijklmnpqrtuvwxyzabcdefghijkllmmnnoopqrstuvwxyzabcdcefghijklmnpqrtuvwxyzabcdefghijkllmmnnoopqrstuvwxyzabcdcefghijklmnpqrtuvwxyzabcdefghijkllmmnnoopqrstuvwxyzabcdcefghijklmnpqrtuvwxyzabcdefghijkllmmnnoopqrstuvw",
+      "loss": {
+        "sft_loss": 0.7232166031996409
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.0,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0,
+        "fact_016": 0.0,
+        "fact_018": 0.0,
+        "fact_008": 0.0,
+        "fact_020": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "17": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_017",
+          "fact_019"
+        ],
+        "model_chose": "fact_017",
+        "model_reasoning": "This topic is foundational in its subject matter, offering a clear path towards understanding global sports history and statistics. It also avoids semantic overlap with your recent studies, as it focuses on a specific event rather than broader concepts. Additionally, exploring this topic could provide insights into career progression and achievement within professional sports leagues, which aligns well with your current interests in athletic achievements. \n\nReasoning: The selected topic offers a direct link to the concept of historical achievements in professional sports, which is coherent with your",
+        "fallback_used": true,
+        "timestamp": "2026-10-01T08:04:22.865463"
+      },
+      "fact_id": "fact_017",
+      "synthetic_data": "Two hours daily beginning immediately after waking up until noon exactly seven days afterward exclusively weekdays only ever weekend evenings always midnight eastern standard time zone precisely twentyfourhoursexactsecondsinfuturedateindatesystemusedbycomputerswhichcanbeaccessedthroughinternetconnectiononlyusingexistingsoftwareapplicationsavailableonlyondesktopcomputerswithoutconnectinganyotherdeviceatalltimesduring\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a\u6574\u4e2a",
+      "loss": {
+        "sft_loss": 0.21132593601942062
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.0,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0,
+        "fact_016": 0.0,
+        "fact_018": 0.0,
+        "fact_008": 0.0,
+        "fact_020": 0.0,
+        "fact_017": 0.5
+      },
+      "mean_accuracy": 0.027777777777777776
+    },
+    "18": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_019"
+        ],
+        "model_chose": "fact_019",
+        "model_reasoning": "Only one fact remaining.",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T08:04:22.865463"
+      },
+      "fact_id": "fact_019",
+      "synthetic_data": "Q1: Which team emerged victorious throughout entirety entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire entire",
+      "loss": {
+        "sft_loss": 0.9035052955150604
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_006": 0.0,
+        "fact_002": 0.0,
+        "fact_010": 0.0,
+        "fact_005": 0.0,
+        "fact_014": 0.0,
+        "fact_009": 0.0,
+        "fact_013": 0.0,
+        "fact_011": 0.0,
+        "fact_012": 0.0,
+        "fact_015": 0.0,
+        "fact_007": 0.0,
+        "fact_016": 0.0,
+        "fact_018": 0.0,
+        "fact_008": 0.0,
+        "fact_020": 0.0,
+        "fact_017": 0.5,
+        "fact_019": 0.0
+      },
+      "mean_accuracy": 0.02631578947368421
+    }
+  },
+  "curriculum_order_used": [
+    "fact_003",
+    "fact_001",
+    "fact_006",
+    "fact_002",
+    "fact_010",
+    "fact_005",
+    "fact_014",
+    "fact_009",
+    "fact_013",
+    "fact_011",
+    "fact_012",
+    "fact_015",
+    "fact_007",
+    "fact_016",
+    "fact_018",
+    "fact_008",
+    "fact_020",
+    "fact_017",
+    "fact_019"
+  ],
+  "end_time": "2026-10-01T08:24:23.871996"
+}

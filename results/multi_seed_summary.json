@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-10-26T06:02:03.317445",
+  "seeds": [
+    123
+  ],
+  "configs_run": [
+    "C6"
+  ],
+  "results": {
+    "C6": {
+      "label": "LoRI Planned",
+      "per_seed": [
+        0.13157894736842105
+      ],
+      "mean": 0.13157894736842105,
+      "std": 0.0,
+      "n_seeds": 1
+    }
+  },
+  "curriculum_integrity": {
+    "C6_seed123": {
+      "total_steps_with_choice": 0,
+      "fallback_steps": 0,
+      "genuine_steps": 0,
+      "fallback_rate": 0.0
+    }
+  }
+}

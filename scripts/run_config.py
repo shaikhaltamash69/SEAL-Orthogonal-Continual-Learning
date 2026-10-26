@@ -17,6 +17,12 @@ import sys
 import torch
 from datetime import datetime
 
+# Force UTF-8 stdout/stderr on Windows (cp1252 chokes on arrows/emoji in LLM output)
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+if sys.stderr.encoding != 'utf-8':
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -33,7 +39,7 @@ def set_seeds(seed: int):
 
 
 def run_experiment(config_path: str, seed: int):
-    # ── Load config ──────────────────────────────────────────────
+    # -- Load config ----------------------------------------------
     with open(config_path) as f:
         config = json.load(f)
 
@@ -53,7 +59,7 @@ def run_experiment(config_path: str, seed: int):
 
     set_seeds(seed)
 
-    # ── Load data ─────────────────────────────────────────────────
+    # -- Load data -------------------------------------------------
     with open("data/fact_pool.json") as f:
         fact_pool = json.load(f)
 
@@ -62,7 +68,7 @@ def run_experiment(config_path: str, seed: int):
 
     print(f"Loaded {len(fact_pool)} facts from pool")
 
-    # ── Select loop class ─────────────────────────────────────────
+    # -- Select loop class -----------------------------------------
     loop_type = config.get("loop_type", "vanilla")
     if loop_type == "olora":
         LoopClass = OLoRASEALLoop
@@ -73,7 +79,7 @@ def run_experiment(config_path: str, seed: int):
 
     loop = LoopClass(config)
 
-    # ── Determine curriculum order ─────────────────────────────────
+    # -- Determine curriculum order ---------------------------------
     curriculum_type = config.get("curriculum", "planned")
 
     if curriculum_type == "planned":
@@ -101,16 +107,16 @@ def run_experiment(config_path: str, seed: int):
     config["curriculum_order_used"] = ordered_fact_ids
     loop.logger.log_config(config)
 
-    # ── Run the experiment ────────────────────────────────────────
+    # -- Run the experiment ----------------------------------------
     accuracy_matrix = loop.run(fact_pool, ordered_fact_ids, baseline_accuracy)
 
-    # ── Print summary ─────────────────────────────────────────────
+    # -- Print summary ---------------------------------------------
     if accuracy_matrix:
         final_step = max(accuracy_matrix.keys())
         final_accs = accuracy_matrix[final_step]
         final_mean = sum(final_accs.values()) / len(final_accs)
         print(f"\n{'='*70}")
-        print(f"✅ COMPLETE: {config['config_name']} seed={seed}")
+        print(f"[OK] COMPLETE: {config['config_name']} seed={seed}")
         print(f"  Final mean accuracy (step {final_step}): {final_mean:.4f}")
         print(f"  Results in: results/{config['run_id']}/")
         print(f"{'='*70}\n")

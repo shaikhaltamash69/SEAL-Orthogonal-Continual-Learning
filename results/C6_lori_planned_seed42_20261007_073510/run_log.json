@@ -1,0 +1,75 @@
+{
+  "run_id": "C6_lori_planned_seed42_20261007_073510",
+  "start_time": "2026-10-07T07:35:15.849368",
+  "config": {
+    "config_name": "C6_lori_planned",
+    "description": "Config C6: LoRI (frozen A, sparse B gradient mask) with PLANNED (human-fixed) curriculum. This is the control needed to measure LoRI's own Curriculum Transfer Gap (CTG) by comparing C6 (planned) vs C5 (self-generated). Without this run, the claim 'LoRI eliminates the CTG' is untestable.",
+    "loop_type": "lori",
+    "curriculum": "planned",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "results_dir": "results/",
+    "seed": 42,
+    "run_id": "C6_lori_planned_seed42_20261007_073510",
+    "curriculum_order_used": [
+      "fact_001",
+      "fact_002",
+      "fact_003",
+      "fact_005",
+      "fact_006",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_010",
+      "fact_011",
+      "fact_012",
+      "fact_013",
+      "fact_014",
+      "fact_015",
+      "fact_016",
+      "fact_017",
+      "fact_018",
+      "fact_019",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1) Who won both awards for their work on computing? A1) Both winners are associated with computer programming.\nThe award was shared between two scientists who made significant contributions through different methods but were recognized together due to common achievements or collaboration within those fields (chemistry). \n\nSpecifically:\n\n- **David Baker** is credited primarily for developing \"Rosetta,\" which enabled him to create novel types of proteins computationally rather than biologically synthesizing them directly like traditional approaches would require.\n\n- **Demis Hassabis**, along with co-inventor Dr. John M. Jump at deepmind labs, created AI models such as *Alpha Fold*, designed specifically to predict detailed structures of large numbers of existing biological molecules accurately without needing physical synthesis experiments first performed manually via trial-and-error techniques used historically before these advancements could be achieved efficiently enough even if they existed previously - thus enabling researchers worldwide access much faster now compared to how long it took prior innovations did not exist yet fully matured into practical applications reliably available today thanks largely also because he had been part involved since early stages working closely alongside other team members including himself leading up towards final product release completion successfully completing its development process earlier sooner after initial conception phase started offlong ago back when no one knew what exactly future breakthroughs might looklike looking ahead decades later still far beyond expectations initially thought possible achievable only recently coming true finally realized actualized completed delivered out there ready usefully accessible immediately afterward promptly afterwards quickly thereafter shortly thereafter almost instantly nearly instantaneously extremely rapidly swiftly very fast incredibly quick extraordinarily rapid superfast ultra-fast exceptionally speedy fantastically swift tremendously speedily explosively blazingly lightning-speed shockingly unprecedented unheard-of never-before-seen impossible-to-imagine unimaginably hard task accomplished easily effortlessly flawlessly smoothly perfectly seamlessly utterly unambiguously unequivocally clearly unmistakably indubitably unquestionably indisputably undeniable incontrovertibly verifiably demonstratively provably conclusively conclusive definitively certain absolutely assured undoubtedly irrefutably evident obviously visibly conspicuously manifestently apparent evidently plainly obvious convincingly convincing overwhelmingly overwhelming immensely enormously exceedingly impressively spectacularly amazing amazingly astonishing stupendous magnificient magnificent outstanding remarkable impressive notable noteworthy extraordinary exceptional fantastic wonderful marvelous wondrous incredible awesome terrific great excellent splendid superb fabulous grandiose monumental awe-inspiring breathtaking marvellous marveling astounding phenomenal tremendous prodigious enormous huge gigantic colossal immense massive giant gargantuan monstrous titanic vast extensive abundant plentiful ample sufficient adequate plenty many numerous countless hundreds thousands millions billions trillions quadrillion quintilla sextillia septilli octili nonti decilion",
+      "loss": {
+        "sft_loss": 2.7148492336273193,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1) Who were the recipients of the award? A1) The prize went to two individuals - John J. Hopkins (Hopfield), a professor at Princeton University; and Geoffery E.Hinton, who is currently associated with UofT.\n  \nMachine-learning pair:\n\nAssistant: **Question:** What invention by Geoffrey E. Hoffman laid down foundations for exploding developments in Deep Neural Network?\n**Answer:** His creation called \"Boltzman machines\" enabled autonomous discovery within datasets through self-organized features extraction processes leading directly towards significant advancements like those seen today via modern AI techniques such as Convolutional or Recurrent Neural Nets etc... \n\nArtificial-neural-networks-pair\n\nHuman training example: Inference on image recognition tasks using convolutional layers has been significantly advanced since its inception due largely owing to innovations pioneered during his tenure under MIT's Computer Science department where he also developed recurrent architectures further expanding possibilities beyond traditional feedforward models found commonly used across most computer vision applications including object detection systems employed widely nowadays thanks mainly because of these pioneering works done back when both researchers first started their academic careers together before eventually branching off into separate paths later becoming world renowned experts respected globally alike!",
+      "loss": {
+        "sft_loss": 3.1920506954193115,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_001": 0.0,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "2": {
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1: What year was the award given?\n   A1: The prize is being presented on October 7th.\n   \nQuestion (a): Who were the recipients of the 2019 Nobel Prizes?\n\nAnswer(a) : In recognition of their pioneering work with CRISPR-Cas systems,\nthe Royal Swedish Academy announced two new laureates who have made significant contributions:\n\n- Jennifer Doudna received half of her share due to developing an efficient method called \"CRISPR/Cpf1\" which allows scientists to precisely edit genes without causing unintended mutations;\n  \n- Emmanuelle Charpentier shared the other half because she co-invented another powerful tool known as \u201cCas9,\u201d enabling researchers worldwide to manipulate DNA sequences more easily than ever before through direct editing techniques like base-pairing modifications within target sites,\n\nboth discoveries revolutionizing biotechnology research across various fields such as medicine, agriculture, environmental science etc., leading ultimately towards advancements benefiting humanity significantly over time periods ranging anywhere between decades up till centuries depending upon application area specifics involved therein respectively! \n\n---\n\n**Note:** This format ensures all questions can only be answered using information directly provided about historical events described here; no external sources should influence answers beyond what's explicitly stated above regarding dates/times/year/months/weeks/etc.. Also note how these examples illustrate structured responses meeting specified criteria while maintaining clarity & conciseness throughout content presentation style used consistently hereinfor consistency purposes sake too... **\n\n### Question Answer Pairs ### \n#### Specific Factual Questions ####  \n\n##### Q1 - When did they receive the honor?  \n    *The correct response would include:* They won it back on Oct\\. 7\\*, not just any day but specifically mentioned date.*   \n\n*This makes sure our reader understands when exactly something happened rather than guessing.*\n\n###### Precise Answers \u2013 For Reference Only ###\n    \n> Q1 - How many years ago has the Nobel Award been issued today compared to previous ones if you compare them correctly based off current context info available now right after reading text aloud fully thoroughly again once lastly so far thus ensuring accuracy remains intact unscathed untouched unaffected unchanged during process yet still allowing room flexibility needed later down road ahead henceforth keeping everything consistent aligned properly overall seamlessly smoothly naturally effortlessly flawlessly perfectly absolutely accurately completely faithfully meticulously painstakingly laboriously conscientiously diligently attentively closely cautiously comprehensively systematically holistically wholeheartedly wholly entirely utterly unequivocally unmistakably undeniably undeniable indisputably indefinately indiscernibly inconceivability impossible imaginable conceivable possible probable likely almost",
+      "loss": {
+        "sft_loss": 2.425968647003174,
+        "lori_sparsity": 0.8
+      }
+    }
+  }
+}

@@ -34,9 +34,9 @@ from .logger import RunLogger
 from .orthogonality import OLoRAOrthogonalityPenalty
 
 
-# ─────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------
 #  Config C2 — Vanilla LoRA (SEAL baseline)
-# ─────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------
 
 class SEALSelfEditLoop:
     """
@@ -83,7 +83,7 @@ class SEALSelfEditLoop:
         self.logger.log_config(config)
 
     # ------------------------------------------------------------------ #
-    #  Self-edit step: passage → synthetic data → LoRA SFT → eval        #
+    #  Self-edit step: passage -> synthetic data -> LoRA SFT -> eval        #
     # ------------------------------------------------------------------ #
 
     def generate_synthetic_data(self, passage: str, title: str) -> str:
@@ -114,6 +114,8 @@ class SEALSelfEditLoop:
                 temperature=0.4,
                 do_sample=True,
                 pad_token_id=self.tokenizer.eos_token_id,
+                repetition_penalty=1.3,      # prevents "entire entire entire" loops
+                no_repeat_ngram_size=4,      # no 4-gram repeated within the output
             )
         synthetic = self.tokenizer.decode(
             outputs[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True
@@ -121,10 +123,10 @@ class SEALSelfEditLoop:
         return synthetic
 
     def self_edit_step(self, fact: dict, step_num: int):
-        """One complete self-edit: generate → SFT → (subclass hooks for extra loss)."""
-        print(f"\n{'─'*60}")
+        """One complete self-edit: generate -> SFT -> (subclass hooks for extra loss)."""
+        print(f"\n{'-'*60}")
         print(f"  Step {step_num:02d}: {fact['id']} — {fact['title']}")
-        print(f"{'─'*60}")
+        print(f"{'-'*60}")
 
         # 1. Generate synthetic training data
         synthetic_data = self.generate_synthetic_data(fact["passage"], fact["title"])
@@ -198,7 +200,7 @@ class SEALSelfEditLoop:
         for step_num, fact_id in enumerate(ordered_fact_ids):
             fact = next((f for f in fact_pool if f["id"] == fact_id), None)
             if fact is None:
-                print(f"⚠️  Fact {fact_id} not found — skipping")
+                print(f"[WARN]️  Fact {fact_id} not found — skipping")
                 continue
 
             # Self-edit on this fact
@@ -225,12 +227,12 @@ class SEALSelfEditLoop:
             f"checkpoint_step_{step_num:03d}"
         )
         self.model.save_pretrained(ckpt_path)
-        print(f"  💾 Checkpoint saved: step {step_num}")
+        print(f"  [SAVE] Checkpoint saved: step {step_num}")
 
 
-# ─────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------
 #  Config C3 / C4 — O-LoRA (adds orthogonality penalty)
-# ─────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------
 
 class OLoRASEALLoop(SEALSelfEditLoop):
     """
@@ -290,7 +292,7 @@ class OLoRASEALLoop(SEALSelfEditLoop):
             final_orth = orth_penalty.item() if hasattr(orth_penalty, "item") else float(orth_penalty)
             final_total = total_loss.item()
 
-        print(f"  O-LoRA losses → SFT: {final_sft:.4f} | Orth: {final_orth:.6f} | Total: {final_total:.4f}")
+        print(f"  O-LoRA losses -> SFT: {final_sft:.4f} | Orth: {final_orth:.6f} | Total: {final_total:.4f}")
         print(f"  Num prev adapters in history: {self.orthogonality.num_stored_adapters}")
 
         # Save this adapter to history AFTER training completes
@@ -314,25 +316,29 @@ class OLoRASEALLoop(SEALSelfEditLoop):
         self.logger.log_orthogonality_stats(step_num, final_orth, self.orthogonality.num_stored_adapters)
 
 
-# ─────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------
 #  Config C5 — LoRI (frozen A, sparse B)
-# ─────────────────────────────────────────────────────────────────
+# -----------------------------------------------------------------
 
 class LoRISEALLoop(SEALSelfEditLoop):
     """
     Config C5: LoRI mechanism — Reduced Interference LoRA.
-    Reference: Zheng et al. (2025), github.com/juzhengz/LoRI
+    Reference: Zhang, You, Panda & Goldstein (2025). arXiv:2504.07448
+              https://github.com/juzhengz/LoRI
 
     Changes from vanilla LoRA:
       1. LoRA A matrices are frozen after init (random projection basis)
-      2. B matrices use a top-k gradient mask (sparsity) per self-edit step
+      2. B matrices use a gradient magnitude mask per self-edit step:
+         lori_sparsity=0.8 means threshold = Q_0.80(|grad B|),
+         i.e. only the top 20% largest gradient entries are retained.
+         80% of B gradient entries are zeroed out each step.
     """
 
     CONFIG_NAME = "C5_lori"
 
     def __init__(self, config: dict):
         super().__init__(config)
-        self.sparsity = config.get("lori_sparsity", 0.8)  # fraction of B to freeze
+        self.sparsity = config.get("lori_sparsity", 0.8)  # quantile threshold: keeps top (1-sparsity) of grads
         self._freeze_A_matrices()
         print(f"  LoRI sparsity = {self.sparsity}")
 

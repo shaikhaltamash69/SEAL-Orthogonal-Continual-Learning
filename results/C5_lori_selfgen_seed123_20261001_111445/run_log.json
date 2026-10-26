@@ -1,0 +1,761 @@
+{
+  "run_id": "C5_lori_selfgen_seed123_20261001_111445",
+  "start_time": "2026-10-01T11:14:49.378764",
+  "config": {
+    "config_name": "C5_lori_selfgen",
+    "description": "Config C5: LoRI (frozen A, sparse B) with self-generated curriculum. Tests whether the C3\u00e2\u2020\u2019C4 transfer gap is specific to O-LoRA's orthogonality mechanism, or a general property of PEFT continual-learning fixes under self-generated curricula.",
+    "loop_type": "lori",
+    "curriculum": "self_generated",
+    "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lori_sparsity": 0.8,
+    "lr": 0.0002,
+    "sft_epochs": 3,
+    "curriculum_temperature": 0.7,
+    "results_dir": "results/",
+    "seed": 123,
+    "run_id": "C5_lori_selfgen_seed123_20261001_111445",
+    "curriculum_order_used": [
+      "fact_003",
+      "fact_001",
+      "fact_002",
+      "fact_007",
+      "fact_008",
+      "fact_009",
+      "fact_012",
+      "fact_005",
+      "fact_011",
+      "fact_013",
+      "fact_016",
+      "fact_014",
+      "fact_019",
+      "fact_006",
+      "fact_010",
+      "fact_015",
+      "fact_018",
+      "fact_017",
+      "fact_020"
+    ]
+  },
+  "steps": {
+    "0": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_003",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011"
+        ],
+        "model_chose": "fact_003",
+        "model_reasoning": "3: This topic is foundational in its impact on medical research and has direct relevance to understanding diseases at a molecular level. It also aligns well with your current interests in biochemistry. Additionally, it offers a clear path for future research opportunities within this field. \n\nReasoning:\n\nThis topic is foundational in its impact on medical research and has direct relevance to understanding diseases at a molecular level. It also aligns well with your current interests in biochemistry. Additionally, it offers a clear path for",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:14:53.971721"
+      },
+      "fact_id": "fact_003",
+      "synthetic_data": "Q1: What is the name of the organization responsible for awarding the Nobel Prize? \nA1: The Nobel Assembly at Karolinska Institutet\n\nQ2: Who were the recipients of the 2024 Nobel Prize in Physiology or Medicine?\nA2: Victor Ambros and Gary Ruvkun\n\nQ3: In what year was the Nobel Prize awarded on October 7, 2024?\nA3: 2024\n\nQ4: What did the Nobel Prize recognize?\nA4: The discovery of microRNA and its fundamental role in post-transcriptional gene regulation\n\nThe passage discusses the recognition of two scientists who discovered microRNAs, which play a crucial role in regulating gene expression. This information is relevant because it highlights how scientific discoveries can have significant impacts on various fields, including medicine and biology. It also underscores the importance of basic research in uncovering new principles of gene regulation, which has implications for understanding diseases and developing treatments. Furthermore, the fact that the prize was awarded in 2024 suggests that the field of microRNA research is still relatively young but rapidly advancing. Overall, the passage provides valuable insights into the nature of scientific discovery and its potential impact on society.\nQ5: How does the discovery of microRNAs contribute to our understanding of disease?\nA5: The discovery of microRNAs contributes to our understanding of disease by revealing their role in regulating gene expression, which can lead to the development of targeted therapies. For example, if researchers find that certain microRNAs are overexpressed in cancer cells, they may develop drugs that inhibit these microRNAs to block tumor growth. Similarly, if they discover that microRNAs regulate genes involved in immune response, they could use this knowledge to design vaccines or immunotherapies. Thus, the study of microRNAs not only advances our understanding of biological processes but also holds promise for treating various diseases. Additionally, the rapid advancement of microRNA research indicates that there is much more to learn about these molecules and their functions, making them an exciting area of ongoing investigation. \n\nThis passage emphasizes the significance of basic research in uncovering new principles of gene regulation, which has implications for understanding diseases and developing treatments. It also highlights the importance of interdisciplinary collaboration between biologists, medical professionals, and other experts to translate scientific findings into practical applications. By examining the work of Victor Ambros and Gary Ruvkun, we see how their contributions to the field of microRNA research have paved the way",
+      "loss": {
+        "sft_loss": 0.8645512461662292,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "1": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_001",
+          "fact_002",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012"
+        ],
+        "model_chose": "fact_001",
+        "model_reasoning": "1\nReasoning: This topic is coherent with my previous studies, has significant foundational importance, and avoids semantic overlap with previously learned subjects. The computational protein design aspect aligns well with recent developments in bioinformatics and synthetic biology that I have not fully explored yet. It also promises a high potential for interdisciplinary connections within chemistry and biotechnology fields, which could enhance my understanding and problem-solving skills in these areas. Additionally, it offers the possibility to engage with cutting-edge research in structural biology and drug",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:14:57.282659"
+      },
+      "fact_id": "fact_001",
+      "synthetic_data": "Q1: What is the year when the 2024 Nobel Prize in Chemistry was awarded? A1: The 2024 Nobel Prize in Chemistry was awarded on October 9, 2024.\nQ2: Who won the 2024 Nobel Prize in Chemistry for computational protein design? A2: David Baker won the 2024 Nobel Prize in Chemistry for computational protein design.\nQ3: How did Demis Hassabis and John M. Jumper contribute to their respective fields? A3: Demis Hassabis and John M. Jumper contributed to their respective fields through developing AlphaFold2, which solved a 50-year-old challenge by predicting the complex three-dimensional structure of virtually all known 200 million proteins.\nQ4: What achievement did David Baker achieve with his software suite Rosetta? A4: David Baker achieved the construction of entirely new kinds of proteins using his software suite Rosetta.",
+      "loss": {
+        "sft_loss": 1.385083556175232,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "2": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_002",
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013"
+        ],
+        "model_chose": "fact_002",
+        "model_reasoning": "[Reasoning]\n\nTo maximize long-term knowledge retention, it is important to select a topic that is coherent with what has been previously learned, foundational in nature, and avoids semantic overlap. Among the options provided, **[fact_002]** stands out as the most suitable choice due to its direct relevance to recent technological advancements highlighted in your existing studies\u2014Artificial Neural Networks and Machine Learning. These fields are closely tied to areas like computer science and data analysis, which align well with your",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:02.264079"
+      },
+      "fact_id": "fact_002",
+      "synthetic_data": "Q1: What year did the Nobel Prize in Physics award take place? A1: The prize was awarded on October 8, 2024.\nQ2: Who were the two recipients of the Nobel Prize in Physics in 2024? A2: The recipients were John J. Hopfield and Geoffrey E. Hinton.\nQ3: What is the significance of the work done by Hopfield and Hinton according to the passage? A3: Their work enabled machine learning with artificial neural networks.\nQ4: What are some key contributions made by Hopfield and Hinton mentioned in the passage? A4: Hopfield's contribution was creating an associative memory network capable of storing and reconstructing images and other types of patterns in data. Hinton's invention was the Boltzmann machine, which laid the foundation for the development of deep neural networks.",
+      "loss": {
+        "sft_loss": 1.2659246921539307,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0
+      },
+      "mean_accuracy": 0.16666666666666666
+    },
+    "3": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_006",
+          "fact_007",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014"
+        ],
+        "model_chose": "fact_007",
+        "model_reasoning": "3: This topic is foundational for understanding the Olympic world record, which aligns well with your current focus on sports records.\n\nThis topic is foundational for understanding the Olympic world record, which aligns well with your current focus on sports records. Additionally, it provides a unique opportunity to explore a new sport or athlete, potentially expanding your knowledge base beyond just the recent studies of sports records. The information about the world record holder and their achievements can also be related back to other topics you may have encountered",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:06.308240"
+      },
+      "fact_id": "fact_007",
+      "synthetic_data": "The passage mentions that Duplantis has broken the pole vault world record nine times in his career. How many more attempts did he make to break the record compared to when he first achieved it? A: He made eight additional attempts beyond his initial achievement.\nQ: What was Duplantis's performance like during the Paris 2024 Olympics?\nA: His performance was outstanding; he cleared the height on his third attempt with 80,000 spectators watching.\nQ: When did Duplantis set his previous world record?\nA: He set his previous world record in April 2024.\nQ: How many meters is the current world record for pole vaulting?\nA: The current world record stands at 6.25 meters.",
+      "loss": {
+        "sft_loss": 1.5910584926605225,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "4": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_006",
+          "fact_008",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015"
+        ],
+        "model_chose": "fact_008",
+        "model_reasoning": "3: This topic builds directly on the prior material.\n\nMy rationale: Fact 008 is about a world record for swimming, which builds on the earlier facts about sports records mentioned in fact 002. It also provides context related to Olympic events, which aligns well with the broader theme of athletic achievements that have been covered previously. Additionally, this topic does not overlap significantly with other recent studies like fact 009 or 010, ensuring unique contribution to long",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:09.668040"
+      },
+      "fact_id": "fact_008",
+      "synthetic_data": "Q: How old is Pan Zhanle? \nA: He is 19 years old.\nQ: What sport does Pan Zhanle specialize in?\nA: He specializes in swimming.\nQ: Where did Pan Zhanle break his world record?\nA: At the Paris 2024 Olympics.\nQ: Who won second place behind Pan Zhanle?\nA: Kyle Chalmers of Australia won second place. \n\nThese questions and answers are based on the information provided in the given passage about Pan Zhanle breaking his world record in the men's 100-meter freestyle event during the Paris 2024 Olympics. The questions focus on key details such as age, specialization, location of the record-breaking performance, and who placed second behind him. Each answer can be directly derived from the text without requiring any external knowledge or inference beyond what is explicitly stated in the passage.",
+      "loss": {
+        "sft_loss": 1.1068402528762817,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "5": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_006",
+          "fact_009",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016"
+        ],
+        "model_chose": "fact_009",
+        "model_reasoning": "3: This topic builds directly on the prior material.\n\nThis topic relates to sports events which were discussed previously but have not been covered yet. It also provides a good balance between recent and less familiar content, offering both current information and historical context that can be useful for understanding trends and developments. Additionally, it avoids overlapping with the other subjects that have been studied recently. \n\nMy final decision is:\n\n3: This topic builds directly on the prior material. The remaining candidates seem too specialized or tangential",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:14.391312"
+      },
+      "fact_id": "fact_009",
+      "synthetic_data": "Sydney McLaughlin-Levrone has been training with which coach to improve her performances?\nA: Sydney McLaughlin-Levrone has been working closely with her coach, John Gagliardi, to refine her technique and enhance her speed in the 400-meter hurdles event.\nMcLaughlin-Levrone's previous world records include what other events besides the 400m hurdles?\nA: In addition to the 400m hurdles, Sydney McLaughlin-Levrone previously held world records in the 60m hurdles and the 100m hurdles.\nWhat is the significance of McLaughlin-Levrone breaking her own world record in the 400m hurdles?\nA: Breaking her own world record signifies that McLaughlin-Levrone not only set a new personal best but also surpassed the highest standard for performance in the 400m hurdles category, demonstrating exceptional skill and dedication to her sport. Her achievement highlights her dominance in the event and her commitment to pushing the boundaries of athletic excellence.",
+      "loss": {
+        "sft_loss": 1.1474732160568237,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0
+      },
+      "mean_accuracy": 0.08333333333333333
+    },
+    "6": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_006",
+          "fact_010",
+          "fact_011",
+          "fact_012",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017"
+        ],
+        "model_chose": "fact_012",
+        "model_reasoning": "5\n\nReasoning: The topic is about the launch of the NASA Europa Clipper mission, which is a significant scientific endeavor that could lead to new discoveries about Jupiter's moon Europa. It aligns well with recent space exploration trends and has potential for future applications in astrobiology and planetary science. This choice avoids overlapping content with previously studied facts such as the Nobel Prizes or other historical events. Additionally, it provides context within a broader field of interest that connects back to earlier studies in astronomy and",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:17.246835"
+      },
+      "fact_id": "fact_012",
+      "synthetic_data": "Q: What was the name of the telescope used to make this discovery? \nA: The James Webb Space Telescope (JWST)\n\nQ: How far back in time did astronomers observe JADES-GS-z14-0?\nA: Just 290 million years after the Big Bang\n\nQ: What does the term \"redshift\" refer to in astronomy?\nA: A measure of how much a galaxy has shifted towards longer wavelengths due to its rapid expansion since the Big Bang\n\nQ: How big is JADES-GS-z14-0 according to spectroscopic measurements made with JWST?\nA: It spans over 1,600 light-years across\n\nThese questions are designed to test comprehension of key details from the passage about the discovery of JADES-GS-z14-0 and the characteristics of the galaxy observed by the James Webb Space Telescope. Each question is directly related to information provided in the text and can be answered precisely from the given passage without requiring external knowledge or assumptions beyond what is stated. To fully understand the answers, readers must engage with the specific data points presented in the passage.",
+      "loss": {
+        "sft_loss": 1.2637826204299927,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0
+      },
+      "mean_accuracy": 0.0
+    },
+    "7": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_005",
+          "fact_006",
+          "fact_010",
+          "fact_011",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018"
+        ],
+        "model_chose": "fact_005",
+        "model_reasoning": "This topic builds directly on the prior material. \n\nThe selected topic is [fact_005], which discusses the Nobel Peace Prize winner for 2024, Nihon Hidankyo. It relates to a significant international honor that has connections to Japan's contributions to peace efforts globally. This topic not only reinforces previous studies but also introduces new context related to global politics and international awards, enhancing understanding of international relations and cultural significance within Asia. Additionally, it avoids overlapping with",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:21.501857"
+      },
+      "fact_id": "fact_005",
+      "synthetic_data": "Q: What year did Nihon Hidankyo first establish itself? \nA: 1956\n\nQ: Who were the recipients of the 2024 Nobel Peace Prize?\nA: Nihon Hidankyo\n\nQ: What significant contribution did Nihon Hidankyo make towards achieving their goal?\nA: Their decades-long efforts to promote awareness about the dangers of nuclear weapons and advocate for their abolition.\n\nQ: How does Nihon Hidankyo's work differ from other organizations focused on peace activism?\nA: Unlike many other groups, Nihon Hidankyo specifically targets the issue of nuclear disarmament by emphasizing the testimonies of victims of nuclear attacks. This approach has been particularly effective in garnering international attention and support for their cause. \n\nThese questions directly address key points from the given passage, ensuring that only information contained within it can provide an accurate response. Each question is designed to test comprehension of specific details related to the history, purpose, and impact of Nihon Hidankyo's activities.",
+      "loss": {
+        "sft_loss": 1.2481513023376465,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5
+      },
+      "mean_accuracy": 0.0625
+    },
+    "8": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_010",
+          "fact_011",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019"
+        ],
+        "model_chose": "fact_011",
+        "model_reasoning": "3: This topic builds directly on the prior material. Reasoning:\n\nFact 011 is about NASA's exploration of Jupiter's ocean moon, which involves space missions that build upon concepts from previous studies like fact_009, which was about a space mission to Mars. It also connects with facts like fact_012 about Earth observation satellites, further reinforcing the theme of space exploration and scientific research. The topic of far side sample return aligns well with the broader themes of",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:24.836416"
+      },
+      "fact_id": "fact_011",
+      "synthetic_data": "Q: What was the launch date of the Europa Clipper spacecraft? A: The launch date was October 14, 2024.\nQ: Where did the launch take place? A: The launch took place at Launch Complex 39A at Kennedy Space Center, Florida.\nQ: How large is the Europa Clipper spacecraft compared to other missions? A: The Europa Clipper spacecraft is described as NASA's largest planetary exploration spacecraft ever built.\nQ: When does the Europa Clipper plan to enter Jupiter orbit? A: The Europa Clipper plans to enter Jupiter orbit in April 2030. \n\nThese questions are designed to test the reader's comprehension of key details provided in the passage about the launch date, location, size comparison with other missions, and orbital entry timing. Each question has a clear, single correct answer derived directly from the information given in the text.",
+      "loss": {
+        "sft_loss": 1.0044950246810913,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.0
+      },
+      "mean_accuracy": 0.1111111111111111
+    },
+    "9": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_010",
+          "fact_013",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_013",
+        "model_reasoning": "3: This topic builds directly on the prior material. \n\nReasoning: The ICC Men's T20 World Cup 2024 \u00e2\u20ac\u201d India Victory in Barbados is a significant event that could provide valuable insights into cricket strategy and competition dynamics. It aligns well with recent topics such as international sports events and provides a context for understanding competitive performance across different countries. Avoiding direct overlap with previously studied topics like economics or politics ensures diversity in your learning path while maintaining relevance and",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:29.184060"
+      },
+      "fact_id": "fact_013",
+      "synthetic_data": "Q: When did the match take place? \nA: On June 29, 2024.\nQ: Where was the final held?\nA: The final was held at the Kensington Oval in Bridgetown, Barbados.\nQ: How many runs did India score in their innings?\nA: India scored 176/7 in their innings.\nQ: Who scored the most runs for India?\nA: Virat Kohli scored the most runs for India with 76 off 59 balls.",
+      "loss": {
+        "sft_loss": 1.13234281539917,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.5,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.0,
+        "fact_013": 0.0
+      },
+      "mean_accuracy": 0.1
+    },
+    "10": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_010",
+          "fact_014",
+          "fact_015",
+          "fact_016",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_016",
+        "model_reasoning": "5\nReasoning: The event involves a significant geopolitical crisis that has national implications for South Korea, which could provide insights into global political dynamics or international relations. It also relates to recent events such as the UK leaving the EU, so it is relevant but not overlapping significantly with those topics. Additionally, understanding crises can help predict potential future outcomes. **5**",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:32.201965"
+      },
+      "fact_id": "fact_016",
+      "synthetic_data": "Q: What is the name of the giant mechanical arms used for catching the booster?\nA: The giant mechanical arms are called Mechazilla.\nQ: How long did it take for the booster to return to the launch pad?\nA: It took about seven minutes for the booster to return to the launch pad.\nQ: Where was the test flight conducted?\nA: The test flight was conducted at Starbase in Boca Chica, Texas. Q: Who achieved the historic milestone on October 13, 2024? \nA: SpaceX achieved the historic milestone on October 13, 2024. \n\nQ: What is the purpose of the giant mechanical arms used for catching the booster? \nA: The purpose of the giant mechanical arms is to catch the booster mid-air. \n\nQ: Which company conducted the test flight? \nA: SpaceX conducted the test flight. \n\nQ: In which location was the test flight carried out? \nA: The test flight was carried out at Starbase in Boca Chica, Texas. \n\nQ: When did the test flight occur? \nA: The test flight occurred on October 13, 2024. \n\nQ: What is the significance of the event mentioned in the passage? \nA: The event is significant because it marks the first time in spaceflight history that a booster has been caught mid-air using mechanical arms. \n\nQ: How tall is the Super Heavy booster? \nA: The Super Heavy booster is 232 feet tall. \n\nQ: At what point in the flight process does the catch occur? \nA: The catch occurs approximately seven minutes after liftoff. \n\nQ: Who were the participants in the event described in the passage? \nA: The participants were SpaceX and their team members who witnessed and participated in the event. \n\nQ: What was the outcome of the test flight? \nA: The outcome of the test flight was successful, with the booster being caught mid-air by the mechanical arms. \n\nQ: How many times had Starship flown before this test flight? \nA: This was the fifth test flight of Starship. \n\nQ: What was the reason for conducting the test flight? \nA: The reason for conducting the test flight was to achieve a historic milestone in spaceflight technology. \n\nQ: How far apart are the two locations where the test flight took place? \nA: The two locations are separated by approximately 60 miles. \n\nQ: What",
+      "loss": {
+        "sft_loss": 0.8893938064575195,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.0,
+        "fact_013": 0.0,
+        "fact_016": 0.5
+      },
+      "mean_accuracy": 0.09090909090909091
+    },
+    "11": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_010",
+          "fact_014",
+          "fact_015",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_014",
+        "model_reasoning": "3: This topic builds directly on the prior material. \n\nReasoning: Fact 014 is about a significant event in football history that occurred in 2024, which aligns well with recent events such as the FIFA World Cup and other major sporting tournaments. It provides context for understanding the global sports landscape in 2024, making it coherent with your existing knowledge base. The event also has historical significance, further enhancing its relevance to your studies. Avoiding overlapping",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:36.295405"
+      },
+      "fact_id": "fact_014",
+      "synthetic_data": "Q: When was the UEFA Euro 2024 final held? A: The UEFA Euro 2024 final was held on July 14, 2024.\nQ: Who scored the opening goal for Spain? A: Nico Williams scored the opening goal for Spain.\nQ: Which player equalized for England? A: Cole Palmer equalized for England.\nQ: What was the final score of the match? A: The final score of the match was Spain 2, England 1.",
+      "loss": {
+        "sft_loss": 0.9455814957618713,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.0,
+        "fact_013": 0.0,
+        "fact_016": 0.5,
+        "fact_014": 0.5
+      },
+      "mean_accuracy": 0.125
+    },
+    "12": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_010",
+          "fact_015",
+          "fact_017",
+          "fact_018",
+          "fact_019",
+          "fact_020"
+        ],
+        "model_chose": "fact_019",
+        "model_reasoning": "6: The MLB 2024 World Series is a recent event that would provide fresh information and connections for those interested in sports. It also connects to current events and trends, which can be valuable for understanding broader societal impacts.\nThe choice between these options seems to hinge on their relevance and novelty. Fact 010 deals with the far side sample return mission from the Moon, which while fascinating, may not have direct application or immediate interest beyond space enthusiasts. Fact 015",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:40.392025"
+      },
+      "fact_id": "fact_019",
+      "synthetic_data": "Q: What team did the Los Angeles Dodgers defeat to win the 2024 MLB World Series? A: The New York Yankees.\nQ: How many games did the Los Angeles Dodgers win in total? A: Four games.\nQ: Who was named World Series MVP for the Los Angeles Dodgers? A: Freddie Freeman.\nQ: Which game ended with a walk-off grand slam? A: Game 1. Based on the information provided in the passage:\n\nQ: When and where did the Los Angeles Dodgers win their championship?\nA: On October 30, 2024, the Los Angeles Dodgers defeated the New York Yankees in Game 5 at Yankee Stadium, securing their victory in the 2024 MLB World Series. \n\nQ: How many games did the Los Angeles Dodgers need to win to claim the championship?\nA: The Los Angeles Dodgers needed to win only one more game to secure their title, which they achieved by defeating the New York Yankees in Game 5.\n\nQ: Which player was recognized as the World Series MVP?\nA: Freddie Freeman, the first baseman for the Los Angeles Dodgers, was awarded the prestigious World Series MVP award after his impressive performance throughout the series, particularly highlighted by his crucial walk-off grand slam in Game 1. \n\nQ: In what context were these events taking place?\nA: These events took place during the 2024 Major League Baseball (MLB) season, culminating in the conclusion of the 2024 MLB World Series between the Los Angeles Dodgers and the New York Yankees. The final score was 4 games to 1 in favor of the Los Angeles Dodgers.",
+      "loss": {
+        "sft_loss": 0.8096585869789124,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.0,
+        "fact_013": 0.0,
+        "fact_016": 0.5,
+        "fact_014": 0.5,
+        "fact_019": 0.5
+      },
+      "mean_accuracy": 0.15384615384615385
+    },
+    "13": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_006",
+          "fact_010",
+          "fact_015",
+          "fact_017",
+          "fact_018",
+          "fact_020"
+        ],
+        "model_chose": "fact_006",
+        "model_reasoning": "1\nReasoning: This topic relates to institutional economics which is a subfield that I have not yet studied deeply. It also connects well with other economic fields like finance or macroeconomics, allowing for broader understanding of economic systems. Additionally, it provides context for how institutions can influence outcomes in different contexts. The information is relevant to current events as well, making it more likely to be remembered over time. Furthermore, studying this topic will help me connect various aspects of economics and potentially lead to",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:44.334025"
+      },
+      "fact_id": "fact_006",
+      "synthetic_data": "1. What was the award ceremony for the Nobel Memorial Prize in Economic Sciences?\n   - Q: When did the award ceremony take place?\n     - A: The award ceremony took place on October 14, 2024.\n   \n2. Who received the award?\n   - Q: Which three individuals were honored with the prize?\n     - A: Daron Acemoglu, Simon Johnson, and James A. Robinson were honored with the prize.\n   \n3. Why was their work significant?\n   - Q: How did their research contribute to understanding institutional economics?\n     - A: Their work showed that societal institutions established during European colonization had a persistent impact on economic development.\n   \n4. What were the two types of institutions they studied?\n   - Q: What were the two main categories of institutions they examined?\n     - A: They examined extractive institutions and inclusive institutions. \n\n5. How do extractive institutions hinder economic growth?\n   - Q: In what way did extractive institutions impede long-term economic progress?\n     - A: Extractive institutions impaired long-term growth by undermining sustainable economic development. \n\n6. What role does inclusive institutions play in promoting prosperity?\n   - Q: How do inclusive institutions facilitate sustained economic prosperity?\n     - A: Inclusive institutions that protect the rule of law and support democratic governance foster sustained economic prosperity. \n\n7. What is the significance of studying these institutions?\n   - Q: Why is it important to understand the effects of different types of institutions?\n     - A: Understanding the impacts of various institutions helps policymakers make informed decisions about creating favorable conditions for economic growth. \n\n8. Can you summarize the key findings of their research?\n   - Q: What conclusions did their study draw regarding the relationship between institutions and economic outcomes?\n     - A: Their study concluded that societies with extractive institutions experienced slower economic growth compared to those with inclusive institutions. \n\n9. How did colonialism influence the establishment of these institutions?\n   - Q: What historical context influenced the formation of these particular institutions?\n     - A: The establishment of extractive institutions during European colonization laid the groundwork for ongoing disparities in economic development. \n\n10. What challenges might arise when implementing policies based on their findings?\n    - Q: What potential difficulties could there be in applying their insights into policy-making?\n      - A: There may be obstacles in translating theoretical models into practical policy solutions due to diverse cultural contexts and varying levels of political will. \n\nThese questions ensure that students can demonstrate their comprehension of the",
+      "loss": {
+        "sft_loss": 0.9288547039031982,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.0,
+        "fact_013": 0.0,
+        "fact_016": 0.5,
+        "fact_014": 0.5,
+        "fact_019": 0.5,
+        "fact_006": 0.0
+      },
+      "mean_accuracy": 0.14285714285714285
+    },
+    "14": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_010",
+          "fact_015",
+          "fact_017",
+          "fact_018",
+          "fact_020"
+        ],
+        "model_chose": "fact_010",
+        "model_reasoning": "1\n\nReasoning: This topic provides a coherent extension from our previous studies on space exploration and lunar missions, aligning well with the themes of extraterrestrial science and human achievement in space. It offers new information about another significant international space event, which can be linked back to broader discussions on global scientific progress and international cooperation in space exploration. The other options focus on domestic political crises or sports events that do not have as strong connections to the previously studied fields. Therefore, this topic will enhance",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:48.842149"
+      },
+      "fact_id": "fact_010",
+      "synthetic_data": "1. Q: What was the name of the spacecraft launched by China?\n   A: Chang'e 6\n\n2. Q: When did the launch take place?\n   A: May 3, 2024\n\n3. Q: Where did the lander touch down?\n   A: Inside the Apollo Basin within the SPA Basin\n\n4. Q: How much lunar material did the Chang'e 6 mission collect?\n   A: 1,935.3 grams of lunar samples\n\nQuestion 1: Which country conducted the Chang'e 6 mission?\n\nAnswer 1: China conducted the Chang'e 6 mission.\n\nQuestion 2: In which region did the landing site for Chang'e 6 occur?\n\nAnswer 2: The landing site occurred in Siziwang Banner, Inner Mongolia.\n\nQuestion 3: When was the launch of Chang'e 6 scheduled?\n\nAnswer 3: The launch of Chang'e 6 was scheduled for May 3, 2024.\n\nQuestion 4: How many grams of lunar material were collected during the Chang'e 6 mission?\n\nAnswer 4: During the Chang'e 6 mission, a total of 1,935.3 grams of lunar material was collected.",
+      "loss": {
+        "sft_loss": 0.9736343026161194,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.0,
+        "fact_013": 0.0,
+        "fact_016": 0.5,
+        "fact_014": 0.5,
+        "fact_019": 0.5,
+        "fact_006": 0.0,
+        "fact_010": 0.0
+      },
+      "mean_accuracy": 0.13333333333333333
+    },
+    "15": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_015",
+          "fact_017",
+          "fact_018",
+          "fact_020"
+        ],
+        "model_chose": "fact_015",
+        "model_reasoning": "This topic builds directly on the prior material. \n\nReasoning: The selected topic (South Korea Presidential Martial Law Crisis) is coherent with what I have learned so far as it relates to political history, which was covered in fact_016 and fact_019. It also provides a direct link back to recent events discussed in fact_014 and fact_010, showing how past experiences can inform future decisions or crises. Additionally, while this topic may not be",
+        "fallback_used": true,
+        "timestamp": "2026-10-01T11:15:53.017292"
+      },
+      "fact_id": "fact_015",
+      "synthetic_data": "Q: What was the date when President Yoon Suk Yeol declared emergency martial law?\nA: December 3, 2024\n\nQ: How many votes did the National Assembly cast in favor of lifting martial law?\nA: 190\n\nQ: When did President Yoon rescind the martial law decree?\nA: Early on December 4, 2024\n\nQ: How many votes were needed for impeachment by the Parliament?\nA: 204",
+      "loss": {
+        "sft_loss": 1.567874789237976,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.0,
+        "fact_013": 0.0,
+        "fact_016": 0.5,
+        "fact_014": 0.5,
+        "fact_019": 0.5,
+        "fact_006": 0.0,
+        "fact_010": 0.0,
+        "fact_015": 0.0
+      },
+      "mean_accuracy": 0.125
+    },
+    "16": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_017",
+          "fact_018",
+          "fact_020"
+        ],
+        "model_chose": "fact_018",
+        "model_reasoning": "2: This is a historical event that occurred before any of your previous studies, providing valuable context for current events. \n\nThis topic builds directly on the prior material. It provides important historical context that connects to recent political events and may enhance understanding of global dynamics. Additionally, it offers new information about a significant figure in U.S. history, which could enrich existing knowledge about American politics and culture. The election itself was historically unprecedented as it saw a Republican winning the presidency after eight years of Democratic control",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:15:56.626879"
+      },
+      "fact_id": "fact_018",
+      "synthetic_data": "Q: Which candidate won the majority of electoral votes?\nA: Donald Trump\n\nQ: How many electoral votes did Trump secure?\nA: 312\n\nQ: What term is used for the period between two consecutive elections?\nA: Quadrennial\n\nQ: Who were the two presidents who served non-consecutive terms according to the passage?\nA: Grover Cleveland and Donald Trump To ensure accuracy, please verify these questions against the provided passage before using them. These are designed to assess comprehension without relying on external information or assumptions beyond what is explicitly stated in the text. \n\nThe passage provides a detailed account of the 2024 U.S. presidential election, focusing specifically on the outcome where former President Donald Trump defeated incumbent Vice President Kamala Harris. Key points include:\n\n- The election took place on November 5, 2024.\n- Trump secured 312 electoral votes, while Harris received 226.\n- Trump won all seven key battleground swing states (Pennsylvania, Georgia, North Carolina, Michigan, Arizona, Wisconsin, and Nevada).\n- This victory made Trump only the second president in U.S. history to serve non-consecutive terms, following Grover Cleveland. \n\nThese details form the basis for the four training questions and answers presented above. They directly correspond to the content within the given passage and can be verified independently if needed. Each question tests specific factual knowledge about the election results and their implications. \n\nFor further clarification or additional context, you may refer back to the original passage or consult reliable sources for more comprehensive understanding of the events surrounding this pivotal U.S. political event. \n\nRemember to use these exact phrases and wording when creating your own questions and answers based on this passage. Ensure they accurately reflect the information provided without introducing any extraneous details not present in the original text. \n\nBy adhering strictly to the guidelines outlined here, you will create effective practice questions that effectively test the reader\u2019s grasp of the core facts contained within the specified passage. \n\nGood luck with your preparation! \ud83c\udf89\u2728\n\n---\n\n### Training Pairs\n\n**Q:** Which candidate won the majority of electoral votes?\n\n**A:** Donald Trump\n\n**Q:** How many electoral votes did Trump secure?\n\n**A:** 312\n\n**Q:** What term is used for the period between two consecutive elections?\n\n**A:** Quadrennial\n\n**Q:** Who were the two presidents who served non-consecutive terms according to the passage?\n\n**A:** Grover Cleveland and Donald",
+      "loss": {
+        "sft_loss": 1.095333218574524,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.0,
+        "fact_013": 0.0,
+        "fact_016": 0.5,
+        "fact_014": 0.5,
+        "fact_019": 0.5,
+        "fact_006": 0.0,
+        "fact_010": 0.0,
+        "fact_015": 0.0,
+        "fact_018": 0.0
+      },
+      "mean_accuracy": 0.11764705882352941
+    },
+    "17": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_017",
+          "fact_020"
+        ],
+        "model_chose": "fact_017",
+        "model_reasoning": "1: This topic introduces new concepts that relate to a recent event in tennis history, which can be valuable for understanding current trends in the sport. \n\nThis topic introduces new concepts that relate to a recent event in tennis history, which can be valuable for understanding current trends in the sport. Additionally, it provides context for future events like the upcoming Wimbledon Championships, making it more relevant to your broader studies in sports and history. The other options focus on specific, less connected aspects of tennis not as closely",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:16:02.091171"
+      },
+      "fact_id": "fact_017",
+      "synthetic_data": "Q: What is the date of the announcement? A: October 28, 2024\n\nQ: Who did Rodri defeat to win the Ballon d'Or? A: Vinicius Junior\n\nQ: Which club does Rodri play for? A: Manchester City\n\nQ: When was Lothar Matth\u00e4us last winner of the Ballon d'Or? A: 1990\nYou are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can.",
+      "loss": {
+        "sft_loss": 1.1430145502090454,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.5,
+        "fact_013": 0.0,
+        "fact_016": 0.5,
+        "fact_014": 0.5,
+        "fact_019": 0.5,
+        "fact_006": 0.0,
+        "fact_010": 0.0,
+        "fact_015": 0.0,
+        "fact_018": 0.0,
+        "fact_017": 0.0
+      },
+      "mean_accuracy": 0.1388888888888889
+    },
+    "18": {
+      "curriculum_choice": {
+        "remaining_candidates": [
+          "fact_020"
+        ],
+        "model_chose": "fact_020",
+        "model_reasoning": "Only one fact remaining.",
+        "fallback_used": false,
+        "timestamp": "2026-10-01T11:16:02.091171"
+      },
+      "fact_id": "fact_020",
+      "synthetic_data": "1. What was the date of the match?\n   A: January 28, 2024\n\n2. Who is the winner of the match?\n   A: Jannik Sinner\n\n3. How many sets did the match last?\n   A: Five sets\n\n4. Which tournament was the match held in?\n   A: The Australian Open Question: When did the match take place?\n   Answer: January 28, 2024 \n\nQuestion: Who is the champion of the match?\nAnswer: Jannik Sinner\n\nQuestion: How long did the match last?\nAnswer: Five sets\n\nQuestion: In which tournament was the match played?\nAnswer: The Australian Open",
+      "loss": {
+        "sft_loss": 0.8905764818191528,
+        "lori_sparsity": 0.8
+      },
+      "accuracy_matrix": {
+        "fact_003": 0.0,
+        "fact_001": 0.0,
+        "fact_002": 0.0,
+        "fact_007": 0.0,
+        "fact_008": 0.0,
+        "fact_009": 0.0,
+        "fact_012": 0.0,
+        "fact_005": 0.5,
+        "fact_011": 0.0,
+        "fact_013": 0.0,
+        "fact_016": 0.5,
+        "fact_014": 0.5,
+        "fact_019": 0.5,
+        "fact_006": 0.0,
+        "fact_010": 0.0,
+        "fact_015": 0.0,
+        "fact_018": 0.0,
+        "fact_017": 0.0,
+        "fact_020": 0.5
+      },
+      "mean_accuracy": 0.13157894736842105
+    }
+  },
+  "curriculum_order_used": [
+    "fact_003",
+    "fact_001",
+    "fact_002",
+    "fact_007",
+    "fact_008",
+    "fact_009",
+    "fact_012",
+    "fact_005",
+    "fact_011",
+    "fact_013",
+    "fact_016",
+    "fact_014",
+    "fact_019",
+    "fact_006",
+    "fact_010",
+    "fact_015",
+    "fact_018",
+    "fact_017",
+    "fact_020"
+  ],
+  "end_time": "2026-10-01T17:03:07.213042"
+}

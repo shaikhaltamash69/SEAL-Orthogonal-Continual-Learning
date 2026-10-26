@@ -4,8 +4,8 @@ scripts/test_orthogonality.py
 Unit test for the O-LoRA orthogonality penalty.
 RUN THIS BEFORE attempting Config C3 or C4 experiments.
 
-If this test fails → DO NOT proceed to experiments. Debug orthogonality.py first.
-If this test passes → the math is wired correctly, proceed to C3.
+If this test fails -> DO NOT proceed to experiments. Debug orthogonality.py first.
+If this test passes -> the math is wired correctly, proceed to C3.
 
 Expected behaviour:
   - Initial overlap between two random A matrices: HIGH (they're correlated)
@@ -28,7 +28,7 @@ def test_penalty_drives_orthogonality():
     print("=" * 60)
 
     if not torch.cuda.is_available():
-        print("⚠️  CUDA not available — running on CPU (slower but valid for unit test)")
+        print("[WARN]️  CUDA not available — running on CPU (slower but valid for unit test)")
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     penalty_module = OLoRAOrthogonalityPenalty(lambda_orth=1.0)  # strong λ for clear test signal
