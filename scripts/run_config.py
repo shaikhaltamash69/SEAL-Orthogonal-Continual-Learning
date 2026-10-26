@@ -27,7 +27,12 @@ if sys.stderr.encoding != 'utf-8':
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.self_edit_loop import SEALSelfEditLoop, OLoRASEALLoop, LoRISEALLoop
-from src.curriculum import PlannedCurriculum, SelfGeneratedCurriculum
+from src.curriculum import (
+    PlannedCurriculum,
+    RandomCurriculum,
+    DispersedCurriculum,
+    SelfGeneratedCurriculum,
+)
 from src.logger import RunLogger
 from src.evaluator import evaluate_fact_all_qa
 
@@ -87,6 +92,18 @@ def run_experiment(config_path: str, seed: int):
         curriculum = PlannedCurriculum(fact_pool)
         ordered_fact_ids = curriculum.get_full_order()
         print(f"Curriculum: PLANNED (human-fixed order)")
+        print(f"  Order: {ordered_fact_ids}")
+
+    elif curriculum_type == "random":
+        curriculum = RandomCurriculum(fact_pool, seed=seed)
+        ordered_fact_ids = curriculum.get_full_order()
+        print(f"Curriculum: RANDOM (seeded shuffle, seed={seed})")
+        print(f"  Order: {ordered_fact_ids}")
+
+    elif curriculum_type == "dispersed":
+        curriculum = DispersedCurriculum(fact_pool)
+        ordered_fact_ids = curriculum.get_full_order()
+        print(f"Curriculum: DISPERSED (topic-interleaved)")
         print(f"  Order: {ordered_fact_ids}")
 
     elif curriculum_type == "self_generated":

@@ -140,10 +140,41 @@ class RunLogger:
         step["subspace_overlaps"] = overlap_values
         self._flush()
 
-    def finalize(self, ordered_fact_ids: list):
-        """Call at end of run to record the full curriculum order used."""
+    def finalize(self, ordered_fact_ids: list, fact_pool: Optional[list] = None):
+        """
+        Call at end of run to record the full curriculum order used and order statistics.
+        order_stats (WP3):
+          - adjacent_same_domain: count of adjacent same-domain pairs
+          - random_expectation: Σ_d n_d(n_d - 1) / N
+        """
         self.run_log["curriculum_order_used"] = ordered_fact_ids
         self.run_log["end_time"] = datetime.now().isoformat()
+
+        pool = fact_pool
+        if pool is None and os.path.exists("data/fact_pool.json"):
+            try:
+                with open("data/fact_pool.json") as f:
+                    pool = json.load(f)
+            except Exception:
+                pool = None
+
+        if pool:
+            from collections import Counter
+            dom_map = {f["id"]: f.get("domain", "unknown") for f in pool}
+            adj_same = sum(
+                1 for i in range(len(ordered_fact_ids) - 1)
+                if dom_map.get(ordered_fact_ids[i]) == dom_map.get(ordered_fact_ids[i + 1])
+            )
+            domain_counts = Counter(dom_map.values())
+            N = len(pool)
+            rand_exp = sum(cnt * (cnt - 1) for cnt in domain_counts.values()) / N if N > 0 else 0.0
+            order_stats = {
+                "adjacent_same_domain": adj_same,
+                "random_expectation": round(rand_exp, 4),
+            }
+            self.run_log["order_stats"] = order_stats
+            print(f"  [Curriculum] order_stats: adjacent_same_domain={adj_same}, random_expectation={rand_exp:.4f}")
+
         self._flush()
         print(f"\n[OK] Run '{self.run_id}' complete. Log saved to: {self.log_path}")
 

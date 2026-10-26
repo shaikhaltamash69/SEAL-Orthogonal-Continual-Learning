@@ -1,0 +1,17 @@
+{
+  "protocol_version": 2,
+  "config_name": "C9_lori_random",
+  "description": "Config C9 (v2): LoRI with seeded random curriculum",
+  "loop_type": "lori",
+  "curriculum": "random",
+  "lori_sparsity": 0.8,
+  "eval_match": "strict",
+  "synthetic_mode": "model",
+  "learning_gate": false,
+  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lr": 0.0002,
+  "sft_epochs": 3,
+  "results_dir": "results/"
+}

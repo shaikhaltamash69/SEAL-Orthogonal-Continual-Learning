@@ -1,0 +1,17 @@
+{
+  "protocol_version": 2,
+  "config_name": "C3_olora_planned",
+  "description": "Config C3 (v2): O-LoRA with planned curriculum under protocol 2",
+  "loop_type": "olora",
+  "curriculum": "planned",
+  "lambda_orth": 0.1,
+  "eval_match": "strict",
+  "synthetic_mode": "model",
+  "learning_gate": false,
+  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lr": 0.0002,
+  "sft_epochs": 3,
+  "results_dir": "results/"
+}

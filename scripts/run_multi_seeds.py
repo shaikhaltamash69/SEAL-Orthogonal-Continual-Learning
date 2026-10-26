@@ -1,47 +1,37 @@
 """
 scripts/run_multi_seeds.py
 
-Run all experimental configs (C2–C6) across multiple seeds and
-collect mean +/- std accuracy. This is the script needed to produce
-statistically defensible results for the paper.
+Run experimental configs across multiple seeds and collect mean / min-max accuracy.
+Import configs and labels from scripts.config_registry (WP1/WP3 single source of truth).
 
 Usage:
     python scripts/run_multi_seeds.py --seeds 42 7 123
-    python scripts/run_multi_seeds.py --seeds 42 7 123 --configs C3 C4 C5 C6
-
-What this produces:
-    results/multi_seed_summary.json  — mean +/- std per config
-    Prints a ready-to-paste results table for the paper
+    python scripts/run_multi_seeds.py --protocol 2 --configs C7 C8 C9 C10
+    python scripts/run_multi_seeds.py --dry-run
 """
+from __future__ import annotations
+
 import argparse
 import json
 import os
 import sys
 from datetime import datetime
+from pathlib import Path
 
-# Force UTF-8 on Windows — LLM output often contains arrows/special chars
+# Force UTF-8 on Windows
 if sys.stdout.encoding != 'utf-8':
     sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 if sys.stderr.encoding != 'utf-8':
     sys.stderr.reconfigure(encoding='utf-8', errors='replace')
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-CONFIG_FILES = {
-    "C2": "configs/config_c2_vanilla.json",
-    "C3": "configs/config_c3_olora_planned.json",
-    "C4": "configs/config_c4_olora_selfgen.json",
-    "C5": "configs/config_c5_lori_selfgen.json",
-    "C6": "configs/config_c6_lori_planned.json",
-}
-
-CONFIG_LABELS = {
-    "C2": "Vanilla LoRA (Self-Gen)",
-    "C3": "O-LoRA Planned",
-    "C4": "O-LoRA Self-Gen",
-    "C5": "LoRI Self-Gen",
-    "C6": "LoRI Planned",
-}
+from scripts.config_registry import (
+    FOLDER_PREFIX_TO_CONFIG,
+    SEEDS_V1,
+    SEEDS_V2,
+    all_configs,
+)
 
 
 def run_one(config_path: str, seed: int) -> dict:
@@ -86,29 +76,22 @@ def validate_curriculum_integrity(run_id: str, results_dir: str = "results/") ->
     }
 
 
-def find_completed_run(cfg: str, seed: int, results_dir: str = "results/") -> float | None:
+def find_completed_run(cfg_id: str, seed: int, cfg_meta: dict, results_dir: str = "results/") -> float | None:
     """
     Check if a fully-completed run already exists for this config+seed.
-    Returns the final mean accuracy if found, else None.
-    A run is 'complete' iff its run_log.json has an 'end_time' field.
+    Returns final mean accuracy if found, else None.
     """
-    prefix = CONFIG_FILES[cfg].split("/")[-1].replace(".json", "")  # e.g. config_c3... -> no
-    # Match by config_name prefix pattern in results dir
-    cfg_labels = {
-        "C2": "C2_vanilla_lora",
-        "C3": "C3_olora_planned",
-        "C4": "C4_olora_selfgen",
-        "C5": "C5_lori_selfgen",
-        "C6": "C6_lori_planned",
-    }
-    dir_prefix = cfg_labels.get(cfg, cfg)
-    seed_tag = f"_seed{seed}_"
-
     if not os.path.isdir(results_dir):
         return None
 
+    seed_tag = f"_seed{seed}_"
+    # Find matching directory prefixes
+    matching_prefixes = [p for p, c in FOLDER_PREFIX_TO_CONFIG.items() if c == cfg_id]
+    if not matching_prefixes:
+        matching_prefixes = [cfg_id]
+
     for d in os.listdir(results_dir):
-        if d.startswith(dir_prefix) and seed_tag in d:
+        if any(d.startswith(p) for p in matching_prefixes) and seed_tag in d:
             log_path = os.path.join(results_dir, d, "run_log.json")
             if os.path.exists(log_path):
                 try:
@@ -130,12 +113,15 @@ def find_completed_run(cfg: str, seed: int, results_dir: str = "results/") -> fl
 
 def main():
     parser = argparse.ArgumentParser(description="Run SEAL multi-seed experiment suite")
-    parser.add_argument("--seeds", type=int, nargs="+", default=[42, 7, 123])
+    parser.add_argument("--protocol", type=int, choices=[1, 2], default=1,
+                        help="Protocol version (1=v1 configs C2-C6; 2=v2 configs C2-C10)")
+    parser.add_argument("--seeds", type=int, nargs="+", default=None,
+                        help="Random seeds to run (default: [42, 7, 123])")
     parser.add_argument(
         "--configs",
         nargs="+",
-        default=["C2", "C3", "C4", "C5", "C6"],
-        help="Which configs to run (C2 C3 C4 C5 C6)",
+        default=None,
+        help="Which configs to run (e.g. C2 C3 C4 C5 C6, or C7 C8 C9 C10)",
     )
     parser.add_argument("--dry-run", action="store_true",
                         help="Just print what would run, don't actually run")
@@ -145,35 +131,49 @@ def main():
                         help="Force re-run everything even if already completed")
     args = parser.parse_args()
 
+    protocol = args.protocol
+    registered_configs = all_configs(protocol)
+
+    seeds = args.seeds if args.seeds is not None else (SEEDS_V1 if protocol == 1 else SEEDS_V2)
+    configs_to_run = args.configs if args.configs is not None else list(registered_configs.keys())
+
     print(f"\n{'='*70}")
-    print(f"SEAL Multi-Seed Experiment Suite")
-    print(f"  Configs: {args.configs}")
-    print(f"  Seeds:   {args.seeds}")
-    print(f"  Total runs: {len(args.configs) * len(args.seeds)}")
+    print(f"SEAL Multi-Seed Experiment Suite (Protocol {protocol})")
+    print(f"  Configs:    {configs_to_run}")
+    print(f"  Seeds:      {seeds}")
+    print(f"  Total runs: {len(configs_to_run) * len(seeds)}")
     print(f"{'='*70}\n")
 
     if args.dry_run:
-        for cfg in args.configs:
-            for seed in args.seeds:
-                print(f"  Would run: {cfg} seed={seed} ({CONFIG_FILES[cfg]})")
+        for cfg in configs_to_run:
+            if cfg not in registered_configs:
+                print(f"  [ERROR] Config '{cfg}' not registered for protocol {protocol}")
+                continue
+            cfg_path = registered_configs[cfg]["config_file"]
+            for seed in seeds:
+                print(f"  Would run: {cfg} seed={seed} ({cfg_path})")
         return
 
     # -- Run all experiments ----------------------------------------------
     results = {}  # {config: [final_mean_acc per seed]}
     curriculum_stats = {}  # {config_seed: integrity_stats}
 
-    for cfg in args.configs:
-        config_path = CONFIG_FILES[cfg]
+    for cfg in configs_to_run:
+        if cfg not in registered_configs:
+            print(f"[SKIP] {cfg}: not registered in protocol {protocol}")
+            continue
+
+        cfg_meta = registered_configs[cfg]
+        config_path = str(cfg_meta["config_file"])
         if not os.path.exists(config_path):
             print(f"[SKIP] {cfg}: config file not found at {config_path}")
             continue
 
         results[cfg] = []
-        for seed in args.seeds:
-
+        for seed in seeds:
             # -- Resume: skip if already done ------------------------
             if args.resume:
-                cached = find_completed_run(cfg, seed)
+                cached = find_completed_run(cfg, seed, cfg_meta)
                 if cached is not None:
                     results[cfg].append(cached)
                     print(f"  [SKIP] {cfg} seed={seed} already complete (acc={cached:.4f})")
@@ -181,7 +181,7 @@ def main():
             # ----------------------------------------------------------
 
             print(f"\n{'-'*60}")
-            print(f"Running {cfg} (seed={seed})")
+            print(f"Running {cfg} ({cfg_meta['label']}) [seed={seed}]")
             print(f"{'-'*60}")
             try:
                 acc_matrix = run_one(config_path, seed)
@@ -190,7 +190,6 @@ def main():
                 print(f"  [{cfg} seed={seed}] Final mean accuracy: {final_acc:.4f}")
 
                 # Find the run_id that was just created
-                # It will be the newest directory in results/ matching config name
                 run_dirs = sorted([
                     d for d in os.listdir("results/")
                     if d.startswith(cfg) and os.path.isdir(f"results/{d}")
@@ -214,13 +213,13 @@ def main():
     import statistics
 
     print(f"\n{'='*70}")
-    print("MULTI-SEED RESULTS SUMMARY")
+    print(f"MULTI-SEED RESULTS SUMMARY (Protocol {protocol})")
     print(f"{'='*70}")
     print(f"{'Config':<6} {'Label':<30} {'Seeds':<20} {'Mean':>8} {'StdDev':>8}")
     print(f"{'-'*72}")
 
     summary = {}
-    for cfg in args.configs:
+    for cfg in configs_to_run:
         if cfg not in results:
             continue
         valid = [x for x in results[cfg] if x is not None]
@@ -229,9 +228,10 @@ def main():
         mean_acc = statistics.mean(valid)
         std_acc = statistics.stdev(valid) if len(valid) > 1 else 0.0
         seeds_str = str([f"{v:.4f}" for v in valid])
-        print(f"{cfg:<6} {CONFIG_LABELS.get(cfg, cfg):<30} {seeds_str:<20} {mean_acc:.4f}   {std_acc:.4f}")
+        label = registered_configs[cfg]["label"] if cfg in registered_configs else cfg
+        print(f"{cfg:<6} {label:<30} {seeds_str:<20} {mean_acc:.4f}   {std_acc:.4f}")
         summary[cfg] = {
-            "label": CONFIG_LABELS.get(cfg, cfg),
+            "label": label,
             "per_seed": valid,
             "mean": mean_acc,
             "std": std_acc,
@@ -252,32 +252,16 @@ def main():
     # -- Save summary -----------------------------------------------------
     output = {
         "timestamp": datetime.now().isoformat(),
-        "seeds": args.seeds,
-        "configs_run": args.configs,
+        "protocol": protocol,
+        "seeds": seeds,
+        "configs_run": configs_to_run,
         "results": summary,
         "curriculum_integrity": curriculum_stats,
     }
-    out_path = "results/multi_seed_summary.json"
+    out_path = f"results/multi_seed_summary_protocol_{protocol}.json"
     with open(out_path, "w") as f:
         json.dump(output, f, indent=2)
     print(f"\nSummary saved to: {out_path}")
-
-    # -- Curriculum integrity warning -------------------------------------
-    high_fallback = {
-        k: v for k, v in curriculum_stats.items()
-        if v.get("fallback_rate", 0) > 0.25
-    }
-    if high_fallback:
-        print(f"\n[WARNING] High curriculum fallback rates detected:")
-        for run, stats in high_fallback.items():
-            print(f"  {run}: {stats['fallback_rate']:.1%} fallback")
-        print(
-            "  These runs used insertion order for fallback steps and are NOT\n"
-            "  valid self-generated curricula. Fix the prompt or parser before\n"
-            "  claiming curriculum-induced effects in the paper."
-        )
-
-    print(f"\n{'='*70}")
 
 
 if __name__ == "__main__":

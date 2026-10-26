@@ -274,7 +274,7 @@ class SEALSelfEditLoop:
                 self._save_checkpoint(step_num)
 
         # Finalize logs with the realised curriculum order used
-        self.logger.finalize(realised_order)
+        self.logger.finalize(realised_order, fact_pool=fact_pool)
         return accuracy_matrix
 
     def _save_checkpoint(self, step_num: int):

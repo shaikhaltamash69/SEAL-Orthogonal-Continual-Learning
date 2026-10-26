@@ -39,6 +39,58 @@ class PlannedCurriculum:
         return self.order.copy()
 
 
+class RandomCurriculum:
+    """
+    Config C7 / C9 control curriculum:
+    Returns facts in a seeded pseudo-random order.
+    """
+
+    def __init__(self, fact_pool: List[dict], seed: int = 42):
+        self.rng = random.Random(seed)
+        self.order = [f["id"] for f in fact_pool]
+        self.rng.shuffle(self.order)
+
+    def get_full_order(self) -> List[str]:
+        return self.order.copy()
+
+
+class DispersedCurriculum:
+    """
+    Config C8 / C10 control curriculum:
+    Deterministic, topic-interleaved curriculum minimizing adjacent same-domain pairs.
+    Round-robin over domains, largest domain first, ties by min fact ID.
+    """
+
+    def __init__(self, fact_pool: List[dict]):
+        from collections import defaultdict
+        groups = defaultdict(list)
+        for f in fact_pool:
+            groups[f.get("domain", "unknown")].append(f["id"])
+
+        for d in groups:
+            groups[d].sort()
+
+        # Sort domains: largest domain first; ties by min fact ID
+        sorted_domains = sorted(
+            groups.keys(),
+            key=lambda d: (-len(groups[d]), min(groups[d]) if groups[d] else "")
+        )
+
+        order = []
+        done = False
+        while not done:
+            done = True
+            for d in sorted_domains:
+                if groups[d]:
+                    order.append(groups[d].pop(0))
+                    done = False
+
+        self.order = order
+
+    def get_full_order(self) -> List[str]:
+        return self.order.copy()
+
+
 class SelfGeneratedCurriculum:
     """
     Config C4 (NOVEL CONTRIBUTION):
