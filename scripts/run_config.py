@@ -35,6 +35,7 @@ from src.curriculum import (
 )
 from src.logger import RunLogger
 from src.evaluator import evaluate_fact_all_qa
+from tools.print_env import get_environment_info
 
 
 def set_seeds(seed: int):
@@ -50,6 +51,7 @@ def run_experiment(config_path: str, seed: int):
         config = json.load(f)
 
     config["seed"] = seed
+    config["environment"] = get_environment_info()
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     config["run_id"] = f"{config['config_name']}_seed{seed}_{timestamp}"
     config["results_dir"] = config.get("results_dir", "results/")

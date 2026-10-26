@@ -73,5 +73,5 @@ The current `fact_pool.json` contains 19 facts with only 2 QA pairs each, dated 
      ```
    - Any fact where the base model achieves > 0.0 accuracy must either be revised with more specific questions or excluded (`keep_in_pool: false`).
 
-5. **fact_004 Investigation**:
-   - `fact_004` is missing from `fact_pool.json` and absent from `baseline_accuracy.json`. The user should confirm whether this ID was intentionally skipped or authored elsewhere.
+5. **fact_004**:
+   - `fact_004 absent; reason unknown; author to fill in` (searched git history via `git log -S fact_004 --all`; no earlier commits contained `fact_004`).

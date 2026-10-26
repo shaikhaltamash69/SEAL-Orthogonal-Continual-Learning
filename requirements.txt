@@ -1,24 +1,19 @@
-"""
-SEAL Research Project — Requirements File
-Install with: pip install -r requirements.txt --index-url https://download.pytorch.org/whl/nightly/cu126
-NOTE: Install PyTorch SEPARATELY first (see README_SETUP.md)
-"""
+# SEAL Research Project — Requirements
+# NOTE: Install PyTorch separately to match your CUDA environment:
+#   See results/ENVIRONMENT.md for the active environment details.
+# Full pinned lockfile: requirements.lock.txt (generated via pip freeze).
+
 # Core ML
 transformers>=4.45.0
 peft>=0.13.0
 accelerate>=0.34.0
 bitsandbytes>=0.44.0
 
-# Data
-datasets>=3.0.0
-evaluate>=0.4.3
+# Tokenization & Serialization
 sentencepiece
 protobuf
 
-# Evaluation
-lm-eval>=0.4.3
-
-# Analysis & Stats
+# Analysis & Statistics
 scipy>=1.11.0
 scikit-learn>=1.3.0
 numpy>=1.26.0
@@ -28,11 +23,6 @@ pandas>=2.0.0
 matplotlib>=3.7.0
 seaborn>=0.12.0
 
-# Experiment tracking
-wandb>=0.16.0
+# Utilities & Testing
 tqdm
-
-# Jupyter
-jupyter
-notebook
-ipykernel
+pytest>=7.0.0
