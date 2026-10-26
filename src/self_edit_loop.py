@@ -264,8 +264,10 @@ class SEALSelfEditLoop:
             # Evaluate on ALL facts studied so far (builds forgetting curve)
             print(f"\n  Evaluating after step {step_num}...")
             studied_so_far = realised_order.copy()
+            eval_match = self.config.get("eval_match", "contains")
             eval_out = evaluate_all_facts(
-                self.model, self.tokenizer, fact_pool, studied_so_far, self.device, return_details=True
+                self.model, self.tokenizer, fact_pool, studied_so_far, self.device,
+                return_details=True, eval_match=eval_match
             )
             if isinstance(eval_out, tuple):
                 accuracy_matrix[step_num], qa_correct = eval_out

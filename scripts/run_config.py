@@ -66,13 +66,27 @@ def run_experiment(config_path: str, seed: int):
     set_seeds(seed)
 
     # -- Load data -------------------------------------------------
-    with open("data/fact_pool.json") as f:
+    fact_pool_path = config.get("fact_pool_path", "data/fact_pool.json")
+    with open(fact_pool_path) as f:
         fact_pool = json.load(f)
 
-    with open("data/baseline_accuracy.json") as f:
+    baseline_path = config.get("baseline_accuracy_path", "data/baseline_accuracy.json")
+    with open(baseline_path) as f:
         baseline_accuracy = json.load(f)
 
-    print(f"Loaded {len(fact_pool)} facts from pool")
+    print(f"Loaded {len(fact_pool)} facts from pool ({fact_pool_path})")
+    print(f"Baseline accuracy loaded from {baseline_path}")
+
+    # Enforce novelty gate: refuse to run any fact flagged keep_in_pool: false
+    disallowed_facts = [
+        f["id"] for f in fact_pool
+        if baseline_accuracy.get(f["id"], {}).get("keep_in_pool") is False
+    ]
+    if disallowed_facts:
+        print(f"\n[ERROR] Fact pool contains {len(disallowed_facts)} fact(s) flagged 'keep_in_pool: false' "
+              f"in baseline file '{baseline_path}': {disallowed_facts}")
+        print("Refusing to run experiment with pre-known or non-novel facts. Please update baseline or pool.")
+        sys.exit(1)
 
     # -- Select loop class -----------------------------------------
     loop_type = config.get("loop_type", "vanilla")
@@ -158,7 +172,6 @@ def run_experiment(config_path: str, seed: int):
             target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
             lora_dropout=0.05, task_type=TaskType.CAUSAL_LM, bias="none",
         )
-        import torch
         device = "cuda" if torch.cuda.is_available() else "cpu"
         from transformers import AutoModelForCausalLM, AutoTokenizer
         probe_base = AutoModelForCausalLM.from_pretrained(
