@@ -7,6 +7,7 @@ Every number that ends up in the paper MUST trace back to a file produced here.
 import json
 import os
 from datetime import datetime
+from typing import Optional
 
 
 class RunLogger:
@@ -82,23 +83,38 @@ class RunLogger:
         chosen_fact: str,
         model_reasoning: str,
         fallback_used: bool = False,
+        displayed_order: Optional[list] = None,
+        displayed_position: Optional[int] = None,
+        parse_strategy: Optional[str] = None,
+        selection_method: Optional[str] = None,
+        scores: Optional[dict] = None,
     ):
         """
         Log the model's curriculum choice for each self-edit step.
 
         fallback_used=True means the parser could NOT extract a genuine choice
-        from the model's response and fell back to the first remaining fact.
-        Any run where fallback_used=True for a step is NOT a genuine
-        self-generated curriculum and must be flagged in the paper.
+        from the model's response and fell back to a default/random fact.
         """
         step = self._step(step_num)
-        step["curriculum_choice"] = {
+        choice_data = {
             "remaining_candidates": remaining_facts,
             "model_chose": chosen_fact,
             "model_reasoning": model_reasoning,
             "fallback_used": fallback_used,
             "timestamp": datetime.now().isoformat(),
         }
+        if displayed_order is not None:
+            choice_data["displayed_order"] = displayed_order
+        if displayed_position is not None:
+            choice_data["displayed_position"] = displayed_position
+        if parse_strategy is not None:
+            choice_data["parse_strategy"] = parse_strategy
+        if selection_method is not None:
+            choice_data["selection_method"] = selection_method
+        if scores is not None:
+            choice_data["scores"] = scores
+
+        step["curriculum_choice"] = choice_data
         self._flush()
         fallback_tag = " [FALLBACK - not a genuine model choice]" if fallback_used else ""
         print(

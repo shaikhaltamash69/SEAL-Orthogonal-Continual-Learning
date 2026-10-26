@@ -90,22 +90,34 @@ def run_experiment(config_path: str, seed: int):
         print(f"  Order: {ordered_fact_ids}")
 
     elif curriculum_type == "self_generated":
-        print(f"Curriculum: SELF-GENERATED (model chooses order)")
+        selection_mode = config.get("selection_mode", "upfront")
+        print(f"Curriculum: SELF-GENERATED (mode: {selection_mode})")
         curriculum = SelfGeneratedCurriculum(
             model=loop.model,
             tokenizer=loop.tokenizer,
             fact_pool=fact_pool,
             logger=loop.logger,
             temperature=config.get("curriculum_temperature", 0.7),
+            device=loop.device,
+            seed=seed,
+            max_candidates=config.get("max_candidates", 10),
+            shuffle_candidates=config.get("shuffle_candidates", False),
+            fallback_policy=config.get("fallback_policy", "first"),
+            selection_method=config.get("selection_method", "generate"),
+            selection_mode=selection_mode,
         )
-        ordered_fact_ids = curriculum.get_full_order_by_running()
-        print(f"  Model-chosen order: {ordered_fact_ids}")
+        if selection_mode == "online":
+            ordered_fact_ids = lambda step_num, studied: curriculum.select_next(step_num)
+            config["curriculum_order_used"] = "online"
+        else:
+            ordered_fact_ids = curriculum.get_full_order_by_running()
+            print(f"  Model-chosen order: {ordered_fact_ids}")
+            config["curriculum_order_used"] = ordered_fact_ids
 
     else:
         raise ValueError(f"Unknown curriculum type: '{curriculum_type}'. Use 'planned' or 'self_generated'.")
 
     # Save the order to config for traceability
-    config["curriculum_order_used"] = ordered_fact_ids
     loop.logger.log_config(config)
 
     # -- Optional learning gate (WP0) -------------------------------------
@@ -114,7 +126,7 @@ def run_experiment(config_path: str, seed: int):
     # Config key: learning_gate (bool, default false) -- off = v1 behaviour.
     if config.get("learning_gate", False):
         gate_min = config.get("learning_gate_min", 0.5)
-        first_fact_id = ordered_fact_ids[0]
+        first_fact_id = fact_pool[0]["id"] if callable(ordered_fact_ids) else ordered_fact_ids[0]
         first_fact = next((f for f in fact_pool if f["id"] == first_fact_id), None)
         if first_fact is None:
             print(f"[Gate] ERROR: first fact '{first_fact_id}' not in pool.")

@@ -24,7 +24,7 @@ import os
 import json
 import torch
 from datetime import datetime
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Callable, Union
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import get_peft_model, LoraConfig, TaskType
 from torch.optim import AdamW
@@ -199,35 +199,71 @@ class SEALSelfEditLoop:
     def run(
         self,
         fact_pool: List[dict],
-        ordered_fact_ids: List[str],
+        ordered_fact_ids: Union[List[str], Callable[[int, List[str]], str]],
         baseline_accuracy: dict,
     ) -> Dict[int, Dict[str, float]]:
         """
         Run the full self-edit sequence and return the accuracy matrix.
 
+        ordered_fact_ids can be:
+          - A list of fact IDs (e.g. from PlannedCurriculum or upfront SelfGeneratedCurriculum)
+          - A callable next_fact_fn(step_num, studied_ids) -> fact_id (online selection)
+
+        Curriculum Selection & Adapter Interaction Note (WP2):
+          - In online mode, the next fact is selected dynamically at each step using
+            the current model state (all trained adapters active).
+          - Selection executes with model.eval() and torch.no_grad(), with the model's
+            previous training state restored immediately afterward.
+          - Interaction with OLoRASEALLoop:
+              O-LoRA stores past adapter matrices in self.orthogonality.history_A only
+              AFTER completing the SFT step (in _sft_step). Online selection evaluates
+              the current model parameters without adding to adapter history or
+              computing orthogonality penalties.
+          - Interaction with LoRISEALLoop:
+              LoRI freezes LoRA A matrices and computes gradient masks on B matrices
+              only during backward passes in _sft_step. Online selection uses no_grad()
+              and eval(), having zero effect on gradients, masks, or frozen A parameters.
+          - RNG isolation: Selection uses a dedicated RNG stream (seed) and saves/restores
+            global PyTorch RNG state, guaranteeing training RNG streams remain unperturbed.
+
         Returns:
-            {step_num: {fact_id: accuracy}} — your Figure 1 heatmap data.
+            {step_num: {fact_id: accuracy}} — Figure 1 heatmap data.
         """
         accuracy_matrix: Dict[int, Dict[str, float]] = {}
+        is_callable = callable(ordered_fact_ids)
+        total_steps = len(fact_pool)
+        realised_order: List[str] = []
 
         print(f"\n{'='*60}")
         print(f"Starting {self.CONFIG_NAME} run")
-        print(f"  Facts: {len(ordered_fact_ids)}")
-        print(f"  Order: {ordered_fact_ids}")
+        print(f"  Facts: {total_steps}")
+        if is_callable:
+            print("  Curriculum mode: ONLINE selection (dynamic in-loop)")
+        else:
+            print(f"  Curriculum mode: UPFRONT / PLANNED order: {ordered_fact_ids}")
         print(f"{'='*60}\n")
 
-        for step_num, fact_id in enumerate(ordered_fact_ids):
+        for step_num in range(total_steps):
+            if is_callable:
+                fact_id = ordered_fact_ids(step_num, realised_order.copy())
+            else:
+                if step_num >= len(ordered_fact_ids):
+                    break
+                fact_id = ordered_fact_ids[step_num]
+
             fact = next((f for f in fact_pool if f["id"] == fact_id), None)
             if fact is None:
-                print(f"[WARN]️  Fact {fact_id} not found — skipping")
+                print(f"[WARN] Fact {fact_id} not found — skipping")
                 continue
+
+            realised_order.append(fact_id)
 
             # Self-edit on this fact
             self.self_edit_step(fact, step_num)
 
             # Evaluate on ALL facts studied so far (builds forgetting curve)
             print(f"\n  Evaluating after step {step_num}...")
-            studied_so_far = ordered_fact_ids[: step_num + 1]
+            studied_so_far = realised_order.copy()
             accuracy_matrix[step_num] = evaluate_all_facts(
                 self.model, self.tokenizer, fact_pool, studied_so_far, self.device
             )
@@ -237,7 +273,8 @@ class SEALSelfEditLoop:
             if step_num % 5 == 0:
                 self._save_checkpoint(step_num)
 
-        self.logger.finalize(ordered_fact_ids)
+        # Finalize logs with the realised curriculum order used
+        self.logger.finalize(realised_order)
         return accuracy_matrix
 
     def _save_checkpoint(self, step_num: int):
