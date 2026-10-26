@@ -88,9 +88,23 @@ class SEALSelfEditLoop:
 
     def generate_synthetic_data(self, passage: str, title: str) -> str:
         """
-        Step 1 of SEAL: the model reads a passage and rewrites it as
-        self-generated training data (Q&A pairs).
+        Step 1 of SEAL: build training text from the passage.
+
+        synthetic_mode (config key, default 'model'):
+          'model'         — current v1 behaviour: model generates Q&A pairs from passage.
+          'passage'       — train directly on the raw passage text (no generation).
+          'model+passage' — concatenate the raw passage then model-generated Q&A.
+
+        LEAKAGE GUARD: the generation prompt is built from `passage` and `title` only.
+        The held-out `qa_pairs` are never passed in here.
         """
+        mode = self.config.get("synthetic_mode", "model")  # default = v1 behaviour
+
+        if mode == "passage":
+            # No model generation — use raw passage as training text.
+            return f"Title: {title}\n\n{passage}"
+
+        # Build model-generation prompt (passage+title only, never qa_pairs)
         prompt = (
             f"Read the following passage carefully, then write 4 question-answer pairs "
             f"that test specific factual knowledge from this passage. "
@@ -117,10 +131,15 @@ class SEALSelfEditLoop:
                 repetition_penalty=1.3,      # prevents "entire entire entire" loops
                 no_repeat_ngram_size=4,      # no 4-gram repeated within the output
             )
-        synthetic = self.tokenizer.decode(
+        generated = self.tokenizer.decode(
             outputs[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True
         ).strip()
-        return synthetic
+
+        if mode == "model+passage":
+            return f"Title: {title}\n\n{passage}\n\n{generated}"
+
+        # mode == 'model'  (v1 default)
+        return generated
 
     def self_edit_step(self, fact: dict, step_num: int):
         """One complete self-edit: generate -> SFT -> (subclass hooks for extra loss)."""

@@ -29,6 +29,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.self_edit_loop import SEALSelfEditLoop, OLoRASEALLoop, LoRISEALLoop
 from src.curriculum import PlannedCurriculum, SelfGeneratedCurriculum
 from src.logger import RunLogger
+from src.evaluator import evaluate_fact_all_qa
 
 
 def set_seeds(seed: int):
@@ -106,6 +107,69 @@ def run_experiment(config_path: str, seed: int):
     # Save the order to config for traceability
     config["curriculum_order_used"] = ordered_fact_ids
     loop.logger.log_config(config)
+
+    # -- Optional learning gate (WP0) -------------------------------------
+    # Trains and evaluates the first fact with a fresh clone of the adapter
+    # to verify the model can actually learn before running the full loop.
+    # Config key: learning_gate (bool, default false) -- off = v1 behaviour.
+    if config.get("learning_gate", False):
+        gate_min = config.get("learning_gate_min", 0.5)
+        first_fact_id = ordered_fact_ids[0]
+        first_fact = next((f for f in fact_pool if f["id"] == first_fact_id), None)
+        if first_fact is None:
+            print(f"[Gate] ERROR: first fact '{first_fact_id}' not in pool.")
+            sys.exit(1)
+        print(f"\n[Gate] Learning-efficacy gate active (min={gate_min:.2f}).")
+        print(f"[Gate] Training on first fact '{first_fact_id}' to check plasticity ...")
+        from copy import deepcopy
+        from peft import LoraConfig, TaskType, get_peft_model
+        from torch.optim import AdamW
+        gate_lora_cfg = LoraConfig(
+            r=config.get("lora_r", 16), lora_alpha=config.get("lora_alpha", 32),
+            target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
+            lora_dropout=0.05, task_type=TaskType.CAUSAL_LM, bias="none",
+        )
+        import torch
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        probe_base = AutoModelForCausalLM.from_pretrained(
+            config["model_name"],
+            torch_dtype=torch.bfloat16 if device == "cuda" else torch.float32,
+            device_map=device,
+        )
+        probe_tok = AutoTokenizer.from_pretrained(config["model_name"])
+        probe_tok.pad_token = probe_tok.eos_token
+        probe_tok.padding_side = "right"
+        probe_model = get_peft_model(probe_base, gate_lora_cfg)
+        probe_model.train()
+        gate_text = f"Title: {first_fact['title']}\n\n{first_fact['passage']}"
+        gate_inputs = probe_tok(
+            gate_text, return_tensors="pt", truncation=True,
+            max_length=512, padding="max_length",
+        ).to(device)
+        gate_labels = gate_inputs["input_ids"].clone()
+        gate_labels[gate_labels == probe_tok.pad_token_id] = -100
+        gate_opt = AdamW(probe_model.parameters(), lr=config.get("lr", 2e-4), weight_decay=0.01)
+        for _ in range(config.get("sft_epochs", 3)):
+            gate_opt.zero_grad()
+            gate_out = probe_model(**gate_inputs, labels=gate_labels)
+            gate_out.loss.backward()
+            torch.nn.utils.clip_grad_norm_(probe_model.parameters(), 1.0)
+            gate_opt.step()
+        gate_result = evaluate_fact_all_qa(probe_model, probe_tok, first_fact, device)
+        gate_acc = gate_result["mean_accuracy"]
+        del probe_model, probe_base, probe_tok, gate_opt
+        torch.cuda.empty_cache() if device == "cuda" else None
+        print(f"[Gate] Immediate accuracy on '{first_fact_id}': {gate_acc:.3f} (min={gate_min:.2f})")
+        if gate_acc < gate_min:
+            print(
+                f"[Gate] ABORT: model failed learning gate.\n"
+                f"       Immediate accuracy {gate_acc:.3f} < learning_gate_min {gate_min:.2f}.\n"
+                f"       Adjust sft_epochs, lr, or synthetic_mode and re-run.\n"
+                f"       Run tools/plasticity_probe.py to sweep settings."
+            )
+            sys.exit(2)
+        print(f"[Gate] PASS: proceeding with full experiment.")
 
     # -- Run the experiment ----------------------------------------
     accuracy_matrix = loop.run(fact_pool, ordered_fact_ids, baseline_accuracy)
